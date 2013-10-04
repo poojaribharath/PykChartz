@@ -1,3 +1,6 @@
-svg{
-    background: green !important;
+svg {
+  shape-rendering: crispEdges;
+}
+line{
+  shape-rendering: crispEdges;
 }
