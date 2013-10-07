@@ -7,43 +7,43 @@ sample_data =  [
 	breakup: [
             {
 		name: "Scans",
-		color: "gray",
+		color: "#268BD2",
 		count: 500,
 		tooltip: "hihi-scans"
             },
             {
 		name: "Facebook",
-		color: "#1D3174",
+		color: "#DC322F",
 		count: 100,
 		tooltip: "hihi-fb"
             },
             {
 		name: "Twitter",
-		color: "#3998DC",
+		color: "#D33682",
 		count: 40,
 		tooltip: "hihi-tw"
             },
             {
 		name: "SalesTag",
-		color: "#E04416",
+		color: "#859900",
 		count: 20,
 		tooltip: "hihi-st"
             },
             {
 		name: "GooglePlus",
-		color: "#BD341C",
+		color: "#2AA198",
 		count: 10,
 		tooltip: "hihi-gp"
             },
             {
 		name: "Pinterest",
-		color: "#B20D1B",
+		color: "#CB4B16",
 		count: 30,
 		tooltip: "hihi-pi"
             },
             {
 		name: "Email",
-		color: "#C1BF00",
+		color: "#6C71C4",
 		count: 29,
 		tooltip: "hihi-em"
             },
@@ -58,43 +58,43 @@ sample_data =  [
 	breakup: [
             {
 		name: "Scans",
-		color: "gray",
+		color: "#268BD2",
 		count: 100,
 		tooltip: "hihi-scans"
             },
             {
 		name: "Facebook",
-		color: "#1D3174",
+		color: "#DC322F",
 		count: 20,
 		tooltip: "hihi-fb"
             },
             {
 		name: "Twitter",
-		color: "#3998DC",
+		color: "#D33682",
 		count: 8,
 		tooltip: "hihi-tw"
             },
             {
 		name: "SalesTag",
-		color: "#E04416",
+		color: "#859900",
 		count: 4,
 		tooltip: "hihi-st"
             },
             {
 		name: "GooglePlus",
-		color: "#BD341C",
+		color: "#2AA198",
 		count: 3,
 		tooltip: "hihi-gp"
             },
             {
 		name: "Pinterest",
-		color: "#B20D1B",
+		color: "#CB4B16",
 		count: 6,
 		tooltip: "hihi-pi"
             },
             {
 		name: "Email",
-		color: "#C1BF00",
+		color: "#6C71C4",
 		count: 6,
 		tooltip: "hihi-em"
             },
@@ -109,43 +109,43 @@ sample_data =  [
 	breakup: [
             {
 		name: "Scans",
-		color: "gray",
+		color: "#268BD2",
 		count: 50,
 		tooltip: "hihi-scans"
             },
             {
 		name: "Facebook",
-		color: "#1D3174",
+		color: "#DC322F",
 		count: 10,
 		tooltip: "hihi-fb"
             },
             {
 		name: "Twitter",
-		color: "#3998DC",
+		color: "#D33682",
 		count: 5,
 		tooltip: "hihi-tw"
             },
             {
 		name: "SalesTag",
-		color: "#E04416",
+		color: "#859900",
 		count: 3,
 		tooltip: "hihi-st"
             },
             {
 		name: "GooglePlus",
-		color: "#BD341C",
+		color: "#2AA198",
 		count: 2,
 		tooltip: "hihi-gp"
             },
             {
 		name: "Pinterest",
-		color: "#B20D1B",
+		color: "#CB4B16",
 		count: 4,
 		tooltip: "hihi-pi"
             },
             {
 		name: "Email",
-		color: "#C1BF00",
+		color: "#6C71C4",
 		count: 6,
 		tooltip: "hihi-em"
             },
