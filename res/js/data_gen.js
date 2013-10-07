@@ -146,7 +146,7 @@ sample_data =  [
             {
 		name: "Email",
 		color: "#D62728",
-		count: 6,
+		count: 60,
 		tooltip: "hihi-em"
             },
 

@@ -1,21 +1,69 @@
 function riverChart(){
     // Defaults
-    var width = 720;
-    var height = 120;
+    var width = 960;
+    var height = 200;
+    var filterList = [];
+
+    function filter(d){
+	var d = d || [];
+	if(filterList.length < 1) return d;
+
+	for(i in d){
+	    var media = d[i].breakup;
+	    var newMedia = [];
+	    for(j in media){
+		if (jQuery.inArray(media[j].name, filterList) >= 0) newMedia.push(media[j]);
+	    }
+	    d[i].breakup = newMedia;
+	}
+	return d;
+    }
+
+    chart.stupid = function(){
+	this.filterList(["Facebook","Twitter"]);
+	chart(d3.select("#river-container"));
+    }
+
+    chart.unstupid = function(){
+	this.filterList([]);
+	chart(d3.select("#river-container"));
+    }
+
+
+    chart.stacked = function(){
+	var svg = d3.select("#river-container").select("svg");
+	svg.selectAll("g.bar-holder").attr("transform","translate(0,0)");
+    }
 
     function chart(selection){
 	selection.each(function(data, i){ // for rendering into different elements
-	    var data = parseData(data);
+
+	    // Need space for all the text and atleast 50px for the rectangles
+	    if(width < 250){
+		console.log("RiverChart: Error: The width of the chart can't be lesser than 250");
+		return false;
+	    }
+
+	    // Filtering & Parsing Data
+	    datqwerwa = filter(data);
+	    data = parseData(data);
 	    var maxTotalVal = maxTotal(data);
 
+	    // Sizes & Scales
 	    var xScale = d3.scale.linear().domain([0, maxTotalVal]).range([0, width - 200]);
-
 	    var barHeight = height / (data.length * 2);
 	    var barMargin = barHeight * 2;
 
-	    var svg = d3.select(this).append("svg").attr("width", width).attr("height", height);
+	    // If the SVG already exists don't create a new one
+	    var svg;
+	    if ($(this).find("svg").length == 0){
+		svg = d3.select(this).append("svg").attr("width", width).attr("height", height);
+	    }else{
+		svg = d3.select(this).select("svg");
+	    }
 
-	    // top lines
+
+	    // Top: Graph Lines
 	    svg.selectAll("line.top_line").data(data).enter()
 		.append("line").attr("class", "top_line")
 		.attr("x1", 0).attr("x2", width)
@@ -25,7 +73,8 @@ function riverChart(){
 		.attr("y2", function(d, i){
 		    return i * barMargin;
 		});
-	    // bottom lines
+
+	    // Bottom: Graph Lines
 	    svg.selectAll("line.bottom_line").data(data).enter()
 		.append("line").attr("class", "bottom_line")
 		.attr("x1", 0).attr("x2", width)
@@ -48,28 +97,43 @@ function riverChart(){
 		.style("border-radius", "5px")
 		.text("a simple tooltip");
 
-	    // Big Reect groups
-	    svg.selectAll("g.bar-holder").data(data).enter()
-		.append("g").attr("class", "bar-holder")
+
+	    // SVG Groups for holding the bars
+	    var groups = svg.selectAll("g.bar-holder").data(data)
+
+	    groups.enter().append("g").attr("class", "bar-holder")
 		.attr("transform", function(d, i){
 		    var y = i * barMargin;
 		    var x = xScale((maxTotalVal - d.breakupTotal) / 2) + 100;
 		    return "translate("+x+","+y+")";
-		})
+		});
+
+
+	    groups.transition().duration(1000)
 		.attr("height", barHeight)
 		.attr("width", function(d){
 		    return xScale(d.breakupTotal);
+		})
+		.attr("transform", function(d, i){
+		    var y = i * barMargin;
+		    var x = xScale((maxTotalVal - d.breakupTotal) / 2) + 100;
+		    return "translate("+x+","+y+")";
 		});
 
-	    var bar_holder = d3.selectAll("g.bar-holder")[0];
+	    groups.exit().remove();
 
+	    var bar_holder = d3.selectAll("g.bar-holder")[0];
 	    for(i in data){
 		var group = bar_holder[i];
 		var breakup = data[i].breakup;
 
+
 		// Rectangles
-		d3.select(group).selectAll("rect").data(breakup).enter()
-		    .append("rect")
+		var rects = d3.select(group).selectAll("rect").data(breakup);
+
+		rects.enter().append("rect").attr("height", 0);
+
+		rects.transition().duration(1000)
 		    .attr("x", function(d, i){
 			if (i == 0) return 0
 			var shift = 0;
@@ -82,8 +146,9 @@ function riverChart(){
 		    .attr("height", barHeight)
 		    .attr("width", function(d,i){
 			return xScale(d.count);
-		    })
-		    .attr("style", function(d,i){
+		    });
+
+		rects.attr("style", function(d,i){
 			return "fill: " + d.color;
 		    })
 		    .on("mouseover", function(d, i){
@@ -98,12 +163,17 @@ function riverChart(){
 		    .on("mouseout", function(){
 			return tooltip.style("visibility", "hidden");
 		    });
+
+		rects.exit().transition().duration(1000).attr("width", 0).remove();
 	    }
 
-	    // Cool labels
-	    svg.selectAll("text.cool_label").data(data).enter()
-		.append("text").attr("class", "cool_label")
-		.attr("x", width)
+
+	    // Display Name labels
+	    var display_name = svg.selectAll("text.cool_label").data(data);
+
+	    display_name.enter().append("text").attr("class", "cool_label");
+
+	    display_name.attr("x", width)
 		.attr("y", function(d, i){
 		    return (i * barMargin) + (barHeight/2) + 5;
 		})
@@ -111,10 +181,13 @@ function riverChart(){
 		    return d.display_name;
 		});
 
-	    // Left side labels
-	    svg.selectAll("text.left_label").data(data).enter()
-		.append("svg:text")
-		.attr("class", "left_label")
+
+	    // Left side labels with totals
+	    var left_labels = svg.selectAll("text.left_label").data(data);
+
+	    left_labels.enter().append("svg:text").attr("class", "left_label");
+
+	    left_labels
 		.attr("y", function(d, i){
 		    return (i * barMargin) + (barHeight/2) + 5;
 		})
@@ -123,10 +196,13 @@ function riverChart(){
 		    return d.breakupTotal + " " + d.technical_name;
 		});
 
-	    // right side labels
-	    svg.selectAll("text.right_label").data(data).enter()
-		.append("svg:text")
-		.attr("class", "right_label")
+
+	    // Right side labels with time duration
+	    var right_labels = svg.selectAll("text.right_label").data(data);
+
+	    right_labels.enter().append("svg:text").attr("class", "right_label");
+
+	    right_labels
 		.attr("y", function(d, i){
 		    return (i * barMargin) + (barHeight * 1.5) + 5;
 		})
@@ -140,12 +216,21 @@ function riverChart(){
 		});
 
 
-	    // left anglelines
-	    svg.selectAll("line.left_line").data(data).enter()
-		.append("line").attr("class", "left_line")
+
+	    // Left side angle lines
+	    var left_angles = svg.selectAll("line.left_line").data(data);
+
+	    left_angles.enter().append("line").attr("class", "left_line")
+		.attr("y2", function(d,i){
+		    return (i * barMargin) + barHeight;
+		})
+		.attr("x2", function(d,i){
+		    return xScale((maxTotalVal - d.breakupTotal) / 2) + 100;
+		});
+
+	    left_angles.transition().duration(1000)
 		.attr("style", function(d,i){
 		    if(!data[i+1]) return "stroke-width: 0";
-//		    return "stroke-width: 2; stroke: red";
 		})
 		.attr("y1", function(d,i){
 		    return (i * barMargin) + barHeight;
@@ -161,12 +246,21 @@ function riverChart(){
 		    return xScale((maxTotalVal - data[i+1].breakupTotal) / 2) + 100;
 		});
 
-	    // right angle lines
-	    svg.selectAll("line.right_line").data(data).enter()
-		.append("line").attr("class", "right_line")
+
+	    // Right side angle lines
+	    var right_angles = svg.selectAll("line.right_line").data(data)
+
+	    right_angles.enter().append("line").attr("class", "right_line")
+		.attr("y2", function(d,i){
+		    return (i * barMargin) + barHeight;
+		})
+		.attr("x2", function(d,i){
+		    return xScale(((maxTotalVal - d.breakupTotal) / 2) + d.breakupTotal) + 100;
+		});
+
+	    right_angles.transition().duration(1000)
 		.attr("style", function(d,i){
 		    if(!data[i+1]) return "stroke-width: 0";
-//		    return "stroke-width: 2; stroke: red";
 		})
 		.attr("y1", function(d,i){
 		    return (i * barMargin) + barHeight;
@@ -220,14 +314,20 @@ function riverChart(){
 	return chart;
     }
 
+    chart.filterList = function(v){
+	if(!arguments.length) return filterList;
+	filterList = v;
+	return chart;
+    }
+
     return chart;
 }
 
 
 $(document).ready(function(){
     var then = new Date(); // Start timer
-    var chart = riverChart();
-    d3.select("#river-container").datum(sample_data).call(chart);
+    kchart = riverChart();
+    d3.select("#river-container").datum(sample_data).call(kchart);
     var now = new Date(); // Stop timer
     console.log("RiverChart:   Log: The chart was rendered in: " + (now - then) + "ms");
 });
