@@ -36,7 +36,17 @@ function riverChart(){
 		    return (i * barMargin) + barHeight;
 		});
 
-
+	    // Tooltip
+	    var tooltip = d3.select("body")
+		.append("div")
+		.style("position", "absolute")
+		.style("z-index", "10")
+		.style("visibility", "hidden")
+		.style("background", "#fff")
+		.style("padding", "10px 20px")
+		.style("box-shadow", "0 0 10px #000")
+		.style("border-radius", "5px")
+		.text("a simple tooltip");
 
 	    // Big Reect groups
 	    svg.selectAll("g.bar-holder").data(data).enter()
@@ -75,6 +85,18 @@ function riverChart(){
 		    })
 		    .attr("style", function(d,i){
 			return "fill: " + d.color;
+		    })
+		    .on("mouseover", function(d, i){
+			tooltip.html(d.tooltip);
+			return tooltip.style("visibility", "visible");
+		    })
+		    .on("mousemove", function(){
+			var yReduce = parseInt(tooltip.style("height")) + 40;
+			var xReduce = parseInt(tooltip.style("width")) / 2;
+			return tooltip.style("top", (event.pageY- yReduce)+"px").style("left",(event.pageX-xReduce)+"px");
+		    })
+		    .on("mouseout", function(){
+			return tooltip.style("visibility", "hidden");
 		    });
 	    }
 
