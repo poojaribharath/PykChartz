@@ -1,19 +1,42 @@
 function riverChart(){
     // Defaults
     var width = 720;
-    var height = 480;
+    var height = 120;
 
     function chart(selection){
 	selection.each(function(data, i){ // for rendering into different elements
 	    var data = parseData(data);
 	    var maxTotalVal = maxTotal(data);
 
-	    var xScale = d3.scale.linear().domain([0, maxTotalVal]).range([0, width - 150]);
+	    var xScale = d3.scale.linear().domain([0, maxTotalVal]).range([0, width - 200]);
 
-	    var barHeight = height / (data.length * 3);
-	    var barMargin = barHeight * 3;
+	    var barHeight = height / (data.length * 2);
+	    var barMargin = barHeight * 2;
 
 	    var svg = d3.select(this).append("svg").attr("width", width).attr("height", height);
+
+	    // top lines
+	    svg.selectAll("line.top_line").data(data).enter()
+		.append("line").attr("class", "top_line")
+		.attr("x1", 0).attr("x2", width)
+		.attr("y1", function(d, i){
+		    return i * barMargin;
+		})
+		.attr("y2", function(d, i){
+		    return i * barMargin;
+		});
+	    // bottom lines
+	    svg.selectAll("line.bottom_line").data(data).enter()
+		.append("line").attr("class", "bottom_line")
+		.attr("x1", 0).attr("x2", width)
+		.attr("y1", function(d, i){
+		    return (i * barMargin) + barHeight;
+		})
+		.attr("y2", function(d, i){
+		    return (i * barMargin) + barHeight;
+		});
+
+
 
 	    // Big Reect groups
 	    svg.selectAll("g.bar-holder").data(data).enter()
@@ -56,11 +79,10 @@ function riverChart(){
 	    // Cool labels
 	    svg.selectAll("text.cool_label").data(data).enter()
 		.append("text").attr("class", "cool_label")
-		.attr("x", ((width-150)/2)+100)
+		.attr("x", width)
 		.attr("y", function(d, i){
-		    return (i * barMargin) + barHeight + 15;
+		    return (i * barMargin) + (barHeight/2) + 5;
 		})
-		.attr("text-anchor", "middle")
 		.text(function(d, i){
 		    return d.display_name;
 		});
@@ -70,7 +92,7 @@ function riverChart(){
 		.append("svg:text")
 		.attr("class", "left_label")
 		.attr("y", function(d, i){
-		    return (i * barMargin) + (barHeight/2);
+		    return (i * barMargin) + (barHeight/2) + 5;
 		})
 		.attr("x", 0)
 		.text(function(d,i){
@@ -82,10 +104,14 @@ function riverChart(){
 		.append("svg:text")
 		.attr("class", "right_label")
 		.attr("y", function(d, i){
-		    return (i * barMargin) + (barMargin/1.5);
+		    return (i * barMargin) + (barHeight * 1.5) + 5;
 		})
-		.attr("x", width - 50)
+		.attr("x", width)
 		.text(function(d,i){
+		    if(data[i+1] == undefined){
+			console.log("RiverChart: Error: Duration given for last bar");
+			return "";
+		    }
 		    return d.duration;
 		});
 
@@ -95,7 +121,7 @@ function riverChart(){
 		.append("line").attr("class", "left_line")
 		.attr("style", function(d,i){
 		    if(!data[i+1]) return "stroke-width: 0";
-		    return "stroke-width: 2; stroke: red";
+//		    return "stroke-width: 2; stroke: red";
 		})
 		.attr("y1", function(d,i){
 		    return (i * barMargin) + barHeight;
@@ -116,7 +142,7 @@ function riverChart(){
 		.append("line").attr("class", "right_line")
 		.attr("style", function(d,i){
 		    if(!data[i+1]) return "stroke-width: 0";
-		    return "stroke-width: 2; stroke: red";
+//		    return "stroke-width: 2; stroke: red";
 		})
 		.attr("y1", function(d,i){
 		    return (i * barMargin) + barHeight;
