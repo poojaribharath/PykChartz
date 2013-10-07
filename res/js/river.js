@@ -29,6 +29,17 @@ function riverChart(){
     }
 
 
+    toggleFilter = function(f){
+	var index = filterList.indexOf(f)
+	if(index === -1){
+	    filterList.push(f);
+	}else{
+	    filterList.splice(index, 1);
+	}
+
+	console.log(index);
+    }
+
     chart.stacked = function(){
 	var svg = d3.select("#river-container").select("svg");
 	$("g.bar-holder").each(function(i , el){
@@ -55,11 +66,11 @@ function riverChart(){
 	    var maxTotalVal = maxTotal(tData);
 
 
-
 	    // Sizes & Scales
 	    var xScale = d3.scale.linear().domain([0, maxTotalVal]).range([0, width - 200]);
 	    var barHeight = height / (tData.length * 2);
 	    var barMargin = barHeight * 2;
+
 
 	    // If the SVG already exists don't create a new one
 	    var svg;
@@ -81,6 +92,7 @@ function riverChart(){
 		    return i * barMargin;
 		});
 
+
 	    // Bottom: Graph Lines
 	    svg.selectAll("line.bottom_line").data(tData).enter()
 		.append("line").attr("class", "bottom_line")
@@ -91,6 +103,7 @@ function riverChart(){
 		.attr("y2", function(d, i){
 		    return (i * barMargin) + barHeight - 1;
 		});
+
 
 	    // Tooltip
 	    var tooltip = d3.select("body")
@@ -103,6 +116,24 @@ function riverChart(){
 		.style("box-shadow", "0 0 10px #000")
 		.style("border-radius", "5px")
 		.text("a simple tooltip");
+
+
+	    svg.append("text").text("Facebook").attr("x",100).attr("y",100).on("click", function(e){
+		toggleFilter("Facebook");
+		chart(selection);
+	    });
+
+	    svg.append("text").text("Email").attr("x",100).attr("y",120).on("click", function(e){
+		toggleFilter("Email");
+		chart(selection);
+	    });
+
+	    svg.append("text").text("Twitter").attr("x",100).attr("y",140).on("click", function(e){
+		toggleFilter("Twitter");
+		chart(selection);
+	    });
+
+
 
 
 	    // SVG Groups for holding the bars
