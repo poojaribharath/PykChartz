@@ -5,7 +5,6 @@ function riverChart(){
     var filterList = [];
 
     function filter(d){
-	var d = d || [];
 	if(filterList.length < 1) return d;
 
 	for(i in d){
@@ -42,6 +41,8 @@ function riverChart(){
 
     function chart(selection){
 	selection.each(function(data, i){ // for rendering into different elements
+	    var tData = data.slice(0);
+
 	    // Need space for all the text and atleast 50px for the rectangles
 	    if(width < 250){
 		console.log("RiverChart: Error: The width of the chart can't be lesser than 250");
@@ -49,9 +50,12 @@ function riverChart(){
 	    }
 
 	    // Filtering & Parsing Data
-	    datqwerwa = filter(data);
+	    data = filter(data);
 	    data = parseData(data);
+
 	    var maxTotalVal = maxTotal(data);
+
+	    console.log(tData);
 
 	    // Sizes & Scales
 	    var xScale = d3.scale.linear().domain([0, maxTotalVal]).range([0, width - 200]);
@@ -280,6 +284,7 @@ function riverChart(){
 		    if(!data[i+1]) return 0;
 		    return xScale(((maxTotalVal - data[i+1].breakupTotal) / 2) + data[i+1].breakupTotal) + 100;
 		});
+
 	});
 
 
@@ -293,16 +298,16 @@ function riverChart(){
 	return total;
     }
 
-    function maxTotal(data){
+    function maxTotal(d){
 	var totals = []
-	for(i in data) totals.push(data[i].breakupTotal); // Get all the breakupTotals in an Array
+	for(i in d) totals.push(d[i].breakupTotal); // Get all the breakupTotals in an Array
 	totals = totals.sort(function(a,b){return a - b}); // Sort them in ascending order
 	return totals[totals.length - 1]; // Give the last one
     }
 
-    function parseData(data){
-	for(i in data) data[i].breakupTotal = totalInBreakup(data[i].breakup); // Calculate all breakup totals and add to the hash
-	return data;
+    function parseData(d){
+	for(i in d) d[i].breakupTotal = totalInBreakup(d[i].breakup); // Calculate all breakup totals and add to the hash
+	return d;
     }
 
 
