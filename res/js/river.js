@@ -54,6 +54,17 @@ function riverChart(){
 		    });
 	    }
 
+	    // Cool labels
+	    svg.selectAll("text.cool_label").data(data).enter()
+		.append("text").attr("class", "cool_label")
+		.attr("x", ((width-150)/2)+100)
+		.attr("y", function(d, i){
+		    return (i * barMargin) + barHeight + 15;
+		})
+		.attr("text-anchor", "middle")
+		.text(function(d, i){
+		    return d.display_name;
+		});
 
 	    // Left side labels
 	    svg.selectAll("text.left_label").data(data).enter()
@@ -121,9 +132,6 @@ function riverChart(){
 		    if(!data[i+1]) return 0;
 		    return xScale(((maxTotalVal - data[i+1].breakupTotal) / 2) + data[i+1].breakupTotal) + 100;
 		});
-
-
-
 	});
     }
 
