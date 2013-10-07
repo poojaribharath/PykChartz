@@ -9,7 +9,7 @@ function riverChart(){
 	    var data = parseData(data);
 	    var maxTotalVal = maxTotal(data);
 
-	    var xScale = calculateScale(data);
+	    var xScale = d3.scale.linear().domain([0, maxTotalVal]).range([0, width - 150]);
 
 	    var barHeight = height / (data.length * 3);
 	    var barMargin = barHeight * 3;
@@ -139,39 +139,19 @@ function riverChart(){
     // Data Helpers
     function totalInBreakup(breakup){
 	var total = 0;
-	for(i in breakup){
-	    var media = breakup[i];
-	    total += media.count;
-	}
-	return total
+	for(i in breakup) total += breakup[i].count; // Add all the counts in breakup to total
+	return total;
     }
 
     function maxTotal(data){
 	var totals = []
-	for(i in data){
-	    var period = data[i].breakup
-	    var total = 0
-	    for(j in period){
-		var media = period[j];
-		total += media.count;
-	    }
-	    totals.push(total);
-	}
-	totals = totals.sort(function(a,b){
-	    return a - b;
-	});
-	return totals[totals.length - 1];
-    }
-
-    function calculateScale(data){
-	return d3.scale.linear().domain([0, maxTotal(data)]).range([0, width - 150]);
+	for(i in data) totals.push(data[i].breakupTotal); // Get all the breakupTotals in an Array
+	totals = totals.sort(function(a,b){return a - b}); // Sort them in ascending order
+	return totals[totals.length - 1]; // Give the last one
     }
 
     function parseData(data){
-	for(i in data){
-	    var point = data[i];
-	    point.breakupTotal = totalInBreakup(point.breakup);
-	}
+	for(i in data) data[i].breakupTotal = totalInBreakup(data[i].breakup); // Calculate all breakup totals and add to the hash
 	return data;
     }
 
@@ -190,13 +170,6 @@ function riverChart(){
 	height = v;
 	return chart;
     }
-
-    chart.data = function(v){
-	if(!arguments.length) return data;
-	data = v;
-	return chart;
-    }
-
 
     return chart;
 }
