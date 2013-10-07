@@ -19,7 +19,7 @@ function riverChart(){
     }
 
     chart.stupid = function(){
-	this.filterList(["Facebook","Twitter"]);
+	this.filterList(["Facebook","Email", "Twitter"]);
 	chart(d3.select("#river-container"));
     }
 
@@ -41,7 +41,6 @@ function riverChart(){
 
     function chart(selection){
 	selection.each(function(data, i){ // for rendering into different elements
-	    console.log(data);
 	    var tData = jQuery.extend(true, [], data);
 
 	    // Need space for all the text and atleast 50px for the rectangles
@@ -140,7 +139,7 @@ function riverChart(){
 		// Rectangles
 		var rects = d3.select(group).selectAll("rect").data(breakup);
 
-		rects.enter().append("rect").attr("height", 0);
+		rects.enter().append("rect").attr("width", 0);
 
 		rects.transition().duration(1000)
 		    .attr("x", function(d, i){
