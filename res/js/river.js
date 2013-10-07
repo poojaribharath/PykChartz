@@ -30,10 +30,10 @@ function riverChart(){
 		.append("line").attr("class", "bottom_line")
 		.attr("x1", 0).attr("x2", width)
 		.attr("y1", function(d, i){
-		    return (i * barMargin) + barHeight;
+		    return (i * barMargin) + barHeight - 1;
 		})
 		.attr("y2", function(d, i){
-		    return (i * barMargin) + barHeight;
+		    return (i * barMargin) + barHeight - 1;
 		});
 
 	    // Tooltip
