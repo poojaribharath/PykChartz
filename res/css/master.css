@@ -4,3 +4,11 @@ svg {
 line{
   shape-rendering: crispEdges;
 }
+
+g.bar-holder rect{
+    opacity: 0.8;
+}
+
+g.bar-holder rect:hover{
+    opacity: 1;
+}
