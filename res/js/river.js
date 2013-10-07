@@ -6,6 +6,9 @@ function riverChart(){
 
     function chart(selection){
 	selection.each(function(data, i){ // for rendering into different elements
+	    var data = parseData(data);
+	    var maxTotalVal = maxTotal(data);
+
 	    var xScale = calculateScale(data);
 
 	    var barHeight = height / (data.length * 3);
@@ -14,27 +17,24 @@ function riverChart(){
 	    var svg = d3.select(this).append("svg").attr("width", width).attr("height", height);
 
 	    // Big Reect groups
-	    svg.selectAll("g.bar-holder")
-		.data(data)
-		.enter()
+	    svg.selectAll("g.bar-holder").data(data).enter()
 		.append("g").attr("class", "bar-holder")
 		.attr("transform", function(d, i){
 		    var y = i * barMargin;
-		    var x = xScale((maxTotal(data) - totalInBreakup(d.breakup)) / 2) + 100;
+		    var x = xScale((maxTotalVal - d.breakupTotal) / 2) + 100;
 		    return "translate("+x+","+y+")";
 		})
 		.attr("height", barHeight)
 		.attr("width", function(d){
-		    return xScale(totalInBreakup(d.breakup));
+		    return xScale(d.breakupTotal);
 		});
 
 	    var bar_holder = d3.selectAll("g.bar-holder")[0];
+
 	    for(i in data){
 		var group = bar_holder[i];
 		var breakup = data[i].breakup;
-		d3.select(group).selectAll("rect")
-		    .data(breakup)
-		    .enter()
+		d3.select(group).selectAll("rect").data(breakup).enter()
 		    .append("rect")
 		    .attr("x", function(d, i){
 			if (i == 0) return 0
@@ -56,9 +56,7 @@ function riverChart(){
 
 
 	    // Left side labels
-	    svg.selectAll("text.left_label")
-		.data(data)
-		.enter()
+	    svg.selectAll("text.left_label").data(data).enter()
 		.append("svg:text")
 		.attr("class", "left_label")
 		.attr("y", function(d, i){
@@ -66,13 +64,11 @@ function riverChart(){
 		})
 		.attr("x", 0)
 		.text(function(d,i){
-		    return totalInBreakup(d.breakup) + " " + d.technical_name;
+		    return d.breakupTotal + " " + d.technical_name;
 		});
 
 	    // right side labels
-	    svg.selectAll("text.right_label")
-		.data(data)
-		.enter()
+	    svg.selectAll("text.right_label").data(data).enter()
 		.append("svg:text")
 		.attr("class", "right_label")
 		.attr("y", function(d, i){
@@ -85,9 +81,7 @@ function riverChart(){
 
 
 	    // left anglelines
-	    svg.selectAll("line.left_line")
-		.data(data)
-		.enter()
+	    svg.selectAll("line.left_line").data(data).enter()
 		.append("line").attr("class", "left_line")
 		.attr("style", function(d,i){
 		    if(!data[i+1]) return "stroke-width: 0";
@@ -97,20 +91,18 @@ function riverChart(){
 		    return (i * barMargin) + barHeight;
 		})
 		.attr("x1", function(d,i){
-		    return xScale((maxTotal(data) - totalInBreakup(d.breakup)) / 2) + 100;
+		    return xScale((maxTotalVal - d.breakupTotal) / 2) + 100;
 		})
 		.attr("y2", function(d,i){
 		    return ((i+1) * barMargin);
 		})
 		.attr("x2", function(d,i){
 		    if(!data[i+1]) return 0;
-		    return xScale((maxTotal(data) - totalInBreakup(data[i+1].breakup)) / 2) + 100;
+		    return xScale((maxTotalVal - data[i+1].breakupTotal) / 2) + 100;
 		});
 
 	    // right angle lines
-	    svg.selectAll("line.right_line")
-		.data(data)
-		.enter()
+	    svg.selectAll("line.right_line").data(data).enter()
 		.append("line").attr("class", "right_line")
 		.attr("style", function(d,i){
 		    if(!data[i+1]) return "stroke-width: 0";
@@ -120,14 +112,14 @@ function riverChart(){
 		    return (i * barMargin) + barHeight;
 		})
 		.attr("x1", function(d,i){
-		    return xScale(((maxTotal(data) - totalInBreakup(d.breakup)) / 2) + totalInBreakup(d.breakup)) + 100;
+		    return xScale(((maxTotalVal - d.breakupTotal) / 2) + d.breakupTotal) + 100;
 		})
 		.attr("y2", function(d,i){
 		    return ((i+1) * barMargin);
 		})
 		.attr("x2", function(d,i){
 		    if(!data[i+1]) return 0;
-		    return xScale(((maxTotal(data) - totalInBreakup(data[i+1].breakup)) / 2) + totalInBreakup(data[i+1].breakup)) + 100;
+		    return xScale(((maxTotalVal - data[i+1].breakupTotal) / 2) + data[i+1].breakupTotal) + 100;
 		});
 
 
@@ -165,6 +157,14 @@ function riverChart(){
 
     function calculateScale(data){
 	return d3.scale.linear().domain([0, maxTotal(data)]).range([0, width - 150]);
+    }
+
+    function parseData(data){
+	for(i in data){
+	    var point = data[i];
+	    point.breakupTotal = totalInBreakup(point.breakup);
+	}
+	return data;
     }
 
 
