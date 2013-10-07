@@ -2,7 +2,6 @@ function riverChart(){
     // Defaults
     var width = 720;
     var height = 480;
-    var data = [];
 
     function chart(selection){
 	selection.each(function(data, i){ // for rendering into different elements
@@ -176,6 +175,9 @@ function riverChart(){
 
 
 $(document).ready(function(){
+    var then = new Date(); // Start timer
     var chart = riverChart();
     d3.select("#river-container").datum(sample_data).call(chart);
+    var now = new Date(); // Stop timer
+    console.log("The chart was rendered in: " + (now - then) + "ms");
 });
