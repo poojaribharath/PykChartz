@@ -32,12 +32,16 @@ function riverChart(){
 
     chart.stacked = function(){
 	var svg = d3.select("#river-container").select("svg");
-	svg.selectAll("g.bar-holder").attr("transform","translate(0,0)");
+	$("g.bar-holder").each(function(i , el){
+	    var t = $(el).attr("transform");
+	    t = t.replace("translate(", "").replace(")","");
+	    t = t.split(",");
+	    $(el).attr("transform", "translate(100,"+ t[1] +")")
+	});
     }
 
     function chart(selection){
 	selection.each(function(data, i){ // for rendering into different elements
-
 	    // Need space for all the text and atleast 50px for the rectangles
 	    if(width < 250){
 		console.log("RiverChart: Error: The width of the chart can't be lesser than 250");
@@ -121,6 +125,7 @@ function riverChart(){
 		});
 
 	    groups.exit().remove();
+
 
 	    var bar_holder = d3.selectAll("g.bar-holder")[0];
 	    for(i in data){
@@ -276,6 +281,8 @@ function riverChart(){
 		    return xScale(((maxTotalVal - data[i+1].breakupTotal) / 2) + data[i+1].breakupTotal) + 100;
 		});
 	});
+
+
     }
 
 
