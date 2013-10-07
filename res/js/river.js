@@ -56,6 +56,8 @@ function riverChart(){
 	    for(i in data){
 		var group = bar_holder[i];
 		var breakup = data[i].breakup;
+
+		// Rectangles
 		d3.select(group).selectAll("rect").data(breakup).enter()
 		    .append("rect")
 		    .attr("x", function(d, i){
@@ -205,5 +207,5 @@ $(document).ready(function(){
     var chart = riverChart();
     d3.select("#river-container").datum(sample_data).call(chart);
     var now = new Date(); // Stop timer
-    console.log("The chart was rendered in: " + (now - then) + "ms");
+    console.log("RiverChart:   Log: The chart was rendered in: " + (now - then) + "ms");
 });
