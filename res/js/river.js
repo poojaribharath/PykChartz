@@ -5,7 +5,7 @@ function riverChart(){
     var filterList = [];
 
     function filter(d){
-	if(filterList.length < 1) return d;
+	if(filterList.length < 1) return d; // return full data if there are no filters
 
 	for(i in d){
 	    var media = d[i].breakup;
@@ -18,14 +18,17 @@ function riverChart(){
 	return d;
     }
 
-    chart.stupid = function(){
-	this.filterList(["Facebook","Email", "Twitter"]);
-	chart(d3.select("#river-container"));
-    }
-
-    chart.unstupid = function(){
-	this.filterList([]);
-	chart(d3.select("#river-container"));
+    onlyFilter = function(f, selection){
+	var index = filterList.indexOf(f)
+	if(filterList.length === 1 && index != -1){
+	    // if its the only item on the list, get rid of it
+	    filterList = [];
+	}else{
+	    // otherwise empty the list and add this one to it
+	    filterList = [];
+	    filterList.push(f);
+	}
+	chart(selection);
     }
 
 
@@ -39,17 +42,7 @@ function riverChart(){
 	chart(selection);
     }
 
-    chart.stacked = function(){
-	var svg = d3.select("#river-container").select("svg");
-	$("g.bar-holder").each(function(i , el){
-	    var t = $(el).attr("transform");
-	    t = t.replace("translate(", "").replace(")","");
-	    t = t.split(",");
-	    $(el).attr("transform", "translate(100,"+ t[1] +")")
-	});
-    }
-
-    function makeTooltips(legends, svg, selection){
+    function makeLegends(legends, svg, selection){
 	if($("g.legend-holder").length > 0) return false;
 	var lg = svg.append("g").attr("class", "legend-holder")
 	    .attr("transform", "translate(0,15)");
@@ -72,6 +65,8 @@ function riverChart(){
 	    .on("click", function(d, i, e){
 		toggleFilter(d.name, selection);
 	    });
+
+	    toggleFilter(legends[i].name, selection );
 	}
 
 	return 20;
@@ -111,7 +106,7 @@ function riverChart(){
 
 
 
-	    var legendHeight = makeTooltips(tData[0].breakup, svg, selection);
+	    var legendHeight = makeLegends(tData[0].breakup, svg, selection);
 
 
 	    // Top: Graph Lines
@@ -139,8 +134,9 @@ function riverChart(){
 
 
 	    // Tooltip
+	    $("#river-tooltip").remove();
 	    var tooltip = d3.select("body")
-		.append("div")
+		.append("div").attr("id","river-tooltip")
 		.style("position", "absolute")
 		.style("z-index", "10")
 		.style("visibility", "hidden")
@@ -219,6 +215,9 @@ function riverChart(){
 		    })
 		    .on("mouseout", function(){
 			return tooltip.style("visibility", "hidden");
+		    })
+		    .on("click", function(d, i){
+			onlyFilter(d.name, selection);
 		    });
 
 		rects.exit().transition().duration(1000).attr("width", 0).remove();
