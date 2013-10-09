@@ -4,6 +4,12 @@ function riverChart(){
     var height = 200;
     var filterList = [];
     var fullList = [];
+    var extended = true;
+
+    chart.ss = function(s){
+	extended = !extended;
+	chart(s);
+    }
 
 
     // Filtering data
@@ -190,7 +196,17 @@ function riverChart(){
 		.attr("transform", function(d, i){
 		    var y = yScale(i * barMargin);
 		    var x = xScale((maxTotalVal - d.breakupTotal) / 2) + 100;
-		    return "translate("+x+","+y+")";
+		    var scalex = 1;
+		    var scaley = 1;
+
+		    if(extended){
+			var barWidth = xScale(d.breakupTotal);
+			scalex = (width - 200) / barWidth;
+			scaley = 2;
+			x = yScale(100);
+		    }
+
+		    return "translate("+x+","+y+") scale("+ scalex +", "+ scaley  +")";
 		});
 
 	    groups.exit().remove();
@@ -298,6 +314,12 @@ function riverChart(){
 
 
 
+	    if(extended) {
+		$("line.left_line").fadeOut();
+		$("line.right_line").fadeOut();
+		return;
+	    } //No need for angle lines if its extended
+
 	    // Left side angle lines
 	    var left_angles = svg.selectAll("line.left_line").data(tData);
 
@@ -325,6 +347,7 @@ function riverChart(){
 		.attr("x2", function(d,i){
 		    if(!tData[i+1]) return 0;
 		    return xScale((maxTotalVal - tData[i+1].breakupTotal) / 2) + 100;
+
 		});
 
 
