@@ -5,6 +5,8 @@ function riverChart(){
     var filterList = [];
     var fullList = [];
 
+
+    // Filtering data
     function filter(d){
 	if(filterList.length < 1){
 	    filterList = jQuery.extend(true, [], fullList);
@@ -21,7 +23,7 @@ function riverChart(){
 	return d;
     }
 
-    onlyFilter = function(f, selection){
+    function onlyFilter(f, selection){
 	var index = filterList.indexOf(f)
 	if(filterList.length === 1 && index != -1){
 	    // if its the only item on the list, get rid of it
@@ -35,7 +37,7 @@ function riverChart(){
     }
 
 
-    toggleFilter = function(f, selection){
+    function toggleFilter(f, selection){
 	var index = filterList.indexOf(f)
 	if(index === -1){
 	    filterList.push(f);
@@ -45,6 +47,8 @@ function riverChart(){
 	chart(selection);
     }
 
+
+    // Legend Maker
     function makeLegends(legends, svg, selection){
 
 	var lg = svg.append("g").attr("class", "legend-holder")
@@ -92,6 +96,8 @@ function riverChart(){
 	return 30;
     }
 
+
+    // Main chart function
     function chart(selection){
 	selection.each(function(data, i){ // for rendering into different elements
 
@@ -189,8 +195,6 @@ function riverChart(){
 
 	    groups.exit().remove();
 
-	    // TODO: Fix the height in the bars
-	    // TODO: Use nested selections to add the bars in the group
 
 	    var bar_holder = d3.selectAll("g.bar-holder")[0];
 	    for(i in tData){
