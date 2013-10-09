@@ -4,7 +4,7 @@ function riverChart(){
     var height = 200;
     var filterList = [];
     var fullList = [];
-    var extended = true;
+    var extended = false;
 
     chart.ss = function(s){
 	extended = !extended;
@@ -344,11 +344,11 @@ function riverChart(){
 	var options = [
 	    {
 		"name": "Percentage",
-		"on": false
+		"on": extended
 	    },
 	    {
 		"name": "Absolute",
-		"on": true
+		"on": !extended
 	    }
 	]
 
@@ -362,7 +362,7 @@ function riverChart(){
 	    });
 
 	var circles = d3.select("g.option-holder").selectAll("circles").data(options);
-	circles.enter().append("circle")
+	circles.enter().append("circle");
 	circles
 	    .attr("cx", function(d,i){
 		return (i*100)+10;
@@ -371,6 +371,10 @@ function riverChart(){
 	    .attr("style", function(d){
 		var fill = d.on ? "#000" : "#fff";
 		return "fill: "+ fill +"; stroke-width: 3px; stroke:#000";
+	    })
+	    .on("click", function(d,i){
+		extended = !extended;
+		chart(selection);
 	    });
 
 
