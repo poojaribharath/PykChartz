@@ -29,15 +29,14 @@ function riverChart(){
     }
 
 
-    toggleFilter = function(f){
+    toggleFilter = function(f, selection){
 	var index = filterList.indexOf(f)
 	if(index === -1){
 	    filterList.push(f);
 	}else{
 	    filterList.splice(index, 1);
 	}
-
-	console.log(index);
+	chart(selection);
     }
 
     chart.stacked = function(){
@@ -50,8 +49,37 @@ function riverChart(){
 	});
     }
 
+    function makeTooltips(legends, svg, selection){
+	if($("g.legend-holder").length > 0) return false;
+	var lg = svg.append("g").attr("class", "legend-holder")
+	    .attr("transform", "translate(0,15)");
+
+	var lWidth = width / legends.length
+
+	lg.selectAll("g.legend").data(legends).enter().append("g").attr("class", "legend")
+	    .attr("transform", function(d, i){
+		var l = i * lWidth;
+		return "translate("+l+",0)";
+	    });
+
+	var legendGroups = d3.selectAll("g.legend")[0];
+
+	for(i in legends){
+	    var group = d3.select(legendGroups[i])
+	    group.append("text").text(function(){
+		return legends[i].name;
+	    })
+	    .on("click", function(d, i, e){
+		toggleFilter(d.name, selection);
+	    });
+	}
+
+	return 20;
+    }
+
     function chart(selection){
 	selection.each(function(data, i){ // for rendering into different elements
+
 	    var tData = jQuery.extend(true, [], data);
 
 	    // Need space for all the text and atleast 50px for the rectangles
@@ -68,7 +96,8 @@ function riverChart(){
 
 	    // Sizes & Scales
 	    var xScale = d3.scale.linear().domain([0, maxTotalVal]).range([0, width - 200]);
-	    var barHeight = height / (tData.length * 2);
+	    var yScale = d3.scale.linear().domain([0, height]).range([20, height]);
+	    var barHeight = (height) / (tData.length * 2);
 	    var barMargin = barHeight * 2;
 
 
@@ -81,15 +110,19 @@ function riverChart(){
 	    }
 
 
+
+	    var legendHeight = makeTooltips(tData[0].breakup, svg, selection);
+
+
 	    // Top: Graph Lines
 	    svg.selectAll("line.top_line").data(tData).enter()
 		.append("line").attr("class", "top_line")
 		.attr("x1", 0).attr("x2", width)
 		.attr("y1", function(d, i){
-		    return i * barMargin;
+		    return yScale(i * barMargin);
 		})
 		.attr("y2", function(d, i){
-		    return i * barMargin;
+		    return yScale(i * barMargin);
 		});
 
 
@@ -98,10 +131,10 @@ function riverChart(){
 		.append("line").attr("class", "bottom_line")
 		.attr("x1", 0).attr("x2", width)
 		.attr("y1", function(d, i){
-		    return (i * barMargin) + barHeight - 1;
+		    return yScale((i * barMargin) + barHeight);
 		})
 		.attr("y2", function(d, i){
-		    return (i * barMargin) + barHeight - 1;
+		    return yScale((i * barMargin) + barHeight);
 		});
 
 
@@ -118,30 +151,13 @@ function riverChart(){
 		.text("a simple tooltip");
 
 
-	    svg.append("text").text("Facebook").attr("x",100).attr("y",100).on("click", function(e){
-		toggleFilter("Facebook");
-		chart(selection);
-	    });
-
-	    svg.append("text").text("Email").attr("x",100).attr("y",120).on("click", function(e){
-		toggleFilter("Email");
-		chart(selection);
-	    });
-
-	    svg.append("text").text("Twitter").attr("x",100).attr("y",140).on("click", function(e){
-		toggleFilter("Twitter");
-		chart(selection);
-	    });
-
-
-
 
 	    // SVG Groups for holding the bars
 	    var groups = svg.selectAll("g.bar-holder").data(tData)
 
 	    groups.enter().append("g").attr("class", "bar-holder")
 		.attr("transform", function(d, i){
-		    var y = i * barMargin;
+		    var y = yScale(i * barMargin);
 		    var x = xScale((maxTotalVal - d.breakupTotal) / 2) + 100;
 		    return "translate("+x+","+y+")";
 		});
@@ -153,13 +169,15 @@ function riverChart(){
 		    return xScale(d.breakupTotal);
 		})
 		.attr("transform", function(d, i){
-		    var y = i * barMargin;
+		    var y = yScale(i * barMargin);
 		    var x = xScale((maxTotalVal - d.breakupTotal) / 2) + 100;
 		    return "translate("+x+","+y+")";
 		});
 
 	    groups.exit().remove();
 
+	    // TODO: Fix the height in the bars
+	    // TODO: Use nested selections to add the bars in the group
 
 	    var bar_holder = d3.selectAll("g.bar-holder")[0];
 	    for(i in tData){
@@ -214,7 +232,7 @@ function riverChart(){
 
 	    display_name.attr("x", width)
 		.attr("y", function(d, i){
-		    return (i * barMargin) + (barHeight/2) + 5;
+		    return yScale((i * barMargin) + (barHeight/2) + 5);
 		})
 		.text(function(d, i){
 		    return d.display_name;
@@ -228,7 +246,7 @@ function riverChart(){
 
 	    left_labels
 		.attr("y", function(d, i){
-		    return (i * barMargin) + (barHeight/2) + 5;
+		    return yScale((i * barMargin) + (barHeight/2) + 5);
 		})
 		.attr("x", 0)
 		.text(function(d,i){
@@ -243,7 +261,7 @@ function riverChart(){
 
 	    right_labels
 		.attr("y", function(d, i){
-		    return (i * barMargin) + (barHeight * 1.5) + 5;
+		    return yScale((i * barMargin) + (barHeight * 1.5) + 5);
 		})
 		.attr("x", width)
 		.text(function(d,i){
@@ -261,7 +279,7 @@ function riverChart(){
 
 	    left_angles.enter().append("line").attr("class", "left_line")
 		.attr("y2", function(d,i){
-		    return (i * barMargin) + barHeight;
+		    return yScale((i * barMargin) + barHeight);
 		})
 		.attr("x2", function(d,i){
 		    return xScale((maxTotalVal - d.breakupTotal) / 2) + 100;
@@ -272,13 +290,13 @@ function riverChart(){
 		    if(!tData[i+1]) return "stroke-width: 0";
 		})
 		.attr("y1", function(d,i){
-		    return (i * barMargin) + barHeight;
+		    return yScale((i * barMargin) + barHeight);
 		})
 		.attr("x1", function(d,i){
 		    return xScale((maxTotalVal - d.breakupTotal) / 2) + 100;
 		})
 		.attr("y2", function(d,i){
-		    return ((i+1) * barMargin);
+		    return yScale(((i+1) * barMargin));
 		})
 		.attr("x2", function(d,i){
 		    if(!tData[i+1]) return 0;
@@ -291,7 +309,7 @@ function riverChart(){
 
 	    right_angles.enter().append("line").attr("class", "right_line")
 		.attr("y2", function(d,i){
-		    return (i * barMargin) + barHeight;
+		    return yScale((i * barMargin) + barHeight);
 		})
 		.attr("x2", function(d,i){
 		    return xScale(((maxTotalVal - d.breakupTotal) / 2) + d.breakupTotal) + 100;
@@ -302,13 +320,13 @@ function riverChart(){
 		    if(!tData[i+1]) return "stroke-width: 0";
 		})
 		.attr("y1", function(d,i){
-		    return (i * barMargin) + barHeight;
+		    return yScale((i * barMargin) + barHeight);
 		})
 		.attr("x1", function(d,i){
 		    return xScale(((maxTotalVal - d.breakupTotal) / 2) + d.breakupTotal) + 100;
 		})
 		.attr("y2", function(d,i){
-		    return ((i+1) * barMargin);
+		    return yScale(((i+1) * barMargin));
 		})
 		.attr("x2", function(d,i){
 		    if(!tData[i+1]) return 0;
