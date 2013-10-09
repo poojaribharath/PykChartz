@@ -12,97 +12,6 @@ function riverChart(){
     }
 
 
-    // Filtering data
-    function filter(d){
-	if(filterList.length < 1){
-	    filterList = jQuery.extend(true, [], fullList);
-	}
-
-	for(i in d){
-	    var media = d[i].breakup;
-	    var newMedia = [];
-	    for(j in media){
-		if (jQuery.inArray(media[j].name, filterList) >= 0) newMedia.push(media[j]);
-	    }
-	    d[i].breakup = newMedia;
-	}
-	return d;
-    }
-
-    function onlyFilter(f, selection){
-	var index = filterList.indexOf(f)
-	if(filterList.length === 1 && index != -1){
-	    // if its the only item on the list, get rid of it
-	    filterList = [];
-	}else{
-	    // otherwise empty the list and add this one to it
-	    filterList = [];
-	    filterList.push(f);
-	}
-	chart(selection);
-    }
-
-
-    function toggleFilter(f, selection){
-	var index = filterList.indexOf(f)
-	if(index === -1){
-	    filterList.push(f);
-	}else{
-	    filterList.splice(index, 1);
-	}
-	chart(selection);
-    }
-
-
-    // Legend Maker
-    function makeLegends(legends, svg, selection){
-
-	var lg = svg.append("g").attr("class", "legend-holder")
-	    .attr("transform", "translate(0,15)");
-
-
-	var lWidth = width / legends.length
-
-	lg.selectAll("g.legend").data(legends).enter().append("g").attr("class", "legend")
-	    .attr("transform", function(d, i){
-		var l = i * lWidth;
-		return "translate("+l+",0)";
-	    })
-	    .on("click", function(d){
-		toggleFilter(d.name, selection);
-	    });
-
-
-
-	var legendGroups = d3.selectAll("g.legend")[0];
-
-	for(i in legends){
-	    var group = d3.select(legendGroups[i])
-
-	    group.selectAll("text").data([legends[i]]).enter().append("text")
-		.text(function(d){
-		    filterList.push(d.name);
-		    fullList.push(d.name);
-		    return d.name;
-		})
-		.attr("transform", "translate(20,-1)");
-
-
-	    var c = group.selectAll("circle").data([legends[i]])
-
-	    c.enter().append("circle")
-
-	    c.attr("cx", 9).attr("cy",-6).attr("r", 6)
-		.attr("style", function(d){
-		    var fill = (filterList.indexOf(d.name) === -1) ? "#fff" : d.color;
-		    if(filterList.length === 0) fill = d.color;
-		    return "fill: "+ fill +"; stroke-width: 3px; stroke:" + d.color;
-		});
-	}
-	return 30;
-    }
-
-
     // Main chart function
     function chart(selection){
 	selection.each(function(data, i){ // for rendering into different elements
@@ -384,6 +293,97 @@ function riverChart(){
 
 
     }
+
+    // Filtering data
+    function filter(d){
+	if(filterList.length < 1){
+	    filterList = jQuery.extend(true, [], fullList);
+	}
+
+	for(i in d){
+	    var media = d[i].breakup;
+	    var newMedia = [];
+	    for(j in media){
+		if (jQuery.inArray(media[j].name, filterList) >= 0) newMedia.push(media[j]);
+	    }
+	    d[i].breakup = newMedia;
+	}
+	return d;
+    }
+
+    function onlyFilter(f, selection){
+	var index = filterList.indexOf(f)
+	if(filterList.length === 1 && index != -1){
+	    // if its the only item on the list, get rid of it
+	    filterList = [];
+	}else{
+	    // otherwise empty the list and add this one to it
+	    filterList = [];
+	    filterList.push(f);
+	}
+	chart(selection);
+    }
+
+
+    function toggleFilter(f, selection){
+	var index = filterList.indexOf(f)
+	if(index === -1){
+	    filterList.push(f);
+	}else{
+	    filterList.splice(index, 1);
+	}
+	chart(selection);
+    }
+
+
+    // Legend Maker
+    function makeLegends(legends, svg, selection){
+
+	var lg = svg.append("g").attr("class", "legend-holder")
+	    .attr("transform", "translate(0,15)");
+
+
+	var lWidth = width / legends.length
+
+	lg.selectAll("g.legend").data(legends).enter().append("g").attr("class", "legend")
+	    .attr("transform", function(d, i){
+		var l = i * lWidth;
+		return "translate("+l+",0)";
+	    })
+	    .on("click", function(d){
+		toggleFilter(d.name, selection);
+	    });
+
+
+
+	var legendGroups = d3.selectAll("g.legend")[0];
+
+	for(i in legends){
+	    var group = d3.select(legendGroups[i])
+
+	    group.selectAll("text").data([legends[i]]).enter().append("text")
+		.text(function(d){
+		    filterList.push(d.name);
+		    fullList.push(d.name);
+		    return d.name;
+		})
+		.attr("transform", "translate(20,-1)");
+
+
+	    var c = group.selectAll("circle").data([legends[i]])
+
+	    c.enter().append("circle")
+
+	    c.attr("cx", 9).attr("cy",-6).attr("r", 6)
+		.attr("style", function(d){
+		    var fill = (filterList.indexOf(d.name) === -1) ? "#fff" : d.color;
+		    if(filterList.length === 0) fill = d.color;
+		    return "fill: "+ fill +"; stroke-width: 3px; stroke:" + d.color;
+		});
+	}
+	return 30;
+    }
+
 
 
     // Data Helpers
