@@ -24,5 +24,14 @@
       <div id="river-container">
       </div>
     </div>
+
+    <script>
+      $(document).ready(function(){
+       d3.json("/res/js/data.json", function(e,d){
+        chart = riverChart();
+        d3.select("#river-container").datum(d).call(chart);
+       });
+      });
+    </script>
   </body>
 </html>
