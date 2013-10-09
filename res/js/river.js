@@ -406,12 +406,3 @@ function riverChart(){
 
     return chart;
 }
-
-
-$(document).ready(function(){
-    var then = new Date(); // Start timer
-    kchart = riverChart();
-    d3.select("#river-container").datum(sample_data).call(kchart);
-    var now = new Date(); // Stop timer
-    console.log("RiverChart:   Log: The chart was rendered in: " + (now - then) + "ms");
-});
