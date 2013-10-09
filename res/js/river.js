@@ -3,9 +3,12 @@ function riverChart(){
     var width = 960;
     var height = 200;
     var filterList = [];
+    var fullList = [];
 
     function filter(d){
-	if(filterList.length < 1) return d; // return full data if there are no filters
+	if(filterList.length < 1){
+	    filterList = jQuery.extend(true, [], fullList);
+	}
 
 	for(i in d){
 	    var media = d[i].breakup;
@@ -43,9 +46,10 @@ function riverChart(){
     }
 
     function makeLegends(legends, svg, selection){
-	if($("g.legend-holder").length > 0) return 20;
+
 	var lg = svg.append("g").attr("class", "legend-holder")
 	    .attr("transform", "translate(0,15)");
+
 
 	var lWidth = width / legends.length
 
@@ -53,22 +57,39 @@ function riverChart(){
 	    .attr("transform", function(d, i){
 		var l = i * lWidth;
 		return "translate("+l+",0)";
+	    })
+	    .on("click", function(d){
+		toggleFilter(d.name, selection);
 	    });
+
+
 
 	var legendGroups = d3.selectAll("g.legend")[0];
 
 	for(i in legends){
 	    var group = d3.select(legendGroups[i])
-	    group.append("text").text(function(){
-		return legends[i].name;
-	    })
-	    .on("click", function(d, i, e){
-		toggleFilter(d.name, selection);
-	    });
 
-	    filterList.push(legends[i].name);
+	    group.selectAll("text").data([legends[i]]).enter().append("text")
+		.text(function(d){
+		    filterList.push(d.name);
+		    fullList.push(d.name);
+		    return d.name;
+		})
+		.attr("transform", "translate(20,-1)");
+
+
+	    var c = group.selectAll("circle").data([legends[i]])
+
+	    c.enter().append("circle")
+
+	    c.attr("cx", 9).attr("cy",-6).attr("r", 6)
+		.attr("style", function(d){
+		    var fill = (filterList.indexOf(d.name) === -1) ? "#fff" : d.color;
+		    if(filterList.length === 0) fill = d.color;
+		    return "fill: "+ fill +"; stroke-width: 3px; stroke:" + d.color;
+		});
 	}
-	return 20;
+	return 30;
     }
 
     function chart(selection){
@@ -82,11 +103,6 @@ function riverChart(){
 		return false;
 	    }
 
-	    // Filtering & Parsing Data
-	    filter(tData);
-	    parseData(tData);
-	    var maxTotalVal = maxTotal(tData);
-
 
 	    // If the SVG already exists don't create a new one
 	    var svg;
@@ -96,7 +112,12 @@ function riverChart(){
 		svg = d3.select(this).select("svg");
 	    }
 
-	    var legendHeight = makeLegends(tData[0].breakup, svg, selection);
+	    var legendHeight = makeLegends(data[0].breakup, svg, selection);
+
+	    // Filtering & Parsing Data
+	    filter(tData);
+	    parseData(tData);
+	    var maxTotalVal = maxTotal(tData);
 
 	    // Sizes & Scales
 	    var xScale = d3.scale.linear().domain([0, maxTotalVal]).range([0, width - 200]);

@@ -40,3 +40,12 @@ line.bottom_line, line.top_line{
     stroke-dasharray: 5,5;
     shape-rendering: crispEdge;
 }
+
+
+g.legend circle{
+    shape-rendering: auto;
+}
+
+g.legend{
+    cursor: pointer;
+}
