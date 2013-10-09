@@ -41,15 +41,14 @@ line.bottom_line, line.top_line{
     shape-rendering: crispEdge;
 }
 
-
-g.legend circle{
+g.option-holder{
+    cursor: pointer;
     shape-rendering: auto;
-}
-
-g.option-holder circle{
-    shape-rendering: auto;
+    font-size: 12px;
 }
 
 g.legend{
+    shape-rendering: auto;
     cursor: pointer;
+    font-size: 12px;
 }

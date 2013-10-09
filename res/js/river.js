@@ -359,11 +359,15 @@ function riverChart(){
 	    })
 	    .attr("transform", function(d, i){
 		return "translate(" + ((i*100) + 20) + ",0)";
+	    })
+	    .on("click", function(d,i){
+		extended = !extended;
+		chart(selection);
 	    });
 
+
 	var circles = d3.select("g.option-holder").selectAll("circles").data(options);
-	circles.enter().append("circle");
-	circles
+	circles.enter().append("circle")
 	    .attr("cx", function(d,i){
 		return (i*100)+10;
 	    })
