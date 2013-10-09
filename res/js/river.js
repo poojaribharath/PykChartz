@@ -43,7 +43,7 @@ function riverChart(){
     }
 
     function makeLegends(legends, svg, selection){
-	if($("g.legend-holder").length > 0) return false;
+	if($("g.legend-holder").length > 0) return 20;
 	var lg = svg.append("g").attr("class", "legend-holder")
 	    .attr("transform", "translate(0,15)");
 
@@ -66,9 +66,8 @@ function riverChart(){
 		toggleFilter(d.name, selection);
 	    });
 
-	    toggleFilter(legends[i].name, selection );
+	    filterList.push(legends[i].name);
 	}
-
 	return 20;
     }
 
@@ -89,13 +88,6 @@ function riverChart(){
 	    var maxTotalVal = maxTotal(tData);
 
 
-	    // Sizes & Scales
-	    var xScale = d3.scale.linear().domain([0, maxTotalVal]).range([0, width - 200]);
-	    var yScale = d3.scale.linear().domain([0, height]).range([20, height]);
-	    var barHeight = (height) / (tData.length * 2);
-	    var barMargin = barHeight * 2;
-
-
 	    // If the SVG already exists don't create a new one
 	    var svg;
 	    if ($(this).find("svg").length == 0){
@@ -104,9 +96,13 @@ function riverChart(){
 		svg = d3.select(this).select("svg");
 	    }
 
-
-
 	    var legendHeight = makeLegends(tData[0].breakup, svg, selection);
+
+	    // Sizes & Scales
+	    var xScale = d3.scale.linear().domain([0, maxTotalVal]).range([0, width - 200]);
+	    var yScale = d3.scale.linear().domain([0, height]).range([legendHeight, height]);
+	    var barHeight = (height) / (tData.length * 2);
+	    var barMargin = barHeight * 2;
 
 
 	    // Top: Graph Lines
@@ -160,7 +156,7 @@ function riverChart(){
 
 
 	    groups.transition().duration(1000)
-		.attr("height", barHeight)
+		.attr("height", yScale(barHeight))
 		.attr("width", function(d){
 		    return xScale(d.breakupTotal);
 		})
@@ -196,7 +192,11 @@ function riverChart(){
 			return xScale(shift);
 		    })
 		    .attr("y", 0)
-		    .attr("height", barHeight)
+		    .attr("height", function(d, i){
+			// Scale the height according to the available height
+			return (barHeight * (height - legendHeight)) / height
+
+		    })
 		    .attr("width", function(d,i){
 			return xScale(d.count);
 		    });
