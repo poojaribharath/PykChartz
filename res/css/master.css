@@ -46,6 +46,10 @@ g.legend circle{
     shape-rendering: auto;
 }
 
+g.option-holder circle{
+    shape-rendering: auto;
+}
+
 g.legend{
     cursor: pointer;
 }

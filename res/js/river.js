@@ -338,12 +338,49 @@ function riverChart(){
 
     // Legend Maker
     function makeLegends(legends, svg, selection){
-
-	var lg = svg.append("g").attr("class", "legend-holder")
+	var optionHolder = svg.append("g").attr("class", "option-holder")
 	    .attr("transform", "translate(0,15)");
 
+	var options = [
+	    {
+		"name": "Percentage",
+		"on": false
+	    },
+	    {
+		"name": "Absolute",
+		"on": true
+	    }
+	]
 
-	var lWidth = width / legends.length
+	var texts = d3.select("g.option-holder").selectAll("text").data(options);
+	texts.enter().append("text")
+	    .text(function(d,i){
+		return d.name;
+	    })
+	    .attr("transform", function(d, i){
+		return "translate(" + ((i*100) + 20) + ",0)";
+	    });
+
+	var circles = d3.select("g.option-holder").selectAll("circles").data(options);
+	circles.enter().append("circle")
+	circles
+	    .attr("cx", function(d,i){
+		return (i*100)+10;
+	    })
+	    .attr("cy",-6).attr("r", 6)
+	    .attr("style", function(d){
+		var fill = d.on ? "#000" : "#fff";
+		return "fill: "+ fill +"; stroke-width: 3px; stroke:#000";
+	    });
+
+
+
+
+	var lg = svg.append("g").attr("class", "legend-holder")
+	    .attr("transform", "translate(250,15)");
+
+
+	var lWidth = (width-250) / legends.length
 
 	lg.selectAll("g.legend").data(legends).enter().append("g").attr("class", "legend")
 	    .attr("transform", function(d, i){
