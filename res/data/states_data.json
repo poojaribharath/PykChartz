@@ -1,0 +1,1202 @@
+{
+ "0":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 97,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 89,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 8,
+    "display_name": "kermit"
+   }
+  },
+ "1":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 59,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 45,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 43,
+    "display_name": "kermit"
+   }
+  },
+ "2":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 11,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 5,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 27,
+    "display_name": "kermit"
+   }
+  },
+ "3":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 70,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 35,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 38,
+    "display_name": "kermit"
+   }
+  },
+ "4":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 70,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 95,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 36,
+    "display_name": "kermit"
+   }
+  },
+ "5":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 32,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 66,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 1,
+    "display_name": "kermit"
+   }
+  },
+ "6":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 69,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 98,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 96,
+    "display_name": "kermit"
+   }
+  },
+ "7":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 45,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 95,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 63,
+    "display_name": "kermit"
+   }
+  },
+ "8":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 20,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 87,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 73,
+    "display_name": "kermit"
+   }
+  },
+ "9":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 27,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 11,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 88,
+    "display_name": "kermit"
+   }
+  },
+ "10":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 96,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 77,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 22,
+    "display_name": "kermit"
+   }
+  },
+ "11":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 24,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 45,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 68,
+    "display_name": "kermit"
+   }
+  },
+ "12":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 74,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 87,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 82,
+    "display_name": "kermit"
+   }
+  },
+ "13":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 54,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 3,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 33,
+    "display_name": "kermit"
+   }
+  },
+ "14":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 85,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 98,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 1,
+    "display_name": "kermit"
+   }
+  },
+ "15":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 27,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 89,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 84,
+    "display_name": "kermit"
+   }
+  },
+ "16":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 29,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 72,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 71,
+    "display_name": "kermit"
+   }
+  },
+ "17":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 80,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 24,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 62,
+    "display_name": "kermit"
+   }
+  },
+ "18":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 59,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 56,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 56,
+    "display_name": "kermit"
+   }
+  },
+ "19":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 69,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 46,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 64,
+    "display_name": "kermit"
+   }
+  },
+ "20":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 68,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 47,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 19,
+    "display_name": "kermit"
+   }
+  },
+ "21":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 72,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 84,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 57,
+    "display_name": "kermit"
+   }
+  },
+ "22":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 13,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 23,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 4,
+    "display_name": "kermit"
+   }
+  },
+ "23":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 58,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 21,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 78,
+    "display_name": "kermit"
+   }
+  },
+ "24":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 30,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 87,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 82,
+    "display_name": "kermit"
+   }
+  },
+ "25":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 82,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 81,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 69,
+    "display_name": "kermit"
+   }
+  },
+ "26":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 97,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 51,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 68,
+    "display_name": "kermit"
+   }
+  },
+ "27":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 66,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 81,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 3,
+    "display_name": "kermit"
+   }
+  },
+ "28":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 24,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 66,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 95,
+    "display_name": "kermit"
+   }
+  },
+ "29":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 36,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 46,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 20,
+    "display_name": "kermit"
+   }
+  },
+ "30":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 23,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 95,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 98,
+    "display_name": "kermit"
+   }
+  },
+ "31":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 18,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 71,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 77,
+    "display_name": "kermit"
+   }
+  },
+ "32":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 85,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 65,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 28,
+    "display_name": "kermit"
+   }
+  },
+ "33":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 22,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 61,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 89,
+    "display_name": "kermit"
+   }
+  },
+ "34":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 62,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 78,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 18,
+    "display_name": "kermit"
+   }
+  },
+ "35":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 4,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 64,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 60,
+    "display_name": "kermit"
+   }
+  },
+ "36":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 30,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 56,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 80,
+    "display_name": "kermit"
+   }
+  },
+ "37":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 73,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 68,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 27,
+    "display_name": "kermit"
+   }
+  },
+ "38":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 33,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 28,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 87,
+    "display_name": "kermit"
+   }
+  },
+ "39":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 73,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 10,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 97,
+    "display_name": "kermit"
+   }
+  },
+ "40":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 29,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 57,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 97,
+    "display_name": "kermit"
+   }
+  },
+ "41":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 30,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 36,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 23,
+    "display_name": "kermit"
+   }
+  },
+ "42":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 80,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 79,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 0,
+    "display_name": "kermit"
+   }
+  },
+ "43":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 13,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 42,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 0,
+    "display_name": "kermit"
+   }
+  },
+ "44":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 54,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 32,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 59,
+    "display_name": "kermit"
+   }
+  },
+ "45":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 28,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 59,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 45,
+    "display_name": "kermit"
+   }
+  },
+ "46":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 16,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 62,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 18,
+    "display_name": "kermit"
+   }
+  },
+ "47":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 47,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 0,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 62,
+    "display_name": "kermit"
+   }
+  },
+ "48":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 49,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 77,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 10,
+    "display_name": "kermit"
+   }
+  },
+ "49":
+  {
+   "deaths":
+   {
+    "color": "red",
+    "tooltip": "wat",
+    "data": 37,
+    "display_name": "kermit"
+   },
+   "population":
+   {
+    "color": "blue",
+    "tooltip": "wat",
+    "data": 91,
+    "display_name": "kermit"
+   },
+   "parties":
+   {
+    "color": "green",
+    "tooltip": "wat",
+    "data": 76,
+    "display_name": "kermit"
+   }
+  }
+}
