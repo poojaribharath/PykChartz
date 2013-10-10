@@ -57,7 +57,6 @@ Choropleth = function(options){
 	    .enter().append("path").attr("class", "county")
 	    .attr("d", path)
 	    .attr("style", function(d, i){
-		console.log(d.id);
 		if(!c[d.id]) return;
 
 		var color = c[d.id][param].color;
@@ -86,7 +85,7 @@ Choropleth = function(options){
 		$("g.states path").css("fill", function(){
 		    return $(this).attr("data-color");
 		});
-		$("g.states path").css("stroke-width", "0");
+		$("g.states path").css("stroke-width", "2px");
 		$("g.states path").css("opacity", function(){
 		    return $(this).attr("data-heat");
 		});
@@ -106,7 +105,10 @@ Choropleth = function(options){
 		return s[d.id][param].color;
 	    })
 	    .attr("style", function(d, i){
-		if(!s[d.id]) return;
+		if(!s[d.id]) {
+		    console.log(d.id);
+		    return;
+		}
 
 		var color = s[d.id][param].color;
 		var opacity = 1;

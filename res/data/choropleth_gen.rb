@@ -1,6 +1,6 @@
 puts '{'
 
-n = 50
+n = 100000
 
 n.times do |i|
   puts ' "' + i.to_s + '":'
@@ -12,7 +12,7 @@ n.times do |i|
   puts "   {"
   puts '    "color": "red",'
   puts '    "tooltip": "wat",'
-  d = (rand() * 100).floor
+  d = (rand() * 90).floor + 10
   puts '    "data": ' + d.to_s + ','
   puts '    "display_name": "kermit"'
   puts "   },"
@@ -23,7 +23,7 @@ n.times do |i|
   puts "   {"
   puts '    "color": "blue",'
   puts '    "tooltip": "wat",'
-  d = (rand() * 100).floor
+  d = (rand() * 90).floor + 10
   puts '    "data": ' + d.to_s + ','
   puts '    "display_name": "kermit"'
   puts "   },"
@@ -33,7 +33,7 @@ n.times do |i|
   puts "   {"
   puts '    "color": "green",'
   puts '    "tooltip": "wat",'
-  d = (rand() * 100).floor
+  d = (rand() * 90).floor + 10
   puts '    "data": ' + d.to_s + ','
   puts '    "display_name": "kermit"'
   puts "   }"
