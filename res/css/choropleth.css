@@ -1,0 +1,14 @@
+g.states path{
+    stroke: white;
+    stroke-width: 2px;
+}
+
+g.states.zoomed path{
+    fill: none;
+    opacity: 1;
+}
+
+g.counties path{
+    stroke: white;
+    stroke-width: 0.5px;
+}
