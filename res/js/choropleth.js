@@ -1,6 +1,5 @@
 var width = 960;
 var height = 500;
-var centered;
 
 var state_data = []
 for(var i = 0; i < 50; i++) state_data.push(Math.random());
@@ -51,7 +50,6 @@ $(document).ready(function(){
 	    x = centroid[0];
 	    y = centroid[1];
 	    k = 4;
-	    centered = d;
 
 	    $("g.states path").css("fill", "none");
 	    $("g.states path").animate({opacity: 1});
@@ -89,8 +87,6 @@ $(document).ready(function(){
 	    counties_g.transition()
 		.duration(750)
 		.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")");
-
-
 	}
 
     });
