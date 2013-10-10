@@ -1,6 +1,8 @@
 puts '{'
 
-50.times do |i|
+n = 50
+
+n.times do |i|
   puts ' "' + i.to_s + '":'
 
   puts "  {"
@@ -8,36 +10,37 @@ puts '{'
   # deaths
   puts '   "deaths":'
   puts "   {"
-  puts '    "color": "red"'
-  puts '    "tooltip": "wat"'
+  puts '    "color": "red",'
+  puts '    "tooltip": "wat",'
   d = (rand() * 100).floor
-  puts '    "data": ' + d.to_s
+  puts '    "data": ' + d.to_s + ','
   puts '    "display_name": "kermit"'
-  puts "   }"
+  puts "   },"
 
 
   # population
   puts '   "population":'
   puts "   {"
-  puts '    "color": "blue"'
-  puts '    "tooltip": "wat"'
+  puts '    "color": "blue",'
+  puts '    "tooltip": "wat",'
   d = (rand() * 100).floor
-  puts '    "data": ' + d.to_s
+  puts '    "data": ' + d.to_s + ','
   puts '    "display_name": "kermit"'
-  puts "   }"
+  puts "   },"
 
   # parties
   puts '   "parties":'
   puts "   {"
-  puts '    "color": "green"'
-  puts '    "tooltip": "wat"'
+  puts '    "color": "green",'
+  puts '    "tooltip": "wat",'
   d = (rand() * 100).floor
-  puts '    "data": ' + d.to_s
+  puts '    "data": ' + d.to_s + ','
   puts '    "display_name": "kermit"'
   puts "   }"
 
+  comma = (i+1 == n) ? "" : ","
 
-  puts "  }"
+  puts "  }" + comma
 end
 
 puts '}'
