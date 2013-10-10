@@ -10,7 +10,7 @@ $(document).ready(function(){
 
     d3.json("/res/data/us.json", function(error, topology) {
 	svg.selectAll("path")
-	    .data(topojson.feature(topology, topology.objects.counties).features)
+	    .data(topojson.feature(topology, topology.objects.states).features)
 	    .enter().append("path")
 	    .attr("d", path);
     });

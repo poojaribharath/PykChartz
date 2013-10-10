@@ -1,54 +1,9 @@
-svg {
-  shape-rendering: crispEdges;
-}
-line{
-  shape-rendering: crispEdges;
-}
-
-g.bar-holder rect{
-    opacity: 0.7;
+path {
+  fill: #ccc;
+  stroke: #fff;
+  stroke-width: .5px;
 }
 
-g.bar-holder rect:hover{
-    opacity: 1;
-}
-
-line.left_line, line.right_line{
-    stroke-width: 1;
-    stroke: #ddd;
-    shape-rendering: auto;
-}
-
-text.left_label, text.right_label{
-    fill: #aaa;
-    font-size: 10px;
-}
-
-text.cool_label, text.right_label{
-    text-anchor: end;
-}
-
-text.cool_label{
-    font-size: 11px;
-    color: #000;
-    font-weight: 800;
-}
-
-line.bottom_line, line.top_line{
-    stroke-width: 1;
-    stroke: #eee;
-    stroke-dasharray: 5,5;
-    shape-rendering: crispEdge;
-}
-
-g.option-holder{
-    cursor: pointer;
-    shape-rendering: auto;
-    font-size: 12px;
-}
-
-g.legend{
-    shape-rendering: auto;
-    cursor: pointer;
-    font-size: 12px;
+path:hover {
+  fill: #ca1f46;
 }
