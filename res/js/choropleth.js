@@ -78,9 +78,11 @@ Choropleth = function(options){
 	    .attr("style", function(d, i){
 		var color = (d === that.param) ? "#000" : "#fff";
 		return "stroke-width: 3px; stroke: #000; fill: " + color;
+	    })
+	    .on("click", function(d){
+		that.param = d;
+		that.draw(t,s,c);
 	    });
-
-
     }
 
     this.renderMaps = function(t, s, c){
