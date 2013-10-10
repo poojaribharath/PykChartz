@@ -1,6 +1,6 @@
 Choropleth = function(options){
 
-    this.draw = function(){
+    this.init = function(){
 	if(!this.validate_options()) return false;
 
 	var that = this;
@@ -17,26 +17,70 @@ Choropleth = function(options){
     }
 
     this.render = function(t, s, c){
-	this.svg = d3.select(this.options.selection).append("svg")
-	    .attr("width", this.optionswidth)
-	    .attr("height", this.options.height);
+	var h = this.options.height;
+	var w = this.options.width;
 
-	this.legends_group = this.svg.append("g")
+	// Create SVG holders for map and legends
+	this.legends_group = d3.select(this.options.selection).append("svg")
 	    .attr("class", "legend-holder")
-	    .attr("height", 30);
+	    .attr("height", 30)
+	    .attr("width", w);
 
-	this.map_group = this.svg.append("g")
+	this.map_group = d3.select(this.options.selection).append("svg")
 	    .attr("class", "map-holder")
-	    .attr("transform", "translate(0,30)");
+	    .attr("height", h - 30)
+	    .attr("width", w);
 
+	// Set first parameter
+	var params = Object.keys(s["0"]);
+	this.param = params[0];
+
+	// Draw the elements after creating the holder
+	this.draw(t, s, c);
+    }
+
+    this.draw = function(t, s, c){
 	// can pass any object to render the legends
 	// TODO Check if 0 will always be an ID
-	this.renderLegends(s["0"]);
+	this.renderLegends(t,s,c);
 	this.renderMaps(t, s, c);
     }
 
-    this.renderLegends = function(s){
-	console.log(Object.keys(s));
+    this.renderLegends = function(t, s, c){
+	var that = this;
+	var legends = Object.keys(s["0"]);
+	var lWidth = this.options.width / legends.length;
+
+	var lText = this.legends_group.selectAll("text").data(legends);
+	lText.enter().append("text");
+	lText
+	    .attr("y", 15)
+	    .attr("x", function(d, i){
+		return (i*lWidth) + 25;
+	    })
+	    .text(function(d, i){
+		// capitalized string
+		return d.charAt(0).toUpperCase() + d.slice(1).toLowerCase();
+	    })
+	    .on("click", function(d){
+		that.param = d;
+		that.draw(t,s,c);
+	    });
+
+	var lCircle = this.legends_group.selectAll("circle").data(legends);
+	lCircle.enter().append("circle");
+	lCircle
+	    .attr("cy", 10)
+	    .attr("cx", function(d, i){
+		return (i*lWidth) + 15;
+	    })
+	    .attr("r",7)
+	    .attr("style", function(d, i){
+		var color = (d === that.param) ? "#000" : "#fff";
+		return "stroke-width: 3px; stroke: #000; fill: " + color;
+	    });
+
+
     }
 
     this.renderMaps = function(t, s, c){
@@ -46,9 +90,11 @@ Choropleth = function(options){
 	var height = this.options.height;
 	var width = this.options.width;
 
-	var param = "deaths"
+	var param = this.param;
 
 	var map_group = this.map_group;
+	this.map_group.selectAll("g").remove();
+
 	var counties_g = map_group.append("g").attr("class","counties");
 	var states_g = map_group.append("g").attr("class","states");
 
@@ -73,12 +119,12 @@ Choropleth = function(options){
 		y = height/2;
 		k = 1;
 
-		states_g.transition()
-		    .duration(750)
+		states_g.transition().ease("back")
+		    .duration(1200)
 		    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")");
 
-		counties_g.transition()
-		    .duration(750)
+		counties_g.transition().ease("back")
+		    .duration(1200)
 		    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")");
 
 		$("g.counties").fadeOut();
@@ -124,19 +170,19 @@ Choropleth = function(options){
 		var y = centroid[1];
 		k = scale;
 
-		counties_g.transition()
-		    .duration(750)
+		counties_g.transition().delay(250).ease("elastic")
+		    .duration(1200)
 		    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")");
 
-		states_g.transition()
-		    .duration(750)
+		states_g.transition().delay(250).ease("elastic")
+		    .duration(1200)
 		    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")");
 
 		$("g.states path").css("fill", "none");
 		$("g.states path").animate({opacity: 1});
 		$("g.states path").css("stroke-width", "3px");
 		$("g.states path").css("stroke", "#fff");
-		$("g.counties").fadeIn();
+		$("g.counties").show();
 	    });
 
 	$("g.counties").hide();
@@ -168,7 +214,7 @@ k = new Choropleth({
     county_data: "/res/data/counties_data.json",
     state_data: "/res/data/states_data.json",
 });
-k.draw();
+k.init();
 
 /*
 var width = 960;
