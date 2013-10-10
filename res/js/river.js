@@ -6,12 +6,6 @@ function riverChart(){
     var fullList = [];
     var extended = false;
 
-    chart.ss = function(s){
-	extended = !extended;
-	chart(s);
-    }
-
-
     // Main chart function
     function chart(selection){
 	selection.each(function(data, i){ // for rendering into different elements
