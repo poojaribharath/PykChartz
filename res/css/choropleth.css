@@ -1,9 +1,15 @@
-path {
-  fill: #ccc;
+path.state {
+  fill: #2CA02C;
+  stroke: #fff;
+  stroke-width: 5px;
+}
+
+path.county {
+  fill: #2CA02C;
   stroke: #fff;
   stroke-width: .5px;
 }
 
 path:hover {
-  fill: #ca1f46;
+  fill: #333;
 }
