@@ -180,7 +180,8 @@ Choropleth = function(options){
 		    .duration(1200)
 		    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")");
 
-		$("g.states path").css("fill", "none");
+		$("g.states path").css("fill", "#fff"); // Conceal all states
+		$(this).css("fill", "none"); // Show the one that has been clicked on
 		$("g.states path").animate({opacity: 1});
 		$("g.states path").css("stroke-width", "3px");
 		$("g.states path").css("stroke", "#fff");
