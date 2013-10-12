@@ -6,6 +6,8 @@ Choropleth = function(options){
 	var that = this;
 	var opt = this.options;
 
+	$(this.options.selection).html("Loading... Please wait");
+
 	// Get all the data and pass to render
 	d3.json(opt.topojson, function(e, topology){
 	    d3.json(opt.state_data, function(e, state_data){
@@ -17,6 +19,8 @@ Choropleth = function(options){
     }
 
     this.render = function(t, s, c){
+	$(this.options.selection).html("");
+
 	var h = this.options.height;
 	var w = this.options.width;
 
@@ -207,11 +211,12 @@ Choropleth = function(options){
     return this;
 }
 
-
-k = new Choropleth({
-    selection: "#choropleth-container",
-    topojson: "/res/data/us.json",
-    county_data: "/res/data/counties_data.json",
-    state_data: "/res/data/states_data.json",
+$(document).ready(function(){
+    k = new Choropleth({
+	selection: "#choropleth-container",
+	topojson: "/res/data/us.json",
+	county_data: "/res/data/counties_data.json",
+	state_data: "/res/data/states_data.json",
+    });
+    k.init();
 });
-k.init();
