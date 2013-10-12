@@ -133,7 +133,6 @@ Choropleth = function(options){
 		$("g.states path").css("fill", function(){
 		    return $(this).attr("data-color");
 		});
-		$("g.states path").css("stroke-width", "2px");
 		$("g.states path").css("opacity", function(){
 		    return $(this).attr("data-heat");
 		});
@@ -183,8 +182,6 @@ Choropleth = function(options){
 		$("g.states path").css("fill", "#fff"); // Conceal all states
 		$(this).css("fill", "none"); // Show the one that has been clicked on
 		$("g.states path").animate({opacity: 1});
-		$("g.states path").css("stroke-width", "3px");
-		$("g.states path").css("stroke", "#fff");
 		$("g.counties").show();
 	    });
 
