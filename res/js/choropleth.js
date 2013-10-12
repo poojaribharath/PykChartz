@@ -185,7 +185,7 @@ Choropleth = function(options){
 
 		$("g.states path").css("fill", "#fff"); // Conceal all states
 		$(this).css("fill", "none"); // Show the one that has been clicked on
-		$("g.states path").animate({opacity: 0.7});
+		$("g.states path").animate({opacity: 0.9});
 		$("g.counties").show();
 	    });
 
