@@ -26,12 +26,12 @@ Pyk.Choropleth = function(options){
 
 	// Create SVG holders for map and legends
 	this.legends_group = d3.select(this.options.selection).append("svg")
-	    .attr("class", "legend-holder")
+	    .attr("class", "pyk-choropleth-legend-holder")
 	    .attr("height", 30)
 	    .attr("width", w);
 
 	this.map_group = d3.select(this.options.selection).append("svg")
-	    .attr("class", "map-holder")
+	    .attr("class", "pyk-choropleth-map-holder")
 	    .attr("height", h - 30)
 	    .attr("width", w);
 

@@ -1,25 +1,21 @@
-svg.legend-holder circle{cursor: pointer;}
-svg.legend-holder text{cursor: pointer;}
+svg.pyk-choropleth-legend-holder circle{cursor: pointer;}
+svg.pyk-choropleth-legend-holder text{cursor: pointer;}
 
-g.states path{
+svg.pyk-choropleth-map-holder g.states path{
     stroke: white;
     stroke-width: 2px;
 }
 
-g.states path:hover{
-    stroke-width: 6px;
-}
+svg.pyk-choropleth-map-holder g.states path:hover{stroke-width: 6px;}
 
-g.states.zoomed path{
+svg.pyk-choropleth-map-holder g.states.zoomed path{
     fill: none;
     opacity: 1;
 }
 
-g.counties path{
+svg.pyk-choropleth-map-holder g.counties path{
     stroke: white;
     stroke-width: 0.5px;
 }
 
-g.counties path:hover{
-    stroke-width: 2px;
-}
+svg.pyk-choropleth-map-holder g.counties path:hover{stroke-width: 2px;}
