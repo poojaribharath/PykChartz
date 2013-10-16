@@ -255,14 +255,4 @@ Pyk.Choropleth = function(options){
     }, options);
 
     return this;
-}
-
-$(document).ready(function(){
-    k = new Pyk.Choropleth({
-	selection: "#choropleth-container",
-	topojson: "/res/data/us.json",
-	county_data: "/res/data/counties_data.json",
-	state_data: "/res/data/states_data.json",
-    });
-    k.init();
-});
+};
