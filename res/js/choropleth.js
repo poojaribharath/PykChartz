@@ -40,7 +40,22 @@ Choropleth = function(options){
 	this.param = params[0];
 
 	// Draw the elements after creating the holder
+	this.renderTooltip();
 	this.draw(t, s, c);
+    }
+
+    this.renderTooltip = function(){
+	$("#choropleth-tooltip").remove();
+	this.tooltip = d3.select("body")
+	    .append("div").attr("id","choropleth-tooltip")
+	    .style("position", "absolute")
+	    .style("z-index", "10")
+	    .style("visibility", "hidden")
+	    .style("background", "#fff")
+	    .style("padding", "10px 20px")
+	    .style("box-shadow", "0 0 10px #000")
+	    .style("border-radius", "5px")
+	    .text("a simple tooltip");
     }
 
     this.draw = function(t, s, c){
@@ -90,6 +105,7 @@ Choropleth = function(options){
     }
 
     this.renderMaps = function(t, s, c){
+	var that = this;
 	var path = d3.geo.path();
 
 	var scale = this.options.scale;
@@ -140,6 +156,21 @@ Choropleth = function(options){
 		$("g.states path").css("opacity", function(){
 		    return $(this).attr("data-heat");
 		});
+	    })
+	    .on("mouseover", function(d, i){
+		if(!c[d.id]) return;
+		var tooltip = c[d.id][param].tooltip;
+		that.tooltip.html(tooltip);
+		that.tooltip.style("visibility", "visible");
+
+	    })
+	    .on("mousemove", function(){
+		var yReduce = parseInt(that.tooltip.style("height")) + 40;
+		var xReduce = parseInt(that.tooltip.style("width")) / 2;
+		that.tooltip.style("top", (event.pageY- yReduce)+"px").style("left",(event.pageX-xReduce)+"px");
+	    })
+	    .on("mouseout", function(){
+		that.tooltip.style("visibility", "hidden");
 	    });
 
 	states_g.selectAll("path")
@@ -187,6 +218,21 @@ Choropleth = function(options){
 		$(this).css("fill", "none"); // Show the one that has been clicked on
 		$("g.states path").animate({opacity: 0.9});
 		$("g.counties").show();
+	    })
+	    .on("mouseover", function(d, i){
+		if(!c[d.id]) return;
+		var tooltip = c[d.id][param].tooltip;
+		that.tooltip.html(tooltip);
+		that.tooltip.style("visibility", "visible");
+
+	    })
+	    .on("mousemove", function(){
+		var yReduce = parseInt(that.tooltip.style("height")) + 40;
+		var xReduce = parseInt(that.tooltip.style("width")) / 2;
+		that.tooltip.style("top", (event.pageY- yReduce)+"px").style("left",(event.pageX-xReduce)+"px");
+	    })
+	    .on("mouseout", function(){
+		that.tooltip.style("visibility", "hidden");
 	    });
 
 	$("g.counties").hide();
