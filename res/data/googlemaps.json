@@ -1,0 +1,352 @@
+[
+ {
+  "latitude": 66,
+  "longitude": 105,
+  "count": 71,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i3.png"
+ },
+ {
+  "latitude": -31,
+  "longitude": 43,
+  "count": 58,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i2.png"
+ },
+ {
+  "latitude": -45,
+  "longitude": -57,
+  "count": 50,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i1.png"
+ },
+ {
+  "latitude": 25,
+  "longitude": 70,
+  "count": 62,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i1.png"
+ },
+ {
+  "latitude": -23,
+  "longitude": 10,
+  "count": 61,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i3.png"
+ },
+ {
+  "latitude": -38,
+  "longitude": 2,
+  "count": 18,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i2.png"
+ },
+ {
+  "latitude": -6,
+  "longitude": -71,
+  "count": 51,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i2.png"
+ },
+ {
+  "latitude": -56,
+  "longitude": 61,
+  "count": 69,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i1.png"
+ },
+ {
+  "latitude": -37,
+  "longitude": -30,
+  "count": 2,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i3.png"
+ },
+ {
+  "latitude": -44,
+  "longitude": -56,
+  "count": 22,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i2.png"
+ },
+ {
+  "latitude": -3,
+  "longitude": -119,
+  "count": 16,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i2.png"
+ },
+ {
+  "latitude": 11,
+  "longitude": 52,
+  "count": 20,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i3.png"
+ },
+ {
+  "latitude": -83,
+  "longitude": -4,
+  "count": 68,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i2.png"
+ },
+ {
+  "latitude": 10,
+  "longitude": -177,
+  "count": 86,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i2.png"
+ },
+ {
+  "latitude": -90,
+  "longitude": 0,
+  "count": 17,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i3.png"
+ },
+ {
+  "latitude": 21,
+  "longitude": -135,
+  "count": 53,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i1.png"
+ },
+ {
+  "latitude": 66,
+  "longitude": 71,
+  "count": 50,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i1.png"
+ },
+ {
+  "latitude": 23,
+  "longitude": -11,
+  "count": 68,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i1.png"
+ },
+ {
+  "latitude": 52,
+  "longitude": 149,
+  "count": 62,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i2.png"
+ },
+ {
+  "latitude": -62,
+  "longitude": -61,
+  "count": 3,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i2.png"
+ },
+ {
+  "latitude": 64,
+  "longitude": 59,
+  "count": 66,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i1.png"
+ },
+ {
+  "latitude": 86,
+  "longitude": -8,
+  "count": 52,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i3.png"
+ },
+ {
+  "latitude": -48,
+  "longitude": -82,
+  "count": 59,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i2.png"
+ },
+ {
+  "latitude": 73,
+  "longitude": 146,
+  "count": 58,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i1.png"
+ },
+ {
+  "latitude": -60,
+  "longitude": 29,
+  "count": 4,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i1.png"
+ },
+ {
+  "latitude": 42,
+  "longitude": -26,
+  "count": 51,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i1.png"
+ },
+ {
+  "latitude": -85,
+  "longitude": 172,
+  "count": 67,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i3.png"
+ },
+ {
+  "latitude": 86,
+  "longitude": 34,
+  "count": 46,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i3.png"
+ },
+ {
+  "latitude": 66,
+  "longitude": -99,
+  "count": 30,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i3.png"
+ },
+ {
+  "latitude": 81,
+  "longitude": 167,
+  "count": 56,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i2.png"
+ },
+ {
+  "latitude": 31,
+  "longitude": -172,
+  "count": 26,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i3.png"
+ },
+ {
+  "latitude": -71,
+  "longitude": 112,
+  "count": 28,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i3.png"
+ },
+ {
+  "latitude": -72,
+  "longitude": -12,
+  "count": 66,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i1.png"
+ },
+ {
+  "latitude": -64,
+  "longitude": 74,
+  "count": 43,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i2.png"
+ },
+ {
+  "latitude": -37,
+  "longitude": -127,
+  "count": 73,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i2.png"
+ },
+ {
+  "latitude": -60,
+  "longitude": 30,
+  "count": 32,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i2.png"
+ },
+ {
+  "latitude": 64,
+  "longitude": 150,
+  "count": 1,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i2.png"
+ },
+ {
+  "latitude": 48,
+  "longitude": 53,
+  "count": 41,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i2.png"
+ },
+ {
+  "latitude": -37,
+  "longitude": 65,
+  "count": 13,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i2.png"
+ },
+ {
+  "latitude": -43,
+  "longitude": -78,
+  "count": 72,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i1.png"
+ },
+ {
+  "latitude": 23,
+  "longitude": 93,
+  "count": 98,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i2.png"
+ },
+ {
+  "latitude": -18,
+  "longitude": 50,
+  "count": 8,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i2.png"
+ },
+ {
+  "latitude": 89,
+  "longitude": 21,
+  "count": 81,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i3.png"
+ },
+ {
+  "latitude": 43,
+  "longitude": 62,
+  "count": 2,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i1.png"
+ },
+ {
+  "latitude": 66,
+  "longitude": 129,
+  "count": 11,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i3.png"
+ },
+ {
+  "latitude": 89,
+  "longitude": -155,
+  "count": 13,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i1.png"
+ },
+ {
+  "latitude": 1,
+  "longitude": 41,
+  "count": 89,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i2.png"
+ },
+ {
+  "latitude": -64,
+  "longitude": 30,
+  "count": 75,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i3.png"
+ },
+ {
+  "latitude": -33,
+  "longitude": -40,
+  "count": 16,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i2.png"
+ },
+ {
+  "latitude": -6,
+  "longitude": -75,
+  "count": 37,
+  "tooltip": "This tooltip is a lie",
+  "marker": "/res/img/i2.png"
+ }
+]
