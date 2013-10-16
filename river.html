@@ -12,6 +12,7 @@
     <link href="res/css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="res/css/river.css" rel="stylesheet" type="text/css">
 
+    <script src="res/js/pykcharts.js" type="text/javascript" charset="utf-8"></script>
     <script src="res/js/river.js" type="text/javascript" charset="utf-8"></script>
 
   </head>
@@ -24,11 +25,12 @@
     </div>
 
     <script>
-      $(document).ready(function(){
-       d3.json("/res/data/river-data.json", function(e,d){
-        chart = riverChart();
-        d3.select("#river-container").datum(d).call(chart);
-       });
+      $(document).ready(function(e){
+      var k = new Pyk.River({
+      data: "/res/data/river-data.json",
+      selection: "#river-container"
+      });
+      k.init();
       });
     </script>
   </body>
