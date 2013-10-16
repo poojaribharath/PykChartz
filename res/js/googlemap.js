@@ -27,9 +27,35 @@ Pyk.GoogleHeat = function(options){
         };
 
         this.map = new google.maps.Map(div, mapOptions);
+	this.map.setOptions({styles: this.setupStyle()});
 
 	this.setupHeat();
 	this.setupMarkers();
+    }
+
+    this.setupStyle = function(){
+	return [
+	    {
+		stylers: [
+		    { hue: '#FFBB78' },
+		    { visibility: 'simplified' },
+		    { gamma: 0.5 },
+		    { weight: 0.5 }
+		]
+	    },
+	    {
+		elementType: 'labels',
+		stylers: [
+		    { visibility: 'on' }
+		]
+	    },
+	    {
+		featureType: 'water',
+		stylers: [
+		    { color: '#1F77B4' }
+		]
+	    }
+	];
     }
 
     this.setupHeat = function(){
