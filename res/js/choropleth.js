@@ -1,4 +1,4 @@
-Choropleth = function(options){
+Pyk.Choropleth = function(options){
 
     this.init = function(){
 	if(!this.validate_options()) return false;
@@ -258,7 +258,7 @@ Choropleth = function(options){
 }
 
 $(document).ready(function(){
-    k = new Choropleth({
+    k = new Pyk.Choropleth({
 	selection: "#choropleth-container",
 	topojson: "/res/data/us.json",
 	county_data: "/res/data/counties_data.json",
