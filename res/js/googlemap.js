@@ -49,7 +49,8 @@ Pyk.GoogleHeat = function(options){
 	    var p = this.data[i];
 	    var marker = new google.maps.Marker({
 		position: new google.maps.LatLng(p.latitude, p.longitude),
-		title: p.tooltip
+		title: p.tooltip,
+		icon: p.marker
 	    });
 	    markers.push(marker);
 
