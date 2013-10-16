@@ -3,13 +3,30 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 
+    <link href="res/css/bootstrap.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="/res/css/googlemap.css" />
 
     <script src="/res/lib/jquery.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOPmojdPoiyds5TljbgFLXtFoZmJmqgcM&sensor=true"></script>
+    <script src="/res/js/pykcharts.js"></script>
     <script src="/res/js/googlemap.js"></script>
   </head>
   <body>
+    <div class="container">
+      <h1>Google HeatMap</h1>
+      <div id="map-canvas">
+      </div>
+    </div>
+
     <div id="map-canvas"/>
+    <script>
+      $(document).ready(function(){
+      var k = new Pyk.GoogleHeat({
+      selection: "#map-canvas",
+      data: "/res/data/googlemaps.json"
+      })
+      k.init();
+      });
+    </script>
   </body>
 </html>
