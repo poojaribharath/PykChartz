@@ -8,6 +8,8 @@
 
     <script src="/res/lib/jquery.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOPmojdPoiyds5TljbgFLXtFoZmJmqgcM&sensor=true&libraries=visualization"></script>
+    <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markermanager/src/markermanager.js"></script>
+
     <script src="/res/js/pykcharts.js"></script>
     <script src="/res/js/googlemap.js"></script>
   </head>
@@ -23,7 +25,10 @@
       $(document).ready(function(){
       var k = new Pyk.GoogleHeat({
       selection: "#map-canvas",
-      data: "/res/data/googlemaps.json"
+      data: "/res/data/googlemaps.json",
+      center: new google.maps.LatLng(-25.363882,131.044922),
+      defaultZoom: 3,
+      tooltipZoom: 4
       })
       k.init();
       });

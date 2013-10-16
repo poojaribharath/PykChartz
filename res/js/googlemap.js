@@ -17,17 +17,19 @@ Pyk.GoogleHeat = function(options){
     }
 
     this.render = function(){
+	var that = this;
 	var div = this.div.get(0);
 
 	var mapOptions = {
-            center: new google.maps.LatLng(45,90),
-            zoom: 1,
+            center: this.options.center,
+            zoom: this.options.defaultZoom,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
 
         this.map = new google.maps.Map(div, mapOptions);
 
 	this.setupHeat();
+	this.setupMarkers();
     }
 
     this.setupHeat = function(){
@@ -36,18 +38,42 @@ Pyk.GoogleHeat = function(options){
 	    data: pointArray
 	});
 	heatmap.setMap(this.map);
+    }
 
+    this.setupMarkers = function(){
+	var that = this;
+	var mgr = new MarkerManager(that.map);
+
+	var markers = [];
+	for(i in this.data){
+	    var p = this.data[i];
+	    var marker = new google.maps.Marker({
+		position: new google.maps.LatLng(p.latitude, p.longitude),
+		title: p.tooltip
+	    });
+	    markers.push(marker);
+
+	    var infowindow = new google.maps.InfoWindow({content: p.tooltip});
+
+	    google.maps.event.addListener(marker, 'click', function(i) {
+		return function(){
+		    i.open(that.map, this);
+		}
+	    }(infowindow));
+	}
+	google.maps.event.addListener(mgr, 'loaded', function(){
+	    mgr.addMarkers(markers, that.options.tooltipZoom);
+	    mgr.refresh();
+	});
     }
 
     this.heatData = function(){
 	var d = []
-
 	for(i in this.data){
 	    var p = this.data[i];
 	    var o = new google.maps.LatLng(p.latitude, p.longitude);
 	    d.push({location: o, weight: p.count});
 	}
-	console.log(d);
 	return d;
     }
 
@@ -60,7 +86,11 @@ Pyk.GoogleHeat = function(options){
 
     this.options = jQuery.extend({
 	width: 960,
-	height: 500
+	height: 500,
+	center: new google.maps.LatLng(-25.363882,131.044922),
+	defaultZoom: 3,
+	tooltipZoom: 4
+
     }, options);
 
     return this;
