@@ -10,18 +10,18 @@ svg.pyk-river g.bar-holder rect:hover{
     opacity: 1;
 }
 
-svg.pyk-river line.left_line, line.right_line{
+svg.pyk-river line.left_line, svg.pyk-river line.right_line{
     stroke-width: 1;
     stroke: #ddd;
     shape-rendering: auto;
 }
 
-svg.pyk-river text.left_label, text.right_label{
+svg.pyk-river text.left_label, svg.pyk-river text.right_label{
     fill: #aaa;
     font-size: 10px;
 }
 
-svg.pyk-river text.cool_label, text.right_label{
+svg.pyk-river text.cool_label, svg.pyk-river text.right_label{
     text-anchor: end;
 }
 
@@ -31,7 +31,7 @@ svg.pyk-river text.cool_label{
     font-weight: 800;
 }
 
-svg.pyk-river line.bottom_line, line.top_line{
+svg.pyk-river line.bottom_line, svg.pyk-river line.top_line{
     stroke-width: 1;
     stroke: #eee;
     stroke-dasharray: 5,5;
