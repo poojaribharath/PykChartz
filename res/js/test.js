@@ -6,7 +6,7 @@ $(document).ready(function(){
     a = [1,2,3,4];
     b = [5,6,7,8];
     c = [1,2,3]
-    d = [10,20,30,40,50,67,70,34]
+    d = [1,2,3,4,5,67,7,34]
 
     var margin = {top: 20, right: 10, bottom: 20, left: 10};
 
@@ -34,7 +34,7 @@ function popo(data){
 
     var yScale = d3.scale.linear()
 	.domain([0,largest])
-	.range([0,200]);
+	.range([0,180]);
 
     var xScale = d3.scale.ordinal()
 	.domain(data)
