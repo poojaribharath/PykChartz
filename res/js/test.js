@@ -1,14 +1,31 @@
 var a,b,c,d;
 var svg;
+var height, width;
+
 $(document).ready(function(){
     a = [1,2,3,4];
     b = [5,6,7,8];
     c = [1,2,3]
-    d = [1,2,3,4,5,67,7,34]
+    d = [10,20,30,40,50,67,70,34]
 
-    svg = d3.select("#test-container").append("svg");
-    svg.attr("height", 200).attr("width", 400);
-    popo(a);
+    var margin = {top: 20, right: 10, bottom: 20, left: 10};
+
+    var h = 200;
+    var w = 400;
+
+    width = w - margin.left - margin.right;
+    height = h - margin.top - margin.bottom;
+
+    svg = d3.select("#test-container").append("svg")
+	.attr("width", width + margin.left + margin.right)
+	.attr("height", height + margin.top + margin.bottom)
+	.append("g")
+	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+    svg.append("g").attr("class","axis");
+
+    popo(d);
 });
 
 
@@ -19,19 +36,24 @@ function popo(data){
 	.domain([0,largest])
 	.range([0,200]);
 
+    var xScale = d3.scale.ordinal()
+	.domain(data)
+	.rangeBands([50, width], 0.05);
+
+
     var rects = svg.selectAll("rect").data(data);
 
     var padding = 50;
 
     var yAxis = d3.svg.axis()
-                  .scale(d3.scale.linear().domain([r[1],0]).range([0,200]))
+                  .scale(d3.scale.linear().domain([largest,0]).range([0,200]))
                   .orient("left")
-                  .ticks(5);
+                  .ticks(10);
 
-    svg.append("g")
-	.attr("class", "axis")
+    svg.selectAll("g.axis").transition()
 	.attr("transform", "translate(" + padding + ",0)")
 	.call(yAxis)
+
     // Enter
     rects.enter().append("rect")
 	.attr("x",0)
@@ -46,13 +68,13 @@ function popo(data){
     // Update
     rects.transition()
 	.attr("x", function(d,i){
-	    return (i*350/data.length) + 50;
+	    return xScale(d);
 	})
 	.attr("y", function(d,i){
 	    return yScale(largest-d);
 	})
 	.attr("width", function(d,i){
-	    return 350/data.length;
+	    return xScale.rangeBand();
 	})
 	.attr("height", function(d,i){
 	    return yScale(d);
