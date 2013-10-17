@@ -11,17 +11,13 @@ $(document).ready(function(){
     popo(a);
 });
 
-function range(data){
-    var d= data.sort(function(a,b){
-	return a-b;
-    });
-    return [d[0], d[d.length -1]];
-}
 
 function popo(data){
-    var r = range(data);
-    var yScale = d3.scale.linear().domain([0,r[1]]).range([0,200]);
-    var largest = r[1];
+    var largest = d3.max(data);
+
+    var yScale = d3.scale.linear()
+	.domain([0,largest])
+	.range([0,200]);
 
     var rects = svg.selectAll("rect").data(data);
 
