@@ -20,17 +20,14 @@ top_cat.each do |tc|
       uc_data = []
 
       data_cat.each_with_index do |dc,i|
-        if((rand * data_cat.length) > 1)
-
           dc_data = {
             "name" => dc,
             "val" => (rand * 100).floor,
             "color" => colors[i],
             "tooltip" => tooltips[(rand * 5).floor]
           }
-          uc_data.push({dc => dc_data})
+          uc_data.push(dc_data)
 
-        end
       end
 
       t_data.push({uc => uc_data})
