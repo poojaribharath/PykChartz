@@ -50,7 +50,7 @@ function popo(data){
                   .orient("left")
                   .ticks(10);
 
-    svg.selectAll("g.axis").transition()
+    svg.selectAll("g.axis").transition().duration(1000).ease("elastic")
 	.attr("transform", "translate(" + padding + ",0)")
 	.call(yAxis)
 
@@ -66,7 +66,7 @@ function popo(data){
 
 
     // Update
-    rects.transition()
+    rects.transition().ease("elastic").duration(1000)
 	.attr("x", function(d,i){
 	    return xScale(d);
 	})
