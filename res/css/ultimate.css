@@ -1,0 +1,14 @@
+svg.pyk-ultimate{
+    shape-rendering: crispEdges;
+    font-size: 10px;
+}
+
+svg.pyk-ultimate .tick line {
+    stroke: #eee;
+    stroke-width: 1;
+}
+
+svg.pyk-ultimate .tick:first-child line{
+    stroke-width: 2px;
+    stroke: #aaa;
+}

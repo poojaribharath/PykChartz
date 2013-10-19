@@ -24,6 +24,9 @@ Pyk.Ultimate = function(options){
 	    .attr("height", h)
 	    .attr("width", w);
 
+	this.svg.append("g").attr("class", "yaxis");
+	this.svg.append("g").attr("class", "xaxis");
+
 	this.legends_group = this.svg.append("g")
 	    .attr("class", "legend-holder")
 	    .attr("transform", "translate(0,15)");
@@ -91,20 +94,24 @@ Pyk.Ultimate = function(options){
 
     // Traverses the JSON and returns an array of the 'bars' that are to be rendered
     this.flattenData = function(){
-	var the_bars = [];
-
+	var the_bars = [-1];
+	var keys = {};
 	for(i in this.data){
 	    var d = this.data[i];
 	    for(cat_name in d){
 		for(j in d[cat_name]){
 		    var id = "i" + i + "j" + j;
+		    var key = Object.keys(d[cat_name][j])[0];
+
+		    keys[id] = key;
 		    d[cat_name][j].id = id;
+
 		    the_bars.push(d[cat_name][j]);
 		}
 		the_bars.push(i); // Extra seperator element for gaps in segments
 	    }
 	}
-	return the_bars;
+	return [the_bars, keys];
     }
 
     this.renderChart = function(){
@@ -112,7 +119,9 @@ Pyk.Ultimate = function(options){
 	var w = this.chart_group.attr("width");
 	var h = this.chart_group.attr("height");
 
-	var the_bars = this.flattenData();
+	var flattenedData = this.flattenData();
+	var the_bars = flattenedData[0];
+	var keys = flattenedData[1];
 	var layers = this.layers(the_bars);
 
 	var stack = d3.layout.stack() // Create default stack
@@ -133,17 +142,47 @@ Pyk.Ultimate = function(options){
 		return e.id || i; // Keep the ID for bars and numbers for integers
 	    }))
 	    .rangeBands([0,w], 0.2);
-	var yScale = d3.scale.linear().domain([0, d3.max(yValues)]).range([that.options.margins.top, h]);
+
+	var yScale = d3.scale.linear().domain([0,d3.max(yValues)]).range([that.options.margins.top, h]).nice();
+	var yScaleInvert = d3.scale.linear().domain([d3.max(yValues), 0]).range([that.options.margins.top, h]).nice(); // For the yAxis
 	var zScale = d3.scale.category10();
 
 
+	var yAxis = d3.svg.axis()
+	    .scale(yScaleInvert)
+	    .tickSize(-w, 0, 0)
+	    .orient("left");
+
+	var xAxis = d3.svg.axis()
+            .scale(xScale)
+	    .tickSize(-h, 0, 0)
+	    .tickFormat(function(d){
+		if(!keys[d]) return;
+		return keys[d];
+	    })
+            .orient("bottom");
+
+	this.svg.select("g.yaxis")
+	    .attr("transform", "translate("+ this.options.margins.left +", " + this.options.margins.top + ")")
+	    .call(yAxis);
+
+
+	var translateY = parseInt(this.options.margins.top) + parseInt(h);
+
+	this.svg.select("g.xaxis")
+	    .attr("transform", "translate("+ this.options.margins.left +", " + translateY + ")")
+	    .call(xAxis)
+	    .selectAll("text")
+	    .style("text-anchor", "start")
+	    .attr("dy", "2px")
+	    .attr("dx", "20px")
+	    .attr("transform", function(d) {
+                return "rotate(90)"
+            });;
+
 	var bars = this.chart_group.selectAll("g.bars")
-	    .data(layers)
-	    .enter().append("g")
-	    .attr("class", "bars")
-	    .attr("fill", function(d,i){
-		return zScale(i);
-	    });
+	    .data(layers).enter().append("g")
+	    .attr("class", "bars");
 
 	var rect = bars.selectAll("rect")
 	    .data(function(d){
@@ -155,13 +194,28 @@ Pyk.Ultimate = function(options){
 	    .attr("width", function(d){
 		return xScale.rangeBand();
 	    })
+	    .attr("fill", function(d){
+		return d.color;
+	    })
 	    .attr("height", function(d){
 		return yScale(d.y);
 	    })
 	    .attr("y", function(d){
 		return h - yScale(d.y0 + d.y);
 	    })
-
+	    .on("mouseover", function(d, i){
+		that.tooltip.html(d.tooltip);
+		that.tooltip.style("visibility", "visible");
+	    })
+	    .on("mousemove", function(){
+		var yReduce = parseInt(that.tooltip.style("height")) + 40;
+		var xReduce = parseInt(that.tooltip.style("width")) / 2;
+		that.tooltip.style("top", (event.pageY- yReduce)+"px").style("left",(event.pageX-xReduce)+"px");
+	    })
+	    .on("mouseout", function(){
+		that.tooltip.style("visibility", "hidden");
+	    })
+;
     }
 
     this.draw = function(){
@@ -198,10 +252,10 @@ Pyk.Ultimate = function(options){
 	fullList: [],
 	extended: false,
 	margins: {
-	    left: 20,
+	    left: 40,
 	    right: 20,
 	    top: 10,
-	    bottom: 20
+	    bottom: 80
 	}
     }, options);
 
