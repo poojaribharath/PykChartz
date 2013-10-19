@@ -29,7 +29,10 @@ Pyk.Ultimate = function(options){
 	    .attr("transform", "translate(0,15)");
 
 	this.chart_group = this.svg.append("g")
-	    .attr("class", "chart-holder");
+	    .attr("class", "chart-holder")
+	    .attr("width", w - (this.options.margins.right + this.options.margins.left))
+	    .attr("height", h - (this.options.margins.top + this.options.margins.bottom))
+	    .attr("transform", "translate(" + this.options.margins.left + "," + this.options.margins.top + ")");
 
 	// Render elements
 	this.renderTooltip();
@@ -40,30 +43,11 @@ Pyk.Ultimate = function(options){
 	// TODO Implement this
     }
 
-    this.renderChart = function(){
-	var that = this;
-
-	// TODO Figure out margin convention
-	var w = this.options.width;
-
-	var the_bars = [];
-
-	for(i in this.data){
-	    var d = this.data[i];
-	    for(cat_name in d){
-		for(j in d[cat_name]){
-		    var id = "i" + i + "j" + j;
-		    d[cat_name][j].id = id;
-		    the_bars.push(d[cat_name][j]);
-		}
-		the_bars.push(i); // Extra seperator element for gaps in segments
-	    }
-	}
-
-	var idArray = the_bars.map(function(e,i){return e.id || i;}); // Need just the arrays for the ordinal scale
-	var xScale = d3.scale.ordinal().domain(idArray).rangeBands([0,960], 0.05);
-
-	// WHY?
+    // Takes the flattened data and returns layers
+    // Each layer is a separate category
+    // The structure of the layer is made so that is plays well with d3.stack.layout()
+    // Docs - https://github.com/mbostock/d3/wiki/Stack-Layout#wiki-values
+    this.layers = function(the_bars){
 	var layers = [];
 
 	function findLayer(l){
@@ -83,8 +67,6 @@ Pyk.Ultimate = function(options){
 	    return new_layer;
 	}
 
-	var yValues = [];
-
 	for(i in the_bars){
 	    var bar = the_bars[i];
 	    if(!bar.id) continue;
@@ -95,7 +77,6 @@ Pyk.Ultimate = function(options){
 		for(j in icings){
 		    var icing = icings[j];
 		    var layer = findLayer(icing.name);
-		    yValues.push(icing.val);
 		    layer.values.push({
 			"x": id,
 			"y": icing.val,
@@ -105,19 +86,59 @@ Pyk.Ultimate = function(options){
 		}
 	    }
 	}
+	return layers;
+    }
 
-	var yScale = d3.scale.linear().domain([0, d3.max(yValues) * 4]).range([0,this.options.height]);
-	var zScale = d3.scale.category10();
+    // Traverses the JSON and returns an array of the 'bars' that are to be rendered
+    this.flattenData = function(){
+	var the_bars = [];
 
-	console.log(layers);
-	var stack = d3.layout.stack().values(function(d){
-	    return d.values;
+	for(i in this.data){
+	    var d = this.data[i];
+	    for(cat_name in d){
+		for(j in d[cat_name]){
+		    var id = "i" + i + "j" + j;
+		    d[cat_name][j].id = id;
+		    the_bars.push(d[cat_name][j]);
+		}
+		the_bars.push(i); // Extra seperator element for gaps in segments
+	    }
+	}
+	return the_bars;
+    }
+
+    this.renderChart = function(){
+	var that = this;
+	var w = this.chart_group.attr("width");
+	var h = this.chart_group.attr("height");
+
+	var the_bars = this.flattenData();
+	var layers = this.layers(the_bars);
+
+	var stack = d3.layout.stack() // Create default stack
+	    .values(function(d){ // The values are present deep in the array, need to tell d3 where to find it
+		return d.values;
+	    })(layers);
+
+	var yValues = []
+	layers.map(function(e, i){ // Get all values to create scale
+	    for(i in e.values){
+		var d = e.values[i];
+		yValues.push(d.y + d.y0); // Adding up y0 and y to get total height
+	    }
 	});
 
-	var svg = this.chart_group;
+	var xScale = d3.scale.ordinal()
+	    .domain(the_bars.map(function(e, i){
+		return e.id || i; // Keep the ID for bars and numbers for integers
+	    }))
+	    .rangeBands([0,w], 0.2);
+	var yScale = d3.scale.linear().domain([0, d3.max(yValues)]).range([that.options.margins.top, h]);
+	var zScale = d3.scale.category10();
 
-	var bars = svg.selectAll("g.bars")
-	    .data(stack(layers))
+
+	var bars = this.chart_group.selectAll("g.bars")
+	    .data(layers)
 	    .enter().append("g")
 	    .attr("class", "bars")
 	    .attr("fill", function(d,i){
@@ -138,10 +159,8 @@ Pyk.Ultimate = function(options){
 		return yScale(d.y);
 	    })
 	    .attr("y", function(d){
-		return yScale(d.y0);
+		return h - yScale(d.y0 + d.y);
 	    })
-
-
 
     }
 
@@ -174,10 +193,16 @@ Pyk.Ultimate = function(options){
 
     this.options = jQuery.extend({
 	width: 960,
-	height: 200,
+	height: 300,
 	filterList: [],
 	fullList: [],
-	extended: false
+	extended: false,
+	margins: {
+	    left: 20,
+	    right: 20,
+	    top: 10,
+	    bottom: 20
+	}
     }, options);
 
     return this;
