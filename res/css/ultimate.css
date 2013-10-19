@@ -3,6 +3,10 @@ svg.pyk-ultimate{
     font-size: 10px;
 }
 
+svg.pyk-ultimate text.group_label{
+    font-weight: 800;
+}
+
 svg.pyk-ultimate .tick line {
     stroke: #eee;
     stroke-width: 1;

@@ -37,81 +37,42 @@ Pyk.Ultimate = function(options){
 	    .attr("height", h - (this.options.margins.top + this.options.margins.bottom))
 	    .attr("transform", "translate(" + this.options.margins.left + "," + this.options.margins.top + ")");
 
+	var fD = this.flattenData();
+	this.the_bars = fD[0];
+	this.the_keys = fD[1];
+	this.the_layers = this.layers(this.the_bars);
+
 	// Render elements
 	this.renderTooltip();
 	this.draw();
     }
 
     this.renderLegends = function(){
-	// TODO Implement this
+	var that = this;
+
+	function getParameters(){
+	    var p = []
+	    for(i in  that.the_layers){
+		if(!that.the_layers[i].name) continue;
+		p.push(that.the_layers[i].name);
+	    }
+	    return p;
+	}
+	// TODO Make legends
     }
 
-    // Takes the flattened data and returns layers
-    // Each layer is a separate category
-    // The structure of the layer is made so that is plays well with d3.stack.layout()
-    // Docs - https://github.com/mbostock/d3/wiki/Stack-Layout#wiki-values
-    this.layers = function(the_bars){
-	var layers = [];
-
-	function findLayer(l){
-	    for(i in layers){
-		var layer = layers[i];
-		if (layer.name == l) return layer;
-	    }
-	    return addLayer(l);
-	}
-
-	function addLayer(l){
-	    var new_layer = {
-		"name": l,
-		"values": []
-	    }
-	    layers.push(new_layer);
-	    return new_layer;
-	}
-
-	for(i in the_bars){
-	    var bar = the_bars[i];
+    this.getGroups = function(){
+	var groups = {};
+	for(i in this.the_bars){
+	    var bar = this.the_bars[i];
 	    if(!bar.id) continue;
-	    var id = bar.id;
-	    for(k in bar){
-		if(k === "id") continue;
-		var icings = bar[k];
-		for(j in icings){
-		    var icing = icings[j];
-		    var layer = findLayer(icing.name);
-		    layer.values.push({
-			"x": id,
-			"y": icing.val,
-			"color": icing.color,
-			"tooltip": icing.tooltip
-		    })
-		}
+	    if(groups[bar.group]){
+		groups[bar.group].push(bar.id);
+	    }else{
+		groups[bar.group] = [bar.id];
 	    }
 	}
-	return layers;
-    }
-
-    // Traverses the JSON and returns an array of the 'bars' that are to be rendered
-    this.flattenData = function(){
-	var the_bars = [-1];
-	var keys = {};
-	for(i in this.data){
-	    var d = this.data[i];
-	    for(cat_name in d){
-		for(j in d[cat_name]){
-		    var id = "i" + i + "j" + j;
-		    var key = Object.keys(d[cat_name][j])[0];
-
-		    keys[id] = key;
-		    d[cat_name][j].id = id;
-
-		    the_bars.push(d[cat_name][j]);
-		}
-		the_bars.push(i); // Extra seperator element for gaps in segments
-	    }
-	}
-	return [the_bars, keys];
+	return groups;
     }
 
     this.renderChart = function(){
@@ -119,10 +80,10 @@ Pyk.Ultimate = function(options){
 	var w = this.chart_group.attr("width");
 	var h = this.chart_group.attr("height");
 
-	var flattenedData = this.flattenData();
-	var the_bars = flattenedData[0];
-	var keys = flattenedData[1];
-	var layers = this.layers(the_bars);
+	var the_bars = this.the_bars;
+	var keys = this.the_keys;
+	var layers = this.the_layers;
+	var groups= this.getGroups();
 
 	var stack = d3.layout.stack() // Create default stack
 	    .values(function(d){ // The values are present deep in the array, need to tell d3 where to find it
@@ -162,14 +123,14 @@ Pyk.Ultimate = function(options){
 	    })
             .orient("bottom");
 
-	this.svg.select("g.yaxis")
+	this.svg.select("g.yaxis").transition(1000)
 	    .attr("transform", "translate("+ this.options.margins.left +", " + this.options.margins.top + ")")
 	    .call(yAxis);
 
 
 	var translateY = parseInt(this.options.margins.top) + parseInt(h);
 
-	this.svg.select("g.xaxis")
+	this.svg.select("g.xaxis").transition(1000)
 	    .attr("transform", "translate("+ this.options.margins.left +", " + translateY + ")")
 	    .call(xAxis)
 	    .selectAll("text")
@@ -180,6 +141,30 @@ Pyk.Ultimate = function(options){
                 return "rotate(90)"
             });;
 
+
+	var group_label_data = [];
+	for(i in groups){
+	    var g = groups[i];
+	    var x = xScale(g[0]);
+	    var totalWidth = xScale.rangeBand() * g.length;
+	    var x = x + (totalWidth/2);
+	    group_label_data.push({x: x, name: i});
+	}
+
+	this.svg.selectAll("text.group_label").data(group_label_data).enter()
+	    .append("text").attr("class", "group_label")
+	    .attr("x", function(d){
+		return d.x + that.options.margins.left;
+	    })
+	    .attr("y", function(d){
+		return parseInt(h) + 24;
+	    })
+	    .attr("text-anchor", "middle")
+	    .text(function(d){
+		return d.name;
+	    });
+
+
 	var bars = this.chart_group.selectAll("g.bars")
 	    .data(layers).enter().append("g")
 	    .attr("class", "bars");
@@ -188,24 +173,13 @@ Pyk.Ultimate = function(options){
 	    .data(function(d){
 		return d.values
 	    }).enter().append("svg:rect")
-	    .attr("x", function(d){
-		return xScale(d.x);
-	    })
-	    .attr("width", function(d){
-		return xScale.rangeBand();
-	    })
-	    .attr("fill", function(d){
-		return d.color;
-	    })
-	    .attr("height", function(d){
-		return yScale(d.y);
-	    })
-	    .attr("y", function(d){
-		return h - yScale(d.y0 + d.y);
-	    })
+	    .attr("height", 0).attr("y", h)
 	    .on("mouseover", function(d, i){
 		that.tooltip.html(d.tooltip);
 		that.tooltip.style("visibility", "visible");
+	    })
+	    .attr("fill", function(d){
+		return d.color;
 	    })
 	    .on("mousemove", function(){
 		var yReduce = parseInt(that.tooltip.style("height")) + 40;
@@ -214,8 +188,20 @@ Pyk.Ultimate = function(options){
 	    })
 	    .on("mouseout", function(){
 		that.tooltip.style("visibility", "hidden");
+	    });
+
+	rect.transition().duration(1000).attr("x", function(d){
+		return xScale(d.x);
 	    })
-;
+	    .attr("width", function(d){
+		return xScale.rangeBand();
+	    })
+	    .attr("height", function(d){
+		return yScale(d.y);
+	    })
+	    .attr("y", function(d){
+		return h - yScale(d.y0 + d.y);
+	    });
     }
 
     this.draw = function(){
@@ -237,6 +223,78 @@ Pyk.Ultimate = function(options){
 	    .text("a simple tooltip");
     }
 
+    // Data Helpers
+    // Takes the flattened data and returns layers
+    // Each layer is a separate category
+    // The structure of the layer is made so that is plays well with d3.stack.layout()
+    // Docs - https://github.com/mbostock/d3/wiki/Stack-Layout#wiki-values
+    this.layers = function(the_bars){
+	var layers = [];
+
+	function findLayer(l){
+	    for(i in layers){
+		var layer = layers[i];
+		if (layer.name == l) return layer;
+	    }
+	    return addLayer(l);
+	}
+
+	function addLayer(l){
+	    var new_layer = {
+		"name": l,
+		"values": []
+	    }
+	    layers.push(new_layer);
+	    return new_layer;
+	}
+
+	for(i in the_bars){
+	    var bar = the_bars[i];
+	    if(!bar.id) continue;
+	    var id = bar.id;
+	    for(k in bar){
+		if(k === "id") continue;
+		var icings = bar[k];
+		for(j in icings){
+		    var icing = icings[j];
+		    if(!icing.name) continue;
+		    var layer = findLayer(icing.name);
+		    layer.values.push({
+			"x": id,
+			"y": icing.val,
+			"color": icing.color,
+			"tooltip": icing.tooltip
+		    })
+		}
+	    }
+	}
+	return layers;
+    }
+
+    // Traverses the JSON and returns an array of the 'bars' that are to be rendered
+    this.flattenData = function(){
+	var the_bars = [-1];
+	var keys = {};
+	for(i in this.data){
+	    var d = this.data[i];
+	    for(cat_name in d){
+		for(j in d[cat_name]){
+		    var id = "i" + i + "j" + j;
+		    var key = Object.keys(d[cat_name][j])[0];
+
+		    keys[id] = key;
+		    d[cat_name][j].id = id;
+		    d[cat_name][j].group = cat_name;
+
+		    the_bars.push(d[cat_name][j]);
+		}
+		the_bars.push(i); // Extra seperator element for gaps in segments
+	    }
+	}
+	return [the_bars, keys];
+    }
+
+
     // Options: Validations & Defaults
     this.validate_options = function(){
 	if(this.options.selection == undefined) return false;
@@ -247,7 +305,7 @@ Pyk.Ultimate = function(options){
 
     this.options = jQuery.extend({
 	width: 960,
-	height: 300,
+	height: 400,
 	filterList: [],
 	fullList: [],
 	extended: false,
