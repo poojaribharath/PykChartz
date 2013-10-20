@@ -1,0 +1,107 @@
+/* Choropleth */
+
+svg.pyk-choropleth-legend-holder circle{cursor: pointer;}
+svg.pyk-choropleth-legend-holder text{cursor: pointer;}
+
+svg.pyk-choropleth-map-holder g.states path{
+    stroke: white;
+    stroke-width: 2px;
+}
+
+svg.pyk-choropleth-map-holder g.states path:hover{stroke-width: 6px;}
+
+svg.pyk-choropleth-map-holder g.states.zoomed path{
+    fill: none;
+    opacity: 1;
+}
+
+svg.pyk-choropleth-map-holder g.counties path{
+    stroke: white;
+    stroke-width: 0.5px;
+}
+
+svg.pyk-choropleth-map-holder g.counties path:hover{stroke-width: 2px;}
+
+/* Google Maps */
+
+.gmnoprint img {
+    max-width: none;
+}
+img[src*="gstatic.com/"], img[src*="googleapis.com/"] {
+max-width: none;
+}
+
+/* Ultimate Chart */
+
+svg.pyk-ultimate{
+    shape-rendering: crispEdges;
+    font-size: 10px;
+}
+
+svg.pyk-ultimate text.group_label{
+    font-weight: 800;
+}
+
+svg.pyk-ultimate .tick line {
+    stroke: #eee;
+    stroke-width: 1;
+}
+
+svg.pyk-ultimate .tick:first-child line{
+    stroke-width: 2px;
+    stroke: #aaa;
+}
+
+/* River Chart */
+
+svg.pyk-river{shape-rendering: crispEdges;}
+
+svg.pyk-river line{shape-rendering: crispEdges;}
+
+svg.pyk-river g.bar-holder rect{
+    opacity: 0.7;
+}
+
+svg.pyk-river g.bar-holder rect:hover{
+    opacity: 1;
+}
+
+svg.pyk-river line.left_line, svg.pyk-river line.right_line{
+    stroke-width: 1;
+    stroke: #ddd;
+    shape-rendering: auto;
+}
+
+svg.pyk-river text.left_label, svg.pyk-river text.right_label{
+    fill: #aaa;
+    font-size: 10px;
+}
+
+svg.pyk-river text.cool_label, svg.pyk-river text.right_label{
+    text-anchor: end;
+}
+
+svg.pyk-river text.cool_label{
+    font-size: 11px;
+    color: #000;
+    font-weight: 800;
+}
+
+svg.pyk-river line.bottom_line, svg.pyk-river line.top_line{
+    stroke-width: 1;
+    stroke: #eee;
+    stroke-dasharray: 5,5;
+    shape-rendering: crispEdge;
+}
+
+svg.pyk-river g.option-holder{
+    cursor: pointer;
+    shape-rendering: auto;
+    font-size: 12px;
+}
+
+svg.pyk-river g.legend{
+    shape-rendering: auto;
+    cursor: pointer;
+    font-size: 12px;
+}
