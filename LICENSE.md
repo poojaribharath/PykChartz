@@ -2,7 +2,7 @@
 
 ### 1. Free - Non-commercial ###
 
-Do you want to use PykCharts for a personal or non-profit project? Then you can use Pyk Charts for free under the [Creative Commons Attribution-NonCommercial 3.0 License](http://creativecommons.org/licenses/by-nc/3.0/ "Creative Commons Attribution-NonCommercial 3.0 License"). You must link back to [Powered by PykCharts](http://www.pykih.com "Powered by PykCharts") below each chart that you render using PykCharts.
+Do you want to use PykCharts for a personal or non-profit project? Then you can use PykCharts for free under the [Creative Commons Attribution-NonCommercial 3.0 License](http://creativecommons.org/licenses/by-nc/3.0/ "Creative Commons Attribution-NonCommercial 3.0 License"). You must link back to [Powered by PykCharts](http://www.pykih.com "Powered by PykCharts") below each chart that you render using PykCharts.
 
 ### 2. Commercial and government licenses ###
 
