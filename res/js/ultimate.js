@@ -1,4 +1,4 @@
-Pyk.Ultimate = function(options){
+PykCharts.Ultimate = function(options){
     this.init = function(){
 	if(!this.validate_options()) return false;
 

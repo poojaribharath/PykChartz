@@ -1,4 +1,4 @@
-Pyk.River = function(options){
+PykCharts.River = function(options){
 
     this.init = function(){
 	if(!this.validate_options()) return false;

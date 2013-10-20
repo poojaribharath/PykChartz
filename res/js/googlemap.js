@@ -1,4 +1,4 @@
-Pyk.GoogleHeat = function(options){
+PykCharts.GoogleHeat = function(options){
     this.init = function(){
 	if(!this.validate_options()) return false;
 	this.container = $(this.options.selection);

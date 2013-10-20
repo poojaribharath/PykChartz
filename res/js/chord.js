@@ -1,4 +1,4 @@
-Pyk.chord = function(options){
+PykCharts.chord = function(options){
     this.init = function(){
 	if(!this.validate_options()) return false;
 

@@ -1,4 +1,4 @@
-Pyk.Choropleth = function(options){
+PykCharts.Choropleth = function(options){
 
     this.init = function(){
 	if(!this.validate_options()) return false;
