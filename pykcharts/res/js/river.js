@@ -6,7 +6,7 @@ PykCharts.River = function(options){
 	var that = this;
 	var opt = this.options;
 
-	$(this.options.selection).html("<img src='/res/img/spinner.gif'> Loading... Please wait");
+	$(this.options.selection).html("<img src='/pykcharts/res/img/spinner.gif'> Loading... Please wait");
 
 	d3.json(opt.data, function(e, data){
 	    that.data = data;

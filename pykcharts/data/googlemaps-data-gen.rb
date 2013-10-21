@@ -15,7 +15,7 @@ end
 def get_marker
   markers = ["i1.png", "i2.png", "i3.png"]
   marker = markers[(rand()*3).floor]
-  return "/res/img/" + marker
+  return "/pykcharts/res/img/" + marker
 end
 
 puts "["

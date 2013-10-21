@@ -6,7 +6,7 @@ PykCharts.Choropleth = function(options){
 	var that = this;
 	var opt = this.options;
 
-	$(this.options.selection).html("<img src='/images/spinner.gif'> Loading... Please wait");
+	$(this.options.selection).html("<img src='/pykcharts/images/spinner.gif'> Loading... Please wait");
 
 	// Get all the data and pass to render
 	d3.json(opt.topojson, function(e, topology){

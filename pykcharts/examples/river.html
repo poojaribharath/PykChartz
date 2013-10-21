@@ -8,9 +8,9 @@
       <script src="../res/lib/jquery.js" type="text/javascript"></script>
       <script src="../res/lib/bootstrap.js" type="text/javascript"></script>
       <link href="../res/lib/bootstrap.css" rel="stylesheet" type="text/css">
-      <link href="../res/css/ultimate.css" rel="stylesheet" type="text/css">
+      <link href="../res/css/river.css" rel="stylesheet" type="text/css">
       <script src="../res/js/pykcharts.js" type="text/javascript" charset="utf-8"></script>
-      <script src="../res/js/ultimate.js" type="text/javascript" charset="utf-8"></script>
+      <script src="../res/js/river.js" type="text/javascript" charset="utf-8"></script>
    </head>
    <body>
       <div class="container">
@@ -20,22 +20,22 @@
                   <h1><a href="/index.html">PykCharts</a></h1>
                </div>
                <div class="col-sm-1" style="padding-top: 25px; margin-bottom: 60px;">
-                  <a href="http://www.pykih.com" target="_blank"><img src="/images/pykih_25.png" class="img-responsive"></a>
+                  <a href="http://www.pykih.com" target="_blank"><img src="..images/pykih_25.png" class="img-responsive"></a>
                </div>
             </div>
             <div class="col-sm-12">
                <div class="col-sm-3">
                   <ul class="nav nav-pills nav-stacked">
-                     <li><a href="/examples/river.html">River</a></li>
-                     <li><a href="/examples/choropleth.html">Zoomable Choropleth</a></li>
-                     <li><a href="/examples/googlemap.html">Two layer Heat Maps</a></li>
-                     <li class="active"><a href="/examples/ultimate.html">Ultimate Column</a></li>
-                     <li><a href="/examples/chord.html">Rotating Chord</a></li>
+                     <li class="active"><a href="/pykcharts/examples/river.html">River</a></li>
+                     <li><a href="/pykcharts/examples/choropleth.html">Zoomable Choropleth</a></li>
+                     <li><a href="/pykcharts/examples/googlemap.html">Two layer Heat Maps</a></li>
+                     <li><a href="/pykcharts/examples/ultimate.html">Ultimate Column</a></li>
+                     <li><a href="/pykcharts/examples/chord.html">Rotating Chord</a></li>
                   </ul>
                   <br/>
                </div>
                <div class="col-sm-9">
-                  <div id="ultimate-container"></div>
+                  <div id="river-container"></div>
                </div>
             </div>
          </div>
@@ -50,9 +50,10 @@
       </div>
       <script>
          $(document).ready(function(e){
-         var k = new PykCharts.Ultimate({
-         data: "/data/ultimate-data.json",
-         selection: "#ultimate-container",
+         var k = new PykCharts.River({
+         data: "/pykcharts/data/river-data.json",
+         width: 900,
+         selection: "#river-container"
          });
          k.init();
          });

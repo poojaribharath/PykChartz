@@ -3,7 +3,7 @@ PykCharts.Ultimate = function(options){
 	if(!this.validate_options()) return false;
 
 	var that = this;
-	$(this.options.selection).html("<img src='/res/img/spinner.gif'> Loading... Please wait");
+	$(this.options.selection).html("<img src='/pykcharts/res/img/spinner.gif'> Loading... Please wait");
 
 	d3.json(this.options.data, function(e, data){
 	    that.data = data;

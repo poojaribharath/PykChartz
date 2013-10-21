@@ -196,7 +196,7 @@ PykCharts.Choropleth = function(options){
 	var that = this;
 	var opt = this.options;
 
-	$(this.options.selection).html("<img src='/images/spinner.gif'> Loading... Please wait");
+	$(this.options.selection).html("<img src='/pykcharts/pykcharts/images/spinner.gif'> Loading... Please wait");
 
 	// Get all the data and pass to render
 	d3.json(opt.topojson, function(e, topology){
@@ -581,7 +581,7 @@ PykCharts.River = function(options){
 	var that = this;
 	var opt = this.options;
 
-	$(this.options.selection).html("<img src='/res/img/spinner.gif'> Loading... Please wait");
+	$(this.options.selection).html("<img src='/pykcharts/pykcharts/res/img/spinner.gif'> Loading... Please wait");
 
 	d3.json(opt.data, function(e, data){
 	    that.data = data;
@@ -1057,7 +1057,7 @@ PykCharts.Ultimate = function(options){
 	if(!this.validate_options()) return false;
 
 	var that = this;
-	$(this.options.selection).html("<img src='/res/img/spinner.gif'> Loading... Please wait");
+	$(this.options.selection).html("<img src='/pykcharts/pykcharts/res/img/spinner.gif'> Loading... Please wait");
 
 	d3.json(this.options.data, function(e, data){
 	    that.data = data;
