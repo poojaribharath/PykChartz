@@ -38,35 +38,51 @@ PykCharts.Ultimate = function(options){
 	    .attr("height", h - (this.options.margins.top + this.options.margins.bottom))
 	    .attr("transform", "translate(" + this.options.margins.left + "," + this.options.margins.top + ")");
 
-	var fD = this.flattenData();
+	var fD = this.flattenData(this.data);
 	this.the_bars = fD[0];
 	this.the_keys = fD[1];
 	this.the_layers = this.layers(this.the_bars);
+
 
 	// Render elements
 	this.renderTooltip();
 	this.draw();
     }
 
+    this.getParameters = function(){
+	var that = this;
+	var p = []
+	for(i in  that.the_layers){
+	    if(!that.the_layers[i].name) continue;
+	    var name = that.the_layers[i].name;
+	    var color = that.the_layers[i].values[0].color;
+	    p.push({
+		"name": name,
+		"color": color
+	    });
+	}
+	return p;
+
+    }
+
+    this.toggleFilter = function(f){
+	var index = this.options.filterList.indexOf(f)
+	if(index === -1){
+	    this.options.filterList.push(f);
+	}else{
+	    this.options.filterList.splice(index, 1);
+	}
+	this.draw();
+    }
+
+
     this.renderLegends = function(){
 	var that = this;
 	var w = this.options.width;
 
-	function getParameters(){
-	    var p = []
-	    for(i in  that.the_layers){
-		if(!that.the_layers[i].name) continue;
-		var name = that.the_layers[i].name;
-		var color = that.the_layers[i].values[0].color;
-		p.push({
-		    "name": name,
-		    "color": color
-		});
-	    }
-	    return p;
-	}
+	var params = this.getParameters();
 
-	var params = getParameters();
+	this.legends_group.selectAll("g.legend_group").remove();
 
 	var legendGroups = this.legends_group.selectAll("g.legend_group").data(params)
 	    .enter()
@@ -80,22 +96,32 @@ PykCharts.Ultimate = function(options){
 	    var g = d3.select(legendGroups[0][i]);
 	    var p = params[i];
 
-	    var texts = g.append("text")
-		.text(function(d){
+	    var texts = g.selectAll("text").data([p])
+
+	    texts.enter().append("text")
+
+	    texts.text(function(d){
 		    return p.name;
 		})
 		.attr("x", function(d,i){
 		    return i * 40;
 		})
-		.attr("dy", -3);
+		.attr("dy", -3)
+		.on("click", function(d,i){
+		    that.toggleFilter(d.name);
+		});
 
-	    var circles = g.append("circle")
+	    var circles = g.selectAll("circle").data([p])
+	    circles.enter().append("circle");
+
+	    circles
 		.attr("cx", function(d,i){
 		    return (i*100)-10;
 		})
 		.attr("cy",-6).attr("r", 6)
 		.attr("style", function(d){
-		    return "fill: "+ d.color +"; stroke-width: 3px; stroke:" + d.color;
+		    var fillColor = (that.options.filterList.indexOf(d.name) === -1) ? "#fff":d.color;
+		    return "fill: "+ fillColor +"; stroke-width: 3px; stroke:" + d.color;
 		})
 
 	}
@@ -205,15 +231,18 @@ PykCharts.Ultimate = function(options){
 		return d.name;
 	    });
 
+	var bars = this.chart_group.selectAll("g.bars").data(layers)
 
-	var bars = this.chart_group.selectAll("g.bars")
-	    .data(layers).enter().append("g")
+	bars.enter().append("g")
 	    .attr("class", "bars");
+
 
 	var rect = bars.selectAll("rect")
 	    .data(function(d){
 		return d.values
-	    }).enter().append("svg:rect")
+	    });
+
+	rect.enter().append("svg:rect")
 	    .attr("height", 0).attr("y", h)
 	    .on("mouseover", function(d, i){
 		that.tooltip.html(d.tooltip);
@@ -231,23 +260,65 @@ PykCharts.Ultimate = function(options){
 		that.tooltip.style("visibility", "hidden");
 	    });
 
-	rect.transition().duration(1000).attr("x", function(d){
+
+	rect
+	    .transition().duration(1000).attr("x", function(d){
 		return xScale(d.x);
 	    })
 	    .attr("width", function(d){
 		return xScale.rangeBand();
 	    })
 	    .attr("height", function(d){
+		if(d.y == 0) return 0;
 		return yScale(d.y);
 	    })
 	    .attr("y", function(d){
 		return h - yScale(d.y0 + d.y);
 	    });
+
+
     }
 
     this.draw = function(){
+	this.options.fullList = this.getParameters().map(function(d){
+	    return d.name;
+	});
+	this.options.filterList = (this.options.filterList.length === 0) ? this.options.fullList : this.options.filterList;
+
+	var tData = jQuery.extend(true, [], this.data);
+	tData = this.filterData(tData);
+	var fD = this.flattenData(tData);
+	this.the_bars = fD[0];
+	this.the_keys = fD[1];
+	this.the_layers = this.layers(this.the_bars);
+
 	this.renderLegends();
 	this.renderChart();
+    }
+
+    this.filterData = function(data){
+	var params = this.options.filterList;
+
+	for(i in data){
+	    var group = data[i];
+	    for(j in group){
+		var bars = group[j];
+		for(k in bars){
+		    var bar = bars[k];
+		    for(l in bar){
+			var slabs = bar[l];
+			for(m in slabs){
+			    var slab = slabs[m];
+			    if(params.indexOf(slab.name) == -1){
+				slab.val = 0;
+			    }
+			}
+			break;
+		    }
+		}
+	    }
+	}
+	return data;
     }
 
     this.renderTooltip = function(){
@@ -313,11 +384,11 @@ PykCharts.Ultimate = function(options){
     }
 
     // Traverses the JSON and returns an array of the 'bars' that are to be rendered
-    this.flattenData = function(){
+    this.flattenData = function(data){
 	var the_bars = [-1];
 	var keys = {};
-	for(i in this.data){
-	    var d = this.data[i];
+	for(i in data){
+	    var d = data[i];
 	    for(cat_name in d){
 		for(j in d[cat_name]){
 		    var id = "i" + i + "j" + j;
