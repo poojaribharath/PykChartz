@@ -5,11 +5,13 @@ svg.pyk-ultimate{
 
 svg.pyk-ultimate g.legend_group{
     shape-rendering: auto;
+    cursor: pointer;
 }
 
 svg.pyk-ultimate text.group_label{
     font-weight: 800;
 }
+
 
 svg.pyk-ultimate .tick line {
     stroke: #eee;
