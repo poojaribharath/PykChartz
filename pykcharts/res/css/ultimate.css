@@ -3,6 +3,10 @@ svg.pyk-ultimate{
     font-size: 10px;
 }
 
+svg.pyk-ultimate g.legend_group{
+    shape-rendering: auto;
+}
+
 svg.pyk-ultimate text.group_label{
     font-weight: 800;
 }
