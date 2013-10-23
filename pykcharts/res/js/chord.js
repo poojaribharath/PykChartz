@@ -1,19 +1,14 @@
-PykCharts.chord = function(options){
+PykCharts.Chord = function(options){
     this.init = function(){
 	if(!this.validate_options()) return false;
 
 	var that = this;
 
-	d3.json(that.options.time, function(e, t){
-	    that.time = t.sort(function(a, b){
-		return a.hour - b.hour;
-	    });
-	    d3.json(that.options.relations, function(e, r){
-		that.relations = r;
-		d3.json(that.options.frequency, function(e, f){
-		    that.frequency = f;
-		    that.render();
-		});
+	d3.json(that.options.relations, function(e, r){
+	    that.relations = r;
+	    d3.json(that.options.frequency, function(e, f){
+		that.frequency = f;
+		that.render();
 	    });
 	});
 
@@ -23,43 +18,6 @@ PykCharts.chord = function(options){
 	this.nicks = this.frequency.map(function(d){return d.nick;});
 	this.generateMatrix();
 	this.renderChord();
-//	this.renderTime();
-    }
-
-    this.renderTime = function(){
-	var that = this;
-
-	var x = d3.scale
-	    .ordinal()
-	    .domain(this.time.map(function(d){
-		return d.hour
-	    }))
-	    .rangeBands([0, $(document).width()], 0.90);
-
-	var y = d3.scale.linear().domain(
-	    [
-		0,
-		d3.max(this.time.map(function(d){
-		    return d.messages;
-		}))
-	    ]
-	).range([0, 100]);
-
-	var svg = d3.select(this.options.selection).append("svg").attr("class", "time-bar");
-
-	svg.selectAll("rect").data(that.time).enter()
-	    .append("rect")
-	    .attr("height", function(d){
-		console.log(d);
-		return y(d.messages);
-	    })
-	    .attr("x", function(d){
-		return x(d.hour);
-	    })
-	    .attr("width", x.rangeBand())
-	    .attr("y",0)
-	    .style("fill", that.options.color);
-
     }
 
     this.renderChord = function(){
@@ -143,8 +101,6 @@ PykCharts.chord = function(options){
 	    .text(function(d) {
 		return that.nicks[d.index];
 	    });
-
-
     }
 
 
@@ -163,7 +119,8 @@ PykCharts.chord = function(options){
 	populateMatrix();
 	for(i in this.relations){
 	    var r = this.relations[i];
-	    if( that.nicks.indexOf(r.from) == that.nicks.indexOf(r.to)) continue;
+	    // Uncomment this if we don't want to messages to self to be shown here
+	    // if( that.nicks.indexOf(r.from) == that.nicks.indexOf(r.to)) continue;
 	    matrix[that.nicks.indexOf(r.from)][that.nicks.indexOf(r.to)] = r.messages
 	}
 	this.matrix = matrix;
@@ -172,14 +129,14 @@ PykCharts.chord = function(options){
     // Options: Validations & Defaults
     this.validate_options = function(){
 	if(this.options.selection == undefined) return false;
-	if(this.options.time == undefined) return false;
 	if(this.options.relations == undefined) return false;
+	if(this.options.frequency == undefined) return false;
 	return true;
     }
 
     this.options = jQuery.extend({
-	width: $(window).width(),
-	height: $(window).height(),
+	width: 850,
+	height: 400,
     }, options);
 
     return this;
