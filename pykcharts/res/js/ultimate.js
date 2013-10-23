@@ -29,6 +29,7 @@ PykCharts.Ultimate = function(options){
 
 	this.legends_group = this.svg.append("g")
 	    .attr("class", "legend-holder")
+	    .attr("background", "Red")
 	    .attr("transform", "translate(0,15)");
 
 	this.chart_group = this.svg.append("g")
@@ -49,16 +50,55 @@ PykCharts.Ultimate = function(options){
 
     this.renderLegends = function(){
 	var that = this;
+	var w = this.options.width;
 
 	function getParameters(){
 	    var p = []
 	    for(i in  that.the_layers){
 		if(!that.the_layers[i].name) continue;
-		p.push(that.the_layers[i].name);
+		var name = that.the_layers[i].name;
+		var color = that.the_layers[i].values[0].color;
+		p.push({
+		    "name": name,
+		    "color": color
+		});
 	    }
 	    return p;
 	}
 
+	var params = getParameters();
+
+	var legendGroups = this.legends_group.selectAll("g.legend_group").data(params)
+	    .enter()
+	    .append("g")
+	    .attr("class", "legend_group")
+	    .attr("transform", function(d,i){
+		return "translate(" + (w-(i*100)-100) + ", 0)";
+	    });
+
+	for(i in params){
+	    var g = d3.select(legendGroups[0][i]);
+	    var p = params[i];
+
+	    var texts = g.append("text")
+		.text(function(d){
+		    return p.name;
+		})
+		.attr("x", function(d,i){
+		    return i * 40;
+		})
+		.attr("dy", -3);
+
+	    var circles = g.append("circle")
+		.attr("cx", function(d,i){
+		    return (i*100)-10;
+		})
+		.attr("cy",-6).attr("r", 6)
+		.attr("style", function(d){
+		    return "fill: "+ d.color +"; stroke-width: 3px; stroke:" + d.color;
+		})
+
+	}
 	// TODO Make legends
     }
 
