@@ -231,18 +231,20 @@ PykCharts.Ultimate = function(options){
 	    group_label_data.push({x: x, name: i});
 	}
 
-	this.svg.selectAll("text.group_label").data(group_label_data).enter()
-	    .append("text").attr("class", "group_label")
-	    .attr("x", function(d){
-		return d.x + that.options.margins.left;
-	    })
-	    .attr("y", function(d){
-		return parseInt(h) + 24;
-	    })
-	    .attr("text-anchor", "middle")
-	    .text(function(d){
-		return d.name;
-	    });
+	if(group_label_data.length > 1){
+	    this.svg.selectAll("text.group_label").data(group_label_data).enter()
+		.append("text").attr("class", "group_label")
+		.attr("x", function(d){
+		    return d.x + that.options.margins.left;
+		})
+		.attr("y", function(d){
+		    return parseInt(h) + 24;
+		})
+		.attr("text-anchor", "middle")
+		.text(function(d){
+		    return d.name;
+		});
+	}
 
 	var bars = this.chart_group.selectAll("g.bars").data(layers)
 
