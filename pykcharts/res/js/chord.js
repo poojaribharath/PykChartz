@@ -27,11 +27,12 @@ PykCharts.Chord = function(options){
 
 	var svg = d3.select(this.options.selection)
 	    .append("svg")
-	    .attr("class", "chord")
+	    .attr("class", "pyk-chord spinning")
 	    .attr("width", w)
 	    .attr("height", h)
 	    .append("g")
 	    .attr("transform","translate(" + w / 2 + "," + h / 2 + ")");
+
 
 
 	var fill = d3.scale.ordinal().range([that.options.color]);
@@ -42,7 +43,7 @@ PykCharts.Chord = function(options){
 	    .sortSubgroups(d3.descending)
 	    .matrix(that.matrix);
 
-	svg.append("g")
+	svg.append("g").attr("class", "circumference")
 	    .selectAll("path")
 	    .data(chord.groups)
 	    .enter().append("path")
@@ -61,6 +62,13 @@ PykCharts.Chord = function(options){
 
 	function fade(opacity) {
 	    return function(g, i) {
+		if(opacity == 0){
+		    $(".spinning").css("-webkit-animation-play-state", "paused");
+		    $(".spinning").css("animation-play-state", "paused");
+		}else{
+		    $(".spinning").css("-webkit-animation-play-state", "running");
+		    $(".spinning").css("animation-play-state", "runnin");
+		}
 		svg.selectAll("g.chord path")
 		    .filter(function(d) {
 			return d.source.index != i && d.target.index != i;
@@ -136,7 +144,7 @@ PykCharts.Chord = function(options){
 
     this.options = jQuery.extend({
 	width: 850,
-	height: 400,
+	height: 700,
     }, options);
 
     return this;
