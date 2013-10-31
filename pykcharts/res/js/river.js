@@ -162,7 +162,7 @@ PykCharts.River = function(options){
 		.on("mousemove", function(){
 		    var yReduce = parseInt(that.tooltip.style("height")) + 40;
 		    var xReduce = parseInt(that.tooltip.style("width")) / 2;
-		    that.tooltip.style("top", (event.pageY- yReduce)+"px").style("left",(event.pageX-xReduce)+"px");
+		    that.tooltip.style("top", (d3.event.pageY- yReduce)+"px").style("left",(d3.event.pageX-xReduce)+"px");
 		})
 		.on("mouseout", function(){
 		    that.tooltip.style("visibility", "hidden");
