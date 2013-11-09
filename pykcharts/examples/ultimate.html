@@ -51,11 +51,12 @@
       <script>
          $(document).ready(function(e){
          var k = new PykCharts.Ultimate({
-         data: "/pykcharts/data/ultimate-data.json",
+         data: "../data/ultimate-data.json",
          selection: "#ultimate-container",
-	 width: 850,
+		width: 850,
+		height: 400,
          });
-         k.init();
+         k.execute();
          });
       </script>
    </body>

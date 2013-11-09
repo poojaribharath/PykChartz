@@ -1,4 +1,6 @@
 PykCharts.Chord = function(options){
+
+// initialize function which validates options for chart read json  
     this.init = function(){
 	if(!this.validate_options()) return false;
 
