@@ -10,7 +10,7 @@
       <link href="../res/lib/bootstrap.css" rel="stylesheet" type="text/css">
       <link href="../res/css/ultimate.css" rel="stylesheet" type="text/css">
       <script src="../res/js/pykcharts.js" type="text/javascript" charset="utf-8"></script>
-      <script src="../res/js/ultimate.js" type="text/javascript" charset="utf-8"></script>
+      <script src="../res/js/treerect.js" type="text/javascript" charset="utf-8"></script>
    </head>
    <body>
       <div class="container">
@@ -35,7 +35,7 @@
                   <br/>
                </div>
                <div class="col-sm-9">
-                  <div id="ultimate-container"></div>
+                  <div id="tree-container"></div>
                </div>
             </div>
          </div>
@@ -50,9 +50,9 @@
       </div>
       <script>
          $(document).ready(function(e){
-         var k = new PykCharts.Ultimate({
-         data: "pykcharts/data/ultimate-data.json",
-         selection: "#ultimate-container",
+         var k = new PykCharts.treerect({
+         data: "/pykcharts/data/treerect.json",
+         selection: "#tree-container",
 		width: 850,
 		height: 400,
          });
