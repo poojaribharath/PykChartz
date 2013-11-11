@@ -35,7 +35,24 @@
                   <br/>
                </div>
                <div class="col-sm-9">
-                  <div id="ultimate-container"></div>
+               <div class="row">
+                                <div class="col-sm-6">
+
+				 <div id="ultimate-container"></div>
+               </div>  <div class="col-sm-6">
+
+				 <div id="ultimate-container1"></div>
+               </div> 
+               </div> 
+			   <div class="row">
+                                  <div class="col-sm-6">
+
+				 <div id="ultimate-container2"></div>
+               </div>  <div class="col-sm-6">
+
+				 <div id="ultimate-container3"></div>
+               </div> 
+               </div>
                </div>
             </div>
          </div>
@@ -53,10 +70,31 @@
          var k = new PykCharts.Ultimate({
          data: "../data/ultimate-data.json",
          selection: "#ultimate-container",
-		width: 850,
+		width: 450,
+		height: 400,
+         });
+         var j = new PykCharts.Ultimate({
+         data: "../data/ultimate-data.json",
+         selection: "#ultimate-container1",
+		width: 450,
+		height: 400,
+         });
+         var l = new PykCharts.Ultimate({
+         data: "../data/ultimate-data.json",
+         selection: "#ultimate-container2",
+		width: 450,
+		height: 400,
+         });
+         var m = new PykCharts.Ultimate({
+         data: "../data/ultimate-data.json",
+         selection: "#ultimate-container3",
+		width: 450,
 		height: 400,
          });
          k.execute();
+         j.execute();
+         l.execute();
+         m.execute();
          });
       </script>
    </body>

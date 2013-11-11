@@ -216,19 +216,22 @@ PykCharts.Ultimate = function(options){
             }).enter().append("svg:rect")
             .attr("height", 0).attr("y", h)
             .on("mouseover", function(d, i){
-                that.tooltip.html(d.tooltip);
-                that.tooltip.style("visibility", "visible");
+                 var tooltip = d3.select("#pyk-ultimate-tooltip");
+				tooltip.html(d.tooltip);
+                tooltip.style("visibility", "visible");
             })
             .attr("fill", function(d){
                 return d.color;
             })
             .on("mousemove", function(){
-                var yReduce = parseInt(that.tooltip.style("height")) + 40;
-                var xReduce = parseInt(that.tooltip.style("width")) / 2;
-                that.tooltip.style("top", (event.pageY- yReduce)+"px").style("left",(event.pageX-xReduce)+"px");
+                      var tooltip = d3.select("#pyk-ultimate-tooltip");
+           var yReduce = parseInt(tooltip.style("height")) + 40;
+                var xReduce = parseInt(tooltip.style("width")) / 2;
+                tooltip.style("top", (event.pageY- yReduce)+"px").style("left",(event.pageX-xReduce)+"px");
             })
             .on("mouseout", function(){
-                that.tooltip.style("visibility", "hidden");
+                 var tooltip = d3.select("#pyk-ultimate-tooltip");
+                tooltip.style("visibility", "hidden");
             });
 
         rect.transition().duration(1000).attr("x", function(d){
