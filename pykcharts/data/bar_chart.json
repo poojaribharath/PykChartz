@@ -1,0 +1,458 @@
+[
+    {
+        "Jan": [
+            {
+                "data": [
+                    {
+                        "name": "Yellow",
+                        "val": 1,
+                        "color": "#ffbb78",
+                        "tooltip": "Jan-Yellow Tooltip"
+                    },
+                    {
+                        "name": "Orange",
+                        "val": 2,
+                        "color": "#ff7f0e",
+                        "tooltip": "Jan-Orange Tooltip"
+                    },
+                    {
+                        "name": "Red",
+                        "val": 3,
+                        "color": "#d62728",
+                        "tooltip": "Jan-Red Tooltip"
+                    },
+                    {
+                        "name": "Blue",
+                        "val": -4,
+                        "color": "#aec7e8",
+                        "tooltip": "Jan-Blue Tooltip"
+                    },
+                    {
+                        "name": "Dark Blue",
+                        "val": -4,
+                        "color": "#1f77b4",
+                        "tooltip": "Jan-Dark Blue Tooltip"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Feb": [
+            {
+                "data": [
+                    {
+                        "name": "Yellow",
+                        "val": 1,
+                        "color": "#ffbb78",
+                        "tooltip": "Feb-Yellow Tooltip"
+                    },
+                    {
+                        "name": "Orange",
+                        "val": 2,
+                        "color": "#ff7f0e",
+                        "tooltip": "Feb-Orange Tooltip"
+                    },
+                    {
+                        "name": "Red",
+                        "val": 1,
+                        "color": "#d62728",
+                        "tooltip": "Feb-Red Tooltip"
+                    },
+                    {
+                        "name": "Blue",
+                        "val": -1,
+                        "color": "#aec7e8",
+                        "tooltip": "Feb-Blue Tooltip"
+                    },
+                    {
+                        "name": "Dark Blue",
+                        "val": -4,
+                        "color": "#1f77b4",
+                        "tooltip": "Feb-Dark Blue Tooltip"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Mar": [
+            {
+                "data": [
+                    {
+                        "name": "Yellow",
+                        "val": 3,
+                        "color": "#ffbb78",
+                        "tooltip": "Mar-Yellow Tooltip"
+                    },
+                    {
+                        "name": "Orange",
+                        "val": 4,
+                        "color": "#ff7f0e",
+                        "tooltip": "Mar-Orange Tooltip"
+                    },
+                    {
+                        "name": "Red",
+                        "val": 5,
+                        "color": "#d62728",
+                        "tooltip": "Mar-Red Tooltip"
+                    },
+                    {
+                        "name": "Blue",
+                        "val": -6,
+                        "color": "#aec7e8",
+                        "tooltip": "Mar-Blue Tooltip"
+                    },
+                    {
+                        "name": "Dark Blue",
+                        "val": -4,
+                        "color": "#1f77b4",
+                        "tooltip": "Mar-Dark Blue Tooltip"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Apr": [
+            {
+                "data": [
+                    {
+                        "name": "Yellow",
+                        "val": 1,
+                        "color": "#ffbb78",
+                        "tooltip": "Apr-Yellow Tooltip"
+                    },
+                    {
+                        "name": "Orange",
+                        "val": 2,
+                        "color": "#ff7f0e",
+                        "tooltip": "Apr-Orange Tooltip"
+                    },
+                    {
+                        "name": "Red",
+                        "val": 1,
+                        "color": "#d62728",
+                        "tooltip": "Apr-Red Tooltip"
+                    },
+                    {
+                        "name": "Blue",
+                        "val": -1,
+                        "color": "#aec7e8",
+                        "tooltip": "Apr-Blue Tooltip"
+                    },
+                    {
+                        "name": "Dark Blue",
+                        "val": -4,
+                        "color": "#1f77b4",
+                        "tooltip": "Apr-Dark Blue Tooltip"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "May": [
+            {
+                "data": [
+                    {
+                        "name": "Yellow",
+                        "val": 1,
+                        "color": "#ffbb78",
+                        "tooltip": "May-Yellow Tooltip"
+                    },
+                    {
+                        "name": "Orange",
+                        "val": 2,
+                        "color": "#ff7f0e",
+                        "tooltip": "May-Orange Tooltip"
+                    },
+                    {
+                        "name": "Red",
+                        "val": 1,
+                        "color": "#d62728",
+                        "tooltip": "May-Red Tooltip"
+                    },
+                    {
+                        "name": "Blue",
+                        "val": -1,
+                        "color": "#aec7e8",
+                        "tooltip": "May-Blue Tooltip"
+                    },
+                    {
+                        "name": "Dark Blue",
+                        "val": -4,
+                        "color": "#1f77b4",
+                        "tooltip": "May-Dark Blue Tooltip"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Jun": [
+            {
+                "data": [
+                    {
+                        "name": "Yellow",
+                        "val": 1,
+                        "color": "#ffbb78",
+                        "tooltip": "Jun-Yellow Tooltip"
+                    },
+                    {
+                        "name": "Orange",
+                        "val": 2,
+                        "color": "#ff7f0e",
+                        "tooltip": "Jun-Orange Tooltip"
+                    },
+                    {
+                        "name": "Red",
+                        "val": 1,
+                        "color": "#d62728",
+                        "tooltip": "Jun-Red Tooltip"
+                    },
+                    {
+                        "name": "Blue",
+                        "val": -1,
+                        "color": "#aec7e8",
+                        "tooltip": "Jun-Blue Tooltip"
+                    },
+                    {
+                        "name": "Dark Blue",
+                        "val": -4,
+                        "color": "#1f77b4",
+                        "tooltip": "Jun-Dark Blue Tooltip"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Jul": [
+            {
+                "data": [
+                    {
+                        "name": "Yellow",
+                        "val": 1,
+                        "color": "#ffbb78",
+                        "tooltip": "Jul-Yellow Tooltip"
+                    },
+                    {
+                        "name": "Orange",
+                        "val": 2,
+                        "color": "#ff7f0e",
+                        "tooltip": "Jul-Orange Tooltip"
+                    },
+                    {
+                        "name": "Red",
+                        "val": 1,
+                        "color": "#d62728",
+                        "tooltip": "Jul-Red Tooltip"
+                    },
+                    {
+                        "name": "Blue",
+                        "val": -1,
+                        "color": "#aec7e8",
+                        "tooltip": "Jul-Blue Tooltip"
+                    },
+                    {
+                        "name": "Dark Blue",
+                        "val": -4,
+                        "color": "#1f77b4",
+                        "tooltip": "Jul-Dark Blue Tooltip"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Aug": [
+            {
+                "data": [
+                    {
+                        "name": "Yellow",
+                        "val": 1,
+                        "color": "#ffbb78",
+                        "tooltip": "Aug-Yellow Tooltip"
+                    },
+                    {
+                        "name": "Orange",
+                        "val": 2,
+                        "color": "#ff7f0e",
+                        "tooltip": "Aug-Orange Tooltip"
+                    },
+                    {
+                        "name": "Red",
+                        "val": 1,
+                        "color": "#d62728",
+                        "tooltip": "Aug-Red Tooltip"
+                    },
+                    {
+                        "name": "Blue",
+                        "val": -2,
+                        "color": "#aec7e8",
+                        "tooltip": "Aug-Blue Tooltip"
+                    },
+                    {
+                        "name": "Dark Blue",
+                        "val": -4,
+                        "color": "#1f77b4",
+                        "tooltip": "Aug-Dark Blue Tooltip"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Sep": [
+            {
+                "data": [
+                    {
+                        "name": "Yellow",
+                        "val": 3,
+                        "color": "#ffbb78",
+                        "tooltip": "Sep-Yellow Tooltip"
+                    },
+                    {
+                        "name": "Orange",
+                        "val": 4,
+                        "color": "#ff7f0e",
+                        "tooltip": "Sep-Orange Tooltip"
+                    },
+                    {
+                        "name": "Red",
+                        "val": 7,
+                        "color": "#d62728",
+                        "tooltip": "Sep-Red Tooltip"
+                    },
+                    {
+                        "name": "Blue",
+                        "val": -8,
+                        "color": "#aec7e8",
+                        "tooltip": "Sep-Blue Tooltip"
+                    },
+                    {
+                        "name": "Dark Blue",
+                        "val": -4,
+                        "color": "#1f77b4",
+                        "tooltip": "Sep-Dark Blue Tooltip"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Oct": [
+            {
+                "data": [
+                    {
+                        "name": "Yellow",
+                        "val": 9,
+                        "color": "#ffbb78",
+                        "tooltip": "Oct-Yellow Tooltip"
+                    },
+                    {
+                        "name": "Orange",
+                        "val": 8,
+                        "color": "#ff7f0e",
+                        "tooltip": "Oct-Orange Tooltip"
+                    },
+                    {
+                        "name": "Red",
+                        "val": 3,
+                        "color": "#d62728",
+                        "tooltip": "Oct-Red Tooltip"
+                    },
+                    {
+                        "name": "Blue",
+                        "val": -6,
+                        "color": "#aec7e8",
+                        "tooltip": "Oct-Blue Tooltip"
+                    },
+                    {
+                        "name": "Dark Blue",
+                        "val": -4,
+                        "color": "#1f77b4",
+                        "tooltip": "Oct-Dark Blue Tooltip"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Nov": [
+            {
+                "data": [
+                    {
+                        "name": "Yellow",
+                        "val": 2,
+                        "color": "#ffbb78",
+                        "tooltip": "Nov-Yellow Tooltip"
+                    },
+                    {
+                        "name": "Orange",
+                        "val": 3,
+                        "color": "#ff7f0e",
+                        "tooltip": "Nov-Orange Tooltip"
+                    },
+                    {
+                        "name": "Red",
+                        "val": 5,
+                        "color": "#d62728",
+                        "tooltip": "Nov-Red Tooltip"
+                    },
+                    {
+                        "name": "Blue",
+                        "val": -8,
+                        "color": "#aec7e8",
+                        "tooltip": "Nov-Blue Tooltip"
+                    },
+                    {
+                        "name": "Dark Blue",
+                        "val": -4,
+                        "color": "#1f77b4",
+                        "tooltip": "Nov-Dark Blue Tooltip"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Dec": [
+            {
+                "data": [
+                    {
+                        "name": "Yellow",
+                        "val": 8,
+                        "color": "#ffbb78",
+                        "tooltip": "Dec-Yellow Tooltip"
+                    },
+                    {
+                        "name": "Orange",
+                        "val": 6,
+                        "color": "#ff7f0e",
+                        "tooltip": "Dec-Orange Tooltip"
+                    },
+                    {
+                        "name": "Red",
+                        "val": 3,
+                        "color": "#d62728",
+                        "tooltip": "Dec-Red Tooltip"
+                    },
+                    {
+                        "name": "Blue",
+                        "val": -2,
+                        "color": "#aec7e8",
+                        "tooltip": "Dec-Blue Tooltip"
+                    },
+                    {
+                        "name": "Dark Blue",
+                        "val": -4,
+                        "color": "#1f77b4",
+                        "tooltip": "Dec-Dark Blue Tooltip"
+                    }
+                ]
+            }
+        ]
+    }
+]
