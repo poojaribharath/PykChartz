@@ -1,4 +1,3 @@
-
 PykCharts.Chord = function(options){
     this.execute = function(){
 	if(!this.validate_options()) return false;
@@ -27,14 +26,13 @@ PykCharts.Chord = function(options){
 	var that = this;
 	var h = this.options.height;
 	var w = this.options.width;
+
 	if (this.options.spinning==1)  
 	{
-	console.log ("inside if"+this.options.spinning);
 	var spinning="pyk-chord spinning";
 	}
 	else
 		var spinning="pyk-chord";
-
 	var svg = d3.select(this.options.selection)
 	    .append("svg")
 	    .attr("class", spinning)
@@ -197,3 +195,4 @@ return that.color[d.index];
 
     return this;
 }
+
