@@ -1,0 +1,210 @@
+[
+    {
+        "January": [
+            {
+                "Previous": [
+                    {
+                        "name": "Missed",
+                        "val": 12,
+                        "color": "#1E76B4",
+                        "tooltip": "Needs are a function of what other people have."
+                    },
+                    {
+                        "name": "Target",
+                        "val": 81,
+                        "color": "#2CA02C",
+                        "tooltip": "Needs are a function of what other people have."
+                    }
+                ]
+            },
+            {
+                "Current": [
+                    {
+                        "name": "Missed",
+                        "val": 33,
+                        "color": "#1E76B4",
+                        "tooltip": "The light of a hundred stars does not equal the light of the moon."
+                    },
+                    {
+                        "name": "Target",
+                        "val": 54,
+                        "color": "#2CA02C",
+                        "tooltip": "Have at you!"
+                    }
+                ]
+            },
+            {
+                "Next": [
+                    {
+                        "name": "Missed",
+                        "val": 30,
+                        "color": "#1E76B4",
+                        "tooltip": "today: A nice place to visit, but you can't stay here for long."
+                    },
+                    {
+                        "name": "Target",
+                        "val": 19,
+                        "color": "#2CA02C",
+                        "tooltip": "Needs are a function of what other people have."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "February": [
+            {
+                "Previous": [
+                    {
+                        "name": "Missed",
+                        "val": 35,
+                        "color": "#1E76B4",
+                        "tooltip": "Needs are a function of what other people have."
+                    },
+                    {
+                        "name": "Target",
+                        "val": 14,
+                        "color": "#2CA02C",
+                        "tooltip": "Needs are a function of what other people have."
+                    }
+                ]
+            },
+            {
+                "Current": [
+                    {
+                        "name": "Missed",
+                        "val": 18,
+                        "color": "#1E76B4",
+                        "tooltip": "Don't look now, but there is a multi-legged creature on your shoulder."
+                    },
+                    {
+                        "name": "Target",
+                        "val": 93,
+                        "color": "#2CA02C",
+                        "tooltip": "today: A nice place to visit, but you can't stay here for long."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "March": [
+            {
+                "Previous": [
+                    {
+                        "name": "Missed",
+                        "val": 18,
+                        "color": "#1E76B4",
+                        "tooltip": "Needs are a function of what other people have."
+                    },
+                    {
+                        "name": "Target",
+                        "val": 20,
+                        "color": "#2CA02C",
+                        "tooltip": "Have at you!"
+                    }
+                ]
+            },
+            {
+                "Current": [
+                    {
+                        "name": "Missed",
+                        "val": 30,
+                        "color": "#1E76B4",
+                        "tooltip": "Don't look now, but there is a multi-legged creature on your shoulder."
+                    },
+                    {
+                        "name": "Target",
+                        "val": 95,
+                        "color": "#2CA02C",
+                        "tooltip": "The light of a hundred stars does not equal the light of the moon."
+                    }
+                ]
+            },
+            {
+                "Next": [
+                    {
+                        "name": "Missed",
+                        "val": 26,
+                        "color": "#1E76B4",
+                        "tooltip": "Don't look now, but there is a multi-legged creature on your shoulder."
+                    },
+                    {
+                        "name": "Target",
+                        "val": 73,
+                        "color": "#2CA02C",
+                        "tooltip": "The light of a hundred stars does not equal the light of the moon."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "April": [
+            {
+                "Previous": [
+                    {
+                        "name": "Missed",
+                        "val": 44,
+                        "color": "#1E76B4",
+                        "tooltip": "today: A nice place to visit, but you can't stay here for long."
+                    },
+                    {
+                        "name": "Target",
+                        "val": 22,
+                        "color": "#2CA02C",
+                        "tooltip": "Needs are a function of what other people have."
+                    }
+                ]
+            },
+            {
+                "Current": [
+                    {
+                        "name": "Missed",
+                        "val": 16,
+                        "color": "#1E76B4",
+                        "tooltip": "The light of a hundred stars does not equal the light of the moon."
+                    },
+                    {
+                        "name": "Target",
+                        "val": 34,
+                        "color": "#2CA02C",
+                        "tooltip": "Needs are a function of what other people have."
+                    }
+                ]
+            },
+            {
+                "Next": [
+                    {
+                        "name": "Missed",
+                        "val": 8,
+                        "color": "#1E76B4",
+                        "tooltip": "Needs are a function of what other people have."
+                    },
+                    {
+                        "name": "Target",
+                        "val": 38,
+                        "color": "#2CA02C",
+                        "tooltip": "Don't look now, but there is a multi-legged creature on your shoulder."
+                    }
+                ]
+            },
+            {
+                "Predicted": [
+                    {
+                        "name": "Missed",
+                        "val": 55,
+                        "color": "#1E76B4",
+                        "tooltip": "today: A nice place to visit, but you can't stay here for long."
+                    },
+                    {
+                        "name": "Target",
+                        "val": 15,
+                        "color": "#2CA02C",
+                        "tooltip": "The light of a hundred stars does not equal the light of the moon."
+                    }
+                ]
+            }
+        ]
+    }
+]
