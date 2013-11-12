@@ -10,16 +10,23 @@ PykCharts.Choropleth = function(options){
   .domain(color_domain)
   .range(["#79F779","#6FED6F","#64E564","#5CDB5C","#52CE52","#4AC44A","#3FB53F","#37AD37","#42A142"]);
 
-  
+    //----------------------------------------------------------------------------------------
+    //1. This is the method that executes the various JS functions in the proper sequence to generate the chart
+    //----------------------------------------------------------------------------------------
+
     this.execute = function(){
+	//1.1 Validate the options passed   
 	if(!this.validate_options()) return false;
 
+		// 1.2 Preload animation
+		$(this.options.selection).html("<img src='/pykcharts-images/spinner.gif'> Loading... Please wait");
+
+		//1.3 Assign Global variable var that to access function and variable throughout   
 	var that = this;
 	var opt = this.options;
 
-	$(this.options.selection).html("<img src='/pykcharts-images/spinner.gif'> Loading... Please wait");
 
-	// Get all the data and pass to render
+	// //1.3 Read Json File Get all the data and pass to render
 	d3.json(opt.topojson, function(e, topology){
 	    d3.json(opt.state_data, function(e, state_data){
 		d3.json(opt.county_data, function(e, county_data){
@@ -29,18 +36,47 @@ PykCharts.Choropleth = function(options){
 	});
     }
 
+	//----------------------------------------------------------------------------------------
+    //2. Validate Options
+    //----------------------------------------------------------------------------------------
+ 	    this.validate_options = function(){
+	if(this.options.selection === undefined) return false;
+	if(this.options.topojson === undefined) return false;
+	if(this.options.county_data === undefined) return false;
+	if(this.options.state_data === undefined) return false;
+	return true;
+    }
+
+    //----------------------------------------------------------------------------------------	
+    //3. Assigning Attributes
+    //----------------------------------------------------------------------------------------
+    this.options = jQuery.extend({
+	width: 960,
+	height: 400,
+	scale: 5,
+	initScale: 0.6
+	//topojson//state_data//county_data//selection
+    }, options);
+
+
+    //----------------------------------------------------------------------------------------
+    //4. Render function to create the chart
+    //----------------------------------------------------------------------------------------
+   //4.1 Clear existing HTML inside Selection DIV ID
     this.render = function(t, s, c){
 	$(this.options.selection).html("");
 
+   //4.2 Assign height and width to a local variable 
 	var h = this.options.height;
 	var w = this.options.width;
 
-	// Create SVG holders for map and legends
+	//4.3 Create SVG holders for legends
 	this.legends_group = d3.select(this.options.selection).append("svg")
 	    .attr("class", "pyk-choropleth-legend-holder")
 	    .attr("height", 30)
 	    .attr("width", w);
-
+		
+	//4.4 Create SVG holders for legends
 	this.map_group = d3.select(this.options.selection).append("svg")
 	    .attr("class", "pyk-choropleth-map-holder")
 	    .attr("height", h - 100)
@@ -53,17 +89,20 @@ this.downlegend_group1 = d3.select(this.options.selection).append("svg")
 	    .attr("class", "pyk-choropleth-downlegends-holder1")
 	    .attr("height", 50)
 	    .attr("width", w);
-	// Set first parameter
+	//4.5 Set first parameter
 	var params = Object.keys(s["0"]);
 	this.param = params[0];
 
-	// Draw the elements after creating the holder
+	//4.6 Draw the elements after creating the holder
 	this.renderTooltip();
 	this.draw(t, s, c);
  $ ('body').find(" .pyk-choropleth-downlegends-holder1").hide();
 
     }
 
+    //----------------------------------------------------------------------------------------
+    //5. Render tooltip
+    //----------------------------------------------------------------------------------------
     this.renderTooltip = function(){
 	$("#choropleth-tooltip").remove();
 	this.tooltip = d3.select("body")
@@ -78,20 +117,28 @@ this.downlegend_group1 = d3.select(this.options.selection).append("svg")
 	    .text("a simple tooltip");
     }
 
-    this.draw = function(t, s, c){
+      //----------------------------------------------------------------------------------------
+    // 6.Draw function to render chart with elements: 
+    //----------------------------------------------------------------------------------------
+   this.draw = function(t, s, c){
 	// can pass any object to render the legends
 	// TODO Check if 0 will always be an ID
 	this.renderLegends(t,s,c);
+	// 6.1 render map with t= topojson data, s= states data, c= county data
 	this.renderMaps(t, s, c, function() {
 });
 	
     }
 
+    //----------------------------------------------------------------------------------------
+    // 7.Draw function to render Legends: 
+    //----------------------------------------------------------------------------------------
     this.renderLegends = function(t, s, c){
 	var that = this;
 	var legends = Object.keys(s["0"]);
 	var lWidth = this.options.width / legends.length;
 
+	// 7.1 Append clickable text to group element
 	var lText = this.legends_group.selectAll("text").data(legends);
 	lText.enter().append("text");
 	lText
@@ -121,6 +168,7 @@ $ (" .pyk-choropleth-downlegends-holder").hide();
 }		that.draw(t,s,c);
 	    });
 
+	// 7.2 Append clickable circle to group element
 	var lCircle = this.legends_group.selectAll("circle").data(legends);
 	lCircle.enter().append("circle");
 	lCircle
@@ -151,24 +199,31 @@ $ (" .pyk-choropleth-downlegends-holder1").show();
 	    });
     }
 
+    //----------------------------------------------------------------------------------------
+    // 8.Draw function to render map: 
+    //----------------------------------------------------------------------------------------
     this.renderMaps = function(t, s, c){
 	var that = this;
 	var path = d3.geo.path();
 
+    // 8.1 set scale width and height map
 	var scale = this.options.initScale * this.options.scale;
 	var height = this.options.height;
 	var width = this.options.width;
 
 	var param = this.param;
 
+    // 8.2 remove existing group before loading
 	var map_group = this.map_group;
 	this.map_group.selectAll("g").remove();
 
+    // 8.3 Append group counties and states
 	var counties_g = map_group.append("g").attr("class","counties");
 	var states_g = map_group.append("g").attr("class","states");
 
 	
-  var legend1 = this.downlegend_group1.selectAll("g.legend")
+     // 8.4 Append counties group  
+ var legend1 = this.downlegend_group1.selectAll("g.legend")
   .data(ext_color_domain)
   .enter().append("g")
   .attr("class", "legend");
@@ -250,6 +305,7 @@ $ (" .pyk-choropleth-downlegends-holder1").show();
 		that.tooltip.style("visibility", "hidden");
 	    });
 
+    // 8.4 Append state group  
 	states_g.selectAll("path")
 	    .data(topojson.feature(t, t.objects.states).features)
 	    .enter().append("path").attr("class", "state")
@@ -345,22 +401,8 @@ $ (" .pyk-choropleth-downlegends-holder1").show();
 
     }
 
-    this.validate_options = function(){
-	if(this.options.selection === undefined) return false;
-	if(this.options.topojson === undefined) return false;
-	if(this.options.county_data === undefined) return false;
-	if(this.options.state_data === undefined) return false;
-	return true;
-    }
-
-    // Setting the Defaults
-    this.options = jQuery.extend({
-	width: 960,
-	height: 400,
-	scale: 5,
-	initScale: 0.6
-	//topojson//state_data//county_data//selection
-    }, options);
-
-    return this;
+    //----------------------------------------------------------------------------------------
+    // 8. Return the Chart  
+    //----------------------------------------------------------------------------------------  
+  return this;
 };

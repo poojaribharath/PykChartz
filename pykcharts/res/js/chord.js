@@ -1,29 +1,68 @@
 PykCharts.Chord = function(options){
+
+    //----------------------------------------------------------------------------------------
+    //1. This is the method that executes the various JS functions in the proper sequence to generate the chart
+    //----------------------------------------------------------------------------------------
     this.execute = function(){
+	//1.1 Validate the options passed   
 	if(!this.validate_options()) return false;
 
+	//1.2 Assign Global variable var that to access function and variable throughout   
 	var that = this;
 
+	//1.3 Read Json File   
 	d3.json(that.options.relations, function(e, r){
+		//1.4 Set Json Read data to global varibale   
 	    that.relations = r;
 	    d3.json(that.options.frequency, function(e, f){
+		//1.4 Set Json Read data to global varibale   
 		that.frequency = f;
+		//1.5 Render Chart   
 		that.render();
 	    });
 	});
 
     }
+	
+    //----------------------------------------------------------------------------------------
+    //2. Validate Options
+    //----------------------------------------------------------------------------------------
+       this.validate_options = function(){
+	if(this.options.selection == undefined) return false;
+	if(this.options.relations == undefined) return false;
+	if(this.options.frequency == undefined) return false;
+	return true;
+    }
 
-    this.render = function(){
+    //----------------------------------------------------------------------------------------	
+    //3. Assigning Attributes
+    //----------------------------------------------------------------------------------------
+    this.options = jQuery.extend({
+	width: 700,
+	height: 500,
+    }, options);
+
+	
+    //----------------------------------------------------------------------------------------
+    //4. Render function to create the chart
+    //----------------------------------------------------------------------------------------
+	this.render = function(){
+        //4.1 get the texts contents & assign to nick variable
 	this.nicks = this.frequency.map(function(d){return d.nick;});
 		this.color = this.frequency.map(function(d){return d.color;});
-
+        //4.2 Manipulations Json data represent dataformat required by chors 
 	this.generateMatrix();
+        //4.3 Call render chors to display chord svg
 	this.renderChord();
     }
 
+	//----------------------------------------------------------------------------------------
+    //5. Render chords
+    //----------------------------------------------------------------------------------------
     this.renderChord = function(){
 	var that = this;
+	
+    //5.1 Assign height and width to a local variable because if you are manipulating with h and w then the SVG height and width will not get affected
 	var h = this.options.height;
 	var w = this.options.width;
 
@@ -33,6 +72,8 @@ PykCharts.Chord = function(options){
 	}
 	else
 		var spinning="pyk-chord";
+	
+		//5.2 Create SVG holder for the chart and the legends
 	var svg = d3.select(this.options.selection)
 	    .append("svg")
 	    .attr("class", spinning)
@@ -51,6 +92,7 @@ PykCharts.Chord = function(options){
 	    .sortSubgroups(d3.descending)
 	    .matrix(that.matrix);
 
+    //5.3 Append Group circumference to svg
 	svg.append("g").attr("class", "circumference")
 	    .selectAll("path")
 	    .data(chord.groups)
@@ -59,13 +101,11 @@ PykCharts.Chord = function(options){
 		
 
 		return that.color[d.index];
-		//return fill(d.index);
 	    })
 	    .style("stroke", function(d) {
 		
 
 		return that.color[d.index];
-		//return fill(d.index);
 	    })
 	    .attr("d", d3.svg.arc()
 		  .innerRadius(innerRadius)
@@ -118,6 +158,7 @@ $.each(st, function(i, el){
 	    };
 	}
 
+    //5.4 Append Group Chord to svg
 	svg.append("g")
 	    .attr("class", "chord")
 	    .selectAll("path")
@@ -158,6 +199,9 @@ return that.color[d.index];
     }
 
 
+    //----------------------------------------------------------------------------------------
+    // 6. Data Manipulations: 
+    //----------------------------------------------------------------------------------------
     // Data helpers
     this.generateMatrix = function(){
 	var that = this;
@@ -180,19 +224,9 @@ return that.color[d.index];
 	this.matrix = matrix;
     }
 
-    // Options: Validations & Defaults
-    this.validate_options = function(){
-	if(this.options.selection == undefined) return false;
-	if(this.options.relations == undefined) return false;
-	if(this.options.frequency == undefined) return false;
-	return true;
-    }
-
-    this.options = jQuery.extend({
-	width: 700,
-	height: 500,
-    }, options);
-
-    return this;
+    //----------------------------------------------------------------------------------------
+    // 7. Return the Chat  
+    //----------------------------------------------------------------------------------------
+  return this;
 }
 
