@@ -11,10 +11,12 @@ module.exports = function(grunt) {
 		        	'pykcharts/res/js/bubble.js', 
 		        	'pykcharts/res/js/chord.js', 
 		        	'pykcharts/res/js/choropleth.js', 
+                    'pykcharts/res/js/compare_with_circles.js',
 		        	'pykcharts/res/js/googlemap.js',
 		        	'pykcharts/res/js/river.js',
 		        	'pykcharts/res/js/treerect.js',
-		        	'pykcharts/res/js/ultimate.js'
+		        	'pykcharts/res/js/ultimate.js',
+                    'pykcharts/res/js/ultimatenegative.js'
 		        ] // source
 		      }
 		    }
@@ -27,6 +29,7 @@ module.exports = function(grunt) {
 				'distro/pykcharts.css': [
 					'pykcharts/res/css/chord.css',
 					'pykcharts/res/css/choropleth.css',
+                    'pykcharts/res/js/compare_with_circles.css',
 					'pykcharts/res/css/dc.css',
 					'pykcharts/res/css/googlemap.css',
 					'pykcharts/res/css/river.css',

@@ -1,5 +1,5 @@
-PykCharts.Ultimate = function(options){
-    this.init = function(){
+PykCharts.UltimateNegative = function(options){
+    this.execute = function(){
 	if(!this.validate_options()) return false;
 
 	var that = this;
