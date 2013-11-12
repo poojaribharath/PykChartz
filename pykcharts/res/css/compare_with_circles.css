@@ -1,0 +1,12 @@
+/* Compare with Circles */
+
+svg.pyk-compare_with_circles{font-family: Arial, sans-serif;font-size:10px;}
+svg.pyk-compare_with_circles g.axis path,svg.pyk-compare_with_circles g.axis line {fill: none;stroke:#b6b6b6;shape-rendering: crispEdges;}
+/*.tick line{fill:none;stroke:none;}*/
+svg.pyk-compare_with_circles g.tick text{fill:#999;}
+svg.pyk-compare_with_circles text.label{font-size:12px;font-weight:bold;cursor:pointer;}
+svg.pyk-compare_with_circles text.value{font-size:12px;font-weight:bold;}
+svg.pyk-compare_with_circles g.axis text {
+    font-family: sans-serif;
+    font-size: 12px;
+}

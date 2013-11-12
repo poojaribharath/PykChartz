@@ -1,0 +1,52 @@
+{
+    "name": "flare",
+    "children": [
+        {
+            "name": "scale",
+            "children": [
+                {
+                    "name": "Loyal customers",
+                    "ttip": "11.9% of your customers",
+                    "colors": "#379214",
+                    "img": "css/img/red_full.png",
+                    "size": 2105
+                },
+                {
+                    "name": "Promising customers",
+                    "ttip": "7.4% of your customers",
+                    "colors": "#91DB71",
+                    "img": "css/img/red_half.png",
+                    "size": 1316
+                },
+                {
+                    "name": "Other customers",
+                    "ttip": "17.8% of your customers",
+                    "colors": "#A8E697",
+                    "img": "css/img/red_empty.png",
+                    "size": 3151
+                },
+                {
+                    "name": "Loyal at risk",
+                    "ttip": "21.4% of your customers",
+                    "colors": "#CF4B1F",
+                    "img": "css/img/grey_full.png",
+                    "size": 3770
+                },
+                {
+                    "name": "Promising at risk",
+                    "ttip": "13.8% of your customers",
+                    "colors": "#F07E59",
+                    "img": "css/img/grey_half.png",
+                    "size": 2435
+                },
+                {
+                    "name": "Other at risk",
+                    "ttip": "27.4% of your customers",
+                    "colors": "#FAD6CA",
+                    "img": "css/img/grey_empty.png",
+                    "size": 4839
+                }
+            ]
+        }
+    ]
+}

@@ -1,352 +1,352 @@
 [
  {
-  "latitude": 66,
-  "longitude": 105,
+  "latitude": 40.72492,
+  "longitude": -73.99237,
   "count": 71,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i3.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>Bowery BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | E 1st St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>1</td></tr><tr><td>Scans</td><td>:</td><td>20</td></tr><tr><td>Purchases</td><td>:</td><td>8</td></tr><tr><td>Check-ins</td><td>:</td><td>n/a</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 122</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": -31,
-  "longitude": 43,
+  "latitude": 40.72145,
+  "longitude": -73.98384,
   "count": 58,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i2.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>Avenue B BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | Avenue B, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>2</td></tr><tr><td>Scans</td><td>:</td><td>18</td></tr><tr><td>Purchases</td><td>:</td><td>14</td></tr><tr><td>Check-ins</td><td>:</td><td>10</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 111</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": -45,
-  "longitude": -57,
+  "latitude": 40.71889, 
+  "longitude": -73.97525,
   "count": 50,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i1.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>E Houston St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | E Houston St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>3</td></tr><tr><td>Scans</td><td>:</td><td>16</td></tr><tr><td>Purchases</td><td>:</td><td>12</td></tr><tr><td>Check-ins</td><td>:</td><td>9</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 99</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": 25,
-  "longitude": 70,
+  "latitude": 40.72362,
+  "longitude": -73.98524,
   "count": 62,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i1.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>E 3rd St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | Avenue A, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>4</td></tr><tr><td>Scans</td><td>:</td><td>14</td></tr><tr><td>Purchases</td><td>:</td><td>10</td></tr><tr><td>Check-ins</td><td>:</td><td>5</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 88</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": -23,
-  "longitude": 10,
+  "latitude": 40.72219, 
+  "longitude": -73.98192,
   "count": 61,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i3.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>E 3rd St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | E 3rd St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>5</td></tr><tr><td>Scans</td><td>:</td><td>11</td></tr><tr><td>Purchases</td><td>:</td><td>8</td></tr><tr><td>Check-ins</td><td>:</td><td>n/a</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 80</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": -38,
-  "longitude": 2,
+  "latitude": 40.72067, 
+  "longitude": -73.97828,
   "count": 18,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i2.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>E 3rd St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | E 3rd St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>6</td></tr><tr><td>Scans</td><td>:</td><td>9</td></tr><tr><td>Purchases</td><td>:</td><td>6</td></tr><tr><td>Check-ins</td><td>:</td><td>6</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 75</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": -6,
-  "longitude": -71,
+  "latitude": 40.72480,
+  "longitude": -73.98439,
   "count": 51,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i2.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>E 5th St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | E 5th St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>7</td></tr><tr><td>Scans</td><td>:</td><td>6</td></tr><tr><td>Purchases</td><td>:</td><td>5</td></tr><tr><td>Check-ins</td><td>:</td><td>4</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 73</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": -56,
-  "longitude": 61,
+  "latitude": 40.72327,
+  "longitude": -73.98073,
   "count": 69,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i1.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>E 5th St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | E 5th St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>8</td></tr><tr><td>Scans</td><td>:</td><td>20</td></tr><tr><td>Purchases</td><td>:</td><td>17</td></tr><tr><td>Check-ins</td><td>:</td><td>n/a</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 122</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": -37,
-  "longitude": -30,
+  "latitude": 40.72184,
+  "longitude": -73.97732,
   "count": 2,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i3.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>E 5th St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | E 5th St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>9</td></tr><tr><td>Scans</td><td>:</td><td>20</td></tr><tr><td>Purchases</td><td>:</td><td>17</td></tr><tr><td>Check-ins</td><td>:</td><td>n/a</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 122</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": -44,
-  "longitude": -56,
+  "latitude": 40.72960,
+  "longitude": -74.00511,
   "count": 22,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i2.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>7th Ave St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | 7th Ave St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>10</td></tr><tr><td>Scans</td><td>:</td><td>18</td></tr><tr><td>Purchases</td><td>:</td><td>14</td></tr><tr><td>Check-ins</td><td>:</td><td>10</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 111</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": -3,
-  "longitude": -119,
+  "latitude": 40.74635,
+  "longitude": -73.99395,
   "count": 16,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i2.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>7th Ave BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | 7th Ave, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>11</td></tr><tr><td>Scans</td><td>:</td><td>16</td></tr><tr><td>Purchases</td><td>:</td><td>12</td></tr><tr><td>Check-ins</td><td>:</td><td>9</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 99</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": 11,
-  "longitude": 52,
+  "latitude": 40.74977,
+  "longitude": -73.99151,
   "count": 20,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i3.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>7th Ave BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | 7th Ave, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>12</td></tr><tr><td>Scans</td><td>:</td><td>14</td></tr><tr><td>Purchases</td><td>:</td><td>10</td></tr><tr><td>Check-ins</td><td>:</td><td>5</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 88</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": -83,
-  "longitude": -4,
+  "latitude": 40.72729,
+  "longitude": -73.98274,
   "count": 68,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i2.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>E 9th St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | E 9th St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>13</td></tr><tr><td>Scans</td><td>:</td><td>11</td></tr><tr><td>Purchases</td><td>:</td><td>8</td></tr><tr><td>Check-ins</td><td>:</td><td>n/a</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 80</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": 10,
-  "longitude": -177,
+  "latitude": 40.73118,
+  "longitude": -73.99188,
   "count": 86,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i2.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>E 9th St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | Broadway Ave, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>14</td></tr><tr><td>Scans</td><td>:</td><td>9</td></tr><tr><td>Purchases</td><td>:</td><td>6</td></tr><tr><td>Check-ins</td><td>:</td><td>6</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 75</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": -90,
-  "longitude": 0,
+  "latitude": 40.73414,
+  "longitude": -73.99897,
   "count": 17,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i3.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>W 9th St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | W 9th St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>15</td></tr><tr><td>Scans</td><td>:</td><td>6</td></tr><tr><td>Purchases</td><td>:</td><td>5</td></tr><tr><td>Check-ins</td><td>:</td><td>4</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 73</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": 21,
-  "longitude": -135,
+  "latitude": 40.72636,
+  "longitude": -73.97700,
   "count": 53,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i1.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>E 11th St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | E 11th St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>16</td></tr><tr><td>Scans</td><td>:</td><td>20</td></tr><tr><td>Purchases</td><td>:</td><td>17</td></tr><tr><td>Check-ins</td><td>:</td><td>n/a</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 122</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": 66,
-  "longitude": 71,
+  "latitude": 40.72983,
+  "longitude": -73.98511,
   "count": 50,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i1.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>E 11th St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | E 11th St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>17</td></tr><tr><td>Scans</td><td>:</td><td>18</td></tr><tr><td>Purchases</td><td>:</td><td>14</td></tr><tr><td>Check-ins</td><td>:</td><td>10</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 111</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": 23,
-  "longitude": -11,
+  "latitude": 40.73184,
+  "longitude": -73.98988,
   "count": 68,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i1.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>E 11th St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | E 11th St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>18</td></tr><tr><td>Scans</td><td>:</td><td>16</td></tr><tr><td>Purchases</td><td>:</td><td>12</td></tr><tr><td>Check-ins</td><td>:</td><td>9</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 99</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": 52,
-  "longitude": 149,
+  "latitude": 40.72641,
+  "longitude": -73.97308,
   "count": 62,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i2.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>E 13th St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | E 13th St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>19</td></tr><tr><td>Scans</td><td>:</td><td>14</td></tr><tr><td>Purchases</td><td>:</td><td>10</td></tr><tr><td>Check-ins</td><td>:</td><td>5</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 88</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": -62,
-  "longitude": -61,
+  "latitude": 40.73664,
+  "longitude": -73.99767,
   "count": 3,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i2.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>W 13th St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | Greenwich Towers Associates, W 13th St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>20</td></tr><tr><td>Scans</td><td>:</td><td>11</td></tr><tr><td>Purchases</td><td>:</td><td>8</td></tr><tr><td>Check-ins</td><td>:</td><td>n/a</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 80</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": 64,
-  "longitude": 59,
+  "latitude": 40.73875,
+  "longitude": -74.00230,
   "count": 66,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i1.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>W 13th St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | W 13th St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>21</td></tr><tr><td>Scans</td><td>:</td><td>9</td></tr><tr><td>Purchases</td><td>:</td><td>6</td></tr><tr><td>Check-ins</td><td>:</td><td>6</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 75</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": 86,
-  "longitude": -8,
+  "latitude": 40.74157,
+  "longitude": -74.00464,
   "count": 52,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i3.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>W 15th St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | W 15th St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>22</td></tr><tr><td>Scans</td><td>:</td><td>6</td></tr><tr><td>Purchases</td><td>:</td><td>5</td></tr><tr><td>Check-ins</td><td>:</td><td>4</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 73</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": -48,
-  "longitude": -82,
+  "latitude": 40.73979,
+  "longitude": -74.00050,
   "count": 59,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i2.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>W 15th St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | W 15th St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>23</td></tr><tr><td>Scans</td><td>:</td><td>20</td></tr><tr><td>Purchases</td><td>:</td><td>17</td></tr><tr><td>Check-ins</td><td>:</td><td>n/a</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 122</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": 73,
-  "longitude": 146,
+  "latitude": 40.73215,
+  "longitude": -73.98237,
   "count": 58,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i1.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>E 15th St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | E 15th St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>24</td></tr><tr><td>Scans</td><td>:</td><td>18</td></tr><tr><td>Purchases</td><td>:</td><td>14</td></tr><tr><td>Check-ins</td><td>:</td><td>10</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 111</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": -60,
-  "longitude": 29,
+  "latitude": 40.74158,
+  "longitude": -74.00095,
   "count": 4,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i1.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>W 17th St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | W 17th St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>25</td></tr><tr><td>Scans</td><td>:</td><td>16</td></tr><tr><td>Purchases</td><td>:</td><td>12</td></tr><tr><td>Check-ins</td><td>:</td><td>9</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 99</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": 42,
-  "longitude": -26,
+  "latitude": 40.73584,
+  "longitude": -73.98735,
   "count": 51,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i1.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>E 17th St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | E 17th St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>26</td></tr><tr><td>Scans</td><td>:</td><td>14</td></tr><tr><td>Purchases</td><td>:</td><td>10</td></tr><tr><td>Check-ins</td><td>:</td><td>5</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 88</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": -85,
-  "longitude": 172,
+  "latitude": 40.73335,
+  "longitude": -73.98142,
   "count": 67,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i3.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>E 17th St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | E 17th St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>27</td></tr><tr><td>Scans</td><td>:</td><td>11</td></tr><tr><td>Purchases</td><td>:</td><td>8</td></tr><tr><td>Check-ins</td><td>:</td><td>n/a</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 80</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": 86,
-  "longitude": 34,
+  "latitude": 40.74513,
+  "longitude": -74.00580,
   "count": 46,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i3.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>W 19th St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | W 19th St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>28</td></tr><tr><td>Scans</td><td>:</td><td>9</td></tr><tr><td>Purchases</td><td>:</td><td>6</td></tr><tr><td>Check-ins</td><td>:</td><td>6</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 75</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": 66,
-  "longitude": -99,
+  "latitude": 40.74123,
+  "longitude": -73.99636,
   "count": 30,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i3.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>W 19th St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | W 19th St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>29</td></tr><tr><td>Scans</td><td>:</td><td>6</td></tr><tr><td>Purchases</td><td>:</td><td>5</td></tr><tr><td>Check-ins</td><td>:</td><td>4</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 73</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": 81,
-  "longitude": 167,
+  "latitude": 40.73545,
+  "longitude": -73.98297,
   "count": 56,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i2.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>E 19th St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | Richard Shadick PHD, E 19th St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>30</td></tr><tr><td>Scans</td><td>:</td><td>20</td></tr><tr><td>Purchases</td><td>:</td><td>17</td></tr><tr><td>Check-ins</td><td>:</td><td>n/a</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 122</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": 31,
-  "longitude": -172,
+  "latitude": 40.74729,
+  "longitude": -74.00724,
   "count": 26,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i3.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>W 21st St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | W 21st St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>31</td></tr><tr><td>Scans</td><td>:</td><td>18</td></tr><tr><td>Purchases</td><td>:</td><td>14</td></tr><tr><td>Check-ins</td><td>:</td><td>10</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 111</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": -71,
-  "longitude": 112,
+  "latitude": 40.74396,
+  "longitude": -73.99936,
   "count": 28,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i3.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>W 21st St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | W 21st St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>32</td></tr><tr><td>Scans</td><td>:</td><td>16</td></tr><tr><td>Purchases</td><td>:</td><td>12</td></tr><tr><td>Check-ins</td><td>:</td><td>9</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 99</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": -72,
-  "longitude": -12,
+  "latitude": 40.73666,
+  "longitude": -73.98209,
   "count": 66,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i1.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>E 21st St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | E 21st St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>33</td></tr><tr><td>Scans</td><td>:</td><td>14</td></tr><tr><td>Purchases</td><td>:</td><td>10</td></tr><tr><td>Check-ins</td><td>:</td><td>5</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 88</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": -64,
-  "longitude": 74,
+  "latitude": 40.74879,
+  "longitude": -74.00691,
   "count": 43,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i2.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>W 23rd St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | 11th Ave, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>34</td></tr><tr><td>Scans</td><td>:</td><td>11</td></tr><tr><td>Purchases</td><td>:</td><td>8</td></tr><tr><td>Check-ins</td><td>:</td><td>n/a</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 80</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": -37,
-  "longitude": -127,
+  "latitude": 40.74145,
+  "longitude": -73.98949,
   "count": 73,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i2.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>E 23rd St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | E 23rd St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>35</td></tr><tr><td>Scans</td><td>:</td><td>9</td></tr><tr><td>Purchases</td><td>:</td><td>6</td></tr><tr><td>Check-ins</td><td>:</td><td>6</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 75</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": -60,
-  "longitude": 30,
+  "latitude": 40.73684,
+  "longitude": -73.97865,
   "count": 32,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i2.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>E 23rd St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | 1st Avenue, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>36</td></tr><tr><td>Scans</td><td>:</td><td>6</td></tr><tr><td>Purchases</td><td>:</td><td>5</td></tr><tr><td>Check-ins</td><td>:</td><td>4</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 73</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": 64,
-  "longitude": 150,
+  "latitude": 40.74997, 
+  "longitude": -74.00571,
   "count": 1,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i2.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>W 25th St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | Stricoff Fine Art, W 25th St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>37</td></tr><tr><td>Scans</td><td>:</td><td>20</td></tr><tr><td>Purchases</td><td>:</td><td>17</td></tr><tr><td>Check-ins</td><td>:</td><td>n/a</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 122</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": 48,
-  "longitude": 53,
+  "latitude": 40.74601,
+  "longitude": -73.99597,
   "count": 41,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i2.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>W 25th St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | W 25th St , New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>38</td></tr><tr><td>Scans</td><td>:</td><td>18</td></tr><tr><td>Purchases</td><td>:</td><td>14</td></tr><tr><td>Check-ins</td><td>:</td><td>10</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 111</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": -37,
-  "longitude": 65,
+  "latitude": 40.74311,
+  "longitude": -73.98934,
   "count": 13,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i2.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>W 25th St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | W 25th St , New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>39</td></tr><tr><td>Scans</td><td>:</td><td>16</td></tr><tr><td>Purchases</td><td>:</td><td>12</td></tr><tr><td>Check-ins</td><td>:</td><td>9</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 99</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": -43,
-  "longitude": -78,
+  "latitude": 40.74047,
+  "longitude": -73.97927,
   "count": 72,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i1.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>E 27th St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | E 27th St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>40</td></tr><tr><td>Scans</td><td>:</td><td>14</td></tr><tr><td>Purchases</td><td>:</td><td>10</td></tr><tr><td>Check-ins</td><td>:</td><td>5</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 88</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": 23,
-  "longitude": 93,
+  "latitude": 40.74360,
+  "longitude": -73.98660,
   "count": 98,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i2.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>W 27th St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | W 27th St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>41</td></tr><tr><td>Scans</td><td>:</td><td>11</td></tr><tr><td>Purchases</td><td>:</td><td>8</td></tr><tr><td>Check-ins</td><td>:</td><td>n/a</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 80</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": -18,
-  "longitude": 50,
+  "latitude": 40.74777,
+  "longitude": -73.99653,
   "count": 8,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i2.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>W 27th St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | W 27th St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>42</td></tr><tr><td>Scans</td><td>:</td><td>9</td></tr><tr><td>Purchases</td><td>:</td><td>6</td></tr><tr><td>Check-ins</td><td>:</td><td>6</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 75</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": 89,
-  "longitude": 21,
+  "latitude": 40.75374,
+  "longitude": -74.00685,
   "count": 81,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i3.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>W 29th St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | W 29th St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>43</td></tr><tr><td>Scans</td><td>:</td><td>6</td></tr><tr><td>Purchases</td><td>:</td><td>5</td></tr><tr><td>Check-ins</td><td>:</td><td>4</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 73</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": 43,
-  "longitude": 62,
+  "latitude": 40.74526,
+  "longitude": -73.98691,
   "count": 2,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i1.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>5th Ave BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | W 29th St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>44</td></tr><tr><td>Scans</td><td>:</td><td>20</td></tr><tr><td>Purchases</td><td>:</td><td>17</td></tr><tr><td>Check-ins</td><td>:</td><td>n/a</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 122</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": 66,
-  "longitude": 129,
+  "latitude": 40.73973,
+  "longitude": -73.97340,
   "count": 11,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i3.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>FDR Drive BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | FDR Drive, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>45</td></tr><tr><td>Scans</td><td>:</td><td>18</td></tr><tr><td>Purchases</td><td>:</td><td>14</td></tr><tr><td>Check-ins</td><td>:</td><td>10</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 111</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": 89,
-  "longitude": -155,
+  "latitude": 40.74300,
+  "longitude": -73.97758,
   "count": 13,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i1.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>E 31st St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | E 31st St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>46</td></tr><tr><td>Scans</td><td>:</td><td>16</td></tr><tr><td>Purchases</td><td>:</td><td>12</td></tr><tr><td>Check-ins</td><td>:</td><td>9</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 99</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": 1,
-  "longitude": 41,
+  "latitude": 40.74822,
+  "longitude": -73.98992,
   "count": 89,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i2.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>W 31st St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | W 31st St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>47</td></tr><tr><td>Scans</td><td>:</td><td>14</td></tr><tr><td>Purchases</td><td>:</td><td>10</td></tr><tr><td>Check-ins</td><td>:</td><td>5</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 88</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": -64,
-  "longitude": 30,
+  "latitude": 40.75260,
+  "longitude": -74.00043,
   "count": 75,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i3.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>W 31st St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | W 31st St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>48</td></tr><tr><td>Scans</td><td>:</td><td>11</td></tr><tr><td>Purchases</td><td>:</td><td>8</td></tr><tr><td>Check-ins</td><td>:</td><td>n/a</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 80</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": -33,
-  "longitude": -40,
+  "latitude": 40.74321,
+  "longitude": -73.97421,
   "count": 16,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i2.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>E 33rd St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | E 33rd St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>49</td></tr><tr><td>Scans</td><td>:</td><td>9</td></tr><tr><td>Purchases</td><td>:</td><td>6</td></tr><tr><td>Check-ins</td><td>:</td><td>6</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 75</td></tr></table>",
+  "marker": "../images/pin.png"
  },
  {
-  "latitude": -6,
-  "longitude": -75,
+  "latitude": 40.74495,
+  "longitude": -73.97850,
   "count": 37,
-  "tooltip": "This tooltip is a lie",
-  "marker": "/pykcharts/images/i2.png"
+  "tooltip": "<h4><table><tr><td rowspan='2' style='padding:2px;'><img src='/images/starbucks.jpg' height='40px'/></td><td>E 33rd St BillBoard</td></tr><tr><td><span style='font-size:12px;'><b>Billboard</b> | E 33rd St, New York City </span></td></tr></table></h4><table class='table table-condensed table-striped'><tr><td>Overall Rank <span style=font-size:10px;>by revenue</span></td><td>:</td><td>50</td></tr><tr><td>Scans</td><td>:</td><td>6</td></tr><tr><td>Purchases</td><td>:</td><td>5</td></tr><tr><td>Check-ins</td><td>:</td><td>4</td></tr><tr><td><b>Revenue</b></td><td>:</td><td>$ 73</td></tr></table>",
+  "marker": "../images/pin.png"
  }
 ]

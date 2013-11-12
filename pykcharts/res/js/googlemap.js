@@ -1,6 +1,12 @@
 PykCharts.GoogleHeat = function(options){
-    this.init = function(){
+    //----------------------------------------------------------------------------------------
+    //1. This is the method that executes the various JS functions in the proper sequence to generate the chart
+    //----------------------------------------------------------------------------------------
+       this.execute = function(){
+	//1.1 Validate the options passed   
 	if(!this.validate_options()) return false;
+    
+	//1.2 Fetch container div set height width   
 	this.container = $(this.options.selection);
 	this.div = $("<div>")
 	    .css("height", this.options.height + "px")
@@ -8,15 +14,41 @@ PykCharts.GoogleHeat = function(options){
 
 	this.container.append(this.div);
 
+	//1.3 Assign Global variable var that to access function and variable throughout   
 	var that = this;
 
+	// 1.4 Read Json File Get all the data and pass to render
 	$.getJSON(this.options.data, function(data){
 	    that.data = data;
 	    that.render();
 	});
     }
 
-    this.render = function(){
+	//----------------------------------------------------------------------------------------
+    //2. Validate Options
+    //----------------------------------------------------------------------------------------
+    this.validate_options = function(){
+	if(this.options.selection == undefined) return false;
+	if(this.options.data == undefined) return false;
+	return true;
+    }
+
+    //----------------------------------------------------------------------------------------	
+    //3. Assigning Attributes
+    //----------------------------------------------------------------------------------------
+    this.options = jQuery.extend({
+	width: 960,
+	height: 500,
+	center: new google.maps.LatLng(-25.363882,131.044922),
+	defaultZoom: 3,
+	tooltipZoom: 4
+
+    }, options);
+	
+    //----------------------------------------------------------------------------------------
+    //4. Render function to create the chart
+    //----------------------------------------------------------------------------------------
+   this.render = function(){
 	var that = this;
 	var div = this.div.get(0);
 
@@ -32,7 +64,10 @@ PykCharts.GoogleHeat = function(options){
 	this.setupHeat();
 	this.setupMarkers();
     }
-
+	
+    //----------------------------------------------------------------------------------------
+    //5. Set up the styles to be displayed
+    //----------------------------------------------------------------------------------------
     this.setupStyle = function(){
 	return [
 	    {
@@ -58,7 +93,10 @@ PykCharts.GoogleHeat = function(options){
 	];
     }
 
-    this.setupHeat = function(){
+     //----------------------------------------------------------------------------------------
+    //6. Set up Heat Map
+    //----------------------------------------------------------------------------------------
+   this.setupHeat = function(){
 	var pointArray = new google.maps.MVCArray(this.heatData());
 	var heatmap = new google.maps.visualization.HeatmapLayer({
 	    data: pointArray
@@ -94,6 +132,9 @@ PykCharts.GoogleHeat = function(options){
 	});
     }
 
+    //----------------------------------------------------------------------------------------
+    //7. Manuplating Data to the json format
+    //----------------------------------------------------------------------------------------
     this.heatData = function(){
 	var d = []
 	for(i in this.data){
@@ -104,21 +145,6 @@ PykCharts.GoogleHeat = function(options){
 	return d;
     }
 
-    // Defatuls and Validations for the Options
-    this.validate_options = function(){
-	if(this.options.selection == undefined) return false;
-	if(this.options.data == undefined) return false;
-	return true;
-    }
-
-    this.options = jQuery.extend({
-	width: 960,
-	height: 500,
-	center: new google.maps.LatLng(-25.363882,131.044922),
-	defaultZoom: 3,
-	tooltipZoom: 4
-
-    }, options);
-
+    
     return this;
 };

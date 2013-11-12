@@ -1,33 +1,82 @@
 PykCharts.Chord = function(options){
-    this.init = function(){
+
+    //----------------------------------------------------------------------------------------
+    //1. This is the method that executes the various JS functions in the proper sequence to generate the chart
+    //----------------------------------------------------------------------------------------
+    this.execute = function(){
+	//1.1 Validate the options passed   
 	if(!this.validate_options()) return false;
 
+	//1.2 Assign Global variable var that to access function and variable throughout   
 	var that = this;
 
+	//1.3 Read Json File   
 	d3.json(that.options.relations, function(e, r){
+		//1.4 Set Json Read data to global varibale   
 	    that.relations = r;
 	    d3.json(that.options.frequency, function(e, f){
+		//1.4 Set Json Read data to global varibale   
 		that.frequency = f;
+		//1.5 Render Chart   
 		that.render();
 	    });
 	});
 
     }
+	
+    //----------------------------------------------------------------------------------------
+    //2. Validate Options
+    //----------------------------------------------------------------------------------------
+       this.validate_options = function(){
+	if(this.options.selection == undefined) return false;
+	if(this.options.relations == undefined) return false;
+	if(this.options.frequency == undefined) return false;
+	return true;
+    }
 
-    this.render = function(){
+    //----------------------------------------------------------------------------------------	
+    //3. Assigning Attributes
+    //----------------------------------------------------------------------------------------
+    this.options = jQuery.extend({
+	width: 700,
+	height: 500,
+    }, options);
+
+	
+    //----------------------------------------------------------------------------------------
+    //4. Render function to create the chart
+    //----------------------------------------------------------------------------------------
+	this.render = function(){
+        //4.1 get the texts contents & assign to nick variable
 	this.nicks = this.frequency.map(function(d){return d.nick;});
+		this.color = this.frequency.map(function(d){return d.color;});
+        //4.2 Manipulations Json data represent dataformat required by chors 
 	this.generateMatrix();
+        //4.3 Call render chors to display chord svg
 	this.renderChord();
     }
 
+	//----------------------------------------------------------------------------------------
+    //5. Render chords
+    //----------------------------------------------------------------------------------------
     this.renderChord = function(){
 	var that = this;
+	
+    //5.1 Assign height and width to a local variable because if you are manipulating with h and w then the SVG height and width will not get affected
 	var h = this.options.height;
 	var w = this.options.width;
 
+	if (this.options.spinning==1)  
+	{
+	var spinning="pyk-chord spinning";
+	}
+	else
+		var spinning="pyk-chord";
+	
+		//5.2 Create SVG holder for the chart and the legends
 	var svg = d3.select(this.options.selection)
 	    .append("svg")
-	    .attr("class", "pyk-chord spinning")
+	    .attr("class", spinning)
 	    .attr("width", w)
 	    .attr("height", h)
 	    .append("g")
@@ -43,15 +92,20 @@ PykCharts.Chord = function(options){
 	    .sortSubgroups(d3.descending)
 	    .matrix(that.matrix);
 
+    //5.3 Append Group circumference to svg
 	svg.append("g").attr("class", "circumference")
 	    .selectAll("path")
 	    .data(chord.groups)
 	    .enter().append("path")
 	    .style("fill", function(d) {
-		return fill(d.index);
+		
+
+		return that.color[d.index];
 	    })
 	    .style("stroke", function(d) {
-		return fill(d.index);
+		
+
+		return that.color[d.index];
 	    })
 	    .attr("d", d3.svg.arc()
 		  .innerRadius(innerRadius)
@@ -62,6 +116,10 @@ PykCharts.Chord = function(options){
 
 	function fade(opacity) {
 	    return function(g, i) {
+            var dt;
+		  var st = new Array();
+var ust = [];
+
 		if(opacity == 0){
 		    $(".spinning").css("-webkit-animation-play-state", "paused");
 		    $(".spinning").css("animation-play-state", "paused");
@@ -70,26 +128,52 @@ PykCharts.Chord = function(options){
 		    $(".spinning").css("animation-play-state", "runnin");
 		}
 		svg.selectAll("g.chord path")
-		    .filter(function(d) {
+		    .filter(function(d,j) {
+                dt=d.target.index;
+				st[j]=d.source.index
+
 			return d.source.index != i && d.target.index != i;
 		    })
 		    .transition()
 		    .style("opacity", opacity);
+			
+			    svg.selectAll("g.chordname text")
+			.filter(function(d,j) {
+
+				if (i == dt || i == (dt-1) || i == (dt-2) || i == (dt-3) || i == (dt-4) || i == (dt-5) || i == (dt-6) || i == (dt-7) || i == (dt-8) || i == (dt-9))
+				{		
+$.each(st, function(i, el){
+    if($.inArray(el, ust) === -1) ust.push(el);
+});
+				
+				return d.index != i && d.index != ust[0]&& d.index != ust[1]&& d.index != ust[2] && d.index != ust[3] && d.index != ust[4] && d.index != ust[5] && d.index != ust[6] && d.index != ust[7] && d.index != ust[8] && d.index != ust[9] ;
+
+				}
+				
+			return d.index != i && d.index != dt && d.index != (dt-1) && d.index != (dt-2) && d.index != (dt-3) && d.index != (dt-4) && d.index != (dt-5)&& d.index != (dt-6) && d.index != (dt-7) && d.index != (dt-8) && d.index != (dt-9);
+        })
+      .transition()
+        .style("opacity", opacity);
+		
 	    };
 	}
 
+    //5.4 Append Group Chord to svg
 	svg.append("g")
 	    .attr("class", "chord")
 	    .selectAll("path")
 	    .data(chord.chords)
 	    .enter().append("path")
 	    .style("fill", function(d) {
-		return fill(d.target.index);
+
+		return that.color[d.target.index];
+
+		//return fill(d.target.index);
 	    })
 	    .attr("d", d3.svg.chord().radius(innerRadius))
 	    .style("opacity", 1);
 
-	var ticks = svg.append("svg:g")
+	var ticks = svg.append("svg:g").attr("class", "chordname")
 	    .selectAll("g")
 	    .data(chord.groups)
 	    .enter().append("svg:g")
@@ -100,6 +184,9 @@ PykCharts.Chord = function(options){
 
 	ticks.append("svg:text").attr("x", 8)
 	    .attr("dy", ".35em")
+		        .attr("fill", function(d) {
+return that.color[d.index];
+	    })
 	    .attr("text-anchor", function(d) {
 		return d.angle > Math.PI ? "end" : null;
 	    })
@@ -112,6 +199,9 @@ PykCharts.Chord = function(options){
     }
 
 
+    //----------------------------------------------------------------------------------------
+    // 6. Data Manipulations: 
+    //----------------------------------------------------------------------------------------
     // Data helpers
     this.generateMatrix = function(){
 	var that = this;
@@ -134,18 +224,9 @@ PykCharts.Chord = function(options){
 	this.matrix = matrix;
     }
 
-    // Options: Validations & Defaults
-    this.validate_options = function(){
-	if(this.options.selection == undefined) return false;
-	if(this.options.relations == undefined) return false;
-	if(this.options.frequency == undefined) return false;
-	return true;
-    }
-
-    this.options = jQuery.extend({
-	width: 850,
-	height: 700,
-    }, options);
-
-    return this;
+    //----------------------------------------------------------------------------------------
+    // 7. Return the Chat  
+    //----------------------------------------------------------------------------------------
+  return this;
 }
+
