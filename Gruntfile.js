@@ -2,42 +2,40 @@ module.exports = function(grunt) {
 
 	grunt.initConfig({
 
+		pkg: grunt.file.readJSON('package.json'),
+
+		js_src_path: 'pykcharts/res/js',
+		js_distro_path: "distro",
+		css_src_path: "pykcharts/res/css",
+		css_distro_path: "distro",
+
+		concat: {
+			js: {
+				src: ['<%= js_src_path %>/pykcharts.js', '<%= js_src_path %>/*.js'],
+				dest: '<%= js_distro_path %>/pykcharts.<%= pkg.version %>.js'
+			},
+			css: {
+				src: ['<%= css_src_path %>/*.css'],
+				dest: '<%= css_distro_path %>/pykcharts.<%= pkg.version %>.css'	
+			}
+		},
+
 		uglify: {
 			my_target: {
 		      files: {
-		        'distro/pykcharts.min.js': // destination
-		        [
-		        	'pykcharts/res/js/pykcharts.js', 
-		        	'pykcharts/res/js/chord.js', 
-		        	'pykcharts/res/js/choropleth.js', 
-		        	'pykcharts/res/js/googlemap.js', 
-		        	'pykcharts/res/js/river.js',
-		        	'pykcharts/res/js/ultimate.js'
-		        ] // source
+		        '<%= js_distro_path %>/pykcharts.<%= pkg.version %>.min.js': // destination
+		        ['<%= js_distro_path %>/pykcharts.<%= pkg.version %>.js'] // source
 		      }
-		    }
+		   }
 		},
 
 		cssmin: {
-
-			combine: {
-				files: {
-				'distro/pykcharts.css': [
-					'pykcharts/res/css/chord.css',
-					'pykcharts/res/css/choropleth.css',
-					'pykcharts/res/css/dc.css',
-					'pykcharts/res/css/googlemap.css',
-					'pykcharts/res/css/river.css',
-					'pykcharts/res/css/ultimate.css'
-					]
-				}
-			},
 			minify: {
 				expand: true,
-				cwd: 'distro/',
-				src: ['pykcharts.css', '!*.min.css'],
-				dest: 'distro/',
-				ext: '.min.css'
+				cwd: '<%= css_distro_path %>/',
+				src: ['pykcharts.<%= pkg.version %>.css', '!*.min.css'],
+				dest: '<%= css_distro_path %>/',
+				ext: '.<%= pkg.version %>.min.css'
 			}
 		},
 
@@ -46,17 +44,16 @@ module.exports = function(grunt) {
 		      files: ['pykcharts/res/css/*.css', 'pykcharts/res/js/*.js'],
 		      tasks: ['build'],
 		    },
-		},
-		clean: ["distro/pykcharts.css"]
+		}
 
 	});
 
+	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-clean');
-
-	grunt.registerTask('build', ['uglify', 'cssmin', 'clean']);
+	
+	grunt.registerTask('build', ['concat', 'uglify', 'cssmin']);
 
 	grunt.event.on('watch', function(action, filepath) {
 	  grunt.log.writeln(filepath + ' has ' + action);
