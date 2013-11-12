@@ -27,9 +27,10 @@ module.exports = function(grunt) {
 			combine: {
 				files: {
 				'distro/pykcharts.css': [
-					'pykcharts/res/css/chord.css',
+					'pykcharts/res/css/bubble.css',
+                    'pykcharts/res/css/chord.css',
 					'pykcharts/res/css/choropleth.css',
-                    'pykcharts/res/js/compare_with_circles.css',
+                    'pykcharts/res/css/compare_with_circles.css',
 					'pykcharts/res/css/dc.css',
 					'pykcharts/res/css/googlemap.css',
 					'pykcharts/res/css/river.css',
