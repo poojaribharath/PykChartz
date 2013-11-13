@@ -1,62 +1,87 @@
+/* jslint node: true */
 module.exports = function(grunt) {
 
-	grunt.initConfig({
+    'use strict';
 
-		pkg: grunt.file.readJSON('package.json'),
+    grunt.initConfig({
 
-		js_src_path: 'pykcharts/res/js',
-		js_distro_path: "distro",
-		css_src_path: "pykcharts/res/css",
-		css_distro_path: "distro",
+        pkg: grunt.file.readJSON('package.json'),
 
-		concat: {
-			js: {
-				src: ['<%= js_src_path %>/pykcharts.js', '<%= js_src_path %>/*.js'],
-				dest: '<%= js_distro_path %>/pykcharts.<%= pkg.version %>.js'
-			},
-			css: {
-				src: ['<%= css_src_path %>/*.css'],
-				dest: '<%= css_distro_path %>/pykcharts.<%= pkg.version %>.css'	
-			}
-		},
+        js_src_path: 'pykcharts/res/js',
+        js_distro_path: 'distro',
+        css_src_path: 'pykcharts/res/css',
+        css_distro_path: 'distro',
 
-		uglify: {
-			my_target: {
-		      files: {
-		        '<%= js_distro_path %>/pykcharts.<%= pkg.version %>.min.js': // destination
-		        ['<%= js_distro_path %>/pykcharts.<%= pkg.version %>.js'] // source
-		      }
-		   }
-		},
+        concat: {
+            'js': {
+                'src': ['<%= js_src_path %>/pykcharts.js', '<%= js_src_path %>/*.js'],
+                'dest': '<%= js_distro_path %>/pykcharts.<%= pkg.version %>.js'
+            },
+            'css': {
+                'src': ['<%= css_src_path %>/*.css'],
+                'dest': '<%= css_distro_path %>/pykcharts.<%= pkg.version %>.css'
+            }
+        },
 
-		cssmin: {
-			minify: {
-				expand: true,
-				cwd: '<%= css_distro_path %>/',
-				src: ['pykcharts.<%= pkg.version %>.css', '!*.min.css'],
-				dest: '<%= css_distro_path %>/',
-				ext: '.<%= pkg.version %>.min.css'
-			}
-		},
+        uglify: {
+            'my_target': {
+                'files': {
+                '<%= js_distro_path %>/pykcharts.<%= pkg.version %>.min.js': // destination
+                ['<%= js_distro_path %>/pykcharts.<%= pkg.version %>.js'] // source
+                }
+            }
+        },
 
-		watch: {
-		    src: {
-		      files: ['pykcharts/res/css/*.css', 'pykcharts/res/js/*.js'],
-		      tasks: ['build'],
-		    },
-		}
+        cssmin: {
+            'minify': {
+                'expand': true,
+                'cwd': '<%= css_distro_path %>/',
+                'src': ['pykcharts.<%= pkg.version %>.css', '!*.min.css'],
+                dest: '<%= css_distro_path %>/',
+                ext: '.<%= pkg.version %>.min.css'
+            }
+        },
 
-	});
+        watch: {
+            src: {
+                files: ['<%= css_src_path %>/*.css', '<%= js_src_path %>/*.js'],
+                tasks: ['build'],
+            },
+        },
 
-	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	
-	grunt.registerTask('build', ['concat', 'uglify', 'cssmin']);
+        jshint: {
+            all: ['Gruntfile.js'] //, '<%= js_src_path %>/*.js']
+        },
 
-	grunt.event.on('watch', function(action, filepath) {
-	  grunt.log.writeln(filepath + ' has ' + action);
-	});
+        clean: {
+            // Clean any pre-commit hooks in .git/hooks directory
+            hooks: ['.git/hooks/pre-commit']
+        },
 
-}
+        // Run shell commands
+        shell: {
+            hooks: {
+            // Copy the project's pre-commit hook into .git/hooks
+            command: 'cp git-hooks/pre-commit .git/hooks/pre-commit'
+            }
+        }
+    });
+
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-shell');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+
+    // Clean the .git/hooks/pre-commit file then copy in the latest version
+    grunt.registerTask('hookmeup', ['clean:hooks', 'shell:hooks']);
+    //build task
+    grunt.registerTask('build', ['concat', 'uglify', 'cssmin', 'hookmeup']);
+
+    grunt.event.on('watch', function(action, filepath) {
+        grunt.log.writeln(filepath + ' has ' + action);
+    });
+
+};
