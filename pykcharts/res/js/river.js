@@ -327,7 +327,7 @@ PykCharts.River = function(options){
                     var tooltip = d3.select("#river-tooltip");
                     var yReduce = parseInt(tooltip.style("height")) + 40;
                     var xReduce = parseInt(tooltip.style("width")) / 2;
-                    tooltip.style("top", (event.pageY- yReduce)+"px").style("left",(event.pageX-xReduce)+"px");
+                    tooltip.style("top", (d3.event.pageY- yReduce)+"px").style("left",(d3.event.pageX-xReduce)+"px");
                 })
                 .on("mouseout", function(){
                     var tooltip = d3.select("#river-tooltip");
