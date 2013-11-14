@@ -14,7 +14,7 @@ PykCharts.BubblePack = function (options) {
             that.renderTooltip();
 
         });
-    }
+    };
 
 
     //----------------------------------------------------------------------------------------
@@ -74,7 +74,7 @@ PykCharts.BubblePack = function (options) {
             //	.on("mouseover", function(d){return   console.log("tooltip:" + d.tip);})
 
             .on("mousemove", function () {
-                return that.tooltip.style("top", (event.pageY - 10) + "px").style("left", (event.pageX + 10) + "px");
+                return that.tooltip.style("top", (d3.event.pageY - 10) + "px").style("left", (d3.event.pageX + 10) + "px");
             })
 
             .on("mouseout", function () {
@@ -95,7 +95,7 @@ PykCharts.BubblePack = function (options) {
 
         // Returns a flattened hierarchy containing all leaf nodes under the root.
         function classes(root) {
-            var classes = [];
+            var classesArray = [];
 
             function recurse(name, node) {
                 if (node.children) node.children.forEach(function (child) {
@@ -106,7 +106,7 @@ PykCharts.BubblePack = function (options) {
                     console.log("ttip:" + node.ttip);
                     console.log("color:" + node.colors);
 
-                    classes.push({
+                    classesArray.push({
                         packageName: name,
                         className: node.name,
                         value: node.size,
@@ -117,15 +117,15 @@ PykCharts.BubblePack = function (options) {
             }
 
             recurse(null, root);
-            console.log("classes:" + classes.ttip);
+            console.log("classes:" + classesArray);
             return {
-                children: classes
+                children: classesArray
             };
         }
 
         d3.select(self.frameElement).style("height", diameter + "px");
 
-    }
+    };
 
 
     //----------------------------------------------------------------------------------------
@@ -146,5 +146,5 @@ PykCharts.BubblePack = function (options) {
             .style("border-radius", "5px")
             .text("a simple tooltip");
 
-    }
-}
+    };
+};

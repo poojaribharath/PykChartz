@@ -1,3 +1,4 @@
+/*jshint -W083 */
 PykCharts.compare_with_circles = function (options) {
 
     function truncate(str, maxLength, suffix) {
@@ -57,17 +58,17 @@ PykCharts.compare_with_circles = function (options) {
             var g = svg.append("g").attr("class", "first row");
 
             var circles = g.selectAll("circle")
-                .data(data[j]['test'])
+                .data(data[j].test)
                 .enter()
                 .append("circle");
 
             var text = g.selectAll("text")
-                .data(data[j]['test'])
+                .data(data[j].test)
                 .enter()
                 .append("text");
 
             var rScale = d3.scale.linear()
-                .domain([0, d3.max(data[j]['test'], function (d) {
+                .domain([0, d3.max(data[j].test, function (d) {
                     return d[1];
                 })])
                 .range([2, 12]);
@@ -102,13 +103,13 @@ PykCharts.compare_with_circles = function (options) {
                 .attr("y", j * 30 + 35)
                 .attr("x", width + 20)
                 .attr("class", "label")
-                .text(truncate(data[j]['name'], 30, "..."))
+                .text(truncate(data[j].name, 30, "..."))
                 .style("fill", function (d) {
                     return c(j);
                 })
                 .on("mouseover", mouseover)
                 .on("mouseout", mouseout);
-        };
+        }
 
         function mouseover(p) {
             var g = d3.select(this).node().parentNode;
@@ -123,4 +124,4 @@ PykCharts.compare_with_circles = function (options) {
         }
     });
 
-}
+};

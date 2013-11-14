@@ -13,19 +13,19 @@ module.exports = function(grunt) {
         css_distro_path: 'distro',
 
         concat: {
-            'js': {
-                'src': ['<%= js_src_path %>/pykcharts.js', '<%= js_src_path %>/*.js'],
-                'dest': '<%= js_distro_path %>/pykcharts.<%= pkg.version %>.js'
+            js: {
+                src: ['<%= js_src_path %>/pykcharts.js', '<%= js_src_path %>/*.js'],
+                dest: '<%= js_distro_path %>/pykcharts.<%= pkg.version %>.js'
             },
-            'css': {
-                'src': ['<%= css_src_path %>/*.css'],
-                'dest': '<%= css_distro_path %>/pykcharts.<%= pkg.version %>.css'
+            css: {
+                src: ['<%= css_src_path %>/*.css'],
+                dest: '<%= css_distro_path %>/pykcharts.<%= pkg.version %>.css'
             }
         },
 
         uglify: {
-            'my_target': {
-                'files': {
+            my_target: {
+                files: {
                 '<%= js_distro_path %>/pykcharts.<%= pkg.version %>.min.js': // destination
                 ['<%= js_distro_path %>/pykcharts.<%= pkg.version %>.js'] // source
                 }
@@ -33,10 +33,10 @@ module.exports = function(grunt) {
         },
 
         cssmin: {
-            'minify': {
-                'expand': true,
-                'cwd': '<%= css_distro_path %>/',
-                'src': ['pykcharts.<%= pkg.version %>.css', '!*.min.css'],
+            minify: {
+                expand: true,
+                cwd: '<%= css_distro_path %>/',
+                src: ['pykcharts.<%= pkg.version %>.css', '!*.min.css'],
                 dest: '<%= css_distro_path %>/',
                 ext: '.<%= pkg.version %>.min.css'
             }
@@ -50,7 +50,7 @@ module.exports = function(grunt) {
         },
 
         jshint: {
-            all: ['Gruntfile.js'] //, '<%= js_src_path %>/*.js']
+            all: ['Gruntfile.js', '<%= js_src_path %>/*.js']
         },
 
         clean: {

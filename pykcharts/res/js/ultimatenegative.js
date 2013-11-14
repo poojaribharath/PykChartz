@@ -1,3 +1,5 @@
+/* jshint -W083 */
+/*jshint laxcomma:true */
 PykCharts.UltimateNegative = function (options) {
     //----------------------------------------------------------------------------------------
     //1. This is the method that executes the various JS functions in the proper sequence to generate the chart
@@ -20,19 +22,19 @@ PykCharts.UltimateNegative = function (options) {
             // Render Chart with the available data
             that.render();
         });
-    }
+    };
 
     //----------------------------------------------------------------------------------------
     //2. Validate Options
     //----------------------------------------------------------------------------------------
     this.validate_options = function () {
-        if (this.options.selection == undefined) return false;
-        if (this.options.data == undefined) return false;
+        if (this.options.selection === undefined) return false;
+        if (this.options.data === undefined) return false;
         if (this.options.svg_width < 300) return false;
         return true;
-    }
+    };
 
-    //----------------------------------------------------------------------------------------	
+    //----------------------------------------------------------------------------------------  
     //3. Assigning Attributes
     //----------------------------------------------------------------------------------------
 
@@ -83,7 +85,7 @@ PykCharts.UltimateNegative = function (options) {
             .attr("transform", "translate(0 ," + height_translate + ")")
             .attr("class", "barchart")
             .attr("height", h)
-            .attr("width", w)
+            .attr("width", w);
 
         //4.4 Add other elements to the SVG Holder
         this.barchartg.append("g").attr("class", "yaxis");
@@ -113,15 +115,15 @@ PykCharts.UltimateNegative = function (options) {
         // Render elements
         this.renderTooltip();
         this.draw();
-    }
+    };
 
     //----------------------------------------------------------------------------------------
     // 5. Get the name of parameter for legends
     //----------------------------------------------------------------------------------------
     this.getParameters = function () {
         var that = this;
-        var p = []
-        for (i in that.the_layers) {
+        var p = [];
+        for (var i in that.the_layers) {
             if (!that.the_layers[i].name) continue;
             var name = that.the_layers[i].name;
             var color = that.the_layers[i].values[0].color;
@@ -132,13 +134,13 @@ PykCharts.UltimateNegative = function (options) {
         }
         return p;
 
-    }
+    };
 
     //----------------------------------------------------------------------------------------
     // 5.Filtering on click 
     //----------------------------------------------------------------------------------------
     this.onlyFilter = function (f) {
-        var index = this.options.filterList.indexOf(f)
+        var index = this.options.filterList.indexOf(f);
         if (this.options.filterList.length === 1 && index != -1) {
             // if its the only item on the list, get rid of it
             this.options.filterList = [];
@@ -148,20 +150,20 @@ PykCharts.UltimateNegative = function (options) {
             this.options.filterList.push(f);
         }
         this.draw();
-    }
+    };
 
     //----------------------------------------------------------------------------------------
     // 6.Toggle Filter back to the original value 
     //----------------------------------------------------------------------------------------
     this.toggleFilter = function (f) {
-        var index = this.options.filterList.indexOf(f)
+        var index = this.options.filterList.indexOf(f);
         if (index === -1) {
             this.options.filterList.push(f);
         } else {
             this.options.filterList.splice(index, 1);
         }
         this.draw();
-    }
+    };
 
 
     //----------------------------------------------------------------------------------------
@@ -183,13 +185,13 @@ PykCharts.UltimateNegative = function (options) {
                 return "translate(" + (w - (i * 80) - 100) + ", 0)";
             });
 
-        for (i in params) {
+        for (var i in params) {
             var g = d3.select(legendGroups[0][i]);
             var p = params[i];
 
-            var texts = g.selectAll("text").data([p])
+            var texts = g.selectAll("text").data([p]);
 
-            texts.enter().append("text")
+            texts.enter().append("text");
 
             texts.text(function (d) {
                 return p.name;
@@ -202,7 +204,7 @@ PykCharts.UltimateNegative = function (options) {
                     that.toggleFilter(d.name);
                 });
 
-            var circles = g.selectAll("circle").data([p])
+            var circles = g.selectAll("circle").data([p]);
             circles.enter().append("circle");
 
             circles
@@ -213,15 +215,15 @@ PykCharts.UltimateNegative = function (options) {
                 .attr("style", function (d) {
                     var fillColor = (that.options.filterList.indexOf(d.name) === -1) ? "#fff" : d.color;
                     return "fill: " + fillColor + "; stroke-width: 3px; stroke:" + d.color;
-                })
+                });
 
         }
         // TODO Make legends
-    }
+    };
 
     this.getGroups = function () {
         var groups = {};
-        for (i in this.the_bars) {
+        for (var i in this.the_bars) {
             var bar = this.the_bars[i];
             if (!bar.id) continue;
             if (groups[bar.group]) {
@@ -231,7 +233,7 @@ PykCharts.UltimateNegative = function (options) {
             }
         }
         return groups;
-    }
+    };
 
     //----------------------------------------------------------------------------------------
     // 8. Rendering Chart: 
@@ -251,12 +253,12 @@ PykCharts.UltimateNegative = function (options) {
             return d.values;
         })(layers);
 
-        var yValues = []
+        var yValues = [];
         layers.map(function (e, i) { // Get all values to create scale
             for (i in e.values) {
                 var d = e.values[i];
                 yValues.push(d.y + d.y0); // Adding up y0 and y to get total height
-                //	console.log(("dyz="+d.y +"dy0z"+ d.y0));
+                //  console.log(("dyz="+d.y +"dy0z"+ d.y0));
             }
         });
 
@@ -276,12 +278,12 @@ PykCharts.UltimateNegative = function (options) {
             ,
             x = d3.scale.ordinal()
                 .domain(['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'])
-                .rangeRoundBands([margin, w - margin], .1)
+                .rangeRoundBands([margin, w - margin], 0.1)
 
             ,
             y = d3.scale.linear()
-                .range([h - margin, 0 + margin])
-            y.domain([-v0, v0])
+                .range([h - margin, 0 + margin]);
+            y.domain([-v0, v0]);
 
             //,xAxis = d3.svg.axis().scale(x).orient("bottom").tickSize(6, 0)
             //,yAxis = d3.svg.axis().scale(y).orient("left")
@@ -320,18 +322,18 @@ PykCharts.UltimateNegative = function (options) {
             .attr("dy", "2px")
             .attr("dx", "20px")
             .attr("transform", function (d) {
-                return "rotate(90)"
-            });;
+                return "rotate(90)";
+            });
 
 
         var group_label_data = [];
-        for (i in groups) {
+        for (var i in groups) {
             var g = groups[i];
-            var x = xScale(g[0]);
+            var xpos = xScale(g[0]);
             var totalWidth = xScale.rangeBand() * g.length + that.options.box_width;
-            var x = x + (totalWidth / 2);
+            xpos = xpos + (totalWidth / 2);
             group_label_data.push({
-                x: x,
+                x: xpos,
                 name: i
             });
         }
@@ -351,7 +353,7 @@ PykCharts.UltimateNegative = function (options) {
                 });
         }
 
-        var bars = this.chart_group.selectAll("g.bars").data(this.barStack(layers))
+        var bars = this.chart_group.selectAll("g.bars").data(this.barStack(layers));
 
         bars.enter().append("g")
             .attr("class", "bars");
@@ -359,7 +361,7 @@ PykCharts.UltimateNegative = function (options) {
 
         var rect = bars.selectAll("rect")
             .data(function (d) {
-                return d.values
+                return d.values;
             });
 
         rect.enter().append("g.barchart:rect")
@@ -374,7 +376,7 @@ PykCharts.UltimateNegative = function (options) {
             .on("mousemove", function () {
                 var yReduce = parseInt(that.tooltip.style("height")) + 40;
                 var xReduce = parseInt(that.tooltip.style("width")) / 2;
-                that.tooltip.style("top", (event.pageY - yReduce) + "px").style("left", (event.pageX - xReduce) + "px");
+                that.tooltip.style("top", (d3.event.pageY - yReduce) + "px").style("left", (d3.event.pageX - xReduce) + "px");
             })
             .on("mouseout", function () {
                 that.tooltip.style("visibility", "hidden");
@@ -395,15 +397,13 @@ PykCharts.UltimateNegative = function (options) {
         })
 
         .attr("y", function (d) {
-            return y(d.y0)
+            return y(d.y0);
         })
 
         .attr("height", function (d) {
             return (Math.abs(y(0) - y(d.y)));
         });
-
-
-    }
+    };
 
 
     //----------------------------------------------------------------------------------------
@@ -424,20 +424,20 @@ PykCharts.UltimateNegative = function (options) {
 
         this.renderLegends();
         this.renderChart();
-    }
+    };
 
     this.filterData = function (data) {
         var params = this.options.filterList;
 
-        for (i in data) {
+        for (var i in data) {
             var group = data[i];
-            for (j in group) {
+            for (var j in group) {
                 var bars = group[j];
-                for (k in bars) {
+                for (var k in bars) {
                     var bar = bars[k];
-                    for (l in bar) {
+                    for (var l in bar) {
                         var slabs = bar[l];
-                        for (m in slabs) {
+                        for (var m in slabs) {
                             var slab = slabs[m];
                             if (params.indexOf(slab.name) == -1) {
                                 slab.val = 0;
@@ -449,7 +449,7 @@ PykCharts.UltimateNegative = function (options) {
             }
         }
         return data;
-    }
+    };
 
     //----------------------------------------------------------------------------------------
     // 10.Render tooltip: 
@@ -466,7 +466,7 @@ PykCharts.UltimateNegative = function (options) {
             .style("box-shadow", "0 0 10px #000")
             .style("border-radius", "5px")
             .text("a simple tooltip");
-    }
+    };
 
     //----------------------------------------------------------------------------------------
     // 10.Data Manuplation
@@ -478,26 +478,25 @@ PykCharts.UltimateNegative = function (options) {
     // Docs - https://github.com/mbostock/d3/wiki/Stack-Layout#wiki-values
 
     this.barStack = function (dz) {
-        var d = new Array()
+        var d = [];
 
         console.log("changed input=" + (dz.length));
         console.log("checking....dzz.=" + (JSON.stringify(dz)));
 
 
-        var l = dz.length
+        var l = dz.length;
         console.log("length=" + l);
         dz.forEach(function (dz) {
             console.log(">>>>>>>>>>>.=" + (JSON.stringify(dz.values)));
             d.push(
                 dz.values
             );
-
-        })
+        });
         console.log("~~~~~~~~~~~=" + (JSON.stringify(d)));
-        var l = d[0].length
+        l = d[0].length;
         console.log("length=" + l);
 
-        var l = d[0].length
+        l = d[0].length;
         console.log("length====***=" + l);
         while (l--) {
             var posBase = 0,
@@ -507,30 +506,30 @@ PykCharts.UltimateNegative = function (options) {
                 console.log("starting,,posBase=" + posBase);
                 console.log("starting,,negBase=" + negBase);
 
-                d = d[l]
-                d.size = Math.abs(d.y)
+                d = d[l];
+                d.size = Math.abs(d.y);
                 console.log("dy=" + d.y);
                 if (d.y < 0) {
                     console.log("if====*** negBase=" + negBase);
-                    d.y0 = negBase
-                    negBase -= d.size
+                    d.y0 = negBase;
+                    negBase -= d.size;
                     console.log("if====*** y0=" + d.y0);
                 } else {
                     console.log("else====*** posBase=" + posBase);
-                    d.y0 = posBase = posBase + d.size
+                    d.y0 = posBase = posBase + d.size;
                     console.log("else====*** y0=" + d.y0);
                 }
-            })
+            });
         }
 
 
         dz.extent = d3.extent(d3.merge(d3.merge(dz.map(function (e) {
-            console.log("eeeeee	=" + JSON.stringify(e));
-            return [e.y0, e.y0 - e.size]
-        }))))
+            console.log("eeeeee =" + JSON.stringify(e));
+            return [e.y0, e.y0 - e.size];
+        }))));
         console.log("output=" + JSON.stringify(dz));
         return dz;
-    }
+    };
 
 
 
@@ -538,7 +537,7 @@ PykCharts.UltimateNegative = function (options) {
         var layers = [];
 
         function findLayer(l) {
-            for (i in layers) {
+            for (var i in layers) {
                 var layer = layers[i];
                 if (layer.name == l) return layer;
             }
@@ -549,19 +548,19 @@ PykCharts.UltimateNegative = function (options) {
             var new_layer = {
                 "name": l,
                 "values": []
-            }
+            };
             layers.push(new_layer);
             return new_layer;
         }
 
-        for (i in the_bars) {
+        for (var i in the_bars) {
             var bar = the_bars[i];
             if (!bar.id) continue;
             var id = bar.id;
-            for (k in bar) {
+            for (var k in bar) {
                 if (k === "id") continue;
                 var icings = bar[k];
-                for (j in icings) {
+                for (var j in icings) {
                     var icing = icings[j];
                     if (!icing.name) continue;
                     var layer = findLayer(icing.name);
@@ -571,21 +570,21 @@ PykCharts.UltimateNegative = function (options) {
                         "color": icing.color,
                         "tooltip": icing.tooltip,
                         "name": icing.name
-                    })
+                    });
                 }
             }
         }
         return layers;
-    }
+    };
 
     // Traverses the JSON and returns an array of the 'bars' that are to be rendered
     this.flattenData = function (data) {
         var the_bars = [-1];
         var keys = {};
-        for (i in data) {
+        for (var i in data) {
             var d = data[i];
-            for (cat_name in d) {
-                for (j in d[cat_name]) {
+            for (var cat_name in d) {
+                for (var j in d[cat_name]) {
                     var id = "i" + i + "j" + j;
                     var key = Object.keys(d[cat_name][j])[0];
 
@@ -599,7 +598,7 @@ PykCharts.UltimateNegative = function (options) {
             }
         }
         return [the_bars, keys];
-    }
+    };
 
 
     //----------------------------------------------------------------------------------------

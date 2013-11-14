@@ -9,7 +9,7 @@ PykCharts.treerect = function (options) {
         var that = this;
 
         //1.2 set width height to local variable   
-        width = this.options.width,
+        width = this.options.width;
         height = this.options.height;
 
         // 1.3 Read Json File Get all the data and pass to render
@@ -19,15 +19,14 @@ PykCharts.treerect = function (options) {
             that.renderTooltip();
 
         });
-    }
+    };
 
     //----------------------------------------------------------------------------------------
     //2. setting up options
     //----------------------------------------------------------------------------------------
     this.options = jQuery.extend({
-      	width: 550,
-	height: 400,
-
+        width: 550,
+        height: 400
     }, options);
 
     //----------------------------------------------------------------------------------------
@@ -93,7 +92,7 @@ PykCharts.treerect = function (options) {
                     return that.tooltip.html(d.ttip).style("visibility", "visible");
                 })
                 .on("mousemove", function () {
-                    return that.tooltip.style("top", (event.pageY - 10) + "px").style("left", (event.pageX + 10) + "px");
+                    return that.tooltip.style("top", (d3.event.pageY - 10) + "px").style("left", (d3.event.pageX + 10) + "px");
                 })
                 .on("mouseout", function () {
                     return that.tooltip.style("visibility", "hidden");
@@ -144,7 +143,7 @@ PykCharts.treerect = function (options) {
             return 1;
         }
 
-    }
+    };
 
     //----------------------------------------------------------------------------------------
     //4. Render Tooltip
@@ -163,6 +162,5 @@ PykCharts.treerect = function (options) {
             .style("border-radius", "5px")
             .text("a simple tooltip");
 
-    }
-
-}
+    };
+};

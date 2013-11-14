@@ -1,16 +1,17 @@
+/*jshint -W083 */
 PykCharts.Ultimate = function(options){
     //----------------------------------------------------------------------------------------
     //1. This is the method that executes the various JS functions in the proper sequence to generate the chart
     //----------------------------------------------------------------------------------------
     this.execute = function(){
-		// 1.1 Validate the option parameters       
-	   if(!this.validate_options()) return false;
+        // 1.1 Validate the option parameters       
+       if(!this.validate_options()) return false;
 
-		// 1.2 Preload animation
-	$(this.options.selection).html("<img src='/pykcharts-images/spinner.gif'> Loading... Please wait");
+        // 1.2 Preload animation
+    $(this.options.selection).html("<img src='/pykcharts-images/spinner.gif'> Loading... Please wait");
 
-		// 1.3 Global Variable
-		var that = this;
+        // 1.3 Global Variable
+        var that = this;
 
         // 1.4 Read the input data file(s)
         d3.json(this.options.data, function(e, data){
@@ -19,19 +20,19 @@ PykCharts.Ultimate = function(options){
             // Render Chart with the available data
             that.render();
         });
-    }
+    };
 
     //----------------------------------------------------------------------------------------
     //2. Validate Options
     //----------------------------------------------------------------------------------------
     this.validate_options = function(){
-        if(this.options.selection == undefined) return false;
-        if(this.options.data == undefined) return false;
+        if(this.options.selection === undefined) return false;
+        if(this.options.data === undefined) return false;
         if(this.options.width < 300) return false;
         return true;
-    }
+    };
 
-    //----------------------------------------------------------------------------------------	
+    //----------------------------------------------------------------------------------------  
     //3. Assigning Attributes
     //----------------------------------------------------------------------------------------
     this.options = jQuery.extend({
@@ -68,7 +69,7 @@ PykCharts.Ultimate = function(options){
             .attr("width", w);
 
               //4.4 Add other elements to the SVG Holder
-		this.svg.append("g").attr("class", "yaxis");
+        this.svg.append("g").attr("class", "yaxis");
         this.svg.append("g").attr("class", "xaxis");
 
         //4.5 Create Legend Holder
@@ -93,7 +94,7 @@ PykCharts.Ultimate = function(options){
         // Render elements
         this.renderTooltip();
         this.draw();
-    }
+    };
 
     //----------------------------------------------------------------------------------------
     // 5. Rendering Legends: 
@@ -103,8 +104,8 @@ PykCharts.Ultimate = function(options){
         var w = this.options.width;
 
         function getParameters(){
-            var p = []
-            for(i in  that.the_layers){
+            var p = [];
+            for(var i in  that.the_layers){
                 if(!that.the_layers[i].name) continue;
                 var name = that.the_layers[i].name;
                 var color = that.the_layers[i].values[0].color;
@@ -126,7 +127,7 @@ PykCharts.Ultimate = function(options){
                 return "translate(" + (w-(i*100)-100) + ", 0)";
             });
 
-        for(i in params){
+        for(var i in params){
             var g = d3.select(legendGroups[0][i]);
             var p = params[i];
 
@@ -146,18 +147,18 @@ PykCharts.Ultimate = function(options){
                 .attr("cy",-6).attr("r", 6)
                 .attr("style", function(d){
                     return "fill: "+ d.color +"; stroke-width: 3px; stroke:" + d.color;
-                })
+                });
 
         }
         // TODO Make legends
-    }
+    };
 
     //----------------------------------------------------------------------------------------
     // 6. Rendering Legends: 
     //----------------------------------------------------------------------------------------
     this.getGroups = function(){
         var groups = {};
-        for(i in this.the_bars){
+        for(var i in this.the_bars){
             var bar = this.the_bars[i];
             if(!bar.id) continue;
             if(groups[bar.group]){
@@ -167,7 +168,7 @@ PykCharts.Ultimate = function(options){
             }
         }
         return groups;
-    }
+    };
 
     //----------------------------------------------------------------------------------------
     // 7. Rendering chart: 
@@ -187,7 +188,7 @@ PykCharts.Ultimate = function(options){
                 return d.values;
             })(layers);
 
-        var yValues = []
+        var yValues = [];
         layers.map(function(e, i){ // Get all values to create scale
             for(i in e.values){
                 var d = e.values[i];
@@ -235,16 +236,16 @@ PykCharts.Ultimate = function(options){
             .attr("dy", "2px")
             .attr("dx", "20px")
             .attr("transform", function(d) {
-                return "rotate(90)"
-            });;
+                return "rotate(90)";
+            });
 
 
         var group_label_data = [];
-        for(i in groups){
+        for(var i in groups){
             var g = groups[i];
             var x = xScale(g[0]);
             var totalWidth = xScale.rangeBand() * g.length;
-            var x = x + (totalWidth/2);
+            x = x + (totalWidth/2);
             group_label_data.push({x: x, name: i});
         }
 
@@ -268,12 +269,12 @@ PykCharts.Ultimate = function(options){
 
         var rect = bars.selectAll("rect")
             .data(function(d){
-                return d.values
+                return d.values;
             }).enter().append("svg:rect")
             .attr("height", 0).attr("y", h)
             .on("mouseover", function(d, i){
                  var tooltip = d3.select("#pyk-ultimate-tooltip");
-				tooltip.html(d.tooltip);
+                tooltip.html(d.tooltip);
                 tooltip.style("visibility", "visible");
             })
             .attr("fill", function(d){
@@ -302,15 +303,15 @@ PykCharts.Ultimate = function(options){
             .attr("y", function(d){
                 return h - yScale(d.y0 + d.y);
             });
-    }
+    };
     
-	//----------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------
     // 8. Draw function to render chart with elements 
     //----------------------------------------------------------------------------------------
     this.draw = function(){
         this.renderLegends();
         this.renderChart();
-    }
+    };
 
     //----------------------------------------------------------------------------------------
     // 9. Rendering tooltip: 
@@ -327,9 +328,9 @@ PykCharts.Ultimate = function(options){
             .style("box-shadow", "0 0 10px #000")
             .style("border-radius", "5px")
             .text("a simple tooltip");
-    }
+    };
 
-	//----------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------
     // 10.Data Manuplation: 
     //----------------------------------------------------------------------------------------
 
@@ -342,7 +343,7 @@ PykCharts.Ultimate = function(options){
         var layers = [];
 
         function findLayer(l){
-            for(i in layers){
+            for(var i in layers){
                 var layer = layers[i];
                 if (layer.name == l) return layer;
             }
@@ -353,19 +354,19 @@ PykCharts.Ultimate = function(options){
             var new_layer = {
                 "name": l,
                 "values": []
-            }
+            };
             layers.push(new_layer);
             return new_layer;
         }
 
-        for(i in the_bars){
+        for(var i in the_bars){
             var bar = the_bars[i];
             if(!bar.id) continue;
             var id = bar.id;
-            for(k in bar){
+            for(var k in bar){
                 if(k === "id") continue;
                 var icings = bar[k];
-                for(j in icings){
+                for(var j in icings){
                     var icing = icings[j];
                     if(!icing.name) continue;
                     var layer = findLayer(icing.name);
@@ -374,21 +375,21 @@ PykCharts.Ultimate = function(options){
                         "y": icing.val,
                         "color": icing.color,
                         "tooltip": icing.tooltip
-                    })
+                    });
                 }
             }
         }
         return layers;
-    }
+    };
 
     // Traverses the JSON and returns an array of the 'bars' that are to be rendered
     this.flattenData = function(){
         var the_bars = [-1];
         var keys = {};
-        for(i in this.data){
+        for(var i in this.data){
             var d = this.data[i];
-            for(cat_name in d){
-                for(j in d[cat_name]){
+            for(var cat_name in d){
+                for(var j in d[cat_name]){
                     var id = "i" + i + "j" + j;
                     var key = Object.keys(d[cat_name][j])[0];
 
@@ -402,7 +403,7 @@ PykCharts.Ultimate = function(options){
             }
         }
         return [the_bars, keys];
-    }
+    };
 
     //----------------------------------------------------------------------------------------
     // 11.Return Chart: 
