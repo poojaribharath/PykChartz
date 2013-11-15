@@ -10,7 +10,7 @@ PykCharts.River = function(options){
         if(!this.validate_options()) return false;
 
         // 1.2 Preload animation
-        $(this.options.selection).html("<img src='/pykcharts-images/spinner.gif'> Loading... Please wait");
+        $(this.options.selection).html("<img src='https://s3.amazonaws.com/PykCharts/spinner.gif'> Loading... Please wait");
 
         //1.3 Assign Global variable var that to access function and variable throughout
         var that = this;
