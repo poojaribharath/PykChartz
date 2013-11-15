@@ -50,7 +50,7 @@ module.exports = function(grunt) {
         },
 
         jshint: {
-            all: ['Gruntfile.js'] //, '<%= js_src_path %>/*.js']
+            all: ['Gruntfile.js', '<%= js_src_path %>/*.js']
         },
 
         clean: {
