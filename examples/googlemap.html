@@ -3,13 +3,13 @@
    <head>
       <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
       <link rel="shortcut icon" href="../images/favicon.ico" type="image/ico">
-      <link href="../res/lib/bootstrap.css" rel="stylesheet" type="text/css">
-      <link rel="stylesheet" type="text/css" href="../res/css/googlemap.css" />
-      <script src="../res/lib/jquery.js"></script>
+      <link href="res/lib/bootstrap.css" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" type="text/css" href="../src/css/pyk.googlemap.css" />
+      <script src="../lib/jquery.js"></script>
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_x5TSxdA6WDIgMfL21CViFexfHFG4cMA&sensor=true&libraries=visualization"></script>
-      <script type="text/javascript" src="../res/lib/markermanager.js"></script>
-      <script src="../res/js/pykcharts.js"></script>
-      <script src="../res/js/googlemap.js"></script>
+      <script type="text/javascript" src="../lib/markermanager.js"></script>
+      <script src="../src/js/pyk.js"></script>
+      <script src="../src/js/pyk.googlemap.js"></script>
       <title>PykCharts</title>
    </head>
    <body>
@@ -20,7 +20,7 @@
                   <h1><a href="/index.html">PykCharts</a></h1>
                </div>
                <div class="col-sm-1" style="padding-top: 25px; margin-bottom: 60px;">
-                  <a href="http://www.pykih.com" target="_blank"><img src="/pykcharts/images/pykih_25.png" class="img-responsive"></a>
+                  <a href="http://www.pykih.com" target="_blank"><img src="https://s3-ap-southeast-1.amazonaws.com/pykih-public-docs/logos/pykih_25.png" class="img-responsive"></a>
                </div>
             </div>
             <div class="col-sm-12">
@@ -56,7 +56,7 @@
          $(document).ready(function(){
          var k = new PykCharts.GoogleHeat({
          selection: "#map-canvas",
-         data: "/pykcharts/data/googlemaps.json",
+         data: "res/data/googlemaps.json",
          center: new google.maps.LatLng(-25.363882,131.044922),
          defaultZoom: 3,
          tooltipZoom: 12
