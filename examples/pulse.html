@@ -4,14 +4,13 @@
       <meta charset="utf-8">
       <title>PykCharts</title>
       <link rel="shortcut icon" href="/images/favicon.ico" type="image/ico">
-      <script src="../res/lib/d3.js" type="text/javascript"></script>
-      <script src="../res/lib/jquery.js" type="text/javascript"></script>
-      <script src="../res/lib/bootstrap.js" type="text/javascript"></script>
-      <link href="../res/lib/bootstrap.css" rel="stylesheet" type="text/css">
-      <link href="../res/css/ultimate.css" rel="stylesheet" type="text/css">
-      <script src="../res/js/pykcharts.js" type="text/javascript" charset="utf-8"></script>
-	<link href="../res/css/compare_with_circles.css" rel="stylesheet" type="text/css">
-		<script src="../res/js/compare_with_circles.js" charset="utf-8"></script>
+      <script src="../lib/d3.js" type="text/javascript"></script>
+      <script src="../lib/jquery.js" type="text/javascript"></script>
+      <script src="res/lib/bootstrap.js" type="text/javascript"></script>
+      <link href="res/lib/bootstrap.css" rel="stylesheet" type="text/css">
+      <script src="../src/js/pyk.js" type="text/javascript" charset="utf-8"></script>
+	  <link href="../src/css/pyk.pulse.css" rel="stylesheet" type="text/css">
+	  <script src="../src/js/pyk.pulse.js" charset="utf-8"></script>
    </head>
    <body>
       <div class="container">
@@ -28,15 +27,15 @@
                <div class="col-sm-3">
                   <ul class="nav nav-pills nav-stacked">
 
-                     <li><a href="/pykcharts/examples/river.html">River</a></li>
-                     <li><a href="/pykcharts/examples/choropleth.html">Zoomable Choropleth</a></li>
-                     <li><a href="/pykcharts/examples/googlemap.html">Two layer Heat Maps</a></li>
-                     <li><a href="/pykcharts/examples/ultimate.html">Ultimate Column</a></li>
-                      <li><a href="/pykcharts/examples/ultimatenegative.html">Ultinate Negative</a></li>
-                     <li><a href="/pykcharts/examples/chord.html">Rotating Chord</a></li>
-                     <li><a href="/pykcharts/examples/bubble.html">Bubble</a></li>
-                     <li><a href="/pykcharts/examples/treerect.html">Tree Rect</a></li>
-                     <li   class="active"><a href="/pykcharts/examples/compare_with_circles.html">Circle Comparision</a></li>                    </ul>
+                     <li><a href="river.html">River</a></li>
+                     <li><a href="choropleth.html">Zoomable Choropleth</a></li>
+                     <li><a href="googlemap.html">Two layer Heat Maps</a></li>
+                     <li><a href="ultimate.html">Ultimate Column</a></li>
+                      <li><a href="ultimatenegative.html">Ultinate Negative</a></li>
+                     <li><a href="chord.html">Rotating Chord</a></li>
+                     <li><a href="bubble.html">Bubble</a></li>
+                     <li><a href="treerect.html">Tree Rect</a></li>
+                     <li   class="active"><a href="pulse.html">Circle Comparision</a></li>                    </ul>
                   <br/>
                </div>
                <div class="col-sm-9">
@@ -55,27 +54,27 @@
       </div>
       <script>
          $(document).ready(function(e){
-      
-  
-  
+
+
+
   var options = {
         width : 600,
-        height : 600,         
+        height : 600,
 		selection: "#circle-container",
-		data:"../data/compare_with_circles.json"
+		data:"res/data/compare_with_circles.json"
         };
-		
-		
+
+
       var k = new PykCharts.compare_with_circles (options);
          });
       </script>
    </body>
 </html>
 
-  
 
-     
- 
+
+
+
 		</script>
 
 </head>
