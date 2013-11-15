@@ -4,14 +4,14 @@
       <meta charset="utf-8">
       <title>PykCharts</title>
       <link rel="shortcut icon" href="/pykcharts/images/favicon.ico" type="image/ico">
-      <script src="../res/lib/d3.js" type="text/javascript"></script>
-      <script src="../res/lib/topojson.js" type="text/javascript"></script>
-      <script src="../res/lib/jquery.js" type="text/javascript"></script>
-      <script src="../res/lib/bootstrap.js" type="text/javascript"></script>
-      <link href="../res/lib/bootstrap.css" rel="stylesheet" type="text/css">
-      <link href="../res/css/choropleth.css" rel="stylesheet" type="text/css">
-      <script src="../res/js/pykcharts.js" type="text/javascript" charset="utf-8"></script>
-      <script src="../res/js/choropleth.js" type="text/javascript" charset="utf-8"></script>
+      <script src="../lib/d3.js" type="text/javascript"></script>
+      <script src="../lib/topojson.js" type="text/javascript"></script>
+      <script src="../lib/jquery.js" type="text/javascript"></script>
+      <script src="res/lib/bootstrap.js" type="text/javascript"></script>
+      <link href="res/lib/bootstrap.css" rel="stylesheet" type="text/css">
+      <link href="../src/css/pyk.choropleth.css" rel="stylesheet" type="text/css">
+      <script src="../src/js/pyk.js" type="text/javascript" charset="utf-8"></script>
+      <script src="../src/js/pyk.choropleth.js" type="text/javascript" charset="utf-8"></script>
    </head>
    <body>
       <div class="container">
@@ -21,22 +21,22 @@
                   <h1><a href="/index.html">PykCharts</a></h1>
                </div>
                <div class="col-sm-1" style="padding-top: 25px; margin-bottom: 60px;">
-                  <a href="http://www.pykih.com" target="_blank"><img src="/pykcharts/images/pykih_25.png" class="img-responsive"></a>
+                  <a href="http://www.pykih.com" target="_blank"><img src="https://s3-ap-southeast-1.amazonaws.com/pykih-public-docs/logos/pykih_25.png" class="img-responsive"></a>
                </div>
             </div>
             <div class="col-sm-12">
                <div class="col-sm-3">
                   <ul class="nav nav-pills nav-stacked">
 
-                     <li><a href="/pykcharts/examples/river.html">River</a></li>
-                     <li   class="active"><a href="/pykcharts/examples/choropleth.html">Zoomable Choropleth</a></li>
-                     <li><a href="/pykcharts/examples/googlemap.html">Two layer Heat Maps</a></li>
-                     <li><a href="/pykcharts/examples/ultimate.html">Ultimate Column</a></li>
-                      <li><a href="/pykcharts/examples/ultimatenegative.html">Ultinate Negative</a></li>
-                     <li><a href="/pykcharts/examples/chord.html">Rotating Chord</a></li>
-                     <li><a href="/pykcharts/examples/bubble.html">Bubble</a></li>
-                     <li><a href="/pykcharts/examples/treerect.html">Tree Rect</a></li>
-                     <li><a href="/pykcharts/examples/compare_with_circles.html">Circle Comparision</a></li>                     </ul>
+                     <li><a href="river.html">River</a></li>
+                     <li   class="active"><a href="choropleth.html">Zoomable Choropleth</a></li>
+                     <li><a href="googlemap.html">Two layer Heat Maps</a></li>
+                     <li><a href="ultimate.html">Ultimate Column</a></li>
+                      <li><a href="ultimatenegative.html">Ultinate Negative</a></li>
+                     <li><a href="chord.html">Rotating Chord</a></li>
+                     <li><a href="bubble.html">Bubble</a></li>
+                     <li><a href="treerect.html">Tree Rect</a></li>
+                     <li><a href="compare_with_circles.html">Circle Comparision</a></li>                     </ul>
                   <br/>
                </div>
                <div class="col-sm-9">
@@ -57,9 +57,9 @@
          $(document).ready(function(){
          k = new PykCharts.Choropleth({
          selection: "#choropleth-container",
-         topojson: "/pykcharts/data/us.json",
-         county_data: "/pykcharts/data/counties_data.json",
-         state_data: "/pykcharts/data/states_data.json",
+         topojson: "res/data/us.json",
+         county_data: "res/data/counties_data.json",
+         state_data: "res/data/states_data.json",
          });
          k.execute();
          });
