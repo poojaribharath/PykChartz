@@ -7,10 +7,10 @@ module.exports = function(grunt) {
 
         pkg: grunt.file.readJSON('package.json'),
 
-        js_src_path: 'pykcharts/res/js',
-        js_distro_path: 'distro',
-        css_src_path: 'pykcharts/res/css',
-        css_distro_path: 'distro',
+        js_src_path: 'src/js',
+        js_distro_path: '.',
+        css_src_path: 'src/css',
+        css_distro_path: '.',
 
         concat: {
             'js': {

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>PykCharts</title>
+      <link rel="shortcut icon" href="/images/favicon.ico" type="image/ico">
+      <script src="../lib/d3.js" type="text/javascript"></script>
+      <script src="../lib/jquery.js" type="text/javascript"></script>
+      <script src="res/lib/bootstrap.js" type="text/javascript"></script>
+      <link href="res/lib/bootstrap.css" rel="stylesheet" type="text/css">
+      <link href="../src/css/pyk.ultimate.css" rel="stylesheet" type="text/css">
+      <script src="../src/js/pyk.js" type="text/javascript" charset="utf-8"></script>
+      <script src="../src/js/pyk.bubble.js" type="text/javascript" charset="utf-8"></script>
+	  <style>
+
+text {
+  font: 10px sans-serif;
+}
+
+</style>
+   </head>
+   <body>
+      <div class="container">
+         <div class="row">
+            <div class="col-sm-12">
+               <div class="col-sm-11" style="margin-bottom: 60px;">
+                  <h1><a href="/index.html">PykCharts</a></h1>
+               </div>
+               <div class="col-sm-1" style="padding-top: 25px; margin-bottom: 60px;">
+                  <a href="http://www.pykih.com" target="_blank"><img src="https://s3-ap-southeast-1.amazonaws.com/pykih-public-docs/logos/pykih_25.png" class="img-responsive"></a>
+               </div>
+            </div>
+            <div class="col-sm-12">
+               <div class="col-sm-3">
+                  <ul class="nav nav-pills nav-stacked">
+
+                     <li><a href="river.html">River</a></li>
+                     <li><a href="choropleth.html">Zoomable Choropleth</a></li>
+                     <li><a href="googlemap.html">Two layer Heat Maps</a></li>
+                     <li><a href="ultimate.html">Ultimate Column</a></li>
+                      <li><a href="ultimatenegative.html">Ultinate Negative</a></li>
+                     <li><a href="chord.html">Rotating Chord</a></li>
+                     <li   class="active"><a href="bubble.html">Bubble</a></li>
+                     <li><a href="treerect.html">Tree Rect</a></li>
+                     <li><a href="compare_with_circles.html">Circle Comparision</a></li>                     </ul>
+                  <br/>
+               </div>
+               <div class="col-sm-9">
+                  <div id="bubble-container"></div>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+         <div class="col-sm-12" style="margin-top: 30px;">
+            <a href="http://www.pykih.com" target="_blank">(c) 2013 Pykih Software LLP</a>
+ 			&nbsp;&nbsp;
+			<a href="https://github.com/pykih/PykCharts/blob/master/LICENSE.md">License</a>
+			<br/><br/><br/>
+         </div>
+		</div>
+      </div>
+      <script>
+         $(document).ready(function(e){
+         var k = new PykCharts.BubblePack({
+         data: "res/data/bubble.json",
+         selection: "#bubble-container",
+		width: 850,
+		height: 400,
+         });
+         k.execute();
+         });
+      </script>
+   </body>
+</html>
