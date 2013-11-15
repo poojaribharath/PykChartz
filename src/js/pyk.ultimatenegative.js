@@ -5,11 +5,11 @@ PykCharts.UltimateNegative = function (options) {
     //1. This is the method that executes the various JS functions in the proper sequence to generate the chart
     //----------------------------------------------------------------------------------------
     this.execute = function () {
-        // 1.1 Validate the option parameters       
+        // 1.1 Validate the option parameters
         if (!this.validate_options()) return false;
 
         // 1.2 Preload animation
-        $(this.options.selection).html("<img src='/pykcharts-images/spinner.gif'> Loading... Please wait");
+        $(this.options.selection).html("<img src='https://s3.amazonaws.com/PykCharts/spinner.gif'> Loading... Please wait");
 
         // 1.3 Global Variable
         var that = this;
@@ -34,7 +34,7 @@ PykCharts.UltimateNegative = function (options) {
         return true;
     };
 
-    //----------------------------------------------------------------------------------------  
+    //----------------------------------------------------------------------------------------
     //3. Assigning Attributes
     //----------------------------------------------------------------------------------------
 
@@ -137,7 +137,7 @@ PykCharts.UltimateNegative = function (options) {
     };
 
     //----------------------------------------------------------------------------------------
-    // 5.Filtering on click 
+    // 5.Filtering on click
     //----------------------------------------------------------------------------------------
     this.onlyFilter = function (f) {
         var index = this.options.filterList.indexOf(f);
@@ -153,7 +153,7 @@ PykCharts.UltimateNegative = function (options) {
     };
 
     //----------------------------------------------------------------------------------------
-    // 6.Toggle Filter back to the original value 
+    // 6.Toggle Filter back to the original value
     //----------------------------------------------------------------------------------------
     this.toggleFilter = function (f) {
         var index = this.options.filterList.indexOf(f);
@@ -167,7 +167,7 @@ PykCharts.UltimateNegative = function (options) {
 
 
     //----------------------------------------------------------------------------------------
-    // 7. Rendering Legends: 
+    // 7. Rendering Legends:
     //----------------------------------------------------------------------------------------
     this.renderLegends = function () {
         var that = this;
@@ -236,7 +236,7 @@ PykCharts.UltimateNegative = function (options) {
     };
 
     //----------------------------------------------------------------------------------------
-    // 8. Rendering Chart: 
+    // 8. Rendering Chart:
     //----------------------------------------------------------------------------------------
     this.renderChart = function () {
         var that = this;
@@ -407,7 +407,7 @@ PykCharts.UltimateNegative = function (options) {
 
 
     //----------------------------------------------------------------------------------------
-    // 9.Draw function to render chart with elements: 
+    // 9.Draw function to render chart with elements:
     //----------------------------------------------------------------------------------------
     this.draw = function () {
         this.options.fullList = this.getParameters().map(function (d) {
@@ -452,7 +452,7 @@ PykCharts.UltimateNegative = function (options) {
     };
 
     //----------------------------------------------------------------------------------------
-    // 10.Render tooltip: 
+    // 10.Render tooltip:
     //----------------------------------------------------------------------------------------
     this.renderTooltip = function () {
         $("#pyk-ultimate-tooltip").remove();
@@ -602,7 +602,7 @@ PykCharts.UltimateNegative = function (options) {
 
 
     //----------------------------------------------------------------------------------------
-    // 11.Return Chart: 
+    // 11.Return Chart:
     //----------------------------------------------------------------------------------------
 
     return this;

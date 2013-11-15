@@ -2,7 +2,7 @@
 PykCharts.Choropleth = function(options){
  var color_domain = [20, 30, 40, 50, 60, 70,80,90];
   var ext_color_domain = [20, 30, 40, 50, 60, 70,80,90];
-  var legend_labels = ["< 20", "30+","40+","50+", "60+", "70+", "80+", "> 90"] ;             
+  var legend_labels = ["< 20", "30+","40+","50+", "60+", "70+", "80+", "> 90"] ;
   var color = d3.scale.threshold()
   .domain(color_domain)
   .range(["#79C7FC", "#6BBDF4", "#5DB2EA", "#53A4DB", "#4A99CE", "#4293C9","#3788BF","#2E82BA","#1F77B4"]);
@@ -15,13 +15,13 @@ PykCharts.Choropleth = function(options){
     //----------------------------------------------------------------------------------------
 
     this.execute = function(){
-    //1.1 Validate the options passed   
+    //1.1 Validate the options passed
     if(!this.validate_options()) return false;
 
         // 1.2 Preload animation
-        $(this.options.selection).html("<img src='/pykcharts-images/spinner.gif'> Loading... Please wait");
+        $(this.options.selection).html("<img src='https://s3.amazonaws.com/PykCharts/spinner.gif'> Loading... Please wait");
 
-        //1.3 Assign Global variable var that to access function and variable throughout   
+        //1.3 Assign Global variable var that to access function and variable throughout
     var that = this;
     var opt = this.options;
 
@@ -47,7 +47,7 @@ PykCharts.Choropleth = function(options){
     return true;
     };
 
-    //----------------------------------------------------------------------------------------  
+    //----------------------------------------------------------------------------------------
     //3. Assigning Attributes
     //----------------------------------------------------------------------------------------
     this.options = jQuery.extend({
@@ -66,7 +66,7 @@ PykCharts.Choropleth = function(options){
     this.render = function(t, s, c){
     $(this.options.selection).html("");
 
-   //4.2 Assign height and width to a local variable 
+   //4.2 Assign height and width to a local variable
     var h = this.options.height;
     var w = this.options.width;
 
@@ -75,7 +75,7 @@ PykCharts.Choropleth = function(options){
         .attr("class", "pyk-choropleth-legend-holder")
         .attr("height", 30)
         .attr("width", w);
-        
+
     //4.4 Create SVG holders for legends
     this.map_group = d3.select(this.options.selection).append("svg")
         .attr("class", "pyk-choropleth-map-holder")
@@ -118,7 +118,7 @@ this.downlegend_group1 = d3.select(this.options.selection).append("svg")
     };
 
       //----------------------------------------------------------------------------------------
-    // 6.Draw function to render chart with elements: 
+    // 6.Draw function to render chart with elements:
     //----------------------------------------------------------------------------------------
     this.draw = function(t, s, c){
         // can pass any object to render the legends
@@ -127,11 +127,11 @@ this.downlegend_group1 = d3.select(this.options.selection).append("svg")
         // 6.1 render map with t= topojson data, s= states data, c= county data
         this.renderMaps(t, s, c, function() {
     });
-    
+
     };
 
     //----------------------------------------------------------------------------------------
-    // 7.Draw function to render Legends: 
+    // 7.Draw function to render Legends:
     //----------------------------------------------------------------------------------------
     this.renderLegends = function(t, s, c){
     var that = this;
@@ -159,7 +159,7 @@ $ (" .pyk-choropleth-downlegends-holder").show();
 
 }
 else
-{ 
+{
 $ (" .pyk-choropleth-downlegends-holder1").css( "display", "block");
 
 $ (" .pyk-choropleth-downlegends-holder1").show();
@@ -198,7 +198,7 @@ $ (" .pyk-choropleth-downlegends-holder").hide();
     };
 
     //----------------------------------------------------------------------------------------
-    // 8.Draw function to render map: 
+    // 8.Draw function to render map:
     //----------------------------------------------------------------------------------------
     this.renderMaps = function(t, s, c){
     var that = this;
@@ -219,8 +219,8 @@ $ (" .pyk-choropleth-downlegends-holder").hide();
     var counties_g = map_group.append("g").attr("class","counties");
     var states_g = map_group.append("g").attr("class","states");
 
-    
-     // 8.4 Append counties group  
+
+     // 8.4 Append counties group
  var legend1 = this.downlegend_group1.selectAll("g.legend")
   .data(ext_color_domain)
   .enter().append("g")
@@ -242,7 +242,7 @@ $ (" .pyk-choropleth-downlegends-holder").hide();
             .attr("class", "mono")
   .text(function(d, i){ return legend_labels[i]; });
 
-  
+
     counties_g.selectAll("path")
         .data(topojson.feature(t, t.objects.counties).features)
         .enter().append("path").attr("class", "county")
@@ -303,7 +303,7 @@ $ (" .pyk-choropleth-downlegends-holder").hide();
         that.tooltip.style("visibility", "hidden");
         });
 
-    // 8.4 Append state group  
+    // 8.4 Append state group
     states_g.selectAll("path")
         .data(topojson.feature(t, t.objects.states).features)
         .enter().append("path").attr("class", "state")
@@ -356,8 +356,8 @@ $ (" .pyk-choropleth-downlegends-holder").hide();
         $("g.counties").show();
         })
         .on("mouseover", function(d, i){
-    
-        if(!c[d.id]) return;    
+
+        if(!c[d.id]) return;
         var tooltip = s[d.id][param].tooltip;
         that.tooltip.html(tooltip);
         that.tooltip.style("visibility", "visible");
@@ -393,12 +393,12 @@ $ (" .pyk-choropleth-downlegends-holder").hide();
         .attr("y", 40)
                   .attr("class", "mono")
         .text(function(d, i){ return legend_labels[i]; });
-        
+
         $("g.counties").hide();
     };
 
     //----------------------------------------------------------------------------------------
-    // 8. Return the Chart  
-    //----------------------------------------------------------------------------------------  
+    // 8. Return the Chart
+    //----------------------------------------------------------------------------------------
   return this;
 };

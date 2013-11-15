@@ -4,11 +4,11 @@ PykCharts.Ultimate = function(options){
     //1. This is the method that executes the various JS functions in the proper sequence to generate the chart
     //----------------------------------------------------------------------------------------
     this.execute = function(){
-        // 1.1 Validate the option parameters       
+        // 1.1 Validate the option parameters
        if(!this.validate_options()) return false;
 
         // 1.2 Preload animation
-    $(this.options.selection).html("<img src='/pykcharts-images/spinner.gif'> Loading... Please wait");
+        $(this.options.selection).html("<img src='https://s3.amazonaws.com/PykCharts/spinner.gif'> Loading... Please wait");
 
         // 1.3 Global Variable
         var that = this;
@@ -32,7 +32,7 @@ PykCharts.Ultimate = function(options){
         return true;
     };
 
-    //----------------------------------------------------------------------------------------  
+    //----------------------------------------------------------------------------------------
     //3. Assigning Attributes
     //----------------------------------------------------------------------------------------
     this.options = jQuery.extend({
@@ -97,7 +97,7 @@ PykCharts.Ultimate = function(options){
     };
 
     //----------------------------------------------------------------------------------------
-    // 5. Rendering Legends: 
+    // 5. Rendering Legends:
     //----------------------------------------------------------------------------------------
   this.renderLegends = function(){
         var that = this;
@@ -154,7 +154,7 @@ PykCharts.Ultimate = function(options){
     };
 
     //----------------------------------------------------------------------------------------
-    // 6. Rendering Legends: 
+    // 6. Rendering Legends:
     //----------------------------------------------------------------------------------------
     this.getGroups = function(){
         var groups = {};
@@ -171,7 +171,7 @@ PykCharts.Ultimate = function(options){
     };
 
     //----------------------------------------------------------------------------------------
-    // 7. Rendering chart: 
+    // 7. Rendering chart:
     //----------------------------------------------------------------------------------------
     this.renderChart = function(){
         var that = this;
@@ -304,9 +304,9 @@ PykCharts.Ultimate = function(options){
                 return h - yScale(d.y0 + d.y);
             });
     };
-    
+
     //----------------------------------------------------------------------------------------
-    // 8. Draw function to render chart with elements 
+    // 8. Draw function to render chart with elements
     //----------------------------------------------------------------------------------------
     this.draw = function(){
         this.renderLegends();
@@ -314,7 +314,7 @@ PykCharts.Ultimate = function(options){
     };
 
     //----------------------------------------------------------------------------------------
-    // 9. Rendering tooltip: 
+    // 9. Rendering tooltip:
     //----------------------------------------------------------------------------------------
     this.renderTooltip = function(){
         $("#pyk-ultimate-tooltip").remove();
@@ -331,7 +331,7 @@ PykCharts.Ultimate = function(options){
     };
 
     //----------------------------------------------------------------------------------------
-    // 10.Data Manuplation: 
+    // 10.Data Manuplation:
     //----------------------------------------------------------------------------------------
 
     // Data Helpers
@@ -406,7 +406,7 @@ PykCharts.Ultimate = function(options){
     };
 
     //----------------------------------------------------------------------------------------
-    // 11.Return Chart: 
+    // 11.Return Chart:
     //----------------------------------------------------------------------------------------
 
     return this;
