@@ -1,33 +1,59 @@
 d3.chart("River", {
     initialize: function () {
         this.base.classed("pyk-river", true);
-        var h = this.base.attr("height");
-        var w = this.base.attr("width");
+        this.h = this.base.attr("height");
+        this.w = this.base.attr("width");
 
-        var axisLinesLayer = this.base.append("g").classed("axis-lines", true);
+        var axisLinesTopLayer = this.base.append("g").classed("axis-lines-top", true);
+        var axisLinesBottomLayer = this.base.append("g").classed("axis-lines-bottom", true);
+        var leftAngleLinesLayer = this.base.append("g").classed("left-angle-lines", true);
+        var rightAngleLinesLayer = this.base.append("g").classed("right-angle-lines", true);
 
-        this.layer("axisLines", axisLinesLayer, {
+        this.layer("axisLinesTop", axisLinesTopLayer, {
             dataBind: function (data) {
-                var chart = this.chart();
-                chart.xScale = d3.scale.linear().domain([0, this.maxTotalVal]).range([0, w - 200]);
-                chart.yScale = d3.scale.linear().domain([0, h]).range([20, h]);
-                chart.barHeight = (h) / (data.length * 2);
-                chart.barMargin = chart.barHeight * 2;
-
                 return this.selectAll("line.top_line").data(data);
             },
 
             insert: function () {
-                var chart = this.chart();
+                return this.append("line");
+            },
 
-                return this.append("line").attr("class", "top_line")
-                    .attr("x1", 0).attr("x2", w)
-                    .attr("y1", function(d, i){
-                        return chart.yScale(i * chart.barMargin);
-                    })
-                    .attr("y2", function(d, i){
-                        return chart.yScale(i * chart.barMargin);
-                    });
+            events: {
+                "enter": function () {
+                    var chart = this.chart();
+                    return this.attr("class", "top_line")
+                        .attr("x1", 0).attr("x2", chart.w)
+                        .attr("y1", function(d, i){
+                            return chart.yScale(i * chart.barMargin);
+                        })
+                        .attr("y2", function(d, i){
+                            return chart.yScale(i * chart.barMargin);
+                        });
+                }
+            }
+        });
+
+        this.layer("axisLinesBottom", axisLinesBottomLayer, {
+            dataBind: function (data) {
+                return this.selectAll("line.bottom_line").data(data);
+            },
+
+            insert: function () {
+                return this.append("line");
+            },
+
+            events: {
+                "enter": function () {
+                    var chart = this.chart();
+                    return this.attr("class", "bottom_line")
+                        .attr("x1", 0).attr("x2", chart.w)
+                        .attr("y1", function(d, i){
+                            return chart.yScale((i * chart.barMargin) + chart.barHeight);
+                        })
+                        .attr("y2", function(d, i){
+                            return chart.yScale((i * chart.barMargin) + chart.barHeight);
+                        });
+                }
             }
         });
     },
@@ -54,6 +80,13 @@ d3.chart("River", {
         for(var i in d) d[i].breakupTotal = totalInBreakup(d[i].breakup);
 
         this.maxTotal = maxTotal(d);
+
+        this.xScale = d3.scale.linear().domain([0, this.maxTotalVal]).range([0, this.w - 200]);
+        this.yScale = d3.scale.linear().domain([0, this.h]).range([20, this.h]);
+        this.barHeight = (this.h) / (d.length * 2);
+        this.barMargin = this.barHeight * 2;
+
+
         return d;
     }
 });
