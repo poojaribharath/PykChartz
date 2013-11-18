@@ -5,8 +5,8 @@
       <title>PykCharts</title>
       <link rel="shortcut icon" href="res/img/favicon.ico" type="image/ico">
       <script src="../lib/d3.js" type="text/javascript"></script>
-      <script src="../lib/jquery.js" type="text/javascript"></script>
       <script src="../lib/d3.chart.min.js" type="text/javascript"></script>
+      <script src="../lib/jquery.js" type="text/javascript"></script>
       <script src="res/lib/bootstrap.js" type="text/javascript"></script>
       <link href="res/lib/bootstrap.css" rel="stylesheet" type="text/css">
       <script src="../src/js/d3.chart.river.js" type="text/javascript" charset="utf-8"></script>
@@ -54,7 +54,8 @@
       </div>
       <script>
          $(document).ready(function(e){
-
+         var chart2 = d3.select("#river-container").append("svg").attr("height", 400).attr("width", 300).chart("River");
+         chart2.draw([1,2,3]);
          });
       </script>
    </body>
