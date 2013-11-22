@@ -146,7 +146,7 @@ PykCharts.choroplethOneLayer = function(options){
                     .text("< "+legend);
             }
         }
-    }
+    };
 
     //----------------------------------------------------------------------------------------
     // 8.Draw function to render map:
@@ -214,7 +214,6 @@ PykCharts.choroplethOneLayer = function(options){
                     if(key==d.id)
                     {
                         return s[key].color;
-                        break;
                     }
                 }
             }
@@ -236,7 +235,6 @@ PykCharts.choroplethOneLayer = function(options){
                     {
                         a++;
                         return that.colorOpacity(s[key].data);
-                        break;
                     }
                 }
                 b++;
@@ -256,12 +254,12 @@ PykCharts.choroplethOneLayer = function(options){
     this.colorOpacity = function (cdata){
         var that = this;
         that.opacity = d3.format(".1f")(cdata/that.max);
-        if(that.opacity==0.0)
+        if(that.opacity===0.0)
         {
             that.opacity=0.1;
         }
         return that.opacity;
-    }
+    };
 
     //----------------------------------------------------------------------------------------
     // 10. Return the Chart
