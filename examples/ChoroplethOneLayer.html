@@ -14,6 +14,48 @@
         <script src="../src/js/pyk.ChoroplethOneLayer.js" type="text/javascript" charset="utf-8"></script>
         <script src="http://d3js.org/queue.v1.min.js"></script>
 
+
+        <script type="text/javascript">
+         
+
+        $(document).ready(function(){
+          
+        /* 
+          */
+      
+          var cscale=(($("#select-scale").find('option:selected').attr('value')));
+          
+            k = new PykCharts.choroplethOneLayer({
+                selection: "#choropleth-container",
+                topojson: "res/data/india_states_topo.json",
+                state_data: "res/data/2004_results_state.json",
+                width: 960,
+                height: 550,
+                colorscale: cscale,
+                colorcode : "green",    //Specify colorname  or hashcode only for ordinal scale.
+                                        //Leave blank for linear scale
+            });
+            k.execute();
+            
+           
+        });
+        function colorScale (colorscale)
+                 {
+      
+                   k = new PykCharts.choroplethOneLayer({
+                       selection: "#choropleth-container",
+                       topojson: "res/data/india_states_topo.json",
+                       state_data: "res/data/2004_results_state.json",
+                       width: 960,
+                       height: 550,
+                       colorscale: colorscale,
+                       colorcode : "green",    //Specify colorname  or hashcode only for ordinal scale.
+                                               //Leave blank for linear scale
+                   });
+                   k.execute();
+                 }
+         
+                </script>
     </head>
     <body>
         <div class="container">
@@ -63,24 +105,5 @@
                 </div>
             </div>
         </div>
-        <script type="text/javascript">
-            function colorScale(colorscale)
-            {
-                $(document).ready(function(){
-                    k = new PykCharts.choroplethOneLayer({
-                        selection: "#choropleth-container",
-                        topojson: "res/data/india_states_topo.json",
-                        state_data: "res/data/2004_results_state.json",
-                        width: 960,
-                        height: 550,
-                        colorscale: colorscale,
-                        colorcode : "green",    //Specify colorname  or hashcode only for ordinal scale.
-                                                //Leave blank for linear scale
-                    });
-                    k.execute();
-                });
-            }
-            colorScale($("#select-scale").find('option:selected').attr('value'));
-        </script>
     </body>
 </html>
