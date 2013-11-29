@@ -19,10 +19,8 @@ PykCharts.compare_with_circles = function (options) {
         width = options.width,
         height = options.height;
 
-    var start_year = 2007,
-        end_year = 2013;
-
-    var c = d3.scale.category20c();
+    var start_year = 2001,
+        end_year = 2012;
 
     var x = d3.scale.linear()
         .range([0, width]);
@@ -58,17 +56,17 @@ PykCharts.compare_with_circles = function (options) {
             var g = svg.append("g").attr("class", "first row");
 
             var circles = g.selectAll("circle")
-                .data(data[j].test)
+                .data(data[j].collection)
                 .enter()
                 .append("circle");
 
             var text = g.selectAll("text")
-                .data(data[j].test)
+                .data(data[j].collection)
                 .enter()
                 .append("text");
 
             var rScale = d3.scale.linear()
-                .domain([0, d3.max(data[j].test, function (d) {
+                .domain([0, d3.max(data[j].collection, function (d) {
                     return d[1];
                 })])
                 .range([2, 12]);
@@ -81,9 +79,8 @@ PykCharts.compare_with_circles = function (options) {
                 .attr("r", function (d) {
                     return rScale(d[1]);
                 })
-                .style("fill", function (d) {
-                    return c(j);
-                });
+                .style("fill", data[j].color)
+                .style("opacity", data[j].opacity*0.1);
 
             text
                 .attr("y", j * 30 + 35)
@@ -94,19 +91,17 @@ PykCharts.compare_with_circles = function (options) {
                 .text(function (d) {
                     return d[1];
                 })
-                .style("fill", function (d) {
-                    return c(j);
-                })
+                .style("fill", data[j].color)
+                .style("opacity", data[j].opacity*0.1)
                 .style("display", "none");
 
             g.append("text")
                 .attr("y", j * 30 + 35)
-                .attr("x", width + 20)
-                .attr("class", "label")
+                .attr("x", width + 40)
+                .attr("class", "label1")
                 .text(truncate(data[j].name, 30, "..."))
-                .style("fill", function (d) {
-                    return c(j);
-                })
+                .style("fill", data[j].color)
+                .style("opacity", data[j].opacity*0.1)
                 .on("mouseover", mouseover)
                 .on("mouseout", mouseout);
         }
