@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 
         concat: {
             'js': {
-                'src': ['<%= js_src_path %>/pykcharts.js', '<%= js_src_path %>/*.js'],
+                'src': ['<%= js_src_path %>/pyk.js', '<%= js_src_path %>/*.js'],
                 'dest': '<%= js_distro_path %>/pykcharts.<%= pkg.version %>.js'
             },
             'css': {
