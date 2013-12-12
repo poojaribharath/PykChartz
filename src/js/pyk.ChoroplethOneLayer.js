@@ -236,6 +236,7 @@ PykCharts.choroplethOneLayer = function(options){
     //----------------------------------------------------------------------------------------
     // 8.Draw function to render map:
     //----------------------------------------------------------------------------------------
+<<<<<<< HEAD
     this.renderMaps = function(t, g){
         var that = this;
         var projection = d3.geo.mercator()
