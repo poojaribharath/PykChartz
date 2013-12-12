@@ -1,0 +1,45 @@
+svg.pyk-hawkeye{
+    shape-rendering: crispEdges;
+    font-size: 10px;
+}
+
+svg.pyk-hawkeye text.group_label{
+    font-weight: 800;
+}
+
+svg.pyk-hawkeye text.txt1{
+
+transform:rotate(7deg);
+-ms-transform:rotate(7deg); /* IE 9 */
+-webkit-transform:rotate(10deg); /* Safari and Chrome */
+}
+svg.pyk-hawkeye text.txt2{
+
+transform:rotate(7deg);
+-ms-transform:rotate(7deg); /* IE 9 */
+-webkit-transform:rotate(10deg); /* Safari and Chrome */
+}
+svg.pyk-hawkeye text.txt3{
+
+transform:rotate(7deg);
+-ms-transform:rotate(7deg); /* IE 9 */
+-webkit-transform:rotate(10deg); /* Safari and Chrome */
+}
+svg.pyk-hawkeye text.txt4{
+
+transform:rotate(7deg);
+-ms-transform:rotate(7deg); /* IE 9 */
+-webkit-transform:rotate(10deg); /* Safari and Chrome */
+}
+svg.pyk-hawkeye text.txt5{
+
+transform:rotate(7deg);
+-ms-transform:rotate(7deg); /* IE 9 */
+-webkit-transform:rotate(10deg); /* Safari and Chrome */
+}
+svg.pyk-hawkeye text.txt6{
+
+transform:rotate(7deg);
+-ms-transform:rotate(7deg); /* IE 9 */
+-webkit-transform:rotate(10deg); /* Safari and Chrome */
+}
