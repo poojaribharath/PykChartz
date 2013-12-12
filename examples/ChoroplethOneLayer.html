@@ -7,6 +7,7 @@
         <script src="../lib/d3.js" type="text/javascript"></script>
         <script src="../lib/topojson.js" type="text/javascript"></script>
         <script src="../lib/jquery.js" type="text/javascript"></script>
+        <script src="../lib/underscore.js" type="text/javascript"></script>
         <script src="res/lib/bootstrap.js" type="text/javascript"></script>
         <link href="res/lib/bootstrap.css" rel="stylesheet" type="text/css">
         <link href="../src/css/pyk.ChoroplethOneLayer.css" rel="stylesheet" type="text/css">
@@ -19,43 +20,59 @@
          
 
         $(document).ready(function(){
-          
-        /* 
-          */
-      
-          var cscale=(($("#select-scale").find('option:selected').attr('value')));
+            var cscale=(($("#select-scale").find('option:selected').attr('value')));
           
             k = new PykCharts.choroplethOneLayer({
                 selection: "#choropleth-container",
                 topojson: "res/data/india_states_topo.json",
-                state_data: "res/data/2004_results_state.json",
+                geo_data: "res/data/2004_results_state.json",
                 width: 960,
                 height: 550,
                 colorscale: cscale,
-                colorcode : "green",    //Specify colorname  or hashcode only for ordinal scale.
-                                        //Leave blank for linear scale
+                colorcode : "green",  //Specify colorname  or hashcode only for ordinal scale.
+                                      //Leave blank for linear scale
+                projectionScale: 800,
+                projectionTranslateX: -900,
+                projectionTranslateY: 550,
             });
             k.execute();
-            
-           
         });
         function colorScale (colorscale)
-                 {
-      
-                   k = new PykCharts.choroplethOneLayer({
-                       selection: "#choropleth-container",
-                       topojson: "res/data/india_states_topo.json",
-                       state_data: "res/data/2004_results_state.json",
-                       width: 960,
-                       height: 550,
-                       colorscale: colorscale,
-                       colorcode : "green",    //Specify colorname  or hashcode only for ordinal scale.
-                                               //Leave blank for linear scale
-                   });
-                   k.execute();
-                 }
-         
-                </script>
+        {
+            var topojson, geo_data, projectionScale, projectionTranslateX, projectionTranslateY;
+            if(colorscale=="selector")
+            {
+                topojson = "res/data/maharashtra_topo.json";
+                geo_data = "res/data/maharashtra_census.json";
+                projectionScale = 3500;
+                projectionTranslateX = -4375;
+                projectionTranslateY = 1410;
+            }
+            else
+            {
+                topojson = "res/data/india_states_topo.json";
+                geo_data = "res/data/2004_results_state.json";
+                projectionScale = 800;
+                projectionTranslateX = -900;
+                projectionTranslateY = 550;
+            }
+            k = new PykCharts.choroplethOneLayer({
+                selection: "#choropleth-container",
+                topojson: topojson,
+                geo_data: geo_data,
+                width: 960,
+                height: 550,
+                colorscale: colorscale,
+                colorcode : "green",   //Specify colorname  or hashcode only for ordinal scale.
+                                       //Leave blank for linear scale
+                projectionScale: projectionScale,
+                projectionTranslateX: projectionTranslateX,
+                projectionTranslateY: projectionTranslateY,
+           });
+           k.execute();
+        }
+
+        </script>
     </head>
     <body>
         <div class="container">
@@ -90,6 +107,7 @@
                             <select id="select-scale" onchange="colorScale($(this).find('option:selected').attr('value'))">
                                 <option value="linear">Linear Color Scale Choropleth</option>
                                 <option value="ordinal">Ordinal Color Scale Choropleth</option>
+                                <option value="selector">Ordinal Color Scale Choropleth with Selector</option>
                             </select>
                         </div>
                         <div id="choropleth-container"></div>

@@ -1,0 +1,1122 @@
+{
+   "IN_MH_AH":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":4543159,
+         "tooltip":"<table><tr><td colspan=2>Ahmadnagar</td><tr><td>Population</td><td>4543159</td></tr><tr><td>Growth Rate</td><td>12.44 %</td></tr><tr><td>Sex Ratio</td><td>939</td></tr><tr><td>Literacy</td><td>79.05 %</td></tr><tr><td>Density</td><td>266</td></tr></table>",
+         "display_name":"Ahmadnagar"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":12.44,
+         "tooltip":"<table><tr><td colspan=2>Ahmadnagar</td><tr><td>Population</td><td>4543159</td></tr><tr><td>Growth Rate</td><td>12.44 %</td></tr><tr><td>Sex Ratio</td><td>939</td></tr><tr><td>Literacy</td><td>79.05 %</td></tr><tr><td>Density</td><td>266</td></tr></table>",
+         "display_name":"Ahmadnagar"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":939,
+         "tooltip":"<table><tr><td colspan=2>Ahmadnagar</td><tr><td>Population</td><td>4543159</td></tr><tr><td>Growth Rate</td><td>12.44 %</td></tr><tr><td>Sex Ratio</td><td>939</td></tr><tr><td>Literacy</td><td>79.05 %</td></tr><tr><td>Density</td><td>266</td></tr></table>",
+         "display_name":"Ahmadnagar"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":79.05,
+         "tooltip":"<table><tr><td colspan=2>Ahmadnagar</td><tr><td>Population</td><td>4543159</td></tr><tr><td>Growth Rate</td><td>12.44 %</td></tr><tr><td>Sex Ratio</td><td>939</td></tr><tr><td>Literacy</td><td>79.05 %</td></tr><tr><td>Density</td><td>266</td></tr></table>",
+         "display_name":"Ahmadnagar"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":266,
+         "tooltip":"<table><tr><td colspan=2>Ahmadnagar</td><tr><td>Population</td><td>4543159</td></tr><tr><td>Growth Rate</td><td>12.44 %</td></tr><tr><td>Sex Ratio</td><td>939</td></tr><tr><td>Literacy</td><td>79.05 %</td></tr><tr><td>Density</td><td>266</td></tr></table>",
+         "display_name":"Ahmadnagar"
+      }
+   },
+   "IN_MH_AK":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":1813906,
+         "tooltip":"<table><tr><td colspan=2>Akola</td><tr><td>Population</td><td>1813906</td></tr><tr><td>Growth Rate</td><td>11.27 %</td></tr><tr><td>Sex Ratio</td><td>946</td></tr><tr><td>Literacy</td><td>88.05 %</td></tr><tr><td>Density</td><td>320</td></tr></table>",
+         "display_name":"Akola"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":11.27,
+         "tooltip":"<table><tr><td colspan=2>Akola</td><tr><td>Population</td><td>1813906</td></tr><tr><td>Growth Rate</td><td>11.27 %</td></tr><tr><td>Sex Ratio</td><td>946</td></tr><tr><td>Literacy</td><td>88.05 %</td></tr><tr><td>Density</td><td>320</td></tr></table>",
+         "display_name":"Akola"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":946,
+         "tooltip":"<table><tr><td colspan=2>Akola</td><tr><td>Population</td><td>1813906</td></tr><tr><td>Growth Rate</td><td>11.27 %</td></tr><tr><td>Sex Ratio</td><td>946</td></tr><tr><td>Literacy</td><td>88.05 %</td></tr><tr><td>Density</td><td>320</td></tr></table>",
+         "display_name":"Akola"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":88.05,
+         "tooltip":"<table><tr><td colspan=2>Akola</td><tr><td>Population</td><td>1813906</td></tr><tr><td>Growth Rate</td><td>11.27 %</td></tr><tr><td>Sex Ratio</td><td>946</td></tr><tr><td>Literacy</td><td>88.05 %</td></tr><tr><td>Density</td><td>320</td></tr></table>",
+         "display_name":"Akola"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":320,
+         "tooltip":"<table><tr><td colspan=2>Akola</td><tr><td>Population</td><td>1813906</td></tr><tr><td>Growth Rate</td><td>11.27 %</td></tr><tr><td>Sex Ratio</td><td>946</td></tr><tr><td>Literacy</td><td>88.05 %</td></tr><tr><td>Density</td><td>320</td></tr></table>",
+         "display_name":"Akola"
+      }
+   },
+   "IN_MH_AM":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":2888445,
+         "tooltip":"<table><tr><td colspan=2>Amravati</td><tr><td>Population</td><td>2888445</td></tr><tr><td>Growth Rate</td><td>10.79 %</td></tr><tr><td>Sex Ratio</td><td>951</td></tr><tr><td>Literacy</td><td>87.38 %</td></tr><tr><td>Density</td><td>237</td></tr></table>",
+         "display_name":"Amravati"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":10.79,
+         "tooltip":"<table><tr><td colspan=2>Amravati</td><tr><td>Population</td><td>2888445</td></tr><tr><td>Growth Rate</td><td>10.79 %</td></tr><tr><td>Sex Ratio</td><td>951</td></tr><tr><td>Literacy</td><td>87.38 %</td></tr><tr><td>Density</td><td>237</td></tr></table>",
+         "display_name":"Amravati"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":951,
+         "tooltip":"<table><tr><td colspan=2>Amravati</td><tr><td>Population</td><td>2888445</td></tr><tr><td>Growth Rate</td><td>10.79 %</td></tr><tr><td>Sex Ratio</td><td>951</td></tr><tr><td>Literacy</td><td>87.38 %</td></tr><tr><td>Density</td><td>237</td></tr></table>",
+         "display_name":"Amravati"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":87.38,
+         "tooltip":"<table><tr><td colspan=2>Amravati</td><tr><td>Population</td><td>2888445</td></tr><tr><td>Growth Rate</td><td>10.79 %</td></tr><tr><td>Sex Ratio</td><td>951</td></tr><tr><td>Literacy</td><td>87.38 %</td></tr><tr><td>Density</td><td>237</td></tr></table>",
+         "display_name":"Amravati"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":237,
+         "tooltip":"<table><tr><td colspan=2>Amravati</td><tr><td>Population</td><td>2888445</td></tr><tr><td>Growth Rate</td><td>10.79 %</td></tr><tr><td>Sex Ratio</td><td>951</td></tr><tr><td>Literacy</td><td>87.38 %</td></tr><tr><td>Density</td><td>237</td></tr></table>",
+         "display_name":"Amravati"
+      }
+   },
+   "IN_MH_AU":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":3701282,
+         "tooltip":"<table><tr><td colspan=2>Aurangabad</td><tr><td>Population</td><td>3701282</td></tr><tr><td>Growth Rate</td><td>27.76 %</td></tr><tr><td>Sex Ratio</td><td>923</td></tr><tr><td>Literacy</td><td>79.02 %</td></tr><tr><td>Density</td><td>366</td></tr></table>",
+         "display_name":"Aurangabad"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":27.76,
+         "tooltip":"<table><tr><td colspan=2>Aurangabad</td><tr><td>Population</td><td>3701282</td></tr><tr><td>Growth Rate</td><td>27.76 %</td></tr><tr><td>Sex Ratio</td><td>923</td></tr><tr><td>Literacy</td><td>79.02 %</td></tr><tr><td>Density</td><td>366</td></tr></table>",
+         "display_name":"Aurangabad"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":923,
+         "tooltip":"<table><tr><td colspan=2>Aurangabad</td><tr><td>Population</td><td>3701282</td></tr><tr><td>Growth Rate</td><td>27.76 %</td></tr><tr><td>Sex Ratio</td><td>923</td></tr><tr><td>Literacy</td><td>79.02 %</td></tr><tr><td>Density</td><td>366</td></tr></table>",
+         "display_name":"Aurangabad"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":79.02,
+         "tooltip":"<table><tr><td colspan=2>Aurangabad</td><tr><td>Population</td><td>3701282</td></tr><tr><td>Growth Rate</td><td>27.76 %</td></tr><tr><td>Sex Ratio</td><td>923</td></tr><tr><td>Literacy</td><td>79.02 %</td></tr><tr><td>Density</td><td>366</td></tr></table>",
+         "display_name":"Aurangabad"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":366,
+         "tooltip":"<table><tr><td colspan=2>Aurangabad</td><tr><td>Population</td><td>3701282</td></tr><tr><td>Growth Rate</td><td>27.76 %</td></tr><tr><td>Sex Ratio</td><td>923</td></tr><tr><td>Literacy</td><td>79.02 %</td></tr><tr><td>Density</td><td>366</td></tr></table>",
+         "display_name":"Aurangabad"
+      }
+   },
+   "IN_MH_BH":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":1200334,
+         "tooltip":"<table><tr><td colspan=2>Bhandara</td><tr><td>Population</td><td>1200334</td></tr><tr><td>Growth Rate</td><td>5.65 %</td></tr><tr><td>Sex Ratio</td><td>982</td></tr><tr><td>Literacy</td><td>83.76 %</td></tr><tr><td>Density</td><td>294</td></tr></table>",
+         "display_name":"Bhandara"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":5.65,
+         "tooltip":"<table><tr><td colspan=2>Bhandara</td><tr><td>Population</td><td>1200334</td></tr><tr><td>Growth Rate</td><td>5.65 %</td></tr><tr><td>Sex Ratio</td><td>982</td></tr><tr><td>Literacy</td><td>83.76 %</td></tr><tr><td>Density</td><td>294</td></tr></table>",
+         "display_name":"Bhandara"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":982,
+         "tooltip":"<table><tr><td colspan=2>Bhandara</td><tr><td>Population</td><td>1200334</td></tr><tr><td>Growth Rate</td><td>5.65 %</td></tr><tr><td>Sex Ratio</td><td>982</td></tr><tr><td>Literacy</td><td>83.76 %</td></tr><tr><td>Density</td><td>294</td></tr></table>",
+         "display_name":"Bhandara"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":83.76,
+         "tooltip":"<table><tr><td colspan=2>Bhandara</td><tr><td>Population</td><td>1200334</td></tr><tr><td>Growth Rate</td><td>5.65 %</td></tr><tr><td>Sex Ratio</td><td>982</td></tr><tr><td>Literacy</td><td>83.76 %</td></tr><tr><td>Density</td><td>294</td></tr></table>",
+         "display_name":"Bhandara"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":294,
+         "tooltip":"<table><tr><td colspan=2>Bhandara</td><tr><td>Population</td><td>1200334</td></tr><tr><td>Growth Rate</td><td>5.65 %</td></tr><tr><td>Sex Ratio</td><td>982</td></tr><tr><td>Literacy</td><td>83.76 %</td></tr><tr><td>Density</td><td>294</td></tr></table>",
+         "display_name":"Bhandara"
+      }
+   },
+   "IN_MH_BI":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":2585049,
+         "tooltip":"<table><tr><td colspan=2>Bid</td><tr><td>Population</td><td>2585049</td></tr><tr><td>Growth Rate</td><td>19.61 %</td></tr><tr><td>Sex Ratio</td><td>916</td></tr><tr><td>Literacy</td><td>76.99 %</td></tr><tr><td>Density</td><td>242</td></tr></table>",
+         "display_name":"Bid"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":19.61,
+         "tooltip":"<table><tr><td colspan=2>Bid</td><tr><td>Population</td><td>2585049</td></tr><tr><td>Growth Rate</td><td>19.61 %</td></tr><tr><td>Sex Ratio</td><td>916</td></tr><tr><td>Literacy</td><td>76.99 %</td></tr><tr><td>Density</td><td>242</td></tr></table>",
+         "display_name":"Bid"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":916,
+         "tooltip":"<table><tr><td colspan=2>Bid</td><tr><td>Population</td><td>2585049</td></tr><tr><td>Growth Rate</td><td>19.61 %</td></tr><tr><td>Sex Ratio</td><td>916</td></tr><tr><td>Literacy</td><td>76.99 %</td></tr><tr><td>Density</td><td>242</td></tr></table>",
+         "display_name":"Bid"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":76.99,
+         "tooltip":"<table><tr><td colspan=2>Bid</td><tr><td>Population</td><td>2585049</td></tr><tr><td>Growth Rate</td><td>19.61 %</td></tr><tr><td>Sex Ratio</td><td>916</td></tr><tr><td>Literacy</td><td>76.99 %</td></tr><tr><td>Density</td><td>242</td></tr></table>",
+         "display_name":"Bid"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":242,
+         "tooltip":"<table><tr><td colspan=2>Bid</td><tr><td>Population</td><td>2585049</td></tr><tr><td>Growth Rate</td><td>19.61 %</td></tr><tr><td>Sex Ratio</td><td>916</td></tr><tr><td>Literacy</td><td>76.99 %</td></tr><tr><td>Density</td><td>242</td></tr></table>",
+         "display_name":"Bid"
+      }
+   },
+   "IN_MH_BU":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":2586258,
+         "tooltip":"<table><tr><td colspan=2>Buldana</td><tr><td>Population</td><td>2586258</td></tr><tr><td>Growth Rate</td><td>15.85 %</td></tr><tr><td>Sex Ratio</td><td>934</td></tr><tr><td>Literacy</td><td>83.4 %</td></tr><tr><td>Density</td><td>268</td></tr></table>",
+         "display_name":"Buldana"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":15.85,
+         "tooltip":"<table><tr><td colspan=2>Buldana</td><tr><td>Population</td><td>2586258</td></tr><tr><td>Growth Rate</td><td>15.85 %</td></tr><tr><td>Sex Ratio</td><td>934</td></tr><tr><td>Literacy</td><td>83.4 %</td></tr><tr><td>Density</td><td>268</td></tr></table>",
+         "display_name":"Buldana"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":934,
+         "tooltip":"<table><tr><td colspan=2>Buldana</td><tr><td>Population</td><td>2586258</td></tr><tr><td>Growth Rate</td><td>15.85 %</td></tr><tr><td>Sex Ratio</td><td>934</td></tr><tr><td>Literacy</td><td>83.4 %</td></tr><tr><td>Density</td><td>268</td></tr></table>",
+         "display_name":"Buldana"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":83.4,
+         "tooltip":"<table><tr><td colspan=2>Buldana</td><tr><td>Population</td><td>2586258</td></tr><tr><td>Growth Rate</td><td>15.85 %</td></tr><tr><td>Sex Ratio</td><td>934</td></tr><tr><td>Literacy</td><td>83.4 %</td></tr><tr><td>Density</td><td>268</td></tr></table>",
+         "display_name":"Buldana"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":268,
+         "tooltip":"<table><tr><td colspan=2>Buldana</td><tr><td>Population</td><td>2586258</td></tr><tr><td>Growth Rate</td><td>15.85 %</td></tr><tr><td>Sex Ratio</td><td>934</td></tr><tr><td>Literacy</td><td>83.4 %</td></tr><tr><td>Density</td><td>268</td></tr></table>",
+         "display_name":"Buldana"
+      }
+   },
+   "IN_MH_CH":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":2204307,
+         "tooltip":"<table><tr><td colspan=2>Chandrapur</td><tr><td>Population</td><td>2204307</td></tr><tr><td>Growth Rate</td><td>6.43 %</td></tr><tr><td>Sex Ratio</td><td>961</td></tr><tr><td>Literacy</td><td>80.01 %</td></tr><tr><td>Density</td><td>193</td></tr></table>",
+         "display_name":"Chandrapur"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":6.43,
+         "tooltip":"<table><tr><td colspan=2>Chandrapur</td><tr><td>Population</td><td>2204307</td></tr><tr><td>Growth Rate</td><td>6.43 %</td></tr><tr><td>Sex Ratio</td><td>961</td></tr><tr><td>Literacy</td><td>80.01 %</td></tr><tr><td>Density</td><td>193</td></tr></table>",
+         "display_name":"Chandrapur"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":961,
+         "tooltip":"<table><tr><td colspan=2>Chandrapur</td><tr><td>Population</td><td>2204307</td></tr><tr><td>Growth Rate</td><td>6.43 %</td></tr><tr><td>Sex Ratio</td><td>961</td></tr><tr><td>Literacy</td><td>80.01 %</td></tr><tr><td>Density</td><td>193</td></tr></table>",
+         "display_name":"Chandrapur"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":80.01,
+         "tooltip":"<table><tr><td colspan=2>Chandrapur</td><tr><td>Population</td><td>2204307</td></tr><tr><td>Growth Rate</td><td>6.43 %</td></tr><tr><td>Sex Ratio</td><td>961</td></tr><tr><td>Literacy</td><td>80.01 %</td></tr><tr><td>Density</td><td>193</td></tr></table>",
+         "display_name":"Chandrapur"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":193,
+         "tooltip":"<table><tr><td colspan=2>Chandrapur</td><tr><td>Population</td><td>2204307</td></tr><tr><td>Growth Rate</td><td>6.43 %</td></tr><tr><td>Sex Ratio</td><td>961</td></tr><tr><td>Literacy</td><td>80.01 %</td></tr><tr><td>Density</td><td>193</td></tr></table>",
+         "display_name":"Chandrapur"
+      }
+   },
+   "IN_MH_DH":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":2050862,
+         "tooltip":"<table><tr><td colspan=2>Dhule</td><tr><td>Population</td><td>2050862</td></tr><tr><td>Growth Rate</td><td>20.08 %</td></tr><tr><td>Sex Ratio</td><td>946</td></tr><tr><td>Literacy</td><td>72.8 %</td></tr><tr><td>Density</td><td>285</td></tr></table>",
+         "display_name":"Dhule"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":20.08,
+         "tooltip":"<table><tr><td colspan=2>Dhule</td><tr><td>Population</td><td>2050862</td></tr><tr><td>Growth Rate</td><td>20.08 %</td></tr><tr><td>Sex Ratio</td><td>946</td></tr><tr><td>Literacy</td><td>72.8 %</td></tr><tr><td>Density</td><td>285</td></tr></table>",
+         "display_name":"Dhule"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":946,
+         "tooltip":"<table><tr><td colspan=2>Dhule</td><tr><td>Population</td><td>2050862</td></tr><tr><td>Growth Rate</td><td>20.08 %</td></tr><tr><td>Sex Ratio</td><td>946</td></tr><tr><td>Literacy</td><td>72.8 %</td></tr><tr><td>Density</td><td>285</td></tr></table>",
+         "display_name":"Dhule"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":72.8,
+         "tooltip":"<table><tr><td colspan=2>Dhule</td><tr><td>Population</td><td>2050862</td></tr><tr><td>Growth Rate</td><td>20.08 %</td></tr><tr><td>Sex Ratio</td><td>946</td></tr><tr><td>Literacy</td><td>72.8 %</td></tr><tr><td>Density</td><td>285</td></tr></table>",
+         "display_name":"Dhule"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":285,
+         "tooltip":"<table><tr><td colspan=2>Dhule</td><tr><td>Population</td><td>2050862</td></tr><tr><td>Growth Rate</td><td>20.08 %</td></tr><tr><td>Sex Ratio</td><td>946</td></tr><tr><td>Literacy</td><td>72.8 %</td></tr><tr><td>Density</td><td>285</td></tr></table>",
+         "display_name":"Dhule"
+      }
+   },
+   "IN_MH_GA":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":1072942,
+         "tooltip":"<table><tr><td colspan=2>Gadchiroli</td><tr><td>Population</td><td>1072942</td></tr><tr><td>Growth Rate</td><td>10.58 %</td></tr><tr><td>Sex Ratio</td><td>982</td></tr><tr><td>Literacy</td><td>74.36 %</td></tr><tr><td>Density</td><td>74</td></tr></table>",
+         "display_name":"Gadchiroli"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":10.58,
+         "tooltip":"<table><tr><td colspan=2>Gadchiroli</td><tr><td>Population</td><td>1072942</td></tr><tr><td>Growth Rate</td><td>10.58 %</td></tr><tr><td>Sex Ratio</td><td>982</td></tr><tr><td>Literacy</td><td>74.36 %</td></tr><tr><td>Density</td><td>74</td></tr></table>",
+         "display_name":"Gadchiroli"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":982,
+         "tooltip":"<table><tr><td colspan=2>Gadchiroli</td><tr><td>Population</td><td>1072942</td></tr><tr><td>Growth Rate</td><td>10.58 %</td></tr><tr><td>Sex Ratio</td><td>982</td></tr><tr><td>Literacy</td><td>74.36 %</td></tr><tr><td>Density</td><td>74</td></tr></table>",
+         "display_name":"Gadchiroli"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":74.36,
+         "tooltip":"<table><tr><td colspan=2>Gadchiroli</td><tr><td>Population</td><td>1072942</td></tr><tr><td>Growth Rate</td><td>10.58 %</td></tr><tr><td>Sex Ratio</td><td>982</td></tr><tr><td>Literacy</td><td>74.36 %</td></tr><tr><td>Density</td><td>74</td></tr></table>",
+         "display_name":"Gadchiroli"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":74,
+         "tooltip":"<table><tr><td colspan=2>Gadchiroli</td><tr><td>Population</td><td>1072942</td></tr><tr><td>Growth Rate</td><td>10.58 %</td></tr><tr><td>Sex Ratio</td><td>982</td></tr><tr><td>Literacy</td><td>74.36 %</td></tr><tr><td>Density</td><td>74</td></tr></table>",
+         "display_name":"Gadchiroli"
+      }
+   },
+   "IN_MH_GO":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":1322507,
+         "tooltip":"<table><tr><td colspan=2>Gondiya</td><tr><td>Population</td><td>1322507</td></tr><tr><td>Growth Rate</td><td>10.14 %</td></tr><tr><td>Sex Ratio</td><td>999</td></tr><tr><td>Literacy</td><td>84.95 %</td></tr><tr><td>Density</td><td>253</td></tr></table>",
+         "display_name":"Gondiya"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":10.14,
+         "tooltip":"<table><tr><td colspan=2>Gondiya</td><tr><td>Population</td><td>1322507</td></tr><tr><td>Growth Rate</td><td>10.14 %</td></tr><tr><td>Sex Ratio</td><td>999</td></tr><tr><td>Literacy</td><td>84.95 %</td></tr><tr><td>Density</td><td>253</td></tr></table>",
+         "display_name":"Gondiya"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":999,
+         "tooltip":"<table><tr><td colspan=2>Gondiya</td><tr><td>Population</td><td>1322507</td></tr><tr><td>Growth Rate</td><td>10.14 %</td></tr><tr><td>Sex Ratio</td><td>999</td></tr><tr><td>Literacy</td><td>84.95 %</td></tr><tr><td>Density</td><td>253</td></tr></table>",
+         "display_name":"Gondiya"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":84.95,
+         "tooltip":"<table><tr><td colspan=2>Gondiya</td><tr><td>Population</td><td>1322507</td></tr><tr><td>Growth Rate</td><td>10.14 %</td></tr><tr><td>Sex Ratio</td><td>999</td></tr><tr><td>Literacy</td><td>84.95 %</td></tr><tr><td>Density</td><td>253</td></tr></table>",
+         "display_name":"Gondiya"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":253,
+         "tooltip":"<table><tr><td colspan=2>Gondiya</td><tr><td>Population</td><td>1322507</td></tr><tr><td>Growth Rate</td><td>10.14 %</td></tr><tr><td>Sex Ratio</td><td>999</td></tr><tr><td>Literacy</td><td>84.95 %</td></tr><tr><td>Density</td><td>253</td></tr></table>",
+         "display_name":"Gondiya"
+      }
+   },
+   "IN_MH_HI":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":1177345,
+         "tooltip":"<table><tr><td colspan=2>Hingoli</td><tr><td>Population</td><td>1177345</td></tr><tr><td>Growth Rate</td><td>19.27 %</td></tr><tr><td>Sex Ratio</td><td>942</td></tr><tr><td>Literacy</td><td>78.17 %</td></tr><tr><td>Density</td><td>244</td></tr></table>",
+         "display_name":"Hingoli"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":19.27,
+         "tooltip":"<table><tr><td colspan=2>Hingoli</td><tr><td>Population</td><td>1177345</td></tr><tr><td>Growth Rate</td><td>19.27 %</td></tr><tr><td>Sex Ratio</td><td>942</td></tr><tr><td>Literacy</td><td>78.17 %</td></tr><tr><td>Density</td><td>244</td></tr></table>",
+         "display_name":"Hingoli"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":942,
+         "tooltip":"<table><tr><td colspan=2>Hingoli</td><tr><td>Population</td><td>1177345</td></tr><tr><td>Growth Rate</td><td>19.27 %</td></tr><tr><td>Sex Ratio</td><td>942</td></tr><tr><td>Literacy</td><td>78.17 %</td></tr><tr><td>Density</td><td>244</td></tr></table>",
+         "display_name":"Hingoli"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":78.17,
+         "tooltip":"<table><tr><td colspan=2>Hingoli</td><tr><td>Population</td><td>1177345</td></tr><tr><td>Growth Rate</td><td>19.27 %</td></tr><tr><td>Sex Ratio</td><td>942</td></tr><tr><td>Literacy</td><td>78.17 %</td></tr><tr><td>Density</td><td>244</td></tr></table>",
+         "display_name":"Hingoli"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":244,
+         "tooltip":"<table><tr><td colspan=2>Hingoli</td><tr><td>Population</td><td>1177345</td></tr><tr><td>Growth Rate</td><td>19.27 %</td></tr><tr><td>Sex Ratio</td><td>942</td></tr><tr><td>Literacy</td><td>78.17 %</td></tr><tr><td>Density</td><td>244</td></tr></table>",
+         "display_name":"Hingoli"
+      }
+   },
+   "IN_MH_JG":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":4229917,
+         "tooltip":"<table><tr><td colspan=2>Jalgaon</td><tr><td>Population</td><td>4229917</td></tr><tr><td>Growth Rate</td><td>14.86 %</td></tr><tr><td>Sex Ratio</td><td>925</td></tr><tr><td>Literacy</td><td>78.2 %</td></tr><tr><td>Density</td><td>360</td></tr></table>",
+         "display_name":"Jalgaon"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":14.86,
+         "tooltip":"<table><tr><td colspan=2>Jalgaon</td><tr><td>Population</td><td>4229917</td></tr><tr><td>Growth Rate</td><td>14.86 %</td></tr><tr><td>Sex Ratio</td><td>925</td></tr><tr><td>Literacy</td><td>78.2 %</td></tr><tr><td>Density</td><td>360</td></tr></table>",
+         "display_name":"Jalgaon"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":925,
+         "tooltip":"<table><tr><td colspan=2>Jalgaon</td><tr><td>Population</td><td>4229917</td></tr><tr><td>Growth Rate</td><td>14.86 %</td></tr><tr><td>Sex Ratio</td><td>925</td></tr><tr><td>Literacy</td><td>78.2 %</td></tr><tr><td>Density</td><td>360</td></tr></table>",
+         "display_name":"Jalgaon"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":78.2,
+         "tooltip":"<table><tr><td colspan=2>Jalgaon</td><tr><td>Population</td><td>4229917</td></tr><tr><td>Growth Rate</td><td>14.86 %</td></tr><tr><td>Sex Ratio</td><td>925</td></tr><tr><td>Literacy</td><td>78.2 %</td></tr><tr><td>Density</td><td>360</td></tr></table>",
+         "display_name":"Jalgaon"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":360,
+         "tooltip":"<table><tr><td colspan=2>Jalgaon</td><tr><td>Population</td><td>4229917</td></tr><tr><td>Growth Rate</td><td>14.86 %</td></tr><tr><td>Sex Ratio</td><td>925</td></tr><tr><td>Literacy</td><td>78.2 %</td></tr><tr><td>Density</td><td>360</td></tr></table>",
+         "display_name":"Jalgaon"
+      }
+   },
+   "IN_MH_JN":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":1959046,
+         "tooltip":"<table><tr><td colspan=2>Jalna</td><tr><td>Population</td><td>1959046</td></tr><tr><td>Growth Rate</td><td>21.46 %</td></tr><tr><td>Sex Ratio</td><td>937</td></tr><tr><td>Literacy</td><td>71.52 %</td></tr><tr><td>Density</td><td>254</td></tr></table>",
+         "display_name":"Jalna"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":21.46,
+         "tooltip":"<table><tr><td colspan=2>Jalna</td><tr><td>Population</td><td>1959046</td></tr><tr><td>Growth Rate</td><td>21.46 %</td></tr><tr><td>Sex Ratio</td><td>937</td></tr><tr><td>Literacy</td><td>71.52 %</td></tr><tr><td>Density</td><td>254</td></tr></table>",
+         "display_name":"Jalna"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":937,
+         "tooltip":"<table><tr><td colspan=2>Jalna</td><tr><td>Population</td><td>1959046</td></tr><tr><td>Growth Rate</td><td>21.46 %</td></tr><tr><td>Sex Ratio</td><td>937</td></tr><tr><td>Literacy</td><td>71.52 %</td></tr><tr><td>Density</td><td>254</td></tr></table>",
+         "display_name":"Jalna"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":71.52,
+         "tooltip":"<table><tr><td colspan=2>Jalna</td><tr><td>Population</td><td>1959046</td></tr><tr><td>Growth Rate</td><td>21.46 %</td></tr><tr><td>Sex Ratio</td><td>937</td></tr><tr><td>Literacy</td><td>71.52 %</td></tr><tr><td>Density</td><td>254</td></tr></table>",
+         "display_name":"Jalna"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":254,
+         "tooltip":"<table><tr><td colspan=2>Jalna</td><tr><td>Population</td><td>1959046</td></tr><tr><td>Growth Rate</td><td>21.46 %</td></tr><tr><td>Sex Ratio</td><td>937</td></tr><tr><td>Literacy</td><td>71.52 %</td></tr><tr><td>Density</td><td>254</td></tr></table>",
+         "display_name":"Jalna"
+      }
+   },
+   "IN_MH_KO":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":3876001,
+         "tooltip":"<table><tr><td colspan=2>Kolhapur</td><tr><td>Population</td><td>3876001</td></tr><tr><td>Growth Rate</td><td>10.01 %</td></tr><tr><td>Sex Ratio</td><td>957</td></tr><tr><td>Literacy</td><td>81.51 %</td></tr><tr><td>Density</td><td>504</td></tr></table>",
+         "display_name":"Kolhapur"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":10.01,
+         "tooltip":"<table><tr><td colspan=2>Kolhapur</td><tr><td>Population</td><td>3876001</td></tr><tr><td>Growth Rate</td><td>10.01 %</td></tr><tr><td>Sex Ratio</td><td>957</td></tr><tr><td>Literacy</td><td>81.51 %</td></tr><tr><td>Density</td><td>504</td></tr></table>",
+         "display_name":"Kolhapur"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":957,
+         "tooltip":"<table><tr><td colspan=2>Kolhapur</td><tr><td>Population</td><td>3876001</td></tr><tr><td>Growth Rate</td><td>10.01 %</td></tr><tr><td>Sex Ratio</td><td>957</td></tr><tr><td>Literacy</td><td>81.51 %</td></tr><tr><td>Density</td><td>504</td></tr></table>",
+         "display_name":"Kolhapur"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":81.51,
+         "tooltip":"<table><tr><td colspan=2>Kolhapur</td><tr><td>Population</td><td>3876001</td></tr><tr><td>Growth Rate</td><td>10.01 %</td></tr><tr><td>Sex Ratio</td><td>957</td></tr><tr><td>Literacy</td><td>81.51 %</td></tr><tr><td>Density</td><td>504</td></tr></table>",
+         "display_name":"Kolhapur"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":504,
+         "tooltip":"<table><tr><td colspan=2>Kolhapur</td><tr><td>Population</td><td>3876001</td></tr><tr><td>Growth Rate</td><td>10.01 %</td></tr><tr><td>Sex Ratio</td><td>957</td></tr><tr><td>Literacy</td><td>81.51 %</td></tr><tr><td>Density</td><td>504</td></tr></table>",
+         "display_name":"Kolhapur"
+      }
+   },
+   "IN_MH_LA":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":2454196,
+         "tooltip":"<table><tr><td colspan=2>Latur</td><tr><td>Population</td><td>2454196</td></tr><tr><td>Growth Rate</td><td>17.97 %</td></tr><tr><td>Sex Ratio</td><td>928</td></tr><tr><td>Literacy</td><td>77.26 %</td></tr><tr><td>Density</td><td>343</td></tr></table>",
+         "display_name":"Latur"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":17.97,
+         "tooltip":"<table><tr><td colspan=2>Latur</td><tr><td>Population</td><td>2454196</td></tr><tr><td>Growth Rate</td><td>17.97 %</td></tr><tr><td>Sex Ratio</td><td>928</td></tr><tr><td>Literacy</td><td>77.26 %</td></tr><tr><td>Density</td><td>343</td></tr></table>",
+         "display_name":"Latur"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":928,
+         "tooltip":"<table><tr><td colspan=2>Latur</td><tr><td>Population</td><td>2454196</td></tr><tr><td>Growth Rate</td><td>17.97 %</td></tr><tr><td>Sex Ratio</td><td>928</td></tr><tr><td>Literacy</td><td>77.26 %</td></tr><tr><td>Density</td><td>343</td></tr></table>",
+         "display_name":"Latur"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":77.26,
+         "tooltip":"<table><tr><td colspan=2>Latur</td><tr><td>Population</td><td>2454196</td></tr><tr><td>Growth Rate</td><td>17.97 %</td></tr><tr><td>Sex Ratio</td><td>928</td></tr><tr><td>Literacy</td><td>77.26 %</td></tr><tr><td>Density</td><td>343</td></tr></table>",
+         "display_name":"Latur"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":343,
+         "tooltip":"<table><tr><td colspan=2>Latur</td><tr><td>Population</td><td>2454196</td></tr><tr><td>Growth Rate</td><td>17.97 %</td></tr><tr><td>Sex Ratio</td><td>928</td></tr><tr><td>Literacy</td><td>77.26 %</td></tr><tr><td>Density</td><td>343</td></tr></table>",
+         "display_name":"Latur"
+      }
+   },
+   "IN_MH_MC":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":3085411,
+         "tooltip":"<table><tr><td colspan=2>Mumbai City</td><tr><td>Population</td><td>3085411</td></tr><tr><td>Growth Rate</td><td>7.57 %</td></tr><tr><td>Sex Ratio</td><td>832</td></tr><tr><td>Literacy</td><td>89.21 %</td></tr><tr><td>Density</td><td>19652</td></tr></table>",
+         "display_name":"Mumbai City"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":7.57,
+         "tooltip":"<table><tr><td colspan=2>Mumbai City</td><tr><td>Population</td><td>3085411</td></tr><tr><td>Growth Rate</td><td>7.57 %</td></tr><tr><td>Sex Ratio</td><td>832</td></tr><tr><td>Literacy</td><td>89.21 %</td></tr><tr><td>Density</td><td>19652</td></tr></table>",
+         "display_name":"Mumbai City"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":832,
+         "tooltip":"<table><tr><td colspan=2>Mumbai City</td><tr><td>Population</td><td>3085411</td></tr><tr><td>Growth Rate</td><td>7.57 %</td></tr><tr><td>Sex Ratio</td><td>832</td></tr><tr><td>Literacy</td><td>89.21 %</td></tr><tr><td>Density</td><td>19652</td></tr></table>",
+         "display_name":"Mumbai City"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":89.21,
+         "tooltip":"<table><tr><td colspan=2>Mumbai City</td><tr><td>Population</td><td>3085411</td></tr><tr><td>Growth Rate</td><td>7.57 %</td></tr><tr><td>Sex Ratio</td><td>832</td></tr><tr><td>Literacy</td><td>89.21 %</td></tr><tr><td>Density</td><td>19652</td></tr></table>",
+         "display_name":"Mumbai City"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":19652,
+         "tooltip":"<table><tr><td colspan=2>Mumbai City</td><tr><td>Population</td><td>3085411</td></tr><tr><td>Growth Rate</td><td>7.57 %</td></tr><tr><td>Sex Ratio</td><td>832</td></tr><tr><td>Literacy</td><td>89.21 %</td></tr><tr><td>Density</td><td>19652</td></tr></table>",
+         "display_name":"Mumbai City"
+      }
+   },
+   "IN_MH_MU":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":9356962,
+         "tooltip":"<table><tr><td colspan=2>Mumbai Suburban</td><tr><td>Population</td><td>9356962</td></tr><tr><td>Growth Rate</td><td>8.29 %</td></tr><tr><td>Sex Ratio</td><td>860</td></tr><tr><td>Literacy</td><td>89.91 %</td></tr><tr><td>Density</td><td>20980</td></tr></table>",
+         "display_name":"Mumbai Suburban"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":8.29,
+         "tooltip":"<table><tr><td colspan=2>Mumbai Suburban</td><tr><td>Population</td><td>9356962</td></tr><tr><td>Growth Rate</td><td>8.29 %</td></tr><tr><td>Sex Ratio</td><td>860</td></tr><tr><td>Literacy</td><td>89.91 %</td></tr><tr><td>Density</td><td>20980</td></tr></table>",
+         "display_name":"Mumbai Suburban"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":860,
+         "tooltip":"<table><tr><td colspan=2>Mumbai Suburban</td><tr><td>Population</td><td>9356962</td></tr><tr><td>Growth Rate</td><td>8.29 %</td></tr><tr><td>Sex Ratio</td><td>860</td></tr><tr><td>Literacy</td><td>89.91 %</td></tr><tr><td>Density</td><td>20980</td></tr></table>",
+         "display_name":"Mumbai Suburban"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":89.91,
+         "tooltip":"<table><tr><td colspan=2>Mumbai Suburban</td><tr><td>Population</td><td>9356962</td></tr><tr><td>Growth Rate</td><td>8.29 %</td></tr><tr><td>Sex Ratio</td><td>860</td></tr><tr><td>Literacy</td><td>89.91 %</td></tr><tr><td>Density</td><td>20980</td></tr></table>",
+         "display_name":"Mumbai Suburban"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":20980,
+         "tooltip":"<table><tr><td colspan=2>Mumbai Suburban</td><tr><td>Population</td><td>9356962</td></tr><tr><td>Growth Rate</td><td>8.29 %</td></tr><tr><td>Sex Ratio</td><td>860</td></tr><tr><td>Literacy</td><td>89.91 %</td></tr><tr><td>Density</td><td>20980</td></tr></table>",
+         "display_name":"Mumbai Suburban"
+      }
+   },
+   "IN_MH_NG":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":4653570,
+         "tooltip":"<table><tr><td colspan=2>Nagpur</td><tr><td>Population</td><td>4653570</td></tr><tr><td>Growth Rate</td><td>14.4 %</td></tr><tr><td>Sex Ratio</td><td>951</td></tr><tr><td>Literacy</td><td>88.39 %</td></tr><tr><td>Density</td><td>470</td></tr></table>",
+         "display_name":"Nagpur"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":14.4,
+         "tooltip":"<table><tr><td colspan=2>Nagpur</td><tr><td>Population</td><td>4653570</td></tr><tr><td>Growth Rate</td><td>14.4 %</td></tr><tr><td>Sex Ratio</td><td>951</td></tr><tr><td>Literacy</td><td>88.39 %</td></tr><tr><td>Density</td><td>470</td></tr></table>",
+         "display_name":"Nagpur"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":951,
+         "tooltip":"<table><tr><td colspan=2>Nagpur</td><tr><td>Population</td><td>4653570</td></tr><tr><td>Growth Rate</td><td>14.4 %</td></tr><tr><td>Sex Ratio</td><td>951</td></tr><tr><td>Literacy</td><td>88.39 %</td></tr><tr><td>Density</td><td>470</td></tr></table>",
+         "display_name":"Nagpur"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":88.39,
+         "tooltip":"<table><tr><td colspan=2>Nagpur</td><tr><td>Population</td><td>4653570</td></tr><tr><td>Growth Rate</td><td>14.4 %</td></tr><tr><td>Sex Ratio</td><td>951</td></tr><tr><td>Literacy</td><td>88.39 %</td></tr><tr><td>Density</td><td>470</td></tr></table>",
+         "display_name":"Nagpur"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":470,
+         "tooltip":"<table><tr><td colspan=2>Nagpur</td><tr><td>Population</td><td>4653570</td></tr><tr><td>Growth Rate</td><td>14.4 %</td></tr><tr><td>Sex Ratio</td><td>951</td></tr><tr><td>Literacy</td><td>88.39 %</td></tr><tr><td>Density</td><td>470</td></tr></table>",
+         "display_name":"Nagpur"
+      }
+   },
+   "IN_MH_ND":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":3361292,
+         "tooltip":"<table><tr><td colspan=2>Nanded</td><tr><td>Population</td><td>3361292</td></tr><tr><td>Growth Rate</td><td>16.86 %</td></tr><tr><td>Sex Ratio</td><td>943</td></tr><tr><td>Literacy</td><td>75.45 %</td></tr><tr><td>Density</td><td>319</td></tr></table>",
+         "display_name":"Nanded"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":16.86,
+         "tooltip":"<table><tr><td colspan=2>Nanded</td><tr><td>Population</td><td>3361292</td></tr><tr><td>Growth Rate</td><td>16.86 %</td></tr><tr><td>Sex Ratio</td><td>943</td></tr><tr><td>Literacy</td><td>75.45 %</td></tr><tr><td>Density</td><td>319</td></tr></table>",
+         "display_name":"Nanded"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":943,
+         "tooltip":"<table><tr><td colspan=2>Nanded</td><tr><td>Population</td><td>3361292</td></tr><tr><td>Growth Rate</td><td>16.86 %</td></tr><tr><td>Sex Ratio</td><td>943</td></tr><tr><td>Literacy</td><td>75.45 %</td></tr><tr><td>Density</td><td>319</td></tr></table>",
+         "display_name":"Nanded"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":75.45,
+         "tooltip":"<table><tr><td colspan=2>Nanded</td><tr><td>Population</td><td>3361292</td></tr><tr><td>Growth Rate</td><td>16.86 %</td></tr><tr><td>Sex Ratio</td><td>943</td></tr><tr><td>Literacy</td><td>75.45 %</td></tr><tr><td>Density</td><td>319</td></tr></table>",
+         "display_name":"Nanded"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":319,
+         "tooltip":"<table><tr><td colspan=2>Nanded</td><tr><td>Population</td><td>3361292</td></tr><tr><td>Growth Rate</td><td>16.86 %</td></tr><tr><td>Sex Ratio</td><td>943</td></tr><tr><td>Literacy</td><td>75.45 %</td></tr><tr><td>Density</td><td>319</td></tr></table>",
+         "display_name":"Nanded"
+      }
+   },
+   "IN_MH_NB":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":1648295,
+         "tooltip":"<table><tr><td colspan=2>Nandurbar</td><tr><td>Population</td><td>1648295</td></tr><tr><td>Growth Rate</td><td>25.66 %</td></tr><tr><td>Sex Ratio</td><td>978</td></tr><tr><td>Literacy</td><td>64.38 %</td></tr><tr><td>Density</td><td>277</td></tr></table>",
+         "display_name":"Nandurbar"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":25.66,
+         "tooltip":"<table><tr><td colspan=2>Nandurbar</td><tr><td>Population</td><td>1648295</td></tr><tr><td>Growth Rate</td><td>25.66 %</td></tr><tr><td>Sex Ratio</td><td>978</td></tr><tr><td>Literacy</td><td>64.38 %</td></tr><tr><td>Density</td><td>277</td></tr></table>",
+         "display_name":"Nandurbar"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":978,
+         "tooltip":"<table><tr><td colspan=2>Nandurbar</td><tr><td>Population</td><td>1648295</td></tr><tr><td>Growth Rate</td><td>25.66 %</td></tr><tr><td>Sex Ratio</td><td>978</td></tr><tr><td>Literacy</td><td>64.38 %</td></tr><tr><td>Density</td><td>277</td></tr></table>",
+         "display_name":"Nandurbar"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":64.38,
+         "tooltip":"<table><tr><td colspan=2>Nandurbar</td><tr><td>Population</td><td>1648295</td></tr><tr><td>Growth Rate</td><td>25.66 %</td></tr><tr><td>Sex Ratio</td><td>978</td></tr><tr><td>Literacy</td><td>64.38 %</td></tr><tr><td>Density</td><td>277</td></tr></table>",
+         "display_name":"Nandurbar"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":277,
+         "tooltip":"<table><tr><td colspan=2>Nandurbar</td><tr><td>Population</td><td>1648295</td></tr><tr><td>Growth Rate</td><td>25.66 %</td></tr><tr><td>Sex Ratio</td><td>978</td></tr><tr><td>Literacy</td><td>64.38 %</td></tr><tr><td>Density</td><td>277</td></tr></table>",
+         "display_name":"Nandurbar"
+      }
+   },
+   "IN_MH_NS":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":6107187,
+         "tooltip":"<table><tr><td colspan=2>Nashik</td><tr><td>Population</td><td>6107187</td></tr><tr><td>Growth Rate</td><td>22.3 %</td></tr><tr><td>Sex Ratio</td><td>934</td></tr><tr><td>Literacy</td><td>82.31 %</td></tr><tr><td>Density</td><td>393</td></tr></table>",
+         "display_name":"Nashik"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":22.3,
+         "tooltip":"<table><tr><td colspan=2>Nashik</td><tr><td>Population</td><td>6107187</td></tr><tr><td>Growth Rate</td><td>22.3 %</td></tr><tr><td>Sex Ratio</td><td>934</td></tr><tr><td>Literacy</td><td>82.31 %</td></tr><tr><td>Density</td><td>393</td></tr></table>",
+         "display_name":"Nashik"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":934,
+         "tooltip":"<table><tr><td colspan=2>Nashik</td><tr><td>Population</td><td>6107187</td></tr><tr><td>Growth Rate</td><td>22.3 %</td></tr><tr><td>Sex Ratio</td><td>934</td></tr><tr><td>Literacy</td><td>82.31 %</td></tr><tr><td>Density</td><td>393</td></tr></table>",
+         "display_name":"Nashik"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":82.31,
+         "tooltip":"<table><tr><td colspan=2>Nashik</td><tr><td>Population</td><td>6107187</td></tr><tr><td>Growth Rate</td><td>22.3 %</td></tr><tr><td>Sex Ratio</td><td>934</td></tr><tr><td>Literacy</td><td>82.31 %</td></tr><tr><td>Density</td><td>393</td></tr></table>",
+         "display_name":"Nashik"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":393,
+         "tooltip":"<table><tr><td colspan=2>Nashik</td><tr><td>Population</td><td>6107187</td></tr><tr><td>Growth Rate</td><td>22.3 %</td></tr><tr><td>Sex Ratio</td><td>934</td></tr><tr><td>Literacy</td><td>82.31 %</td></tr><tr><td>Density</td><td>393</td></tr></table>",
+         "display_name":"Nashik"
+      }
+   },
+   "IN_MH_OS":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":1657576,
+         "tooltip":"<table><tr><td colspan=2>Osmanabad</td><tr><td>Population</td><td>1657576</td></tr><tr><td>Growth Rate</td><td>11.5 %</td></tr><tr><td>Sex Ratio</td><td>924</td></tr><tr><td>Literacy</td><td>78.44 %</td></tr><tr><td>Density</td><td>219</td></tr></table>",
+         "display_name":"Osmanabad"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":11.5,
+         "tooltip":"<table><tr><td colspan=2>Osmanabad</td><tr><td>Population</td><td>1657576</td></tr><tr><td>Growth Rate</td><td>11.5 %</td></tr><tr><td>Sex Ratio</td><td>924</td></tr><tr><td>Literacy</td><td>78.44 %</td></tr><tr><td>Density</td><td>219</td></tr></table>",
+         "display_name":"Osmanabad"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":924,
+         "tooltip":"<table><tr><td colspan=2>Osmanabad</td><tr><td>Population</td><td>1657576</td></tr><tr><td>Growth Rate</td><td>11.5 %</td></tr><tr><td>Sex Ratio</td><td>924</td></tr><tr><td>Literacy</td><td>78.44 %</td></tr><tr><td>Density</td><td>219</td></tr></table>",
+         "display_name":"Osmanabad"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":78.44,
+         "tooltip":"<table><tr><td colspan=2>Osmanabad</td><tr><td>Population</td><td>1657576</td></tr><tr><td>Growth Rate</td><td>11.5 %</td></tr><tr><td>Sex Ratio</td><td>924</td></tr><tr><td>Literacy</td><td>78.44 %</td></tr><tr><td>Density</td><td>219</td></tr></table>",
+         "display_name":"Osmanabad"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":219,
+         "tooltip":"<table><tr><td colspan=2>Osmanabad</td><tr><td>Population</td><td>1657576</td></tr><tr><td>Growth Rate</td><td>11.5 %</td></tr><tr><td>Sex Ratio</td><td>924</td></tr><tr><td>Literacy</td><td>78.44 %</td></tr><tr><td>Density</td><td>219</td></tr></table>",
+         "display_name":"Osmanabad"
+      }
+   },
+   "IN_MH_PA":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":1836086,
+         "tooltip":"<table><tr><td colspan=2>Parbhani</td><tr><td>Population</td><td>1836086</td></tr><tr><td>Growth Rate</td><td>20.19 %</td></tr><tr><td>Sex Ratio</td><td>947</td></tr><tr><td>Literacy</td><td>73.34 %</td></tr><tr><td>Density</td><td>295</td></tr></table>",
+         "display_name":"Parbhani"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":20.19,
+         "tooltip":"<table><tr><td colspan=2>Parbhani</td><tr><td>Population</td><td>1836086</td></tr><tr><td>Growth Rate</td><td>20.19 %</td></tr><tr><td>Sex Ratio</td><td>947</td></tr><tr><td>Literacy</td><td>73.34 %</td></tr><tr><td>Density</td><td>295</td></tr></table>",
+         "display_name":"Parbhani"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":947,
+         "tooltip":"<table><tr><td colspan=2>Parbhani</td><tr><td>Population</td><td>1836086</td></tr><tr><td>Growth Rate</td><td>20.19 %</td></tr><tr><td>Sex Ratio</td><td>947</td></tr><tr><td>Literacy</td><td>73.34 %</td></tr><tr><td>Density</td><td>295</td></tr></table>",
+         "display_name":"Parbhani"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":73.34,
+         "tooltip":"<table><tr><td colspan=2>Parbhani</td><tr><td>Population</td><td>1836086</td></tr><tr><td>Growth Rate</td><td>20.19 %</td></tr><tr><td>Sex Ratio</td><td>947</td></tr><tr><td>Literacy</td><td>73.34 %</td></tr><tr><td>Density</td><td>295</td></tr></table>",
+         "display_name":"Parbhani"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":295,
+         "tooltip":"<table><tr><td colspan=2>Parbhani</td><tr><td>Population</td><td>1836086</td></tr><tr><td>Growth Rate</td><td>20.19 %</td></tr><tr><td>Sex Ratio</td><td>947</td></tr><tr><td>Literacy</td><td>73.34 %</td></tr><tr><td>Density</td><td>295</td></tr></table>",
+         "display_name":"Parbhani"
+      }
+   },
+   "IN_MH_PU":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":9429408,
+         "tooltip":"<table><tr><td colspan=2>Pune</td><tr><td>Population</td><td>9429408</td></tr><tr><td>Growth Rate</td><td>30.37 %</td></tr><tr><td>Sex Ratio</td><td>915</td></tr><tr><td>Literacy</td><td>86.15 %</td></tr><tr><td>Density</td><td>603</td></tr></table>",
+         "display_name":"Pune"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":30.37,
+         "tooltip":"<table><tr><td colspan=2>Pune</td><tr><td>Population</td><td>9429408</td></tr><tr><td>Growth Rate</td><td>30.37 %</td></tr><tr><td>Sex Ratio</td><td>915</td></tr><tr><td>Literacy</td><td>86.15 %</td></tr><tr><td>Density</td><td>603</td></tr></table>",
+         "display_name":"Pune"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":915,
+         "tooltip":"<table><tr><td colspan=2>Pune</td><tr><td>Population</td><td>9429408</td></tr><tr><td>Growth Rate</td><td>30.37 %</td></tr><tr><td>Sex Ratio</td><td>915</td></tr><tr><td>Literacy</td><td>86.15 %</td></tr><tr><td>Density</td><td>603</td></tr></table>",
+         "display_name":"Pune"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":86.15,
+         "tooltip":"<table><tr><td colspan=2>Pune</td><tr><td>Population</td><td>9429408</td></tr><tr><td>Growth Rate</td><td>30.37 %</td></tr><tr><td>Sex Ratio</td><td>915</td></tr><tr><td>Literacy</td><td>86.15 %</td></tr><tr><td>Density</td><td>603</td></tr></table>",
+         "display_name":"Pune"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":603,
+         "tooltip":"<table><tr><td colspan=2>Pune</td><tr><td>Population</td><td>9429408</td></tr><tr><td>Growth Rate</td><td>30.37 %</td></tr><tr><td>Sex Ratio</td><td>915</td></tr><tr><td>Literacy</td><td>86.15 %</td></tr><tr><td>Density</td><td>603</td></tr></table>",
+         "display_name":"Pune"
+      }
+   },
+   "IN_MH_RG":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":2634200,
+         "tooltip":"<table><tr><td colspan=2>Raigarh</td><tr><td>Population</td><td>2634200</td></tr><tr><td>Growth Rate</td><td>19.31 %</td></tr><tr><td>Sex Ratio</td><td>959</td></tr><tr><td>Literacy</td><td>83.14 %</td></tr><tr><td>Density</td><td>368</td></tr></table>",
+         "display_name":"Raigarh"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":19.31,
+         "tooltip":"<table><tr><td colspan=2>Raigarh</td><tr><td>Population</td><td>2634200</td></tr><tr><td>Growth Rate</td><td>19.31 %</td></tr><tr><td>Sex Ratio</td><td>959</td></tr><tr><td>Literacy</td><td>83.14 %</td></tr><tr><td>Density</td><td>368</td></tr></table>",
+         "display_name":"Raigarh"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":959,
+         "tooltip":"<table><tr><td colspan=2>Raigarh</td><tr><td>Population</td><td>2634200</td></tr><tr><td>Growth Rate</td><td>19.31 %</td></tr><tr><td>Sex Ratio</td><td>959</td></tr><tr><td>Literacy</td><td>83.14 %</td></tr><tr><td>Density</td><td>368</td></tr></table>",
+         "display_name":"Raigarh"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":83.14,
+         "tooltip":"<table><tr><td colspan=2>Raigarh</td><tr><td>Population</td><td>2634200</td></tr><tr><td>Growth Rate</td><td>19.31 %</td></tr><tr><td>Sex Ratio</td><td>959</td></tr><tr><td>Literacy</td><td>83.14 %</td></tr><tr><td>Density</td><td>368</td></tr></table>",
+         "display_name":"Raigarh"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":368,
+         "tooltip":"<table><tr><td colspan=2>Raigarh</td><tr><td>Population</td><td>2634200</td></tr><tr><td>Growth Rate</td><td>19.31 %</td></tr><tr><td>Sex Ratio</td><td>959</td></tr><tr><td>Literacy</td><td>83.14 %</td></tr><tr><td>Density</td><td>368</td></tr></table>",
+         "display_name":"Raigarh"
+      }
+   },
+   "IN_MH_RT":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":1615069,
+         "tooltip":"<table><tr><td colspan=2>Ratnagiri</td><tr><td>Population</td><td>1615069</td></tr><tr><td>Growth Rate</td><td>4.82 %</td></tr><tr><td>Sex Ratio</td><td>1122</td></tr><tr><td>Literacy</td><td>82.18 %</td></tr><tr><td>Density</td><td>197</td></tr></table>",
+         "display_name":"Ratnagiri"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":4.82,
+         "tooltip":"<table><tr><td colspan=2>Ratnagiri</td><tr><td>Population</td><td>1615069</td></tr><tr><td>Growth Rate</td><td>4.82 %</td></tr><tr><td>Sex Ratio</td><td>1122</td></tr><tr><td>Literacy</td><td>82.18 %</td></tr><tr><td>Density</td><td>197</td></tr></table>",
+         "display_name":"Ratnagiri"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":1122,
+         "tooltip":"<table><tr><td colspan=2>Ratnagiri</td><tr><td>Population</td><td>1615069</td></tr><tr><td>Growth Rate</td><td>4.82 %</td></tr><tr><td>Sex Ratio</td><td>1122</td></tr><tr><td>Literacy</td><td>82.18 %</td></tr><tr><td>Density</td><td>197</td></tr></table>",
+         "display_name":"Ratnagiri"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":82.18,
+         "tooltip":"<table><tr><td colspan=2>Ratnagiri</td><tr><td>Population</td><td>1615069</td></tr><tr><td>Growth Rate</td><td>4.82 %</td></tr><tr><td>Sex Ratio</td><td>1122</td></tr><tr><td>Literacy</td><td>82.18 %</td></tr><tr><td>Density</td><td>197</td></tr></table>",
+         "display_name":"Ratnagiri"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":197,
+         "tooltip":"<table><tr><td colspan=2>Ratnagiri</td><tr><td>Population</td><td>1615069</td></tr><tr><td>Growth Rate</td><td>4.82 %</td></tr><tr><td>Sex Ratio</td><td>1122</td></tr><tr><td>Literacy</td><td>82.18 %</td></tr><tr><td>Density</td><td>197</td></tr></table>",
+         "display_name":"Ratnagiri"
+      }
+   },
+   "IN_MH_SN":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":2822143,
+         "tooltip":"<table><tr><td colspan=2>Sangli</td><tr><td>Population</td><td>2822143</td></tr><tr><td>Growth Rate</td><td>9.24 %</td></tr><tr><td>Sex Ratio</td><td>966</td></tr><tr><td>Literacy</td><td>81.48 %</td></tr><tr><td>Density</td><td>329</td></tr></table>",
+         "display_name":"Sangli"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":9.24,
+         "tooltip":"<table><tr><td colspan=2>Sangli</td><tr><td>Population</td><td>2822143</td></tr><tr><td>Growth Rate</td><td>9.24 %</td></tr><tr><td>Sex Ratio</td><td>966</td></tr><tr><td>Literacy</td><td>81.48 %</td></tr><tr><td>Density</td><td>329</td></tr></table>",
+         "display_name":"Sangli"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":966,
+         "tooltip":"<table><tr><td colspan=2>Sangli</td><tr><td>Population</td><td>2822143</td></tr><tr><td>Growth Rate</td><td>9.24 %</td></tr><tr><td>Sex Ratio</td><td>966</td></tr><tr><td>Literacy</td><td>81.48 %</td></tr><tr><td>Density</td><td>329</td></tr></table>",
+         "display_name":"Sangli"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":81.48,
+         "tooltip":"<table><tr><td colspan=2>Sangli</td><tr><td>Population</td><td>2822143</td></tr><tr><td>Growth Rate</td><td>9.24 %</td></tr><tr><td>Sex Ratio</td><td>966</td></tr><tr><td>Literacy</td><td>81.48 %</td></tr><tr><td>Density</td><td>329</td></tr></table>",
+         "display_name":"Sangli"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":329,
+         "tooltip":"<table><tr><td colspan=2>Sangli</td><tr><td>Population</td><td>2822143</td></tr><tr><td>Growth Rate</td><td>9.24 %</td></tr><tr><td>Sex Ratio</td><td>966</td></tr><tr><td>Literacy</td><td>81.48 %</td></tr><tr><td>Density</td><td>329</td></tr></table>",
+         "display_name":"Sangli"
+      }
+   },
+   "IN_MH_ST":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":3003741,
+         "tooltip":"<table><tr><td colspan=2>Satara</td><tr><td>Population</td><td>3003741</td></tr><tr><td>Growth Rate</td><td>6.93 %</td></tr><tr><td>Sex Ratio</td><td>988</td></tr><tr><td>Literacy</td><td>82.87 %</td></tr><tr><td>Density</td><td>287</td></tr></table>",
+         "display_name":"Satara"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":6.93,
+         "tooltip":"<table><tr><td colspan=2>Satara</td><tr><td>Population</td><td>3003741</td></tr><tr><td>Growth Rate</td><td>6.93 %</td></tr><tr><td>Sex Ratio</td><td>988</td></tr><tr><td>Literacy</td><td>82.87 %</td></tr><tr><td>Density</td><td>287</td></tr></table>",
+         "display_name":"Satara"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":988,
+         "tooltip":"<table><tr><td colspan=2>Satara</td><tr><td>Population</td><td>3003741</td></tr><tr><td>Growth Rate</td><td>6.93 %</td></tr><tr><td>Sex Ratio</td><td>988</td></tr><tr><td>Literacy</td><td>82.87 %</td></tr><tr><td>Density</td><td>287</td></tr></table>",
+         "display_name":"Satara"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":82.87,
+         "tooltip":"<table><tr><td colspan=2>Satara</td><tr><td>Population</td><td>3003741</td></tr><tr><td>Growth Rate</td><td>6.93 %</td></tr><tr><td>Sex Ratio</td><td>988</td></tr><tr><td>Literacy</td><td>82.87 %</td></tr><tr><td>Density</td><td>287</td></tr></table>",
+         "display_name":"Satara"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":287,
+         "tooltip":"<table><tr><td colspan=2>Satara</td><tr><td>Population</td><td>3003741</td></tr><tr><td>Growth Rate</td><td>6.93 %</td></tr><tr><td>Sex Ratio</td><td>988</td></tr><tr><td>Literacy</td><td>82.87 %</td></tr><tr><td>Density</td><td>287</td></tr></table>",
+         "display_name":"Satara"
+      }
+   },
+   "IN_MH_SI":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":849651,
+         "tooltip":"<table><tr><td colspan=2>Sindhudurg</td><tr><td>Population</td><td>849651</td></tr><tr><td>Growth Rate</td><td>2.21 %</td></tr><tr><td>Sex Ratio</td><td>1036</td></tr><tr><td>Literacy</td><td>85.56 %</td></tr><tr><td>Density</td><td>163</td></tr></table>",
+         "display_name":"Sindhudurg"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":2.21,
+         "tooltip":"<table><tr><td colspan=2>Sindhudurg</td><tr><td>Population</td><td>849651</td></tr><tr><td>Growth Rate</td><td>2.21 %</td></tr><tr><td>Sex Ratio</td><td>1036</td></tr><tr><td>Literacy</td><td>85.56 %</td></tr><tr><td>Density</td><td>163</td></tr></table>",
+         "display_name":"Sindhudurg"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":1036,
+         "tooltip":"<table><tr><td colspan=2>Sindhudurg</td><tr><td>Population</td><td>849651</td></tr><tr><td>Growth Rate</td><td>2.21 %</td></tr><tr><td>Sex Ratio</td><td>1036</td></tr><tr><td>Literacy</td><td>85.56 %</td></tr><tr><td>Density</td><td>163</td></tr></table>",
+         "display_name":"Sindhudurg"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":85.56,
+         "tooltip":"<table><tr><td colspan=2>Sindhudurg</td><tr><td>Population</td><td>849651</td></tr><tr><td>Growth Rate</td><td>2.21 %</td></tr><tr><td>Sex Ratio</td><td>1036</td></tr><tr><td>Literacy</td><td>85.56 %</td></tr><tr><td>Density</td><td>163</td></tr></table>",
+         "display_name":"Sindhudurg"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":163,
+         "tooltip":"<table><tr><td colspan=2>Sindhudurg</td><tr><td>Population</td><td>849651</td></tr><tr><td>Growth Rate</td><td>2.21 %</td></tr><tr><td>Sex Ratio</td><td>1036</td></tr><tr><td>Literacy</td><td>85.56 %</td></tr><tr><td>Density</td><td>163</td></tr></table>",
+         "display_name":"Sindhudurg"
+      }
+   },
+   "IN_MH_SO":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":4317756,
+         "tooltip":"<table><tr><td colspan=2>Solapur</td><tr><td>Population</td><td>4317756</td></tr><tr><td>Growth Rate</td><td>12.16 %</td></tr><tr><td>Sex Ratio</td><td>938</td></tr><tr><td>Literacy</td><td>77.02 %</td></tr><tr><td>Density</td><td>290</td></tr></table>",
+         "display_name":"Solapur"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":12.16,
+         "tooltip":"<table><tr><td colspan=2>Solapur</td><tr><td>Population</td><td>4317756</td></tr><tr><td>Growth Rate</td><td>12.16 %</td></tr><tr><td>Sex Ratio</td><td>938</td></tr><tr><td>Literacy</td><td>77.02 %</td></tr><tr><td>Density</td><td>290</td></tr></table>",
+         "display_name":"Solapur"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":938,
+         "tooltip":"<table><tr><td colspan=2>Solapur</td><tr><td>Population</td><td>4317756</td></tr><tr><td>Growth Rate</td><td>12.16 %</td></tr><tr><td>Sex Ratio</td><td>938</td></tr><tr><td>Literacy</td><td>77.02 %</td></tr><tr><td>Density</td><td>290</td></tr></table>",
+         "display_name":"Solapur"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":77.02,
+         "tooltip":"<table><tr><td colspan=2>Solapur</td><tr><td>Population</td><td>4317756</td></tr><tr><td>Growth Rate</td><td>12.16 %</td></tr><tr><td>Sex Ratio</td><td>938</td></tr><tr><td>Literacy</td><td>77.02 %</td></tr><tr><td>Density</td><td>290</td></tr></table>",
+         "display_name":"Solapur"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":290,
+         "tooltip":"<table><tr><td colspan=2>Solapur</td><tr><td>Population</td><td>4317756</td></tr><tr><td>Growth Rate</td><td>12.16 %</td></tr><tr><td>Sex Ratio</td><td>938</td></tr><tr><td>Literacy</td><td>77.02 %</td></tr><tr><td>Density</td><td>290</td></tr></table>",
+         "display_name":"Solapur"
+      }
+   },
+   "IN_MH_TH":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":11060148,
+         "tooltip":"<table><tr><td colspan=2>Thane</td><tr><td>Population</td><td>11060148</td></tr><tr><td>Growth Rate</td><td>36.01 %</td></tr><tr><td>Sex Ratio</td><td>886</td></tr><tr><td>Literacy</td><td>84.53 %</td></tr><tr><td>Density</td><td>1157</td></tr></table>",
+         "display_name":"Thane"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":36.01,
+         "tooltip":"<table><tr><td colspan=2>Thane</td><tr><td>Population</td><td>11060148</td></tr><tr><td>Growth Rate</td><td>36.01 %</td></tr><tr><td>Sex Ratio</td><td>886</td></tr><tr><td>Literacy</td><td>84.53 %</td></tr><tr><td>Density</td><td>1157</td></tr></table>",
+         "display_name":"Thane"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":886,
+         "tooltip":"<table><tr><td colspan=2>Thane</td><tr><td>Population</td><td>11060148</td></tr><tr><td>Growth Rate</td><td>36.01 %</td></tr><tr><td>Sex Ratio</td><td>886</td></tr><tr><td>Literacy</td><td>84.53 %</td></tr><tr><td>Density</td><td>1157</td></tr></table>",
+         "display_name":"Thane"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":84.53,
+         "tooltip":"<table><tr><td colspan=2>Thane</td><tr><td>Population</td><td>11060148</td></tr><tr><td>Growth Rate</td><td>36.01 %</td></tr><tr><td>Sex Ratio</td><td>886</td></tr><tr><td>Literacy</td><td>84.53 %</td></tr><tr><td>Density</td><td>1157</td></tr></table>",
+         "display_name":"Thane"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":1157,
+         "tooltip":"<table><tr><td colspan=2>Thane</td><tr><td>Population</td><td>11060148</td></tr><tr><td>Growth Rate</td><td>36.01 %</td></tr><tr><td>Sex Ratio</td><td>886</td></tr><tr><td>Literacy</td><td>84.53 %</td></tr><tr><td>Density</td><td>1157</td></tr></table>",
+         "display_name":"Thane"
+      }
+   },
+   "IN_MH_WR":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":1300774,
+         "tooltip":"<table><tr><td colspan=2>Wardha</td><tr><td>Population</td><td>1300774</td></tr><tr><td>Growth Rate</td><td>5.18 %</td></tr><tr><td>Sex Ratio</td><td>946</td></tr><tr><td>Literacy</td><td>86.99 %</td></tr><tr><td>Density</td><td>206</td></tr></table>",
+         "display_name":"Wardha"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":5.18,
+         "tooltip":"<table><tr><td colspan=2>Wardha</td><tr><td>Population</td><td>1300774</td></tr><tr><td>Growth Rate</td><td>5.18 %</td></tr><tr><td>Sex Ratio</td><td>946</td></tr><tr><td>Literacy</td><td>86.99 %</td></tr><tr><td>Density</td><td>206</td></tr></table>",
+         "display_name":"Wardha"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":946,
+         "tooltip":"<table><tr><td colspan=2>Wardha</td><tr><td>Population</td><td>1300774</td></tr><tr><td>Growth Rate</td><td>5.18 %</td></tr><tr><td>Sex Ratio</td><td>946</td></tr><tr><td>Literacy</td><td>86.99 %</td></tr><tr><td>Density</td><td>206</td></tr></table>",
+         "display_name":"Wardha"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":86.99,
+         "tooltip":"<table><tr><td colspan=2>Wardha</td><tr><td>Population</td><td>1300774</td></tr><tr><td>Growth Rate</td><td>5.18 %</td></tr><tr><td>Sex Ratio</td><td>946</td></tr><tr><td>Literacy</td><td>86.99 %</td></tr><tr><td>Density</td><td>206</td></tr></table>",
+         "display_name":"Wardha"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":206,
+         "tooltip":"<table><tr><td colspan=2>Wardha</td><tr><td>Population</td><td>1300774</td></tr><tr><td>Growth Rate</td><td>5.18 %</td></tr><tr><td>Sex Ratio</td><td>946</td></tr><tr><td>Literacy</td><td>86.99 %</td></tr><tr><td>Density</td><td>206</td></tr></table>",
+         "display_name":"Wardha"
+      }
+   },
+   "IN_MH_WS":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":1197160,
+         "tooltip":"<table><tr><td colspan=2>Washim</td><tr><td>Population</td><td>1197160</td></tr><tr><td>Growth Rate</td><td>17.34 %</td></tr><tr><td>Sex Ratio</td><td>930</td></tr><tr><td>Literacy</td><td>83.25 %</td></tr><tr><td>Density</td><td>244</td></tr></table>",
+         "display_name":"Washim"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":17.34,
+         "tooltip":"<table><tr><td colspan=2>Washim</td><tr><td>Population</td><td>1197160</td></tr><tr><td>Growth Rate</td><td>17.34 %</td></tr><tr><td>Sex Ratio</td><td>930</td></tr><tr><td>Literacy</td><td>83.25 %</td></tr><tr><td>Density</td><td>244</td></tr></table>",
+         "display_name":"Washim"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":930,
+         "tooltip":"<table><tr><td colspan=2>Washim</td><tr><td>Population</td><td>1197160</td></tr><tr><td>Growth Rate</td><td>17.34 %</td></tr><tr><td>Sex Ratio</td><td>930</td></tr><tr><td>Literacy</td><td>83.25 %</td></tr><tr><td>Density</td><td>244</td></tr></table>",
+         "display_name":"Washim"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":83.25,
+         "tooltip":"<table><tr><td colspan=2>Washim</td><tr><td>Population</td><td>1197160</td></tr><tr><td>Growth Rate</td><td>17.34 %</td></tr><tr><td>Sex Ratio</td><td>930</td></tr><tr><td>Literacy</td><td>83.25 %</td></tr><tr><td>Density</td><td>244</td></tr></table>",
+         "display_name":"Washim"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":244,
+         "tooltip":"<table><tr><td colspan=2>Washim</td><tr><td>Population</td><td>1197160</td></tr><tr><td>Growth Rate</td><td>17.34 %</td></tr><tr><td>Sex Ratio</td><td>930</td></tr><tr><td>Literacy</td><td>83.25 %</td></tr><tr><td>Density</td><td>244</td></tr></table>",
+         "display_name":"Washim"
+      }
+   },
+   "IN_MH_YA":{
+      "population":{
+         "color": "#5fa9d5",
+         "data":2772348,
+         "tooltip":"<table><tr><td colspan=2>Yavatmal</td><tr><td>Population</td><td>2772348</td></tr><tr><td>Growth Rate</td><td>12.78 %</td></tr><tr><td>Sex Ratio</td><td>952</td></tr><tr><td>Literacy</td><td>82.82 %</td></tr><tr><td>Density</td><td>204</td></tr></table>",
+         "display_name":"Yavatmal"
+      },
+      "growth_rate":{
+         "color": "#a3c337",
+         "data":12.78,
+         "tooltip":"<table><tr><td colspan=2>Yavatmal</td><tr><td>Population</td><td>2772348</td></tr><tr><td>Growth Rate</td><td>12.78 %</td></tr><tr><td>Sex Ratio</td><td>952</td></tr><tr><td>Literacy</td><td>82.82 %</td></tr><tr><td>Density</td><td>204</td></tr></table>",
+         "display_name":"Yavatmal"
+      },
+      "sex_ratio":{
+         "color": "#feaf45",
+         "data":952,
+         "tooltip":"<table><tr><td colspan=2>Yavatmal</td><tr><td>Population</td><td>2772348</td></tr><tr><td>Growth Rate</td><td>12.78 %</td></tr><tr><td>Sex Ratio</td><td>952</td></tr><tr><td>Literacy</td><td>82.82 %</td></tr><tr><td>Density</td><td>204</td></tr></table>",
+         "display_name":"Yavatmal"
+      },
+      "literacy":{
+         "color": "#e63240",
+         "data":82.82,
+         "tooltip":"<table><tr><td colspan=2>Yavatmal</td><tr><td>Population</td><td>2772348</td></tr><tr><td>Growth Rate</td><td>12.78 %</td></tr><tr><td>Sex Ratio</td><td>952</td></tr><tr><td>Literacy</td><td>82.82 %</td></tr><tr><td>Density</td><td>204</td></tr></table>",
+         "display_name":"Yavatmal"
+      },
+      "density":{
+         "color": "#af78be",
+         "data":204,
+         "tooltip":"<table><tr><td colspan=2>Yavatmal</td><tr><td>Population</td><td>2772348</td></tr><tr><td>Growth Rate</td><td>12.78 %</td></tr><tr><td>Sex Ratio</td><td>952</td></tr><tr><td>Literacy</td><td>82.82 %</td></tr><tr><td>Density</td><td>204</td></tr></table>",
+         "display_name":"Yavatmal"
+      }
+   }
+}
