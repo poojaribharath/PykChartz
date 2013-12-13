@@ -1,6 +1,4 @@
 
-PykCharts = {};
-
 PykCharts.HawkEye = function (options) {
   //----------------------------------------------------------------------------------------
   //1. This is the method that executes the various JS functions in the proper sequence to generate the chart
