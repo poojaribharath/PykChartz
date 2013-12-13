@@ -86,6 +86,51 @@ svg.pyk-choropleth-map-holder g.counties path:hover{stroke-width: 2px;}
 img[src*="gstatic.com/"], img[src*="googleapis.com/"] {
 max-width: none;
 }
+svg.pyk-hawkeye{
+    shape-rendering: crispEdges;
+    font-size: 10px;
+}
+
+svg.pyk-hawkeye text.group_label{
+    font-weight: 800;
+}
+
+svg.pyk-hawkeye text.txt1{
+
+transform:rotate(7deg);
+-ms-transform:rotate(7deg); /* IE 9 */
+-webkit-transform:rotate(10deg); /* Safari and Chrome */
+}
+svg.pyk-hawkeye text.txt2{
+
+transform:rotate(7deg);
+-ms-transform:rotate(7deg); /* IE 9 */
+-webkit-transform:rotate(10deg); /* Safari and Chrome */
+}
+svg.pyk-hawkeye text.txt3{
+
+transform:rotate(7deg);
+-ms-transform:rotate(7deg); /* IE 9 */
+-webkit-transform:rotate(10deg); /* Safari and Chrome */
+}
+svg.pyk-hawkeye text.txt4{
+
+transform:rotate(7deg);
+-ms-transform:rotate(7deg); /* IE 9 */
+-webkit-transform:rotate(10deg); /* Safari and Chrome */
+}
+svg.pyk-hawkeye text.txt5{
+
+transform:rotate(7deg);
+-ms-transform:rotate(7deg); /* IE 9 */
+-webkit-transform:rotate(10deg); /* Safari and Chrome */
+}
+svg.pyk-hawkeye text.txt6{
+
+transform:rotate(7deg);
+-ms-transform:rotate(7deg); /* IE 9 */
+-webkit-transform:rotate(10deg); /* Safari and Chrome */
+}
 /* Compare with Circles */
 
 svg.pyk-compare_with_circles{font-family: Arial, sans-serif;font-size:10px;}
