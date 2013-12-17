@@ -3,13 +3,13 @@ PykCharts.HawkEye = function (options) {
   //----------------------------------------------------------------------------------------
   //1. This is the method that executes the various JS functions in the proper sequence to generate the chart
   //----------------------------------------------------------------------------------------
-	
+    
     this.init = function () {
       // 1.1 Validate the option parameters
-			  if (!this.validate_options()) return false;
+              if (!this.validate_options()) return false;
 
         // 1.2 Preload text
-				$(this.options.selection).html("Loading... Please wait");
+                $(this.options.selection).html("Loading... Please wait");
 
         // 1.3 Make Variable value accesible throughout
         var that = this;
@@ -18,8 +18,8 @@ PykCharts.HawkEye = function (options) {
         that.resized = 0;
         that.h_cell = that.options.h_cell; //height of cell in connector tabel
         that.w_cell = that.options.w_cell; //width of cell in connector tabel
-				that.overlap = that.options.overlap;
-				that.initial_bar_width_adjustment = that.options.barchartwidthadjust;
+                that.overlap = that.options.overlap;
+                that.initial_bar_width_adjustment = that.options.barchartwidthadjust;
         that.opentabel = 1;
         that.bdtabel = 1;
 
@@ -33,7 +33,7 @@ PykCharts.HawkEye = function (options) {
         d3.json(this.options.subdata, function (e, data) {
             that.subdata = data;
         });
-				
+                
         // 1.6 Read the Column data input file(s)
         d3.json(this.options.breakdown, function (e, data) {
             that.breakdown = data;
@@ -73,8 +73,8 @@ PykCharts.HawkEye = function (options) {
     this.render = function () {
        
       //4.1 Clear existing HTML inside Selection DIV ID
-			  $(this.options.selection).html("");
-				
+              $(this.options.selection).html("");
+                
         //4.2 Assign height and width, box_width, ... to a local variable to be rendered
         var svg_height = this.options.svg_height;
         var svg_width = this.options.svg_width;
@@ -98,11 +98,11 @@ PykCharts.HawkEye = function (options) {
             .attr("width", svg_width)
         .attr("transform", "translate(" + this.options.margins.left + "," + this.options.margins.top + ")");
 
-				this.barchartg = this.svg.append("g")
+                this.barchartg = this.svg.append("g")
             .attr("transform", "translate(0 ," + height_translate + ")")
             .attr("class", "barchart")
             .attr("height", h)
-            .attr("width", w)
+            .attr("width", w);
 
         this.chart_group = this.barchartg.append("g")
             .attr("class", "chart-holder")
@@ -124,7 +124,7 @@ PykCharts.HawkEye = function (options) {
     //----------------------------------------------------------------------------------------
     // 5. Assembling the barchart json data in group of similar categories  
     //----------------------------------------------------------------------------------------
-		this.getGroups = function () {
+        this.getGroups = function () {
         var groups = {};
         for (var i in this.the_bars) {
             var bar = this.the_bars[i];
@@ -137,11 +137,11 @@ PykCharts.HawkEye = function (options) {
         }
         return groups;
     };
-		
+        
     //----------------------------------------------------------------------------------------
     // 6. fetching nodes of barchart json data   
     //----------------------------------------------------------------------------------------
-	  this.getParameters = function () {
+      this.getParameters = function () {
          var that = this;
          var p = [];
          for (var i in that.the_layers) {
@@ -153,16 +153,16 @@ PykCharts.HawkEye = function (options) {
                  "color": color
              });
          }
- 			  return p;
+               return p;
      };
-		
+        
      //----------------------------------------------------------------------------------------
      // 7. Rendering Chart:
      //----------------------------------------------------------------------------------------
     this.renderChart = function () {
         
       //7.1 Assign height and width, box_width, ... to a local variable to be rendered
-				var that = this;
+                var that = this;
         var w = this.chart_group.attr("width");
         var h = this.chart_group.attr("height");
         var the_bars = this.the_bars;
@@ -170,13 +170,13 @@ PykCharts.HawkEye = function (options) {
         var layers = this.the_layers;
         var groups = this.getGroups();
 
-	      //7.2 using stack layout to arrange rects & passing data returned from layer function
+          //7.2 using stack layout to arrange rects & passing data returned from layer function
         var stack = d3.layout.stack() // Create default stack
         .values(function (d) { // The values are present deep in the array, need to tell d3 where to find it
             return d.values;
         })(layers);
 
-	      //7.3 geting the total Height values in array
+          //7.3 geting the total Height values in array
         var yValues = [];
         layers.map(function (e, i) { // Get all values to create scale
             for (i in e.values) {
@@ -185,39 +185,39 @@ PykCharts.HawkEye = function (options) {
             }
         });
 
-	      //7.4 setting Up Xscale
+          //7.4 setting Up Xscale
         var xScale = d3.scale.ordinal()
             .domain(the_bars.map(function (e, i) {
                 return e.id || i; // Keep the ID for bars and numbers for integers
             }))
             .rangeBands([0, w - this.options.box_gap], 0.2);
 
-			  //7.5 getting max & min for the Total height of Bar Chart
+              //7.5 getting max & min for the Total height of Bar Chart
         var v0 = Math.max(Math.abs(d3.min(yValues)), Math.abs(d3.max(yValues)));
         var margin = 10;
 
-	      //7.6 setting Up yscale
+          //7.6 setting Up yscale
         var y = d3.scale.linear()
             .range([h - margin, 0 + margin]);
         y.domain([-v0, v0]);
         var yScale = d3.scale.linear().domain([-v0, v0]).range([0, h]).nice();
-			  var yScaleInvert = d3.scale.linear().domain([v0, -v0]).range([0, h]).nice(); // For the yAxis
+              var yScaleInvert = d3.scale.linear().domain([v0, -v0]).range([0, h]).nice(); // For the yAxis
         var translateY = parseInt(this.options.margins.top) + parseInt(h);
 
-	      //7.6 get the Names of Of node Jan, Feb..
+          //7.6 get the Names of Of node Jan, Feb..
         var group_label_data = [];
         for (var i in groups) {
             var g = groups[i];
             var x = xScale(g[0]);
             var totalWidth = xScale.rangeBand() * g.length + that.options.box_width;
-            var x = x + (totalWidth / 2);
+            var x1 = x + (totalWidth / 2);
             group_label_data.push({
-                x: x,
+                x: x1,
                 name: i
             });
         }
 
-	      //7.7 Append TEXT Element For of Of node Jan, Feb.. to the Chart
+          //7.7 Append TEXT Element For of Of node Jan, Feb.. to the Chart
         if (group_label_data.length > 1) {
             this.barchartg.selectAll("text.group_label").data(group_label_data).enter()
                 .append("text").attr("class", "group_label")
@@ -231,9 +231,9 @@ PykCharts.HawkEye = function (options) {
                 .text(function (d) {
                     return d.name;
                 });
-							}
-							
-			  //7.8 Append lines for Positive & negative Bar charts with names of months in between
+                            }
+                            
+              //7.8 Append lines for Positive & negative Bar charts with names of months in between
         var wd = this.chart_group.attr("width");
         this.chart_group.append("line")
             .attr("x1", -40)
@@ -264,7 +264,7 @@ PykCharts.HawkEye = function (options) {
             .text("Consumed");
 
 
-			  //7.9 Append group Element named Bar & append rects to bars
+              //7.9 Append group Element named Bar & append rects to bars
         var bars = this.chart_group.selectAll("g.bars").data(this.barStack(layers));
         bars.enter().append("g")
             .attr("class", "bars");
@@ -289,8 +289,8 @@ PykCharts.HawkEye = function (options) {
                 that.tooltip.style("visibility", "hidden");
             })
             .on("click", function (d) {
-						  d3.selectAll("svg g.vis .tabeldata").remove();
-							
+                          d3.selectAll("svg g.vis .tabeldata").remove();
+                            
                 var tsize = [];
                 var tvaluespos = [];
                 var tvaluesneg =[];
@@ -321,79 +321,79 @@ PykCharts.HawkEye = function (options) {
                     }
                 });
 
-							  //7.10 Fetching X,Y,height,width etc.. to be passed to showdetails() for displaying connectors
-                var x1 = xScale(d.x);
-                var y1 = y(upy);
-                var y2 = y(downy);
+                              //7.10 Fetching X,Y,height,width etc.. to be passed to showdetails() for displaying connectors
+                var ax1 = xScale(d.x);
+                var ay1 = y(upy);
+                var ay2 = y(downy);
                 var wd = xScale.rangeBand() + that.options.box_width;
                 var ht = (d.size);
-								var wd,cl=0;
+                                var wd1,cl=0;
                 var svgwidth = d3.select("svg").attr("width");
                 var hh = d3.select(".chart-holder").attr("height");
                 var ww = d3.select(".chart-holder").attr("width");
-								var maxjson = that.processmaxcol();
+                                var maxjson = that.processmaxcol();
                 var table = (that.w_cell*1.4) * maxjson;
-								var overlap = that.overlap;
-							  
-								//7.11 resize towards left i.e. shrink the bar 
-								if(ww>svgwidth-table)
-								{
-									var tx1=ww - (svgwidth-table)
-									x_resize_option_2 =Math.abs(ww- (svgwidth-table));	
-									new_bar_chart_adjust_ind = (that.options.barchartwidthadjust * x_resize_option_2)/(ww);
+                                var overlap = that.overlap;
+                              
+                                //7.11 resize towards left i.e. shrink the bar 
+                                if(ww>svgwidth-table)
+                                {
+                                    var tx1=ww - (svgwidth-table);
+                                    x_resize_option_2 =Math.abs(ww- (svgwidth-table));    
+                                    new_bar_chart_adjust_ind = (that.options.barchartwidthadjust * x_resize_option_2)/(ww);
                   that.options.barchartwidthadjust = that.options.barchartwidthadjust-new_bar_chart_adjust_ind;
-									that.initial_bar_width_adjustment = that.options.barchartwidthadjust;
-									that.render();
+                                    that.initial_bar_width_adjustment = that.options.barchartwidthadjust;
+                                    that.render();
                   that.renderTooltip();
                   that.draw();
-								}
-								
-								if (x1>svgwidth-(overlap * table))
-								{ 
-			            that.resized = 1;
-									x_resize_option_2 =Math.abs(svgwidth-(overlap * table)-x1);	
-									new_bar_chart_adjust_ind = (that.options.barchartwidthadjust * x_resize_option_2)/svgwidth;
+                                }
+                                
+                                if (ax1>svgwidth-(overlap * table))
+                                { 
+                        that.resized = 1;
+                                    x_resize_option_2 =Math.abs(svgwidth-(overlap * table)-ax1);    
+                                    new_bar_chart_adjust_ind = (that.options.barchartwidthadjust * x_resize_option_2)/svgwidth;
                   that.options.barchartwidthadjust = that.options.barchartwidthadjust-new_bar_chart_adjust_ind;
-									that.render();
+                                    that.render();
                   that.renderTooltip();
                   that.draw();
                  }
-		             else if (that.resized ==1)
-								  {
-										//7.12 resize towards left i.e. shrink the bar 
-	                 if (x1 < svgwidth-(overlap * table))
-	 									{ 
-	 			            that.resized = 0;
-									
-	 									x_resize_option_2 = Math.abs(svgwidth- (overlap * table) - x1);	
-	 									new_bar_chart_adjust_ind = (that.options.barchartwidthadjust * x_resize_option_2)/svgwidth;
-										 that.options.barchartwidthadjust = that.options.barchartwidthadjust+new_bar_chart_adjust_ind;
- 										if (that.options.barchartwidthadjust > that.initial_bar_width_adjustment)
- 										{
- 											that.options.barchartwidthadjust = that.initial_bar_width_adjustment;
- 										}
-	 									that.render();
-	                   that.renderTooltip();
-	                   that.draw();
-	                  	}
-								 }
-           			
-								//7.12 Draw Temprory Scale & pass new X,y Width as the Resized 
-								tempxScale = d3.scale.ordinal()
+                     else if (that.resized ==1)
+                                  {
+                                        //7.12 resize towards left i.e. shrink the bar 
+                     if (ax1 < svgwidth-(overlap * table))
+                                         { 
+                             that.resized = 0;
+                                    
+                                         x_resize_option_2 = Math.abs(svgwidth- (overlap * table) - ax1);    
+                                         new_bar_chart_adjust_ind = (that.options.barchartwidthadjust * x_resize_option_2)/svgwidth;
+                                         that.options.barchartwidthadjust = that.options.barchartwidthadjust+new_bar_chart_adjust_ind;
+                                         if (that.options.barchartwidthadjust > that.initial_bar_width_adjustment)
+                                         {
+                                             that.options.barchartwidthadjust = that.initial_bar_width_adjustment;
+                                         }
+                                         that.render();
+                       that.renderTooltip();
+                       that.draw();
+                          }
+                                 }
+                       
+                                //7.12 Draw Temprory Scale & pass new X,y Width as the Resized 
+                                tempxScale = d3.scale.ordinal()
                     .domain(the_bars.map(function (e, i) {
                         return e.id || i; // Keep the ID for bars and numbers for integers
                     }))
                     .rangeBands([0, (svgwidth * that.options.barchartwidthadjust) - that.options.box_gap], 0.2);
-                x1 = (tempxScale(d.x));
-							  wd = tempxScale.rangeBand()+ that.options.box_width; ;
-				        cl  = (that.options.svg_width) -  x1 - table ;
-								var str=d.x;
-								var ni = str.indexOf("i")+1;
-								var nj = str.indexOf("j");
-								var res = str.slice(ni,nj);
-								var months =["January" , "February" ,"March" ,"April", "May" ,"June", "July","August","September","October","November","December" ]
-								var month_name = months[res];
-								that.showdetail(x1, y1, y2, wd,cl, maxval,month_name);
+                ax1 = (tempxScale(d.x));
+                              wd1 = tempxScale.rangeBand()+ that.options.box_width; 
+                        cl  = (that.options.svg_width) -  ax1 - table ;
+                                var str=d.x;
+                                var ni = str.indexOf("i")+1;
+                                var nj = str.indexOf("j");
+                                var res = str.slice(ni,nj);
+                                var months =["January" , "February" ,"March" ,"April", "May" ,"June", "July","August","September","October","November","December" ];
+                                var month_name = months[res];
+                                that.showdetail(ax1, ay1, ay2, wd1,cl, maxval,month_name);
               });
 
         rect
@@ -435,8 +435,8 @@ PykCharts.HawkEye = function (options) {
                 }
             }
         }
-				
-				var max = d3.max(length);
+                
+                var max = d3.max(length);
         return max;
     };
 
@@ -448,11 +448,11 @@ PykCharts.HawkEye = function (options) {
 
         var d = that.subdata;
        
-       	var max = 0;
+           var max = 0;
         for (var i in d) {
-					max = max +1;
+                    max = max +1;
         }
-			  return max;
+              return max;
     };
 
    
@@ -460,36 +460,36 @@ PykCharts.HawkEye = function (options) {
      //----------------------------------------------------------------------------------------
     // 9. Rendering Details:
     //----------------------------------------------------------------------------------------
-    this.showdetail = function (x1, y1, y2, wd, cl, maxval,month) {
+    this.showdetail = function (ax1, ay1, ay2, barwd, cl, maxval,month) {
       
-			//9.1 Remove Current connectoe & Tabel Data 
-			  d3.selectAll("svg g.vis path").remove();
+            //9.1 Remove Current connectoe & Tabel Data 
+              d3.selectAll("svg g.vis path").remove();
         d3.selectAll("svg g.vis rect").remove();
         
-				//9.2 Assign height and width, box_width, ... to a local variable to be rendered
-				var that = this;
+                //9.2 Assign height and width, box_width, ... to a local variable to be rendered
+                var that = this;
         var maxjson = this.processmaxdata();
-				var month_name = month;
+                var month_name = month;
         var posvals = 3;
         var negvals = 2;
-				var table =[];
-        var x1 = x1;
+                var table =[];
+        var x1 = ax1;
         var th = this.chart_group.attr("height");
         var vth = this.vis.attr("height");
-        var y1 = (vth / 2 - (th / 2)) + y1;
-        var y2 = (vth / 2 - (th / 2)) + y2 - 5;
-        var wd = wd;
-        var tablewidth = that.w_cell * this.processmaxcol();;
-				
-				//9.3 passed chordlength obtained from onclik 
+        var y1 = (vth / 2 - (th / 2)) + ay1;
+        var y2 = (vth / 2 - (th / 2)) + ay2 - 5;
+        var wd = barwd;
+        var tablewidth = that.w_cell * this.processmaxcol();
+                
+                //9.3 passed chordlength obtained from onclik 
         var chordlength = cl;
         var buff = 40;
         var theight = that.h_cell * posvals;
         var geom = [3, 4, 1, 2, 5];
         var counterwdth = 0;
         var curveradjestment = wd / counterwdth;
-				
-				//9.4 Getnrating P1 = P12 for upper connector 
+                
+                //9.4 Getnrating P1 = P12 for upper connector 
         var p1 = {
             x: x1,
             y: y1
@@ -498,7 +498,7 @@ PykCharts.HawkEye = function (options) {
         var p1x = x1;
         var p7y = (buff + theight);
         var p2y = (buff * 2);
-				var p8_dx = ((p4x - p1x - (wd / curveradjestment)) / 10) * geom[0];
+                var p8_dx = ((p4x - p1x - (wd / curveradjestment)) / 10) * geom[0];
         var p9_dx = (p4x - p1x - wd / curveradjestment) / 10 * geom[1];
         var p10_dx = (p4x - p1x) / 10 * geom[2];
         var p8_dy = (p7y - p2y) / 10 * geom[3];
@@ -531,7 +531,7 @@ PykCharts.HawkEye = function (options) {
             x: (x1 + wd + chordlength),
             y: (buff + theight)
         };
-	that.p7=p7;
+    that.p7=p7;
 
         var p8 = {
             x: ((x1 + wd + chordlength) - p8_dx),
@@ -553,8 +553,8 @@ PykCharts.HawkEye = function (options) {
             x: (x1 + wd),
             y: y1
         };
-				
-				//9.5 Getnrating P13 = P24 for upper connector 
+                
+                //9.5 Getnrating P13 = P24 for upper connector 
         var buff_below = 20;
         var base = this.options.svg_height - buff_below;
         var p13 = {
@@ -596,7 +596,7 @@ PykCharts.HawkEye = function (options) {
             x: (x1 + wd + chordlength),
             y: (((base)) - (theight))
         };
-			that.p19=p19;
+            that.p19=p19;
 
         var p20 = {
             x: ((x1 + wd + chordlength) - p8_dx),
@@ -619,7 +619,7 @@ PykCharts.HawkEye = function (options) {
             y: y2
         };
 
-				//9.6 line Generator which will be passed tp area generator for upper connector 
+                //9.6 line Generator which will be passed tp area generator for upper connector 
         var d3line = d3.svg.line()
             .x(function (d) {
                 return d.x;
@@ -629,7 +629,7 @@ PykCharts.HawkEye = function (options) {
             })
             .interpolate("linear");
 
-				//9.7 line Generator which will be passed tp area generator for lower connector 
+                //9.7 line Generator which will be passed tp area generator for lower connector 
         var d3line2 = d3.svg.line()
             .x(function (d) {
                 return d.x;
@@ -639,29 +639,32 @@ PykCharts.HawkEye = function (options) {
             })
             .interpolate("linear");
 
-				//9.8 Pushing Data points p1-p12 to array for path 
-	      var line = [];
+                //9.8 Pushing Data points p1-p12 to array for path 
+          var line = [];
         var mainline = [];
         line.push([p1, p2]);
         line.push([p2, pc, p3, p4]);
         line.push([p4, p5]);
-		 	 mainline.push([p1, p2]);
-			 mainline.push([p2, pc, p3]);
-			 mainline.push([p3, p4]);
-			 mainline.push([p4, p7]);
+              mainline.push([p1, p2]);
+             mainline.push([p2, pc, p3]);
+             mainline.push([p3, p4]);
+             mainline.push([p4, p7]);
         var tempx1, tempy1;
         var tempx2, tempy2;
         var wtempx1, wtempy1;
         var wtempx2, wtempy2;
         var rowpointer, colpointer;
 
-				//9.9 setting up row & col Pointer to generate tabel Structure
+                //9.9 setting up row & col Pointer to generate tabel Structure
         rowpointer = p4.x;
         colpointer = p4.y;
         var count = 1;
         var xrectcordinates = [];
         var yrectcordinates = [];
-
+				var tline1 ;
+				var tline2 ;
+				var wtline1 ;
+				var wtline2 ;
         while (count <= posvals) {
             for (i = 0; i < maxjson; i++) {
                 tempx1 = rowpointer + i * that.w_cell;
@@ -669,11 +672,11 @@ PykCharts.HawkEye = function (options) {
                 tempx2 = rowpointer + i * that.w_cell;
                 tempy2 = colpointer + that.h_cell;
 
-                var tline1 = {
+                tline1 = {
                     x: tempx1,
                     y: tempy1
                 };
-                var tline2 = {
+                 tline2 = {
                     x: tempx2,
                     y: tempy2
                 };
@@ -685,11 +688,11 @@ PykCharts.HawkEye = function (options) {
                 wtempx2 = rowpointer + i * that.w_cell;
                 wtempy2 = colpointer + that.h_cell;
 
-                var wtline1 = {
+                 wtline1 = {
                     x: wtempx1,
                     y: wtempy1
                 };
-                var wtline2 = {
+                 wtline2 = {
                     x: wtempx2,
                     y: wtempy2
                 };
@@ -712,22 +715,22 @@ PykCharts.HawkEye = function (options) {
         line.push([p7, p8, p9, p10, p11]);
         line.push([p11, p12]);
         line.push([p12, p1]);
-			 mainline.push([p7, p8, p9, p10, p11]);
-			 mainline.push([p11, p12]);
-			 mainline.push([p12, p1]);
+             mainline.push([p7, p8, p9, p10, p11]);
+             mainline.push([p11, p12]);
+             mainline.push([p12, p1]);
 
-			//9.10 Pushing Data points p13-p24 to array for path 
+            //9.10 Pushing Data points p13-p24 to array for path 
        var line2 = [];
        var mainline2 = [];
         line2.push([p13, p14]);
         line2.push([p14, pc2, p15]);
         line2.push([p15, p16]);
         line2.push([p16, p17]);
-			 mainline2.push([p13, p14]);
-			 mainline2.push([p14, pc2, p15]);
-			 mainline2.push([p15, p16]);
-			 
-			//9.11 setting up row & col Pointer to generate tabel Structure
+             mainline2.push([p13, p14]);
+             mainline2.push([p14, pc2, p15]);
+             mainline2.push([p15, p16]);
+             
+            //9.11 setting up row & col Pointer to generate tabel Structure
         rowpointer = p19.x;
         colpointer = p19.y;
          count = 1;
@@ -774,27 +777,27 @@ PykCharts.HawkEye = function (options) {
         line2.push([p17, p18]);
         line2.push([p18, p19]);
         line2.push([p19, p16]);
-				line2.push([p19, p20, p21, p22, p23]);
+                line2.push([p19, p20, p21, p22, p23]);
         line2.push([p23, p24]);
         line2.push([p24, p13]);
-			 mainline2.push([p19,p16]);
+             mainline2.push([p19,p16]);
         mainline2.push([p19, p20, p21, p22, p23]);
- 			 mainline2.push([p23, p24]);
+              mainline2.push([p23, p24]);
        mainline2.push([p24, p13]);
-			
- 			var area1_data =(that.opentabel == 0? area1_data = line.slice(0) : area1_data = mainline.slice(0));
-			
- 			var area2_data =(that.opentabel == 0? area2_data = line2.slice(0) : area2_data = mainline2.slice(0));
+            
+             var area1_data =(that.opentabel === 0? area1_data = line.slice(0) : area1_data = mainline.slice(0));
+            
+             var area2_data =(that.opentabel === 0? area2_data = line2.slice(0) : area2_data = mainline2.slice(0));
 
 
-			//9.12 setting up area generator to show connectors
+            //9.12 setting up area generator to show connectors
         var area = d3.svg.area()
             .defined(d3line.defined())
             .interpolate("basis")
             .x(d3line.x())
             .y1(d3line.y())
         .y0(buff*2);
-				
+                
         var area2 = d3.svg.area()
             .defined(d3line2.defined())
             .interpolate("basis")
@@ -804,12 +807,12 @@ PykCharts.HawkEye = function (options) {
         var minY = 10;
         var maxY = 210;
 
-				//9.13 display connecotors from the area generators by appending path 
+                //9.13 display connecotors from the area generators by appending path 
         this.vis.selectAll("path.area")
             .data(area1_data)
             .enter().append("path")
             .style("fill", "#FFF")
-			  .transition()
+              .transition()
         .duration(1500)
         .ease("elastic")
         .style("shape-rendering", "crispEdges")
@@ -828,36 +831,36 @@ PykCharts.HawkEye = function (options) {
         .style("shape-rendering", "crispEdges")
             .attr("d", area2);
 
-						//9.14 read data from Json 2 to dispaly small rect inside tabel 
+                        //9.14 read data from Json 2 to dispaly small rect inside tabel 
         var val = [];
         var RdataArray = [];
-        var colpointer;
-        var rowpointer;
+         colpointer = 0;
+         rowpointer = 0;
         var counti = 0;
         var d = that.subdata;
             colpointer = p4.x;
             rowpointer = p4.y ;
-				var irect = 0;
-				
+                var irect = 0;
+                
         for (var i in d) {
 
-						//9.15 transversing through Json 2 & store data in temp array  
+                        //9.15 transversing through Json 2 & store data in temp array  
             for (var j in d[i]) {
 
                 for (var k in d[i][j]) {
 
                     for (var l in d[i][j][k]) {
-                        var temp = new Array();
-												var countt =0;
+                        var temp = [];
+                                                var countt =0;
                         var tmp =0;
-												irect=irect+1;
-												for (m in d[i][j][k][l]) {
-													countt = countt +1;
-									        if (countt > 3) {
-							            rowpointer = p19.y + (tmp * that.h_cell) ;
-													tmp = tmp+1;
-													
-												}
+                                                irect=irect+1;
+                                                for (var m in d[i][j][k][l]) {
+                                                    countt = countt +1;
+                                            if (countt > 3) {
+                                        rowpointer = p19.y + (tmp * that.h_cell) ;
+                                                    tmp = tmp+1;
+                                                    
+                                                }
                             var values = d[i][j][k][l][m].val;
                             var name = d[i][j][k][l][m].name;
                             var color = d[i][j][k][l][m].color;
@@ -874,56 +877,56 @@ PykCharts.HawkEye = function (options) {
                             rowpointer = rowpointer + that.h_cell;
                             count = count + 1;
                             val.push(values);
-														
+                                                        
                         }
                         RdataArray.push(temp);
                         colpointer = colpointer + that.w_cell;
-						            rowpointer = p4.y ;
-												
+                                    rowpointer = p4.y ;
+                                                
                     }
                 }
             }
         }
 
-				//9.15 new Width Scal for the Small Rect in Table  
+                //9.15 new Width Scal for the Small Rect in Table  
         var widthscale = d3.scale.linear()
             .domain([0, d3.max(val)])
             .range([0, that.w_cell*0.7]);
-						var crect= 0;
-						var irect= 0;
+                        var crect= 0;
+                         irect= 0;
 
-						//9.15 Append Group element in tabel & then append rect   
+                        //9.15 Append Group element in tabel & then append rect   
         var smallbars = this.vis.selectAll("g.smallbars").data(RdataArray);
         smallbars.enter().append("g")
             .attr("class", "bars");
         var rect1 = smallbars.selectAll("rect")
             .data(function (d) {
-							
-							var clone = d.slice(0);
-			        var maxjson = that.processmaxdata();
-							if (clone.length < maxjson)
-							{
-								var lastx = clone[clone.length-1].x;
-								var lasty = clone[clone.length-1].y;
-								for (var i=clone.length;i<maxjson;i++)
-								{
-									lastx = clone[clone.length-1].x + that.w_cell;
-								clone.push(
-									{
-										"name":"blank",
-									"color":"none",
-									"x":lastx,
-									"y":lasty,
-									"value":0});
-							}
-						}
+                            
+                            var clone = d.slice(0);
+                    var maxjson = that.processmaxdata();
+                            if (clone.length < maxjson)
+                            {
+                                var lastx = clone[clone.length-1].x;
+                                var lasty = clone[clone.length-1].y;
+                                for (var i=clone.length;i<maxjson;i++)
+                                {
+                                    lastx = clone[clone.length-1].x + that.w_cell;
+                                clone.push(
+                                    {
+                                        "name":"blank",
+                                    "color":"none",
+                                    "x":lastx,
+                                    "y":lasty,
+                                    "value":0});
+                            }
+                        }
                 return clone;
             });
 
 
         rect1.enter().append("g.smallbars:rect")
            .attr("width", function(d) {  return (that.opentabel === 0 ? that.w_cell : 0); })
-					 .attr("height", that.h_cell)
+                     .attr("height", that.h_cell)
             .attr("fill", function (d) {
                 if (d.y == buff)
                     return "#c6c6c6";
@@ -942,23 +945,23 @@ PykCharts.HawkEye = function (options) {
             })
             .attr("y", function (d) {
                 return d.y;
-            })
-          	
-						if (that.opentabel==1)
-						{
-		        rect1
-		            .transition().duration(150)
-								.delay(function(d, i) { 
-									return d.groupdelay * 150; 
-								})
-		            
-								.attr("width", function (d) {
-		                return that.w_cell;
-		            });
-						}
+            });
+              
+                        if (that.opentabel==1)
+                        {
+                rect1
+                    .transition().duration(150)
+                                .delay(function(d, i) { 
+                                    return d.groupdelay * 150; 
+                                })
+                    
+                                .attr("width", function (d) {
+                        return that.w_cell;
+                    });
+                        }
 
         rect1.enter().append("g.smallbars:rect")
-				
+                
             .attr("width", function(d) { return (that.opentabel === 0 ? widthscale(d.value) : 0); })
             .attr("height", (that.h_cell/2))
             .attr("class","valuebars")
@@ -976,17 +979,17 @@ PykCharts.HawkEye = function (options) {
             that.tooltip.style("visibility", "visible");
         })
         .on("click", function (d) {
-		      d3.selectAll("svg g.vis g.bars rect.valuebars")
-					.attr("stroke", "none")
-					.attr("stroke-width",0);
-					
-					d3.select(this)
-					.attr("stroke","red")
-					.attr("stroke-width",2);
-					
-					var color = d3.select(this).attr("fill");
-					that.showtabel(p7.x,p7.y,p6.x,p6.y,p19.x,p19.y,p18.x,p18.y,d.x,d.y,color);
-				})
+              d3.selectAll("svg g.vis g.bars rect.valuebars")
+                    .attr("stroke", "none")
+                    .attr("stroke-width",0);
+                    
+                    d3.select(this)
+                    .attr("stroke","red")
+                    .attr("stroke-width",2);
+                    
+                    var color = d3.select(this).attr("fill");
+                    that.showtabel(p7.x,p7.y,p6.x,p6.y,p19.x,p19.y,p18.x,p18.y,d.x,d.y,color);
+                })
             .on("mousemove", function () {
                 var yReduce = parseInt(that.tooltip.style("height")) + 15;
                 var xReduce = parseInt(that.tooltip.style("width")) / 2;
@@ -995,107 +998,107 @@ PykCharts.HawkEye = function (options) {
             .on("mouseout", function () {
                 that.tooltip.style("visibility", "hidden");
             });
-						
-						//9.16 tabel Trasition if opened other then first time    
-						if (that.opentabel==1)
-						{
-		        rect1
-		            .transition().duration(200)
-								
-								.delay(function(d, i) { return d.groupdelay * 200; })
-								
-		            .attr("width", function (d) {
-		                return widthscale(d.value);
-		            });
-						}
+                        
+                        //9.16 tabel Trasition if opened other then first time    
+                        if (that.opentabel==1)
+                        {
+                rect1
+                    .transition().duration(200)
+                                
+                                .delay(function(d, i) { return d.groupdelay * 200; })
+                                
+                    .attr("width", function (d) {
+                        return widthscale(d.value);
+                    });
+                        }
 
-						//9.16 change tabel open flag to 1 as its been open for the first time    
-						that.showbreakdown(p7.x,p7.y,p19.x,p19.y);
-		};
-		
-		
-		
+                        //9.16 change tabel open flag to 1 as its been open for the first time    
+                        that.showbreakdown(p7.x,p7.y,p19.x,p19.y);
+        };
+        
+        
+        
     //----------------------------------------------------------------------------------------
     // 9. Rendering Details:
     //----------------------------------------------------------------------------------------
-    this.showtabel = function (p7x,p7y,p6x,p6y,p19x,p19y,p18x,p18y,dx,dy,clr) {
-		  d3.selectAll("svg g.vis path.tabeldata").remove();
+    this.showtabel = function (tp7x,tp7y,tp6x,tp6y,tp19x,tp19y,tp18x,tp18y,dx,dy,clr) {
+          d3.selectAll("svg g.vis path.tabeldata").remove();
       d3.selectAll("svg g.vis rect.tabeldata").remove();
       d3.selectAll("svg g.vis text.columns").remove();
       d3.selectAll("svg g.vis rect.columns").remove();
       d3.selectAll("svg g.vis line.columns").remove();
       d3.selectAll("svg g.vis g.bars text").remove();
 
-			var that = this;
-      var p7x = p7x;
-      var p7y = p7y;
-      var p6x = p6x;
-      var p6y = p6y;
-      var p19x = p19x;
-      var p19y = p19y;
-      var p18x = p18x;
-      var p18y = p18y;
+            var that = this;
+      var p7x = tp7x;
+      var p7y = tp7y;
+      var p6x = tp6x;
+      var p6y = tp6y;
+      var p19x = tp19x;
+      var p19y = tp19y;
+      var p18x = tp18x;
+      var p18y = tp18y;
       var px = dx;
       var color = clr;
-			var data;
+            var data;
       var buff = 38;
       var maxjson = this.processmaxcol();
-			var tablewidth = that.w_cell * maxjson;
-			var rowsize = 18;
-			var gap=6;
-			var margin = 10;
-			
-			var tabel = this.vis.append("rect")
-			          .attr("x", p7x )
-							.attr("y", p7y+buff) 
-					   .attr("width",p6x-p7x )
-					   .attr("height",function(d) { return (that.bdtabel === 0 ? ((p19y- p7y -buff)- buff) : 0); })
- 			 		    .attr("stroke", color)
-			 		    .attr("class", "tabeldata")
-							.attr("fill","#dadae3");
-							
-							if(that.bdtabel === 1)
-							{
-							if(dy>p7y)
-							{
-								tabel
-					    .attr("transform", function(d,i) {
-								var x = p7x+(tablewidth/2);
-									var y = p7y+buff+buff*2 + (margin /2) +1;
-							  return "rotate(-180,"+x+","+y+")" 
-					    });
-						}
-	
-						tabel
-			            .transition().duration(200)
-									.delay(function(d, i) { return i * 200; })
-				          .attr("height", function (d) {
-			                return ((p19y- p7y -buff)- buff);
-			            });
-								}
-		 var line = d3.svg.line()
-		     .x(function(d){return d[0];})
-		     .y(function(d){return d[1];})
-		     .interpolate("linear-closed");
-		
-		if(dy<p7y)
-		{		 
-		 data = [[p7x,p7y+buff],[px,p7y],[px+that.w_cell,p7y],[p7x+(p6x-p7x), p7y+buff]];
-		}
-		else
-		{
- 		 data = [[p19x,p19y-buff],[px,p19y],[px+that.w_cell,p19y],[p19x+(p18x-p19x), p19y-buff]];
-		
-		}	
-	
-		var triangle = this.vis.append("path")
-		    .attr("fill", "#dadae3")
-		    .attr("stroke-width",1)
- 		    .attr("class", "tabeldata")
- 		    .attr("stroke", color)
+            var tablewidth = that.w_cell * maxjson;
+            var rowsize = 18;
+            var gap=6;
+            var margin = 10;
+            
+            var tabel = this.vis.append("rect")
+                      .attr("x", p7x )
+                            .attr("y", p7y+buff) 
+                       .attr("width",p6x-p7x )
+                       .attr("height",function(d) { return (that.bdtabel === 0 ? ((p19y- p7y -buff)- buff) : 0); })
+                          .attr("stroke", color)
+                         .attr("class", "tabeldata")
+                            .attr("fill","#dadae3");
+                            
+                            if(that.bdtabel === 1)
+                            {
+                            if(dy>p7y)
+                            {
+                                tabel
+                        .attr("transform", function(d,i) {
+                                var x = p7x+(tablewidth/2);
+                                    var y = p7y+buff+buff*2 + (margin /2) +1;
+                              return "rotate(-180,"+x+","+y+")" ;
+                        });
+                        }
+    
+                        tabel
+                        .transition().duration(200)
+                                    .delay(function(d, i) { return i * 200; })
+                          .attr("height", function (d) {
+                            return ((p19y- p7y -buff)- buff);
+                        });
+                                }
+         var line = d3.svg.line()
+             .x(function(d){return d[0];})
+             .y(function(d){return d[1];})
+             .interpolate("linear-closed");
+        
+        if(dy<p7y)
+        {         
+         data = [[p7x,p7y+buff],[px,p7y],[px+that.w_cell,p7y],[p7x+(p6x-p7x), p7y+buff]];
+        }
+        else
+        {
+          data = [[p19x,p19y-buff],[px,p19y],[px+that.w_cell,p19y],[p19x+(p18x-p19x), p19y-buff]];
+        
+        }    
+    
+        var triangle = this.vis.append("path")
+            .attr("fill", "#dadae3")
+            .attr("stroke-width",1)
+             .attr("class", "tabeldata")
+             .attr("stroke", color)
         .style("shape-rendering", "crispEdges")
-		    .attr("d", line(data));
-				
+            .attr("d", line(data));
+                
         var val = [];
         var RdataArray = [];
         var colpointer;
@@ -1104,53 +1107,53 @@ PykCharts.HawkEye = function (options) {
         var d = that.breakdown;
             colpointer = p7x+margin;
             rowpointer = p7y+buff+margin ;
-			                            
-			  var rectangle = this.vis.append("rect")
+                                        
+              var rectangle = this.vis.append("rect")
                             .attr("x", colpointer)
                             .attr("y", rowpointer)
-										 		    .attr("class", "tabeldata")
-									          .attr("height",rowsize)
-									          .attr("width",(((p6x-p7x)-(2*margin))))
-									          .attr("fill","white")
-									          .attr("stroke","steelblue")
+                                                     .attr("class", "tabeldata")
+                                              .attr("height",rowsize)
+                                              .attr("width",(((p6x-p7x)-(2*margin))))
+                                              .attr("fill","white")
+                                              .attr("stroke","steelblue");
 
-			 var text = this.vis.append("text")
-			                     .attr("x", colpointer + ((((p6x-p7x)-(2*margin)))/3))
-			                     .attr("y", rowpointer+(rowsize/1.4))
-											 		.style("font-size", "11px")
-									 		    .attr("class", "tabeldata")
-											     .style("font-weight", "bold")
-											 		 .text( function (d,i) {
-														 var str =  "Top 5 breakdown "
-											 			  return str ;
-											 	  }) ;
+             var text = this.vis.append("text")
+                                 .attr("x", colpointer + ((((p6x-p7x)-(2*margin)))/3))
+                                 .attr("y", rowpointer+(rowsize/1.4))
+                                                     .style("font-size", "11px")
+                                                 .attr("class", "tabeldata")
+                                                 .style("font-weight", "bold")
+                                                      .text( function (d,i) {
+                                                         var str =  "Top 5 breakdown ";
+                                                           return str ;
+                                                   }) ;
 
         colpointer = p7x+margin;
         rowpointer = p7y+2*buff ;
-				
-				var irect = 0;
-				
+                
+                var irect = 0;
+                
         for (var i in d) {
 
-						//9.15 transversing through Json 2 & store data in temp array  
+                        //9.15 transversing through Json 2 & store data in temp array  
             for (var j in d[i]) {
 
                 for (var k in d[i][j]) {
 
                     for (var l in d[i][j][k]) {
-                        var temp = new Array();
-												var countt =0;
+                        var temp = [];
+                                                var countt =0;
                         var tmp =0;
-												irect=irect+1;
-												for (m in d[i][j][k][l]) {
+                                                irect=irect+1;
+                                                for (var m in d[i][j][k][l]) {
 
                             var values = d[i][j][k][l][m].val;
                             var name = d[i][j][k][l][m].name;
-                            var color = d[i][j][k][l][m].color;
-														var Lineitem = d[i][j][k][l][m].Lineitem;
-														var po = d[i][j][k][l][m].PO;
-														var oustanding = d[i][j][k][l][m].Oustanding;
-														
+                             color = d[i][j][k][l][m].color;
+                                                        var Lineitem = d[i][j][k][l][m].Lineitem;
+                                                        var po = d[i][j][k][l][m].PO;
+                                                        var oustanding = d[i][j][k][l][m].Oustanding;
+                                                        
                             temp.push({
                               name: name,
                               Lineitem: Lineitem,
@@ -1163,174 +1166,174 @@ PykCharts.HawkEye = function (options) {
                             });
                             rowpointer = rowpointer + rowsize;
                             val.push(values);
-														
+                                                        
                         }
                         RdataArray.push(temp);
                         colpointer = colpointer + that.w_cell;
-						            rowpointer = p7y ;
-												
+                                    rowpointer = p7y ;
+                                                
                     }
                 }
             }
         }
 
-				
+                
         var coldatarect = this.vis.selectAll("g.coldatarect").data(RdataArray);
         coldatarect.enter().append("g")
             .attr("class", "bars");
         var rect2 = coldatarect.selectAll("rect")
              .data(function (d) { return d; });
-	        rect2.enter().append("g.barchart:rect")
+            rect2.enter().append("g.barchart:rect")
           .attr("height",function(d) { return (that.bdtabel === 0 ? rowsize : 0); })
           .attr("width",(((p6x-p7x)-(2*margin))))
           .attr("fill","white")
-	 		    .attr("class", "tabeldata")
+                 .attr("class", "tabeldata")
           .attr("stroke","steelblue")
           .attr("x", function (d) { return (d.x); })
           .attr("y", function (d,i) { return (d.y +(i*gap)); });
-					
-	        var txt2 = coldatarect.selectAll("text")
-	             .data(function (d) { return d; });
-		        txt2.enter().append("g.barchart:text")
-			 		 .text( function (d,i) {
-						 var str = d.name + " | " + "Lineitem " + d.Lineitem + " | " + "PO " + d.po+ " | " + "Oustanding " + d.oustanding
-			 			  return str ;
-			 	  }) 
-	          .attr("width",(((p6x-p7x)-(2*margin))))
-	          .attr("fill","black")
-		 		    .attr("class", "tabeldata")
-						.style("font-size",function(d) { return (that.bdtabel === 0 ? "10px" : "0px"); })
-    	          .attr("x", function (d) { return (d.x +gap); })
-	          .attr("y", function (d,i) { return (d.y +(i*gap) +(rowsize/1.4)); });
-									
-										if(that.bdtabel === 1)
-										{	
-								rect2
-			            .transition().duration(200)
-									.delay(function(d, i) { return i * 200; })
-				          .attr("height", function (d) {
-			                return (rowsize);
-			            });
-									
-									var delay =[0,800,300,130.33,50,]
-									if(dy>p7y)
-									{
-										rect2
-							    .attr("transform", function(d,i) {
-										var x = p7x+(tablewidth/2);
-										var y = p7y+buff+buff*2 + (margin *2);
-									  return "rotate(-180,"+x+","+y+")" 
-							    });
-									
-									txt2
-						            .transition().duration(200)
-												.delay(function(d, i) { if (i==0) { return 1000}
-												 return i * delay[i]; })
-										 		.style("font-size", "10px");
-								}
-								else{			
-									txt2
-						            .transition().duration(200)
-												.delay(function(d, i) { return i * 200; })
-										 		.style("font-size", "10px");
-										}	
-		
-									}
-									
-									that.bdtabel = 1;
-		}
+                    
+            var txt2 = coldatarect.selectAll("text")
+                 .data(function (d) { return d; });
+                txt2.enter().append("g.barchart:text")
+                      .text( function (d,i) {
+                         var str = d.name + " | " + "Lineitem " + d.Lineitem + " | " + "PO " + d.po+ " | " + "Oustanding " + d.oustanding ;
+                           return str ;
+                   }) 
+              .attr("width",(((p6x-p7x)-(2*margin))))
+              .attr("fill","black")
+                     .attr("class", "tabeldata")
+                        .style("font-size",function(d) { return (that.bdtabel === 0 ? "10px" : "0px"); })
+                  .attr("x", function (d) { return (d.x +gap); })
+              .attr("y", function (d,i) { return (d.y +(i*gap) +(rowsize/1.4)); });
+                                    
+                                        if(that.bdtabel === 1)
+                                        {    
+                                rect2
+                        .transition().duration(200)
+                                    .delay(function(d, i) { return i * 200; })
+                          .attr("height", function (d) {
+                            return (rowsize);
+                        });
+                                    
+                                    var delay =[0,800,300,130.33,50,];
+                                    if(dy>p7y)
+                                    {
+                                        rect2
+                                .attr("transform", function(d,i) {
+                                        var x = p7x+(tablewidth/2);
+                                        var y = p7y+buff+buff*2 + (margin *2);
+                                      return "rotate(-180,"+x+","+y+")" ;
+                                });
+                                    
+                                    txt2
+                                    .transition().duration(200)
+                                                .delay(function(d, i) { if (i===0) { return 1000; }
+                                                 return i * delay[i]; })
+                                                 .style("font-size", "10px");
+                                }
+                                else{            
+                                    txt2
+                                    .transition().duration(200)
+                                                .delay(function(d, i) { return i * 200; })
+                                                 .style("font-size", "10px");
+                                        }    
+        
+                                    }
+                                    
+                                    that.bdtabel = 1;
+        };
     //----------------------------------------------------------------------------------------
     // 9. Rendering Details:
     //----------------------------------------------------------------------------------------
-    this.showbreakdown = function (p7x,p7y,p19x,p19y) {
-			  d3.selectAll("svg g.vis text.columns").remove();
-			  d3.selectAll("svg g.vis line.columns").remove();
+    this.showbreakdown = function (tp7x,tp7y,tp19x,tp19y) {
+              d3.selectAll("svg g.vis text.columns").remove();
+              d3.selectAll("svg g.vis line.columns").remove();
 
-			var that = this;
-			var lincol = [];
+            var that = this;
+            var lincol = [];
 
-			//9.14 read data from Json 2 to dispaly small rect inside tabel 
-			
-			var	p7x = p7x;
-			var	p7y = p7y;
-			var	p19x = p19x;
-			var	p19y = p19y;
-			var d = that.subdata;
-			var coldata = [];
-	//9.15 transversing through Json 2 & store data in temp array  
+            //9.14 read data from Json 2 to dispaly small rect inside tabel 
+            
+            var    p7x = tp7x;
+            var    p7y = tp7y;
+            var    p19x = tp19x;
+            var    p19y = tp19y;
+            var d = that.subdata;
+            var coldata = [];
+    //9.15 transversing through Json 2 & store data in temp array  
   for (var i in d) {
-	  for (var j in d[i]) {
-			coldata.push(j);
-			lincol.push(j);
+      for (var j in d[i]) {
+            coldata.push(j);
+            lincol.push(j);
   }
 }
 lincol.push(0);
 
-	var col = this.vis.selectAll("line.breakdown")
+    var col = this.vis.selectAll("line.breakdown")
     .data( lincol )
   .enter().append("line")
   .attr("fill", "none")
   .attr("stroke",function(d) { return (that.opentabel === 0 ? "SteelBlue" : "none"); })
-	.style("stroke-dasharray", ("3, 3"))
-	.attr("x1",function (d,i) { return p7x +(i*that.w_cell)-1; })	
-	.attr("y1",p7y )
-	.attr("x2",function (d,i) { return p19x +(i*that.w_cell)-1; })
-	.attr("y2",p19y )
+    .style("stroke-dasharray", ("3, 3"))
+    .attr("x1",function (d,i) { return p7x +(i*that.w_cell)-1; })    
+    .attr("y1",p7y )
+    .attr("x2",function (d,i) { return p19x +(i*that.w_cell)-1; })
+    .attr("y2",p19y )
   .attr("class", function (d,i) {
-		return "columns" ;
+        return "columns" ;
   }); 
-		
-	 var coltext = this.vis.selectAll("text")
-	    .data( coldata )
-	  .enter().append("text")
-		 .text( function (d,i) {
-			  return d ;
-	  }) 
-		
-		.style("font-size",function(d) { return (that.opentabel === 0 ? "14px" : "0px"); })
+        
+     var coltext = this.vis.selectAll("text")
+        .data( coldata )
+      .enter().append("text")
+         .text( function (d,i) {
+              return d ;
+      }) 
+        
+        .style("font-size",function(d) { return (that.opentabel === 0 ? "14px" : "0px"); })
     .style("font-weight", "bold")
-		
-	  .attr("x", function (d,i) {
-	      return p19x +(i*that.w_cell);
-	  })
-	  .attr("y", function (d,i) {
-	      return p19y-((p19y-p7y)/2);
-	  })
+        
+      .attr("x", function (d,i) {
+          return p19x +(i*that.w_cell);
+      })
+      .attr("y", function (d,i) {
+          return p19y-((p19y-p7y)/2);
+      })
     .style("text-anchor", "middle")
     .attr("class", function (d,i) {
-			return "columns" ;
-	  }) 
-		
+            return "columns" ;
+      }) 
+        
     .attr("transform", function(d,i) {
-			
-			var x = (that.w_cell/1.8) +p19x +(i*that.w_cell)
-			var y =p19y-((p19y-p7y)/2);
-		  return "rotate(-90,"+x+","+y+")" 
+            
+            var x = (that.w_cell/1.8) +p19x +(i*that.w_cell);
+            var y =p19y-((p19y-p7y)/2);
+          return "rotate(-90,"+x+","+y+")" ;
     });
-		
-		
-	if (that.opentabel==1)
-		{
+        
+        
+    if (that.opentabel==1)
+        {
     coltext
         .transition().duration(200)
-				.delay(function(d, i) { return i * 200; })
-				
-				.style("font-size","14px")
+                .delay(function(d, i) { return i * 200; })
+                
+                .style("font-size","14px");
        
-		}
-		if (that.opentabel==1)
-		{
+        }
+        if (that.opentabel==1)
+        {
     col
         .transition().duration(200)
-				.delay(function(d, i) { return i * 200; })
-				
-        .attr("stroke","SteelBlue")
-		}
-		
-		
-		that.opentabel =1;
+                .delay(function(d, i) { return i * 200; })
+                
+        .attr("stroke","SteelBlue");
+        }
+        
+        
+        that.opentabel =1 ;
 
-}
+};
   
 
     //----------------------------------------------------------------------------------------
@@ -1353,46 +1356,46 @@ lincol.push(0);
     
     this.HawkEyeClick = function (e) {
 
-			var that = this;
-			
-			e.stopPropagation();
+            var that = this;
+            
+            e.stopPropagation();
       var x = e.target;
-			if($(e.target).is('rect') || $(e.target).is('path') || $(e.target).is('text') )
-			{
-			  
-			}
-			else {
-				
-				if( that.bdtabel === 1)
-				{					
-			  d3.selectAll("svg g.vis path.tabeldata").remove();
-	      d3.selectAll("svg g.vis rect.tabeldata").remove();
-	      d3.selectAll("svg g.vis text.tabeldata").remove();
-	      d3.selectAll("svg g.vis g.bars text").remove();
-	      d3.selectAll("svg g.vis g.bars rect.valuebars")
-				.attr("stroke", "none")
-				.attr("stroke-width",0);
-			that.showbreakdown(that.p7.x,that.p7.y,that.p19.x,that.p19.y)
-				that.bdtabel = 1;
-				}
-				
-				else{
-					d3.selectAll("svg g.vis path").remove();
-	        d3.selectAll("svg g.vis rect").remove();
-		      d3.selectAll("svg g.vis text.columns").remove();
-		      d3.selectAll("svg g.vis rect.columns").remove();
-		      d3.selectAll("svg g.vis line.columns").remove();
-				
-				}
-			}
+            if($(e.target).is('rect') || $(e.target).is('path') || $(e.target).is('text') )
+            {
+              
+            }
+            else {
+                
+                if( that.bdtabel === 1)
+                {                    
+              d3.selectAll("svg g.vis path.tabeldata").remove();
+          d3.selectAll("svg g.vis rect.tabeldata").remove();
+          d3.selectAll("svg g.vis text.tabeldata").remove();
+          d3.selectAll("svg g.vis g.bars text").remove();
+          d3.selectAll("svg g.vis g.bars rect.valuebars")
+                .attr("stroke", "none")
+                .attr("stroke-width",0);
+            that.showbreakdown(that.p7.x,that.p7.y,that.p19.x,that.p19.y);
+                that.bdtabel = 1;
+                }
+                
+                else{
+                    d3.selectAll("svg g.vis path").remove();
+            d3.selectAll("svg g.vis rect").remove();
+              d3.selectAll("svg g.vis text.columns").remove();
+              d3.selectAll("svg g.vis rect.columns").remove();
+              d3.selectAll("svg g.vis line.columns").remove();
+                
+                }
+            }
       /*if (e.target.id == "myDiv" || $(e.target).parents("#myDiv").size()) { 
           alert("Inside div");
       } else { 
          alert("Outside div");
       }*/
-			
-	}
-		//----------------------------------------------------------------------------------------
+            
+    };
+        //----------------------------------------------------------------------------------------
     // 11.Draw function to render chart with tooltips & other elements:
     //----------------------------------------------------------------------------------------
     this.draw = function () {
@@ -1416,7 +1419,7 @@ lincol.push(0);
     // 12.Data Manuplation
     //----------------------------------------------------------------------------------------
      
-		this.filterData = function (data) {
+        this.filterData = function (data) {
         var params = this.options.filterList;
 
         for (var i in data) {
@@ -1481,7 +1484,7 @@ lincol.push(0);
         }))));
         return dz;
     };
-		
+        
     // 12.2 arranges each node daat from json one avove the other assing it x & Y value recpetively         
     this.layers = function (the_bars) {
         var layers = [];
