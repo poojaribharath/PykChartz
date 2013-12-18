@@ -49,7 +49,7 @@ window.requestAnimFrame = window.requestAnimationFrame       ||
                           };
 
 var m = [60, 10, 10, 0],
-    w = 960 - m[1] - m[3],
+    w = 860 - m[1] - m[3],
     h = 290 - m[0] - m[2];
 
 var xscale = d3.scale.ordinal().rangePoints([0, w], 1),
@@ -115,6 +115,7 @@ var svg = d3.select("svg")
     .attr("height", h + m[0] + m[2])
   .append("svg:g")
     .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+
 
 d3.csv(options.data, function(data) {
 
@@ -193,12 +194,47 @@ d3.csv(options.data, function(data) {
 
     data = shuffle(data);
 
-    // data table
-    var foodText = "";
-    data.slice(0,10).forEach(function(d) {
-      foodText += "<span style='background:" + color(d.name,0.85) + "'></span>" + d.name  + "<br/>";
-    });
-    d3.select("#food-list").html(foodText);
+    // Create table
+    d3.select("table").remove();
+      // the columns you'd like to display
+      var columns = ["name", "C", "C++", "Java", "Javascript", "Ruby", "PHP", "Python", "ASP"];
+
+      var table = d3.select("#wrap-table").append("table").attr("class","table table-striped table-hover"),
+          thead = table.append("thead"),
+          tbody = table.append("tbody");
+
+      // append the header row
+      thead.append("tr")
+          .selectAll("th")
+          .data(columns)
+          .enter()
+          .append("th")
+              .text(function(column) { 
+                if(column=="name"){
+                  return "Name";
+                }
+                else{
+                  return column;
+                }
+              });
+
+      // create a row for each object in the data
+      var rows = tbody.selectAll("tr")
+          .data(data)
+          .enter()
+          .append("tr");
+
+      // create a cell in each row for each column
+      var cells = rows.selectAll("td")
+          .data(function(row) {
+              return columns.map(function(column) {
+                  return {column: column, value: row[column]};
+              });
+          })
+          .enter()
+          .append("td")
+              .text(function(d) { return d.value; });
+    //Table Created
 
     ctx.clearRect(0,0,w+1,h+1);
     function render() {
