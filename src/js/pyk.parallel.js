@@ -74,7 +74,7 @@ var colors = {
 
 d3.select("#chart")
     .style("width", (w + m[1] + m[3]) + "px")
-    .style("height", (h + m[0] + m[2]) + "px")
+    .style("height", (h + m[0] + m[2]) + "px");
 
 d3.selectAll("canvas")
     .attr("width", w)
@@ -123,7 +123,7 @@ d3.csv(options.data, function(data) {
     for (var k in d) {
       if (k != "name" && k != "group" && k != "id")
         d[k] = parseFloat(d[k]) || 0;
-    };
+    }
     return d;
   });
 
@@ -208,7 +208,7 @@ d3.csv(options.data, function(data) {
       });
       i = max;
       d3.select("#rendered-count").text(i);
-    };
+    }
 
     // render all lines until finished or a new brush event
     (function animloop(){
@@ -216,7 +216,7 @@ d3.csv(options.data, function(data) {
       requestAnimFrame(animloop);
       render();
     })();
-  };
+  }
 });
 
 
@@ -228,7 +228,7 @@ function path(d, ctx, color) {
   dimensions.map(function(p,i) {
     var x = xscale(p),
         y = yscale[p](d[p]);
-    if (i == 0) {
+    if (i === 0) {
       ctx.moveTo(x,y);
     } else { 
       var cp1x = x - 0.85*(x-x0);
@@ -241,12 +241,12 @@ function path(d, ctx, color) {
     y0 = y;
   });
   ctx.stroke();
-};
+}
 function color(d,a) {
   var c = colors[d];
   //return "red";
   //return ["hsla(",c[0],",",c[1],"%,",c[2],"%,",a,")"].join("");
-};
+}
 
 // Fisher-Yates shuffle
 function shuffle(array) {
@@ -267,7 +267,7 @@ function shuffle(array) {
   return array;
 }
 
-}
+};
 
 
     //----------------------------------------------------------------------------------------
@@ -289,4 +289,4 @@ function shuffle(array) {
 
     };
 	
-}
+};
