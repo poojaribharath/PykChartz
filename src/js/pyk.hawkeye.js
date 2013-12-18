@@ -1463,20 +1463,23 @@ lincol.push(0);
 
         });
          l = d[0].length;
-        while (l--) {
-            var posBase = 0,
-                negBase = -5;
-            d.forEach(function (d) {
-                d = d[l];
-                d.size = Math.abs(d.y);
-                if (d.y < 0) {
-                    d.y0 = negBase;
-                    negBase -= d.size;
-                } else {
-                    d.y0 = posBase = posBase + d.size;
-                }
-            });
-        }
+				 while (l--) {
+				            var posBase = 0,
+				                negBase = -5;
+
+				            /* jshint ignore:start */
+				            d.forEach(function (d) {
+				                d = d[l];
+				                d.size = Math.abs(d.y);
+				                if (d.y < 0) {
+				                    d.y0 = negBase;
+				                    negBase -= d.size;
+				                } else {
+				                    d.y0 = posBase = posBase + d.size;
+				                }
+				            });
+				            /* jshint ignore:end */
+				        }
 
 
         dz.extent = d3.extent(d3.merge(d3.merge(dz.map(function (e) {
