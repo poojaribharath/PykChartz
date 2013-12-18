@@ -86,13 +86,131 @@ svg.pyk-choropleth-map-holder g.counties path:hover{stroke-width: 2px;}
 img[src*="gstatic.com/"], img[src*="googleapis.com/"] {
 max-width: none;
 }
+svg.pyk-hawkeye{
+    shape-rendering: crispEdges;
+    font-size: 10px;
+}
+
+svg.pyk-hawkeye text.group_label{
+    font-weight: 800;
+}
+
+svg.pyk-hawkeye text.txt1{
+
+transform:rotate(7deg);
+-ms-transform:rotate(7deg); /* IE 9 */
+-webkit-transform:rotate(10deg); /* Safari and Chrome */
+}
+svg.pyk-hawkeye text.txt2{
+
+transform:rotate(7deg);
+-ms-transform:rotate(7deg); /* IE 9 */
+-webkit-transform:rotate(10deg); /* Safari and Chrome */
+}
+svg.pyk-hawkeye text.txt3{
+
+transform:rotate(7deg);
+-ms-transform:rotate(7deg); /* IE 9 */
+-webkit-transform:rotate(10deg); /* Safari and Chrome */
+}
+svg.pyk-hawkeye text.txt4{
+
+transform:rotate(7deg);
+-ms-transform:rotate(7deg); /* IE 9 */
+-webkit-transform:rotate(10deg); /* Safari and Chrome */
+}
+svg.pyk-hawkeye text.txt5{
+
+transform:rotate(7deg);
+-ms-transform:rotate(7deg); /* IE 9 */
+-webkit-transform:rotate(10deg); /* Safari and Chrome */
+}
+svg.pyk-hawkeye text.txt6{
+
+transform:rotate(7deg);
+-ms-transform:rotate(7deg); /* IE 9 */
+-webkit-transform:rotate(10deg); /* Safari and Chrome */
+}
+#wrap {
+  width: 860px;
+  margin: 0 auto;
+  position: relative;
+}
+
+svg.linear-range-query {
+  font: 10px sans-serif;
+}
+
+canvas, svg.linear-range-query{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#chart {
+  position: relative;
+}
+
+svg.linear-range-query .brush .extent {
+  fill: rgba(0,0,0,0.12);
+  stroke: rgba(255,255,255,0.6);
+  shape-rendering: crisp-edges;
+}
+
+svg.linear-range-query .dark .brush .extent {
+  fill: rgba(255,255,255,0.12);
+  stroke: rgba(0,0,0,0.5);
+}
+
+svg.linear-range-query .axis line, .axis path {
+  fill: none;
+  stroke: #222;
+  shape-rendering: crispEdges;
+}
+
+svg.linear-range-query .axis text {
+  fill: #222;
+  text-shadow: 1px 1px 1px #fff, -1px -1px 1px #fff;
+}
+
+svg.linear-range-query .axis text.label {
+  fill: #444;
+  font-size: 14px;
+}
+
+svg.linear-range-query .dark .axis text {
+  fill: #f2f2f2;
+  text-shadow: 0 1px 0 #000, 1px 0 0 #000;
+}
+
+svg.linear-range-query .dark .axis text.label {
+  fill: #ddd;
+}
+
+svg.linear-range-query .axis g,
+svg.linear-range-query .axis path {
+  display: block;
+}
+
+svg.linear-range-query #food-list {
+  position: absolute;
+  left: 220px;
+  overflow-x: hidden;
+}
+svg.linear-range-query #food-list span {
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  margin: 2px 4px;
+}
+
 /* Compare with Circles */
 
 svg.pyk-compare_with_circles{font-family: Arial, sans-serif;font-size:10px;}
 svg.pyk-compare_with_circles g.axis path,svg.pyk-compare_with_circles g.axis line {fill: none;stroke:#b6b6b6;shape-rendering: crispEdges;}
 /*.tick line{fill:none;stroke:none;}*/
 svg.pyk-compare_with_circles g.tick text{fill:#999;}
-svg.pyk-compare_with_circles text.label{font-size:12px;font-weight:bold;cursor:pointer;}
+svg.pyk-compare_with_circles text.label1{font-size:12px;font-weight:bold;cursor:pointer;}
 svg.pyk-compare_with_circles text.value{font-size:12px;font-weight:bold;}
 svg.pyk-compare_with_circles g.axis text {
     font-family: sans-serif;

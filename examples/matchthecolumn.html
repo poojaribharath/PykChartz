@@ -8,84 +8,9 @@
       <script src="../lib/jquery.js" type="text/javascript"></script>
       <script src="res/lib/bootstrap.js" type="text/javascript"></script>
       <link href="res/lib/bootstrap.css" rel="stylesheet" type="text/css">
-      <link href="../src/css/pyk.ultimate.css" rel="stylesheet" type="text/css">
+      <link href="../src/css/pyk.linearRangeQuery.css" rel="stylesheet" type="text/css">
       <script src="../src/js/pyk.js" type="text/javascript" charset="utf-8"></script>
-      <script src="../src/js/pyk.treerect.js" type="text/javascript" charset="utf-8"></script>
-
-	  <style type="text/css">
-#wrap {
-  width: 860px;
-  margin: 0 auto;
-  position: relative;
-}
-
-svg {
-  font: 10px sans-serif;
-}
-
-canvas, svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-#chart {
-  position: relative;
-}
-
-.brush .extent {
-  fill: rgba(0,0,0,0.12);
-  stroke: rgba(255,255,255,0.6);
-  shape-rendering: crisp-edges;
-}
-
-.dark .brush .extent {
-  fill: rgba(255,255,255,0.12);
-  stroke: rgba(0,0,0,0.5);
-}
-
-.axis line, .axis path {
-  fill: none;
-  stroke: #222;
-  shape-rendering: crispEdges;
-}
-
-.axis text {
-  fill: #222;
-  text-shadow: 1px 1px 1px #fff, -1px -1px 1px #fff;
-}
-
-.axis text.label {
-  fill: #444;
-  font-size: 14px;
-}
-
-.dark .axis text {
-  fill: #f2f2f2;
-  text-shadow: 0 1px 0 #000, 1px 0 0 #000;
-}
-
-.dark .axis text.label {
-  fill: #ddd;
-}
-
-.axis g,
-.axis path {
-  display: block;
-}
-
-#food-list {
-  position: absolute;
-  left: 220px;
-  overflow-x: hidden;
-}
-#food-list span {
-  display: inline-block;
-  height: 6px;
-  width: 6px;
-  margin: 2px 4px;
-}
-    </style>
+      <script src="../src/js/pyk.parallel.js" type="text/javascript" charset="utf-8"></script>
 
    </head>
    <body>
@@ -147,15 +72,14 @@ canvas, svg {
          </div>
 		</div>
       </div>
-      <script src="../src/js/pyk.parallel.js"></script>
 
       </script>
 	        <script>
 			
          $(document).ready(function(e){
 
-        var k = new PykCharts.matchthecolumn({
-         data: "../examples/res/data/pa.csv",
+        var k = new PykCharts.linearRangeQuery({
+         data: "../examples/res/data/linear_range_query.csv",
          selection: "#wrap",
 		width: 550,
 		height: 400,

@@ -244,7 +244,7 @@ PykCharts.HawkEye = function (options) {
             .style("stroke", "black");
 
         this.chart_group.append("text")
-            .attr("x", -20)
+            .attr("x", -17)
             .attr("y", y(1))
             .attr("text-anchor", "middle")
             .text("Overdue");
@@ -258,7 +258,7 @@ PykCharts.HawkEye = function (options) {
             .style("stroke", "black");
 
         this.chart_group.append("text")
-            .attr("x", -15)
+            .attr("x", -10)
             .attr("y", y(-8))
             .attr("text-anchor", "middle")
             .text("Consumed");
@@ -1460,26 +1460,25 @@ lincol.push(0);
             d.push(
                 dz.values
             );
-
         });
-         l = d[0].length;
-				 while (l--) {
-				            var posBase = 0,
-				                negBase = -5;
+        l = d[0].length;
+		while (l--) {
+			var posBase = 0,
+            negBase = -5;
 
-				            /* jshint ignore:start */
-				            d.forEach(function (d) {
-				                d = d[l];
-				                d.size = Math.abs(d.y);
-				                if (d.y < 0) {
-				                    d.y0 = negBase;
-				                    negBase -= d.size;
-				                } else {
-				                    d.y0 = posBase = posBase + d.size;
-				                }
-				            });
-				            /* jshint ignore:end */
-				        }
+            /* jshint ignore:start */
+            d.forEach(function (d) {
+                d = d[l];
+                d.size = Math.abs(d.y);
+                if (d.y < 0) {
+                    d.y0 = negBase;
+                    negBase -= d.size;
+                } else {
+                    d.y0 = posBase = posBase + d.size;
+                }
+            });
+            /* jshint ignore:end */
+        }
 
 
         dz.extent = d3.extent(d3.merge(d3.merge(dz.map(function (e) {
