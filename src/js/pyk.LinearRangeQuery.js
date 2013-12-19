@@ -124,7 +124,7 @@ d3.csv(options.data, function(data) {
   // Convert quantitative scales to floats
   data = data.map(function(d) {
     for (var k in d) {
-      if (_.contains(that.nonchartColumns,k)==false && _.contains(that.imageColumns,k)==false && _.contains(that.linkColumns,k)==false)
+      if (_.contains(that.nonchartColumns,k)===false && _.contains(that.imageColumns,k)===false && _.contains(that.linkColumns,k)===false)
         d[k] = parseFloat(d[k]) || 0;
     }
     return d;
@@ -132,7 +132,7 @@ d3.csv(options.data, function(data) {
 
   // Extract the list of dimensions and create a scale for each.
   xscale.domain(dimensions = d3.keys(data[0]).filter(function(d) {
-    return _.contains(that.nonchartColumns,d)==false && _.contains(that.imageColumns,d)==false && _.contains(that.linkColumns,d)==false &&(yscale[d] = d3.scale.linear()
+    return _.contains(that.nonchartColumns,d)===false && _.contains(that.imageColumns,d)===false && _.contains(that.linkColumns,d)===false &&(yscale[d] = d3.scale.linear()
         .domain(d3.extent(data, function(p) { return +p[d]; }))
         .range([h, 0]));
   }));
@@ -229,9 +229,9 @@ d3.csv(options.data, function(data) {
           .enter()
           .append("td")
               .html(function(d) { 
-                  if(_.contains(that.imageColumns,d.column)==true){
+                  if(_.contains(that.imageColumns,d.column)===true){
                       return "<img src='"+d.value+"' />";
-                  }else if(_.contains(that.linkColumns,d.column)==true){
+                  }else if(_.contains(that.linkColumns,d.column)===true){
                       return "<a href='"+d.value.match(/\((.*?)\)/)[1]+"'>"+d.value.match(/\[(.*?)\]/)[1]+"</a>";
                   }else{
                       return d.value;

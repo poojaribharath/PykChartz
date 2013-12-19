@@ -1,14 +1,14 @@
-svg.pyk-choropleth-legend-holder circle{cursor: pointer;}
-svg.pyk-choropleth-legend-holder text{cursor: pointer;}
+svg.pyk-choroplethOneLayer-legend-holder circle{cursor: pointer;}
+svg.pyk-choroplethOneLayer-legend-holder text{cursor: pointer;}
 
-svg.pyk-choropleth-map-holder g.states path{
+svg.pyk-choroplethOneLayer-map-holder g.states path{
     stroke: white;
     stroke-width: 1px;
 }
 
-svg.pyk-choropleth-map-holder g.states path:hover{stroke-width: 1px;}
+svg.pyk-choroplethOneLayer-map-holder g.states path:hover{stroke-width: 1px;}
 
-svg.pyk-choropleth-map-holder g.states.zoomed path{
+svg.pyk-choroplethOneLayer-map-holder g.states.zoomed path{
     fill: none;
     opacity: 1;
 }

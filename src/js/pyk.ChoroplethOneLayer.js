@@ -86,13 +86,13 @@ PykCharts.choroplethOneLayer = function(options){
 
         //4.3 Create SVG holders for legends
         this.legends_group = d3.select(this.options.selection).append("svg")
-            .attr("class", "pyk-choropleth-legend-holder")
+            .attr("class", "pyk-choroplethOneLayer-legend-holder")
             .attr("height", 50)
             .attr("width", that.w);
 
         //4.4 Create SVG holders for map
         this.map_group = d3.select(this.options.selection).append("svg")
-            .attr("class", "pyk-choropleth-map-holder")
+            .attr("class", "pyk-choroplethOneLayer-map-holder")
             .attr("width", that.w)
             .attr("height", that.h-100);
 
