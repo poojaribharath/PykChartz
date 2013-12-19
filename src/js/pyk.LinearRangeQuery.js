@@ -11,6 +11,9 @@ PykCharts.linearRangeQuery = function (options) {
         //1.2 set width height to local variable   
         width = this.options.width;
         height = this.options.height;
+        that.nonchartColumns = this.options.nonchartColumns;
+        that.imageColumns = this.options.imageColumns;
+        that.linkColumns = this.options.linkColumns;
 
         // 1.3 Read Json File Get all the data and pass to render
        d3.csv(options.data, function (e, data) {
@@ -29,7 +32,6 @@ PykCharts.linearRangeQuery = function (options) {
         width: 550,
         height: 400
     }, options);
-
 
  //----------------------------------------------------------------------------------------
     //3. Render chart
@@ -72,11 +74,11 @@ var colors = {
   
 };
 
-d3.select("#chart")
+d3.select("#chart").attr("class","linear-range-query")
     .style("width", (w + m[1] + m[3]) + "px")
     .style("height", (h + m[0] + m[2]) + "px");
 
-d3.selectAll("canvas")
+d3.selectAll("canvas").attr("class","linear-range-query")
     .attr("width", w)
     .attr("height", h)
     .style("padding", m.join("px ") + "px");
@@ -122,7 +124,7 @@ d3.csv(options.data, function(data) {
   // Convert quantitative scales to floats
   data = data.map(function(d) {
     for (var k in d) {
-      if (k != "name" && k != "group" && k != "id")
+      if (_.contains(that.nonchartColumns,k)==false && _.contains(that.imageColumns,k)==false && _.contains(that.linkColumns,k)==false)
         d[k] = parseFloat(d[k]) || 0;
     }
     return d;
@@ -130,7 +132,7 @@ d3.csv(options.data, function(data) {
 
   // Extract the list of dimensions and create a scale for each.
   xscale.domain(dimensions = d3.keys(data[0]).filter(function(d) {
-    return d != "name" && d != "crime" && d != "group" && d != "id" &&(yscale[d] = d3.scale.linear()
+    return _.contains(that.nonchartColumns,d)==false && _.contains(that.imageColumns,d)==false && _.contains(that.linkColumns,d)==false &&(yscale[d] = d3.scale.linear()
         .domain(d3.extent(data, function(p) { return +p[d]; }))
         .range([h, 0]));
   }));
@@ -197,7 +199,7 @@ d3.csv(options.data, function(data) {
     // Create table
     d3.select("table").remove();
       // the columns you'd like to display
-      var columns = ["name", "C", "C++", "Java", "Javascript", "Ruby", "PHP", "Python", "ASP"];
+      var columns = _.keys(data[0]);
 
       var table = d3.select("#wrap-table").append("table").attr("class","table table-striped table-hover"),
           thead = table.append("thead"),
@@ -209,14 +211,7 @@ d3.csv(options.data, function(data) {
           .data(columns)
           .enter()
           .append("th")
-              .text(function(column) { 
-                if(column=="name"){
-                  return "Name";
-                }
-                else{
-                  return column;
-                }
-              });
+              .text(function(column) { return column; });
 
       // create a row for each object in the data
       var rows = tbody.selectAll("tr")
@@ -233,7 +228,15 @@ d3.csv(options.data, function(data) {
           })
           .enter()
           .append("td")
-              .text(function(d) { return d.value; });
+              .html(function(d) { 
+                  if(_.contains(that.imageColumns,d.column)==true){
+                      return "<img src='"+d.value+"' />";
+                  }else if(_.contains(that.linkColumns,d.column)==true){
+                      return "<a href='"+d.value.match(/\((.*?)\)/)[1]+"'>"+d.value.match(/\[(.*?)\]/)[1]+"</a>";
+                  }else{
+                      return d.value;
+                  }
+              });
     //Table Created
 
     ctx.clearRect(0,0,w+1,h+1);

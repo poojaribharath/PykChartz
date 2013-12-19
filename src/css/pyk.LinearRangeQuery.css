@@ -1,20 +1,14 @@
-#wrap {
-  width: 860px;
-  margin: 0 auto;
-  position: relative;
-}
-
 svg.linear-range-query {
   font: 10px sans-serif;
 }
 
-canvas, svg.linear-range-query{
+canvas.linear-range-query, svg.linear-range-query{
   position: absolute;
   top: 0;
   left: 0;
 }
 
-#chart {
+#chart.linear-range-query {
   position: relative;
 }
 
