@@ -23,7 +23,7 @@
             var cscale=(($("#select-scale").find('option:selected').attr('value')));
           
             k = new PykCharts.choroplethOneLayer({
-                selection: "#choropleth-container",
+                selection: "#choroplethOneLayer-container",
                 topojson: "res/data/india_states_topo.json",
                 geo_data: "res/data/2004_results_state.json",
                 width: 960,
@@ -57,7 +57,7 @@
                 projectionTranslateY = 550;
             }
             k = new PykCharts.choroplethOneLayer({
-                selection: "#choropleth-container",
+                selection: "#choroplethOneLayer-container",
                 topojson: topojson,
                 geo_data: geo_data,
                 width: 960,
@@ -112,7 +112,7 @@
                                 <option value="selector">Ordinal Color Scale Choropleth with Selector</option>
                             </select>
                         </div>
-                        <div id="choropleth-container"></div>
+                        <div id="choroplethOneLayer-container"></div>
                     </div>
                 </div>
             </div>

@@ -107,9 +107,9 @@ PykCharts.choroplethOneLayer = function(options){
     //5. Render tooltip
     //----------------------------------------------------------------------------------------
     this.renderTooltip = function(){
-        $("#choropleth-tooltip").remove();
+        $("#choroplethOneLayer-tooltip").remove();
         this.tooltip = d3.select("body")
-            .append("div").attr("id","choropleth-tooltip")
+            .append("div").attr("id","choroplethOneLayer-tooltip")
             .style("position", "absolute")
             .style("z-index", "10")
             .style("visibility", "hidden")
