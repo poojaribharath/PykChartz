@@ -26,6 +26,7 @@ var renderCredits = function(c,w,h,t,l){
         credits = d3.select("svg."+c)
             .append("a")
             .attr("xlink:href",l);
+            .attr("target","_blank");
         credits.append("text")
             .attr("x",w-100)
             .attr("y",h-2)
@@ -54,6 +55,7 @@ var renderCredits = function(c,w,h,t,l){
         credits = d3.select("svg."+c)
             .append("a")
             .attr("xlink:href",l);
+            .attr("target","_blank");
         credits.append("text")
             .attr("x",w-60)
             .attr("y",h-2)
