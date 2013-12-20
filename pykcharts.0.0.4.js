@@ -1,4 +1,68 @@
 PykCharts = {};
+var renderCredits = function(c,w,h,t,l){
+    var b = true;
+    var credits;
+    if(b===true){
+        d3.select("svg."+c)
+            .append("text")
+            .attr("x",10)
+            .attr("y",h-2)
+            .attr("font-size",11)
+            .attr("fill","gray")
+            .text("Visualization by");
+        credits = d3.select("svg."+c)
+            .append("a")
+            .attr("xlink:href","http://pykih.com")
+            .attr("target","_blank");
+        credits.append("text")
+            .attr("x",87)
+            .attr("y",h-2)
+            .attr("font-size",11)
+            .attr("fill","blue")
+            .style("text-decoration","underline")
+            .text("pykih.com");
+    }
+    if(t==="" && l!==""){
+        credits = d3.select("svg."+c)
+            .append("a")
+            .attr("xlink:href",l);
+        credits.append("text")
+            .attr("x",w-100)
+            .attr("y",h-2)
+            .attr("font-size",11)
+            .attr("fill","blue")
+            .style("text-decoration","underline")
+            .text("Source");
+    }
+    else if(t!=="" && l===""){
+        d3.select("svg."+c)
+            .append("text")
+            .attr("x",w-100)
+            .attr("y",h-2)
+            .attr("font-size",11)
+            .attr("fill","gray")
+            .text("Source: "+t);
+    }
+    else if(t!=="" && l!==""){
+        d3.select("svg."+c)
+            .append("text")
+            .attr("x",w-100)
+            .attr("y",h-2)
+            .attr("font-size",11)
+            .attr("fill","gray")
+            .text("Source:");
+        credits = d3.select("svg."+c)
+            .append("a")
+            .attr("xlink:href",l);
+        credits.append("text")
+            .attr("x",w-60)
+            .attr("y",h-2)
+            .attr("font-size",11)
+            .attr("fill","blue")
+            .style("text-decoration","underline")
+            .text(t);
+    }
+};
 
 PykCharts.choroplethOneLayer = function(options){
     //----------------------------------------------------------------------------------------
@@ -22,6 +86,9 @@ PykCharts.choroplethOneLayer = function(options){
         that.projectionScale = this.options.projectionScale;
         that.projectionTranslateX = this.options.projectionTranslateX;
         that.projectionTranslateY = this.options.projectionTranslateY;
+        that.source_name = this.options.sourceName;
+        that.source_link = this.options.sourceLink;
+        that.display_credit = this.options.displayCredit;
 
         var opt = this.options;
 
@@ -102,6 +169,7 @@ PykCharts.choroplethOneLayer = function(options){
         //4.5 Draw the elements after creating the holder
         this.renderTooltip();
         this.draw(t, g);
+        renderCredits("pyk-choroplethOneLayer-map-holder",$(".pyk-choroplethOneLayer-map-holder").width(),$(".pyk-choroplethOneLayer-map-holder").height(),that.source_name,that.source_link,that.display_credit);
 
     };
 
@@ -435,6 +503,9 @@ PykCharts.linearRangeQuery = function (options) {
         that.nonchartColumns = this.options.nonchartColumns;
         that.imageColumns = this.options.imageColumns;
         that.linkColumns = this.options.linkColumns;
+        that.source_name = this.options.sourceName;
+        that.source_link = this.options.sourceLink;
+        that.display_credit = this.options.displayCredit;
 
         // 1.3 Read Json File Get all the data and pass to render
        d3.csv(options.data, function (e, data) {
@@ -471,7 +542,7 @@ window.requestAnimFrame = window.requestAnimationFrame       ||
                             window.setTimeout(callback, 1000 / 60);
                           };
 
-var m = [60, 10, 10, 0],
+var m = [60, 10, 20, 0],
     w = 860 - m[1] - m[3],
     h = 290 - m[0] - m[2];
 
@@ -677,6 +748,9 @@ d3.csv(options.data, function(data) {
       render();
     })();
   }
+
+  renderCredits("linear-range-query",$(".linear-range-query").width(),$(".linear-range-query").height(),that.source_name,that.source_link,that.display_credit);
+
 });
 
 
@@ -758,6 +832,10 @@ PykCharts.BubblePack = function (options) {
     this.execute = function () {
         //1.3 Assign Global variable var that to access function and variable throughout   
         var that = this;
+
+        that.source_name = options.sourceName;
+        that.source_link = options.sourceLink;
+        that.display_credit = options.displayCredit;
 
         // 1.2 Read Json File Get all the data and pass to render
         d3.json(options.data, function (e, data) {
@@ -854,9 +932,6 @@ PykCharts.BubblePack = function (options) {
                     recurse(node.name, child);
                 });
                 else {
-                    console.log("className:" + node);
-                    console.log("ttip:" + node.ttip);
-                    console.log("color:" + node.colors);
 
                     classesArray.push({
                         packageName: name,
@@ -869,7 +944,6 @@ PykCharts.BubblePack = function (options) {
             }
 
             recurse(null, root);
-            console.log("classes:" + classesArray);
             return {
                 children: classesArray
             };
@@ -877,6 +951,7 @@ PykCharts.BubblePack = function (options) {
 
         d3.select(self.frameElement).style("height", diameter + "px");
 
+        renderCredits("bubble",$(".bubble").width(),$(".bubble").height(),that.source_name,that.source_link,that.display_credit);
     };
 
 
@@ -911,6 +986,10 @@ PykCharts.Chord = function(options){
 
     //1.2 Assign Global variable var that to access function and variable throughout   
     var that = this;
+
+    that.source_name = this.options.sourceName;
+    that.source_link = this.options.sourceLink;
+    that.display_credit = this.options.displayCredit;
 
     //1.3 Read Json File   
     d3.json(that.options.relations, function(e, r){
@@ -949,6 +1028,7 @@ PykCharts.Chord = function(options){
     //4. Render function to create the chart
     //----------------------------------------------------------------------------------------
     this.render = function(){
+        var that = this;
         //4.1 get the texts contents & assign to nick variable
     this.nicks = this.frequency.map(function(d){return d.nick;});
         this.color = this.frequency.map(function(d){return d.color;});
@@ -956,6 +1036,7 @@ PykCharts.Chord = function(options){
     this.generateMatrix();
         //4.3 Call render chors to display chord svg
     this.renderChord();
+    renderCredits("pyk-chord-credits",$(".pyk-chord-credits").width(),$(".pyk-chord-credits").height(),that.source_name,that.source_link,that.display_credit);
     };
 
     //----------------------------------------------------------------------------------------
@@ -982,8 +1063,6 @@ PykCharts.Chord = function(options){
         .attr("height", h)
         .append("g")
         .attr("transform","translate(" + w / 2 + "," + h / 2 + ")");
-
-
 
     var fill = d3.scale.ordinal().range([that.options.color]);
     var innerRadius = Math.min(w,h) * 0.31;
@@ -1095,6 +1174,12 @@ return that.color[d.index];
         .text(function(d) {
         return that.nicks[d.index];
         });
+
+        d3.select(this.options.selection)
+            .append("svg")
+            .attr("class","pyk-chord-credits")
+            .attr("width",w)
+            .attr("height",10);
     };
 
 
@@ -1153,8 +1238,12 @@ PykCharts.Choropleth = function(options){
 
         //1.3 Assign Global variable var that to access function and variable throughout
     var that = this;
-    var opt = this.options;
 
+    that.source_name = this.options.sourceName;
+    that.source_link = this.options.sourceLink;
+    that.display_credit = this.options.displayCredit;
+
+    var opt = this.options;
 
     // //1.3 Read Json File Get all the data and pass to render
     d3.json(opt.topojson, function(e, topology){
@@ -1194,31 +1283,32 @@ PykCharts.Choropleth = function(options){
     //----------------------------------------------------------------------------------------
    //4.1 Clear existing HTML inside Selection DIV ID
     this.render = function(t, s, c){
+        var that = this;
     $(this.options.selection).html("");
 
    //4.2 Assign height and width to a local variable
-    var h = this.options.height;
-    var w = this.options.width;
+    that.h = this.options.height;
+    that.w = this.options.width;
 
     //4.3 Create SVG holders for legends
     this.legends_group = d3.select(this.options.selection).append("svg")
         .attr("class", "pyk-choropleth-legend-holder")
         .attr("height", 30)
-        .attr("width", w);
+        .attr("width", that.w);
 
     //4.4 Create SVG holders for legends
     this.map_group = d3.select(this.options.selection).append("svg")
         .attr("class", "pyk-choropleth-map-holder")
-        .attr("height", h - 100)
-        .attr("width", w);
+        .attr("height", that.h - 100)
+        .attr("width", that.w);
 this.downlegend_group = d3.select(this.options.selection).append("svg")
         .attr("class", "pyk-choropleth-downlegends-holder")
         .attr("height", 50)
-        .attr("width", w);
+        .attr("width", that.w);
 this.downlegend_group1 = d3.select(this.options.selection).append("svg")
         .attr("class", "pyk-choropleth-downlegends-holder1")
         .attr("height", 50)
-        .attr("width", w);
+        .attr("width", that.w);
     //4.5 Set first parameter
     var params = Object.keys(s["0"]);
     this.param = params[0];
@@ -1227,7 +1317,7 @@ this.downlegend_group1 = d3.select(this.options.selection).append("svg")
     this.renderTooltip();
     this.draw(t, s, c);
     $ ('body').find(" .pyk-choropleth-downlegends-holder1").hide();
-
+    renderCredits("pyk-choropleth-credits",$(".pyk-choropleth-credits").width(),$(".pyk-choropleth-credits").height(),that.source_name,that.source_link,that.display_credit);
     };
 
     //----------------------------------------------------------------------------------------
@@ -1525,6 +1615,12 @@ $ (" .pyk-choropleth-downlegends-holder").hide();
         .text(function(d, i){ return legend_labels[i]; });
 
         $("g.counties").hide();
+
+        d3.select(this.options.selection)
+            .append("svg")
+            .attr("class","pyk-choropleth-credits")
+            .attr("width",that.w)
+            .attr("height",10);
     };
 
     //----------------------------------------------------------------------------------------
@@ -1552,6 +1648,10 @@ PykCharts.GoogleHeat = function(options){
 
     //1.3 Assign Global variable var that to access function and variable throughout   
     var that = this;
+
+    that.source_name = this.options.sourceName;
+    that.source_link = this.options.sourceLink;
+    
 
     // 1.4 Read Json File Get all the data and pass to render
     $.getJSON(this.options.data, function(data){
@@ -1599,6 +1699,7 @@ PykCharts.GoogleHeat = function(options){
 
     this.setupHeat();
     this.setupMarkers();
+    renderCredits("pyk-googlemap-credits",$(".pyk-googlemap-credits").width(),$(".pyk-googlemap-credits").height(),that.source_name,that.source_link);
     };
     
     //----------------------------------------------------------------------------------------
@@ -1638,6 +1739,13 @@ PykCharts.GoogleHeat = function(options){
         data: pointArray
     });
     heatmap.setMap(this.map);
+
+        d3.select(this.options.selection)
+            .append("svg")
+            .attr("class","pyk-googlemap-credits")
+            .attr("width",this.options.width)
+            .attr("height",10);
+
     };
 
     this.setupMarkers = function(){
@@ -1709,6 +1817,11 @@ PykCharts.HawkEye = function (options) {
                 that.initial_bar_width_adjustment = that.options.barchartwidthadjust;
         that.opentabel = 1;
         that.bdtabel = 1;
+        that.svg_width = this.options.svg_width;
+        that.svg_height = this.options.svg_height;
+        that.source_name = this.options.sourceName;
+        that.source_link = this.options.sourceLink;
+        that.display_credit = this.options.displayCredit;
 
         // 1.4 Read the main barchat input data file(s)
         d3.json(this.options.data, function (e, data) {
@@ -1725,8 +1838,6 @@ PykCharts.HawkEye = function (options) {
         d3.json(this.options.breakdown, function (e, data) {
             that.breakdown = data;
         });
-       
-
     };
 
     //----------------------------------------------------------------------------------------
@@ -1758,6 +1869,7 @@ PykCharts.HawkEye = function (options) {
     //4. Render function to create the chart
     //----------------------------------------------------------------------------------------
     this.render = function () {
+        var that = this;
        
       //4.1 Clear existing HTML inside Selection DIV ID
               $(this.options.selection).html("");
@@ -1776,7 +1888,7 @@ PykCharts.HawkEye = function (options) {
         this.svg = d3.select(this.options.selection)
             .append("svg")
             .attr("class", "pyk-hawkeye")
-            .attr("height", svg_height)
+            .attr("height", svg_height+20)
             .attr("width", svg_width);
 
         this.vis = this.svg.append("g")
@@ -1805,6 +1917,7 @@ PykCharts.HawkEye = function (options) {
         // Render elements
         this.renderTooltip();
         this.draw();
+        renderCredits("pyk-hawkeye",$(".pyk-hawkeye").width(),$(".pyk-hawkeye").height(),that.source_name,that.source_link,that.display_credit);
     };
 
    
@@ -3027,6 +3140,7 @@ lincol.push(0);
     // 10.Render tooltip:
     //----------------------------------------------------------------------------------------
     this.renderTooltip = function () {
+        var that = this;
         $("#pyk-ultimate-tooltip").remove();
         this.tooltip = d3.select("body")
             .append("div").attr("id", "pyk-ultimate-tooltip")
@@ -3244,7 +3358,6 @@ lincol.push(0);
 
 
      // 13.Return Chart:
-
     return this;
 };
 /* jshint -W069 */
@@ -3257,6 +3370,10 @@ PykCharts.BubbleMap = function (options) {
     this.execute = function () {
         // Assign Global variable var that to access function and variable throughout   
         var that = this;
+
+        that.source_name = options.sourceName;
+        that.source_link = options.sourceLink;
+        that.display_credit = options.displayCredit;
 
         //---- Reading First Data file
         d3.csv(options.data1, function (file1Dataset){
@@ -3299,6 +3416,7 @@ PykCharts.BubbleMap = function (options) {
 
         //----- SVG holder
         var svg = d3.select(options.selection).append("svg")
+            .attr("class","pyk-onelayerbubblemap")
             .attr("width", width)
             .attr("height", height);
 
@@ -3444,6 +3562,13 @@ PykCharts.BubbleMap = function (options) {
                         return 0;
             });
         });
+        d3.select(options.selection)
+            .append("svg")
+            .attr("class","pyk-onelayerbubblemap-credits")
+            .attr("width",width)
+            .attr("height",10);
+
+        renderCredits("pyk-onelayerbubblemap-credits",$(".pyk-onelayerbubblemap-credits").width(),$(".pyk-onelayerbubblemap-credits").height(),that.source_name,that.source_link,that.display_credit);
     };
 
     this.renderTooltip = function () {
@@ -3488,6 +3613,11 @@ PykCharts.BubbleMap = function (options) {
 };
 /*jshint -W083 */
 PykCharts.compare_with_circles = function (options) {
+
+    var that = this;
+    that.source_name = options.sourceName;
+    that.source_link = options.sourceLink;
+    
 
     function truncate(str, maxLength, suffix) {
         if (str.length > maxLength) {
@@ -3606,7 +3736,7 @@ PykCharts.compare_with_circles = function (options) {
             d3.select(g).selectAll("text.value").style("display", "none");
         }
     });
-
+    renderCredits("pyk-compare_with_circles",$(".pyk-compare_with_circles").width(),$(".pyk-compare_with_circles").height(),that.source_name,that.source_link,that.display_credit);
 };
 /* jshint -W083 */
 PykCharts.River = function(options){
@@ -3624,6 +3754,11 @@ PykCharts.River = function(options){
 
         //1.3 Assign Global variable var that to access function and variable throughout
         var that = this;
+
+        that.source_name = this.options.sourceName;
+        that.source_link = this.options.sourceLink;
+        that.display_credit = this.options.displayCredit;
+
         var opt = this.options;
 
         // 1.4 Read Json File Get all the data and pass to render
@@ -3658,6 +3793,7 @@ PykCharts.River = function(options){
     //4. Render function to create the chart
     //----------------------------------------------------------------------------------------
     this.render = function(){
+        var that = this;
         //4.1 Clear existing HTML inside Selection DIV ID
         $(this.options.selection).html("");
 
@@ -3669,7 +3805,7 @@ PykCharts.River = function(options){
         this.svg = d3.select(this.options.selection)
             .append("svg")
             .attr("class", "pyk-river")
-            .attr("height", h)
+            .attr("height", h+20)
             .attr("width", w);
 
         //4.3 Create legends holder
@@ -3684,6 +3820,7 @@ PykCharts.River = function(options){
         //4.4 Render elements
         this.renderTooltip();
         this.draw();
+        renderCredits("pyk-river",$(".pyk-river").width(),$(".pyk-river").height(),that.source_name,that.source_link,that.display_credit);
     };
 
     //----------------------------------------------------------------------------------------
@@ -4147,6 +4284,10 @@ PykCharts.treerect = function (options) {
         width = this.options.width;
         height = this.options.height;
 
+        that.source_name = this.options.sourceName;
+        that.source_link = this.options.sourceLink;
+        that.display_credit = this.options.displayCredit;
+
         // 1.3 Read Json File Get all the data and pass to render
         d3.json(options.data, function (e, data) {
             that.data = data;
@@ -4193,8 +4334,9 @@ PykCharts.treerect = function (options) {
             .style("width", w + "px")
             .style("height", h + "px")
             .append("svg:svg")
+            .attr("class","pyk-treerect")
             .attr("width", w)
-            .attr("height", h)
+            .attr("height", h+20)
             .append("svg:g")
             .attr("transform", "translate(.5,.5)");
 
@@ -4277,7 +4419,7 @@ PykCharts.treerect = function (options) {
         function count(d) {
             return 1;
         }
-
+        renderCredits("pyk-treerect",$(".pyk-treerect").width(),$(".pyk-treerect").height(),that.source_name,that.source_link,that.display_credit);
     };
 
     //----------------------------------------------------------------------------------------
@@ -4313,6 +4455,10 @@ PykCharts.Ultimate = function(options){
 
         // 1.3 Global Variable
         var that = this;
+
+        that.source_name = this.options.sourceName;
+        that.source_link = this.options.sourceLink;
+        that.display_credit = this.options.displayCredit;
 
         // 1.4 Read the input data file(s)
         d3.json(this.options.data, function(e, data){
@@ -4355,6 +4501,7 @@ PykCharts.Ultimate = function(options){
     //4. Render function to create the chart
     //----------------------------------------------------------------------------------------
     this.render = function(){
+        var that = this;
         //4.1 Clear existing HTML inside Selection DIV ID
         $(this.options.selection).html("");
 
@@ -4365,7 +4512,7 @@ PykCharts.Ultimate = function(options){
         //4.3 SVG Holder for Chart, Legend, ... other elements
         this.svg = d3.select(this.options.selection)
             .append("svg")
-            .attr("class", "pyk-ultimate")
+            .attr("class", "pyk-ultimate "+this.options.selection.substring(1))
             .attr("height", h)
             .attr("width", w);
 
@@ -4395,6 +4542,7 @@ PykCharts.Ultimate = function(options){
         // Render elements
         this.renderTooltip();
         this.draw();
+        renderCredits(this.options.selection.substring(1),$("."+this.options.selection.substring(1)).width(),$("."+this.options.selection.substring(1)).height(),that.source_name,that.source_link,that.display_credit);
     };
 
     //----------------------------------------------------------------------------------------
@@ -4729,6 +4877,10 @@ PykCharts.UltimateNegative = function (options) {
         // 1.3 Global Variable
         var that = this;
 
+        that.source_name = this.options.sourceName;
+        that.source_link = this.options.sourceLink;
+        
+
         // 1.4 Read the input data file(s)
         d3.json(this.options.data, function (e, data) {
 
@@ -4775,6 +4927,7 @@ PykCharts.UltimateNegative = function (options) {
     //4. Render function to create the chart
     //----------------------------------------------------------------------------------------
     this.render = function () {
+        var that = this;
         //4.1 Clear existing HTML inside Selection DIV ID
         $(this.options.selection).html("");
 
@@ -4830,6 +4983,7 @@ PykCharts.UltimateNegative = function (options) {
         // Render elements
         this.renderTooltip();
         this.draw();
+        renderCredits("pyk-ultimate",$(".pyk-ultimate").width(),$(".pyk-ultimate").height(),that.source_name,that.source_link);
     };
 
     //----------------------------------------------------------------------------------------
