@@ -38,7 +38,8 @@
                      <li><a href="treerect.html">Tree Rect</a></li>
                      <li><a href="LinearRangeQuery.html">Linear Range Query</a></li>
                      <li><a href="hawkeye.html">Hawkeye</a></li>           
-                     <li><a href="pulse.html">Circle Comparision</a></li>
+                     <li><a href="OneLayerBubbleMap.html">One Layer Bubble Map</a></li>
+                     <li><a href="pulse.html">Pulse</a></li>
                   </ul>
                   <br/>
                </div>
@@ -61,7 +62,9 @@
          var k = new PykCharts.River({
          data: "res/data/river-data.json",
          width: 900,
-         selection: "#river-container"
+         selection: "#river-container",
+         sourceName: "",
+         sourceLink: ""
          });
          k.execute();
          });

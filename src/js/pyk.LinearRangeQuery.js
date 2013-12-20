@@ -14,6 +14,9 @@ PykCharts.linearRangeQuery = function (options) {
         that.nonchartColumns = this.options.nonchartColumns;
         that.imageColumns = this.options.imageColumns;
         that.linkColumns = this.options.linkColumns;
+        that.source_name = this.options.sourceName;
+        that.source_link = this.options.sourceLink;
+        that.display_credit = this.options.displayCredit;
 
         // 1.3 Read Json File Get all the data and pass to render
        d3.csv(options.data, function (e, data) {
@@ -50,7 +53,7 @@ window.requestAnimFrame = window.requestAnimationFrame       ||
                             window.setTimeout(callback, 1000 / 60);
                           };
 
-var m = [60, 10, 10, 0],
+var m = [60, 10, 20, 0],
     w = 860 - m[1] - m[3],
     h = 290 - m[0] - m[2];
 
@@ -256,6 +259,9 @@ d3.csv(options.data, function(data) {
       render();
     })();
   }
+
+  renderCredits("linear-range-query",$(".linear-range-query").width(),$(".linear-range-query").height(),that.source_name,that.source_link,that.display_credit);
+
 });
 
 

@@ -23,8 +23,12 @@ PykCharts.Choropleth = function(options){
 
         //1.3 Assign Global variable var that to access function and variable throughout
     var that = this;
-    var opt = this.options;
 
+    that.source_name = this.options.sourceName;
+    that.source_link = this.options.sourceLink;
+    that.display_credit = this.options.displayCredit;
+
+    var opt = this.options;
 
     // //1.3 Read Json File Get all the data and pass to render
     d3.json(opt.topojson, function(e, topology){
@@ -64,31 +68,32 @@ PykCharts.Choropleth = function(options){
     //----------------------------------------------------------------------------------------
    //4.1 Clear existing HTML inside Selection DIV ID
     this.render = function(t, s, c){
+        var that = this;
     $(this.options.selection).html("");
 
    //4.2 Assign height and width to a local variable
-    var h = this.options.height;
-    var w = this.options.width;
+    that.h = this.options.height;
+    that.w = this.options.width;
 
     //4.3 Create SVG holders for legends
     this.legends_group = d3.select(this.options.selection).append("svg")
         .attr("class", "pyk-choropleth-legend-holder")
         .attr("height", 30)
-        .attr("width", w);
+        .attr("width", that.w);
 
     //4.4 Create SVG holders for legends
     this.map_group = d3.select(this.options.selection).append("svg")
         .attr("class", "pyk-choropleth-map-holder")
-        .attr("height", h - 100)
-        .attr("width", w);
+        .attr("height", that.h - 100)
+        .attr("width", that.w);
 this.downlegend_group = d3.select(this.options.selection).append("svg")
         .attr("class", "pyk-choropleth-downlegends-holder")
         .attr("height", 50)
-        .attr("width", w);
+        .attr("width", that.w);
 this.downlegend_group1 = d3.select(this.options.selection).append("svg")
         .attr("class", "pyk-choropleth-downlegends-holder1")
         .attr("height", 50)
-        .attr("width", w);
+        .attr("width", that.w);
     //4.5 Set first parameter
     var params = Object.keys(s["0"]);
     this.param = params[0];
@@ -97,7 +102,7 @@ this.downlegend_group1 = d3.select(this.options.selection).append("svg")
     this.renderTooltip();
     this.draw(t, s, c);
     $ ('body').find(" .pyk-choropleth-downlegends-holder1").hide();
-
+    renderCredits("pyk-choropleth-credits",$(".pyk-choropleth-credits").width(),$(".pyk-choropleth-credits").height(),that.source_name,that.source_link,that.display_credit);
     };
 
     //----------------------------------------------------------------------------------------
@@ -395,6 +400,12 @@ $ (" .pyk-choropleth-downlegends-holder").hide();
         .text(function(d, i){ return legend_labels[i]; });
 
         $("g.counties").hide();
+
+        d3.select(this.options.selection)
+            .append("svg")
+            .attr("class","pyk-choropleth-credits")
+            .attr("width",that.w)
+            .attr("height",10);
     };
 
     //----------------------------------------------------------------------------------------

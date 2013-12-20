@@ -18,6 +18,10 @@ PykCharts.GoogleHeat = function(options){
     //1.3 Assign Global variable var that to access function and variable throughout   
     var that = this;
 
+    that.source_name = this.options.sourceName;
+    that.source_link = this.options.sourceLink;
+    
+
     // 1.4 Read Json File Get all the data and pass to render
     $.getJSON(this.options.data, function(data){
         that.data = data;
@@ -64,6 +68,7 @@ PykCharts.GoogleHeat = function(options){
 
     this.setupHeat();
     this.setupMarkers();
+    renderCredits("pyk-googlemap-credits",$(".pyk-googlemap-credits").width(),$(".pyk-googlemap-credits").height(),that.source_name,that.source_link);
     };
     
     //----------------------------------------------------------------------------------------
@@ -103,6 +108,13 @@ PykCharts.GoogleHeat = function(options){
         data: pointArray
     });
     heatmap.setMap(this.map);
+
+        d3.select(this.options.selection)
+            .append("svg")
+            .attr("class","pyk-googlemap-credits")
+            .attr("width",this.options.width)
+            .attr("height",10);
+
     };
 
     this.setupMarkers = function(){

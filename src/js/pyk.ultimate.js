@@ -13,6 +13,10 @@ PykCharts.Ultimate = function(options){
         // 1.3 Global Variable
         var that = this;
 
+        that.source_name = this.options.sourceName;
+        that.source_link = this.options.sourceLink;
+        that.display_credit = this.options.displayCredit;
+
         // 1.4 Read the input data file(s)
         d3.json(this.options.data, function(e, data){
             // Assign it to global accesstor variable
@@ -54,6 +58,7 @@ PykCharts.Ultimate = function(options){
     //4. Render function to create the chart
     //----------------------------------------------------------------------------------------
     this.render = function(){
+        var that = this;
         //4.1 Clear existing HTML inside Selection DIV ID
         $(this.options.selection).html("");
 
@@ -64,7 +69,7 @@ PykCharts.Ultimate = function(options){
         //4.3 SVG Holder for Chart, Legend, ... other elements
         this.svg = d3.select(this.options.selection)
             .append("svg")
-            .attr("class", "pyk-ultimate")
+            .attr("class", "pyk-ultimate "+this.options.selection.substring(1))
             .attr("height", h)
             .attr("width", w);
 
@@ -94,6 +99,7 @@ PykCharts.Ultimate = function(options){
         // Render elements
         this.renderTooltip();
         this.draw();
+        renderCredits(this.options.selection.substring(1),$("."+this.options.selection.substring(1)).width(),$("."+this.options.selection.substring(1)).height(),that.source_name,that.source_link,that.display_credit);
     };
 
     //----------------------------------------------------------------------------------------

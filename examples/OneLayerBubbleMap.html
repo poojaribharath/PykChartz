@@ -42,11 +42,13 @@ text {
                      <li><a href="ultimate.html">Ultimate Column</a></li>
                       <li><a href="ultimatenegative.html">Ultimate Negative</a></li>
                      <li><a href="chord.html">Rotating Chord</a></li>
-                     <li   class="active"><a href="bubble.html">Bubble</a></li>
+                     <li><a href="bubble.html">Bubble</a></li>
                      <li><a href="treerect.html">Tree Rect</a></li>
                      <li><a href="LinearRangeQuery.html">Linear Range Query</a></li>
                      <li><a href="hawkeye.html">Hawkeye</a></li>               
-                     <li><a href="compare_with_circles.html">Circle Comparision</a></li>                     </ul>
+                     <li   class="active"><a href="OneLayerBubbleMap.html">One Layer Bubble Map</a></li>
+                     <li><a href="pulse.html">Pulse</a></li>
+                  </ul>
                   <br/>
                </div>
                <div class="col-sm-9">
@@ -68,7 +70,9 @@ text {
       var k = new PykCharts.BubbleMap({
          data1: "res/data/gdpdata.csv",
          data2: "res/data/gdpdata.csv",
-         selection: "#viz-container"
+         selection: "#viz-container",
+         sourceName: "",
+         sourceLink: ""
       });
       k.execute();
    });

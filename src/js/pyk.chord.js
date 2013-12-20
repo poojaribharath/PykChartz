@@ -10,6 +10,10 @@ PykCharts.Chord = function(options){
     //1.2 Assign Global variable var that to access function and variable throughout   
     var that = this;
 
+    that.source_name = this.options.sourceName;
+    that.source_link = this.options.sourceLink;
+    that.display_credit = this.options.displayCredit;
+
     //1.3 Read Json File   
     d3.json(that.options.relations, function(e, r){
         //1.4 Set Json Read data to global varibale   
@@ -47,6 +51,7 @@ PykCharts.Chord = function(options){
     //4. Render function to create the chart
     //----------------------------------------------------------------------------------------
     this.render = function(){
+        var that = this;
         //4.1 get the texts contents & assign to nick variable
     this.nicks = this.frequency.map(function(d){return d.nick;});
         this.color = this.frequency.map(function(d){return d.color;});
@@ -54,6 +59,7 @@ PykCharts.Chord = function(options){
     this.generateMatrix();
         //4.3 Call render chors to display chord svg
     this.renderChord();
+    renderCredits("pyk-chord-credits",$(".pyk-chord-credits").width(),$(".pyk-chord-credits").height(),that.source_name,that.source_link,that.display_credit);
     };
 
     //----------------------------------------------------------------------------------------
@@ -80,8 +86,6 @@ PykCharts.Chord = function(options){
         .attr("height", h)
         .append("g")
         .attr("transform","translate(" + w / 2 + "," + h / 2 + ")");
-
-
 
     var fill = d3.scale.ordinal().range([that.options.color]);
     var innerRadius = Math.min(w,h) * 0.31;
@@ -193,6 +197,12 @@ return that.color[d.index];
         .text(function(d) {
         return that.nicks[d.index];
         });
+
+        d3.select(this.options.selection)
+            .append("svg")
+            .attr("class","pyk-chord-credits")
+            .attr("width",w)
+            .attr("height",10);
     };
 
 

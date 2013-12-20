@@ -1,6 +1,11 @@
 /*jshint -W083 */
 PykCharts.compare_with_circles = function (options) {
 
+    var that = this;
+    that.source_name = options.sourceName;
+    that.source_link = options.sourceLink;
+    
+
     function truncate(str, maxLength, suffix) {
         if (str.length > maxLength) {
             str = str.substring(0, maxLength + 1);
@@ -118,5 +123,5 @@ PykCharts.compare_with_circles = function (options) {
             d3.select(g).selectAll("text.value").style("display", "none");
         }
     });
-
+    renderCredits("pyk-compare_with_circles",$(".pyk-compare_with_circles").width(),$(".pyk-compare_with_circles").height(),that.source_name,that.source_link,that.display_credit);
 };

@@ -14,6 +14,11 @@ PykCharts.River = function(options){
 
         //1.3 Assign Global variable var that to access function and variable throughout
         var that = this;
+
+        that.source_name = this.options.sourceName;
+        that.source_link = this.options.sourceLink;
+        that.display_credit = this.options.displayCredit;
+
         var opt = this.options;
 
         // 1.4 Read Json File Get all the data and pass to render
@@ -48,6 +53,7 @@ PykCharts.River = function(options){
     //4. Render function to create the chart
     //----------------------------------------------------------------------------------------
     this.render = function(){
+        var that = this;
         //4.1 Clear existing HTML inside Selection DIV ID
         $(this.options.selection).html("");
 
@@ -59,7 +65,7 @@ PykCharts.River = function(options){
         this.svg = d3.select(this.options.selection)
             .append("svg")
             .attr("class", "pyk-river")
-            .attr("height", h)
+            .attr("height", h+20)
             .attr("width", w);
 
         //4.3 Create legends holder
@@ -74,6 +80,7 @@ PykCharts.River = function(options){
         //4.4 Render elements
         this.renderTooltip();
         this.draw();
+        renderCredits("pyk-river",$(".pyk-river").width(),$(".pyk-river").height(),that.source_name,that.source_link,that.display_credit);
     };
 
     //----------------------------------------------------------------------------------------

@@ -20,6 +20,9 @@ PykCharts.choroplethOneLayer = function(options){
         that.projectionScale = this.options.projectionScale;
         that.projectionTranslateX = this.options.projectionTranslateX;
         that.projectionTranslateY = this.options.projectionTranslateY;
+        that.source_name = this.options.sourceName;
+        that.source_link = this.options.sourceLink;
+        that.display_credit = this.options.displayCredit;
 
         var opt = this.options;
 
@@ -100,6 +103,7 @@ PykCharts.choroplethOneLayer = function(options){
         //4.5 Draw the elements after creating the holder
         this.renderTooltip();
         this.draw(t, g);
+        renderCredits("pyk-choroplethOneLayer-map-holder",$(".pyk-choroplethOneLayer-map-holder").width(),$(".pyk-choroplethOneLayer-map-holder").height(),that.source_name,that.source_link,that.display_credit);
 
     };
 

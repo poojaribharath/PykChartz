@@ -39,7 +39,8 @@
                      <li><a href="treerect.html">Tree Rect</a></li>
                      <li   class="active"><a href="LinearRangeQuery.html">Linear Range Query</a></li>
                      <li><a href="hawkeye.html">Hawkeye</a></li>					 
-                     <li><a href="pulse.html">Circle Comparision</a></li>
+                     <li><a href="OneLayerBubbleMap.html">One Layer Bubble Map</a></li>
+                     <li><a href="pulse.html">Pulse</a></li>
                   </ul>
                   <br/>
                </div>
@@ -82,7 +83,9 @@
             nonchartColumns: ["Name"], //Enter the exact names of columns from the data file which should not be included in chart. Leave empty for no value. e.g. ["Name","ID"]
             imageColumns: ["Status"], //Enter the exact names of columns from the data file which has the image path. Leave empty for no value. e.g. ["Status", "Logo"]
             linkColumns: ["Profile"], //Enter the exact names of columns from the data file which has the external link. Leave empty for no value. e.g. ["Profile","Website"]
-          });
+            sourceName: "",
+            sourceLink: ""
+         });
           k.execute();
     	  });
       </script>

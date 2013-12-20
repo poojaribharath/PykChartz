@@ -7,6 +7,10 @@ PykCharts.BubblePack = function (options) {
         //1.3 Assign Global variable var that to access function and variable throughout   
         var that = this;
 
+        that.source_name = options.sourceName;
+        that.source_link = options.sourceLink;
+        that.display_credit = options.displayCredit;
+
         // 1.2 Read Json File Get all the data and pass to render
         d3.json(options.data, function (e, data) {
             that.data = data;
@@ -102,9 +106,6 @@ PykCharts.BubblePack = function (options) {
                     recurse(node.name, child);
                 });
                 else {
-                    console.log("className:" + node);
-                    console.log("ttip:" + node.ttip);
-                    console.log("color:" + node.colors);
 
                     classesArray.push({
                         packageName: name,
@@ -117,7 +118,6 @@ PykCharts.BubblePack = function (options) {
             }
 
             recurse(null, root);
-            console.log("classes:" + classesArray);
             return {
                 children: classesArray
             };
@@ -125,6 +125,7 @@ PykCharts.BubblePack = function (options) {
 
         d3.select(self.frameElement).style("height", diameter + "px");
 
+        renderCredits("bubble",$(".bubble").width(),$(".bubble").height(),that.source_name,that.source_link,that.display_credit);
     };
 
 

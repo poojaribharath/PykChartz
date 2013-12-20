@@ -12,6 +12,10 @@ PykCharts.treerect = function (options) {
         width = this.options.width;
         height = this.options.height;
 
+        that.source_name = this.options.sourceName;
+        that.source_link = this.options.sourceLink;
+        that.display_credit = this.options.displayCredit;
+
         // 1.3 Read Json File Get all the data and pass to render
         d3.json(options.data, function (e, data) {
             that.data = data;
@@ -58,8 +62,9 @@ PykCharts.treerect = function (options) {
             .style("width", w + "px")
             .style("height", h + "px")
             .append("svg:svg")
+            .attr("class","pyk-treerect")
             .attr("width", w)
-            .attr("height", h)
+            .attr("height", h+20)
             .append("svg:g")
             .attr("transform", "translate(.5,.5)");
 
@@ -142,7 +147,7 @@ PykCharts.treerect = function (options) {
         function count(d) {
             return 1;
         }
-
+        renderCredits("pyk-treerect",$(".pyk-treerect").width(),$(".pyk-treerect").height(),that.source_name,that.source_link,that.display_credit);
     };
 
     //----------------------------------------------------------------------------------------

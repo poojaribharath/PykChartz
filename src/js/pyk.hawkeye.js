@@ -22,6 +22,11 @@ PykCharts.HawkEye = function (options) {
                 that.initial_bar_width_adjustment = that.options.barchartwidthadjust;
         that.opentabel = 1;
         that.bdtabel = 1;
+        that.svg_width = this.options.svg_width;
+        that.svg_height = this.options.svg_height;
+        that.source_name = this.options.sourceName;
+        that.source_link = this.options.sourceLink;
+        that.display_credit = this.options.displayCredit;
 
         // 1.4 Read the main barchat input data file(s)
         d3.json(this.options.data, function (e, data) {
@@ -38,8 +43,6 @@ PykCharts.HawkEye = function (options) {
         d3.json(this.options.breakdown, function (e, data) {
             that.breakdown = data;
         });
-       
-
     };
 
     //----------------------------------------------------------------------------------------
@@ -71,6 +74,7 @@ PykCharts.HawkEye = function (options) {
     //4. Render function to create the chart
     //----------------------------------------------------------------------------------------
     this.render = function () {
+        var that = this;
        
       //4.1 Clear existing HTML inside Selection DIV ID
               $(this.options.selection).html("");
@@ -89,7 +93,7 @@ PykCharts.HawkEye = function (options) {
         this.svg = d3.select(this.options.selection)
             .append("svg")
             .attr("class", "pyk-hawkeye")
-            .attr("height", svg_height)
+            .attr("height", svg_height+20)
             .attr("width", svg_width);
 
         this.vis = this.svg.append("g")
@@ -118,6 +122,7 @@ PykCharts.HawkEye = function (options) {
         // Render elements
         this.renderTooltip();
         this.draw();
+        renderCredits("pyk-hawkeye",$(".pyk-hawkeye").width(),$(".pyk-hawkeye").height(),that.source_name,that.source_link,that.display_credit);
     };
 
    
@@ -1340,6 +1345,7 @@ lincol.push(0);
     // 10.Render tooltip:
     //----------------------------------------------------------------------------------------
     this.renderTooltip = function () {
+        var that = this;
         $("#pyk-ultimate-tooltip").remove();
         this.tooltip = d3.select("body")
             .append("div").attr("id", "pyk-ultimate-tooltip")
@@ -1557,6 +1563,5 @@ lincol.push(0);
 
 
      // 13.Return Chart:
-
     return this;
 };

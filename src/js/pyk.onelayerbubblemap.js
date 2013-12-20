@@ -9,6 +9,10 @@ PykCharts.BubbleMap = function (options) {
         // Assign Global variable var that to access function and variable throughout   
         var that = this;
 
+        that.source_name = options.sourceName;
+        that.source_link = options.sourceLink;
+        that.display_credit = options.displayCredit;
+
         //---- Reading First Data file
         d3.csv(options.data1, function (file1Dataset){
 
@@ -50,6 +54,7 @@ PykCharts.BubbleMap = function (options) {
 
         //----- SVG holder
         var svg = d3.select(options.selection).append("svg")
+            .attr("class","pyk-onelayerbubblemap")
             .attr("width", width)
             .attr("height", height);
 
@@ -195,6 +200,13 @@ PykCharts.BubbleMap = function (options) {
                         return 0;
             });
         });
+        d3.select(options.selection)
+            .append("svg")
+            .attr("class","pyk-onelayerbubblemap-credits")
+            .attr("width",width)
+            .attr("height",10);
+
+        renderCredits("pyk-onelayerbubblemap-credits",$(".pyk-onelayerbubblemap-credits").width(),$(".pyk-onelayerbubblemap-credits").height(),that.source_name,that.source_link,that.display_credit);
     };
 
     this.renderTooltip = function () {

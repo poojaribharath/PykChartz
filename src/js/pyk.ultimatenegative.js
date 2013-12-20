@@ -14,6 +14,10 @@ PykCharts.UltimateNegative = function (options) {
         // 1.3 Global Variable
         var that = this;
 
+        that.source_name = this.options.sourceName;
+        that.source_link = this.options.sourceLink;
+        
+
         // 1.4 Read the input data file(s)
         d3.json(this.options.data, function (e, data) {
 
@@ -60,6 +64,7 @@ PykCharts.UltimateNegative = function (options) {
     //4. Render function to create the chart
     //----------------------------------------------------------------------------------------
     this.render = function () {
+        var that = this;
         //4.1 Clear existing HTML inside Selection DIV ID
         $(this.options.selection).html("");
 
@@ -115,6 +120,7 @@ PykCharts.UltimateNegative = function (options) {
         // Render elements
         this.renderTooltip();
         this.draw();
+        renderCredits("pyk-ultimate",$(".pyk-ultimate").width(),$(".pyk-ultimate").height(),that.source_name,that.source_link);
     };
 
     //----------------------------------------------------------------------------------------

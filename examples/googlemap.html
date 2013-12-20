@@ -6,6 +6,7 @@
       <link href="res/lib/bootstrap.css" rel="stylesheet" type="text/css">
       <link rel="stylesheet" type="text/css" href="../src/css/pyk.googlemap.css" />
       <script src="../lib/jquery.js"></script>
+      <script src="../lib/d3.js"></script>
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_x5TSxdA6WDIgMfL21CViFexfHFG4cMA&sensor=true&libraries=visualization"></script>
       <script type="text/javascript" src="../lib/markermanager.js"></script>
       <script src="../src/js/pyk.js"></script>
@@ -38,7 +39,9 @@
                      <li><a href="treerect.html">Tree Rect</a></li>
                      <li><a href="LinearRangeQuery.html">Linear Range Query</a></li>
                      <li><a href="hawkeye.html">Hawkeye</a></li>               
-      				   <li><a href="pulse.html">Circle Comparision</a></li>                     </ul>
+                     <li><a href="OneLayerBubbleMap.html">One Layer Bubble Map</a></li>
+                     <li><a href="pulse.html">Pulse</a></li>
+                  </ul>
                   <br/>
                </div>
                <div class="col-sm-9">
@@ -62,7 +65,9 @@
          data: "res/data/googlemaps.json",
          center: new google.maps.LatLng(-25.363882,131.044922),
          defaultZoom: 3,
-         tooltipZoom: 12
+         tooltipZoom: 12,
+         sourceName: "",
+         sourceLink: ""
          })
          k.execute();
          });
