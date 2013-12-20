@@ -25,7 +25,8 @@ var renderCredits = function(c,w,h,t,l){
     if(t==="" && l!==""){
         credits = d3.select("svg."+c)
             .append("a")
-            .attr("xlink:href",l);
+            .attr("xlink:href",l)
+            .attr("target","_blank");
         credits.append("text")
             .attr("x",w-100)
             .attr("y",h-2)
@@ -53,7 +54,8 @@ var renderCredits = function(c,w,h,t,l){
             .text("Source:");
         credits = d3.select("svg."+c)
             .append("a")
-            .attr("xlink:href",l);
+            .attr("xlink:href",l)
+            .attr("target","_blank");
         credits.append("text")
             .attr("x",w-60)
             .attr("y",h-2)
@@ -1241,7 +1243,7 @@ PykCharts.Choropleth = function(options){
 
     that.source_name = this.options.sourceName;
     that.source_link = this.options.sourceLink;
-    that.display_credit = this.options.displayCredit;
+    
 
     var opt = this.options;
 
@@ -1317,7 +1319,7 @@ this.downlegend_group1 = d3.select(this.options.selection).append("svg")
     this.renderTooltip();
     this.draw(t, s, c);
     $ ('body').find(" .pyk-choropleth-downlegends-holder1").hide();
-    renderCredits("pyk-choropleth-credits",$(".pyk-choropleth-credits").width(),$(".pyk-choropleth-credits").height(),that.source_name,that.source_link,that.display_credit);
+    renderCredits("pyk-choropleth-credits",$(".pyk-choropleth-credits").width(),$(".pyk-choropleth-credits").height(),that.source_name,that.source_link);
     };
 
     //----------------------------------------------------------------------------------------
