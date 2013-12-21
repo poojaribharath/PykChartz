@@ -123,5 +123,5 @@ PykCharts.compare_with_circles = function (options) {
             d3.select(g).selectAll("text.value").style("display", "none");
         }
     });
-    renderCredits("pyk-compare_with_circles",$(".pyk-compare_with_circles").width(),$(".pyk-compare_with_circles").height(),that.source_name,that.source_link,that.display_credit);
+    renderCredits("pyk-compare_with_circles",$(".pyk-compare_with_circles").width(),$(".pyk-compare_with_circles").height(),that.source_name,that.source_link);
 };

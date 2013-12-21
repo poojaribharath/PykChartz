@@ -17,7 +17,7 @@ PykCharts.River = function(options){
 
         that.source_name = this.options.sourceName;
         that.source_link = this.options.sourceLink;
-        that.display_credit = this.options.displayCredit;
+        
 
         var opt = this.options;
 
@@ -80,7 +80,7 @@ PykCharts.River = function(options){
         //4.4 Render elements
         this.renderTooltip();
         this.draw();
-        renderCredits("pyk-river",$(".pyk-river").width(),$(".pyk-river").height(),that.source_name,that.source_link,that.display_credit);
+        renderCredits("pyk-river",$(".pyk-river").width(),$(".pyk-river").height(),that.source_name,that.source_link);
     };
 
     //----------------------------------------------------------------------------------------

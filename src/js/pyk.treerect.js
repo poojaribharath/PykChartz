@@ -14,7 +14,7 @@ PykCharts.treerect = function (options) {
 
         that.source_name = this.options.sourceName;
         that.source_link = this.options.sourceLink;
-        that.display_credit = this.options.displayCredit;
+        
 
         // 1.3 Read Json File Get all the data and pass to render
         d3.json(options.data, function (e, data) {
@@ -147,7 +147,7 @@ PykCharts.treerect = function (options) {
         function count(d) {
             return 1;
         }
-        renderCredits("pyk-treerect",$(".pyk-treerect").width(),$(".pyk-treerect").height(),that.source_name,that.source_link,that.display_credit);
+        renderCredits("pyk-treerect",$(".pyk-treerect").width(),$(".pyk-treerect").height(),that.source_name,that.source_link);
     };
 
     //----------------------------------------------------------------------------------------

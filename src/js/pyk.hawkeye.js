@@ -26,7 +26,7 @@ PykCharts.HawkEye = function (options) {
         that.svg_height = this.options.svg_height;
         that.source_name = this.options.sourceName;
         that.source_link = this.options.sourceLink;
-        that.display_credit = this.options.displayCredit;
+        
 
         // 1.4 Read the main barchat input data file(s)
         d3.json(this.options.data, function (e, data) {
@@ -122,7 +122,7 @@ PykCharts.HawkEye = function (options) {
         // Render elements
         this.renderTooltip();
         this.draw();
-        renderCredits("pyk-hawkeye",$(".pyk-hawkeye").width(),$(".pyk-hawkeye").height(),that.source_name,that.source_link,that.display_credit);
+        renderCredits("pyk-hawkeye",$(".pyk-hawkeye").width(),$(".pyk-hawkeye").height(),that.source_name,that.source_link);
     };
 
    

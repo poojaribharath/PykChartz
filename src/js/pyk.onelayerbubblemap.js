@@ -11,7 +11,7 @@ PykCharts.BubbleMap = function (options) {
 
         that.source_name = options.sourceName;
         that.source_link = options.sourceLink;
-        that.display_credit = options.displayCredit;
+        
 
         //---- Reading First Data file
         d3.csv(options.data1, function (file1Dataset){
@@ -206,7 +206,7 @@ PykCharts.BubbleMap = function (options) {
             .attr("width",width)
             .attr("height",10);
 
-        renderCredits("pyk-onelayerbubblemap-credits",$(".pyk-onelayerbubblemap-credits").width(),$(".pyk-onelayerbubblemap-credits").height(),that.source_name,that.source_link,that.display_credit);
+        renderCredits("pyk-onelayerbubblemap-credits",$(".pyk-onelayerbubblemap-credits").width(),$(".pyk-onelayerbubblemap-credits").height(),that.source_name,that.source_link);
     };
 
     this.renderTooltip = function () {

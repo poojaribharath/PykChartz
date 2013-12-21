@@ -9,7 +9,7 @@ PykCharts.BubblePack = function (options) {
 
         that.source_name = options.sourceName;
         that.source_link = options.sourceLink;
-        that.display_credit = options.displayCredit;
+        
 
         // 1.2 Read Json File Get all the data and pass to render
         d3.json(options.data, function (e, data) {
@@ -125,7 +125,7 @@ PykCharts.BubblePack = function (options) {
 
         d3.select(self.frameElement).style("height", diameter + "px");
 
-        renderCredits("bubble",$(".bubble").width(),$(".bubble").height(),that.source_name,that.source_link,that.display_credit);
+        renderCredits("bubble",$(".bubble").width(),$(".bubble").height(),that.source_name,that.source_link);
     };
 
 

@@ -12,7 +12,7 @@ PykCharts.Chord = function(options){
 
     that.source_name = this.options.sourceName;
     that.source_link = this.options.sourceLink;
-    that.display_credit = this.options.displayCredit;
+    
 
     //1.3 Read Json File   
     d3.json(that.options.relations, function(e, r){
@@ -59,7 +59,7 @@ PykCharts.Chord = function(options){
     this.generateMatrix();
         //4.3 Call render chors to display chord svg
     this.renderChord();
-    renderCredits("pyk-chord-credits",$(".pyk-chord-credits").width(),$(".pyk-chord-credits").height(),that.source_name,that.source_link,that.display_credit);
+    renderCredits("pyk-chord-credits",$(".pyk-chord-credits").width(),$(".pyk-chord-credits").height(),that.source_name,that.source_link);
     };
 
     //----------------------------------------------------------------------------------------

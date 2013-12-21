@@ -15,7 +15,7 @@ PykCharts.Ultimate = function(options){
 
         that.source_name = this.options.sourceName;
         that.source_link = this.options.sourceLink;
-        that.display_credit = this.options.displayCredit;
+        
 
         // 1.4 Read the input data file(s)
         d3.json(this.options.data, function(e, data){
@@ -99,7 +99,7 @@ PykCharts.Ultimate = function(options){
         // Render elements
         this.renderTooltip();
         this.draw();
-        renderCredits(this.options.selection.substring(1),$("."+this.options.selection.substring(1)).width(),$("."+this.options.selection.substring(1)).height(),that.source_name,that.source_link,that.display_credit);
+        renderCredits(this.options.selection.substring(1),$("."+this.options.selection.substring(1)).width(),$("."+this.options.selection.substring(1)).height(),that.source_name,that.source_link);
     };
 
     //----------------------------------------------------------------------------------------
