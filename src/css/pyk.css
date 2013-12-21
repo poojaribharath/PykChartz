@@ -1,0 +1,8 @@
+.pyk-credits{
+	font-size: 11px;
+	fill: gray;
+}
+a .pyk-credits{
+	text-decoration: underline;
+	fill: blue;
+}
