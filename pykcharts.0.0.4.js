@@ -81,7 +81,7 @@ PykCharts.choroplethOneLayer = function(options){
         that.projectionTranslateY = this.options.projectionTranslateY;
         that.source_name = this.options.sourceName;
         that.source_link = this.options.sourceLink;
-        that.display_credit = this.options.displayCredit;
+        
 
         var opt = this.options;
 
@@ -162,7 +162,7 @@ PykCharts.choroplethOneLayer = function(options){
         //4.5 Draw the elements after creating the holder
         this.renderTooltip();
         this.draw(t, g);
-        renderCredits("pyk-choroplethOneLayer-map-holder",$(".pyk-choroplethOneLayer-map-holder").width(),$(".pyk-choroplethOneLayer-map-holder").height(),that.source_name,that.source_link,that.display_credit);
+        renderCredits("pyk-choroplethOneLayer-map-holder",$(".pyk-choroplethOneLayer-map-holder").width(),$(".pyk-choroplethOneLayer-map-holder").height(),that.source_name,that.source_link);
 
     };
 
@@ -498,7 +498,7 @@ PykCharts.linearRangeQuery = function (options) {
         that.linkColumns = this.options.linkColumns;
         that.source_name = this.options.sourceName;
         that.source_link = this.options.sourceLink;
-        that.display_credit = this.options.displayCredit;
+        
 
         // 1.3 Read Json File Get all the data and pass to render
        d3.csv(options.data, function (e, data) {
@@ -742,7 +742,7 @@ d3.csv(options.data, function(data) {
     })();
   }
 
-  renderCredits("linear-range-query",$(".linear-range-query").width(),$(".linear-range-query").height(),that.source_name,that.source_link,that.display_credit);
+  renderCredits("linear-range-query",$(".linear-range-query").width(),$(".linear-range-query").height(),that.source_name,that.source_link);
 
 });
 
@@ -828,7 +828,7 @@ PykCharts.BubblePack = function (options) {
 
         that.source_name = options.sourceName;
         that.source_link = options.sourceLink;
-        that.display_credit = options.displayCredit;
+        
 
         // 1.2 Read Json File Get all the data and pass to render
         d3.json(options.data, function (e, data) {
@@ -944,7 +944,7 @@ PykCharts.BubblePack = function (options) {
 
         d3.select(self.frameElement).style("height", diameter + "px");
 
-        renderCredits("bubble",$(".bubble").width(),$(".bubble").height(),that.source_name,that.source_link,that.display_credit);
+        renderCredits("bubble",$(".bubble").width(),$(".bubble").height(),that.source_name,that.source_link);
     };
 
 
@@ -982,7 +982,7 @@ PykCharts.Chord = function(options){
 
     that.source_name = this.options.sourceName;
     that.source_link = this.options.sourceLink;
-    that.display_credit = this.options.displayCredit;
+    
 
     //1.3 Read Json File   
     d3.json(that.options.relations, function(e, r){
@@ -1029,7 +1029,7 @@ PykCharts.Chord = function(options){
     this.generateMatrix();
         //4.3 Call render chors to display chord svg
     this.renderChord();
-    renderCredits("pyk-chord-credits",$(".pyk-chord-credits").width(),$(".pyk-chord-credits").height(),that.source_name,that.source_link,that.display_credit);
+    renderCredits("pyk-chord-credits",$(".pyk-chord-credits").width(),$(".pyk-chord-credits").height(),that.source_name,that.source_link);
     };
 
     //----------------------------------------------------------------------------------------
@@ -1814,7 +1814,7 @@ PykCharts.HawkEye = function (options) {
         that.svg_height = this.options.svg_height;
         that.source_name = this.options.sourceName;
         that.source_link = this.options.sourceLink;
-        that.display_credit = this.options.displayCredit;
+        
 
         // 1.4 Read the main barchat input data file(s)
         d3.json(this.options.data, function (e, data) {
@@ -1910,7 +1910,7 @@ PykCharts.HawkEye = function (options) {
         // Render elements
         this.renderTooltip();
         this.draw();
-        renderCredits("pyk-hawkeye",$(".pyk-hawkeye").width(),$(".pyk-hawkeye").height(),that.source_name,that.source_link,that.display_credit);
+        renderCredits("pyk-hawkeye",$(".pyk-hawkeye").width(),$(".pyk-hawkeye").height(),that.source_name,that.source_link);
     };
 
    
@@ -3366,7 +3366,7 @@ PykCharts.BubbleMap = function (options) {
 
         that.source_name = options.sourceName;
         that.source_link = options.sourceLink;
-        that.display_credit = options.displayCredit;
+        
 
         //---- Reading First Data file
         d3.csv(options.data1, function (file1Dataset){
@@ -3561,7 +3561,7 @@ PykCharts.BubbleMap = function (options) {
             .attr("width",width)
             .attr("height",10);
 
-        renderCredits("pyk-onelayerbubblemap-credits",$(".pyk-onelayerbubblemap-credits").width(),$(".pyk-onelayerbubblemap-credits").height(),that.source_name,that.source_link,that.display_credit);
+        renderCredits("pyk-onelayerbubblemap-credits",$(".pyk-onelayerbubblemap-credits").width(),$(".pyk-onelayerbubblemap-credits").height(),that.source_name,that.source_link);
     };
 
     this.renderTooltip = function () {
@@ -3729,7 +3729,7 @@ PykCharts.compare_with_circles = function (options) {
             d3.select(g).selectAll("text.value").style("display", "none");
         }
     });
-    renderCredits("pyk-compare_with_circles",$(".pyk-compare_with_circles").width(),$(".pyk-compare_with_circles").height(),that.source_name,that.source_link,that.display_credit);
+    renderCredits("pyk-compare_with_circles",$(".pyk-compare_with_circles").width(),$(".pyk-compare_with_circles").height(),that.source_name,that.source_link);
 };
 /* jshint -W083 */
 PykCharts.River = function(options){
@@ -3750,7 +3750,7 @@ PykCharts.River = function(options){
 
         that.source_name = this.options.sourceName;
         that.source_link = this.options.sourceLink;
-        that.display_credit = this.options.displayCredit;
+        
 
         var opt = this.options;
 
@@ -3813,7 +3813,7 @@ PykCharts.River = function(options){
         //4.4 Render elements
         this.renderTooltip();
         this.draw();
-        renderCredits("pyk-river",$(".pyk-river").width(),$(".pyk-river").height(),that.source_name,that.source_link,that.display_credit);
+        renderCredits("pyk-river",$(".pyk-river").width(),$(".pyk-river").height(),that.source_name,that.source_link);
     };
 
     //----------------------------------------------------------------------------------------
@@ -4279,7 +4279,7 @@ PykCharts.treerect = function (options) {
 
         that.source_name = this.options.sourceName;
         that.source_link = this.options.sourceLink;
-        that.display_credit = this.options.displayCredit;
+        
 
         // 1.3 Read Json File Get all the data and pass to render
         d3.json(options.data, function (e, data) {
@@ -4412,7 +4412,7 @@ PykCharts.treerect = function (options) {
         function count(d) {
             return 1;
         }
-        renderCredits("pyk-treerect",$(".pyk-treerect").width(),$(".pyk-treerect").height(),that.source_name,that.source_link,that.display_credit);
+        renderCredits("pyk-treerect",$(".pyk-treerect").width(),$(".pyk-treerect").height(),that.source_name,that.source_link);
     };
 
     //----------------------------------------------------------------------------------------
@@ -4451,7 +4451,7 @@ PykCharts.Ultimate = function(options){
 
         that.source_name = this.options.sourceName;
         that.source_link = this.options.sourceLink;
-        that.display_credit = this.options.displayCredit;
+        
 
         // 1.4 Read the input data file(s)
         d3.json(this.options.data, function(e, data){
@@ -4535,7 +4535,7 @@ PykCharts.Ultimate = function(options){
         // Render elements
         this.renderTooltip();
         this.draw();
-        renderCredits(this.options.selection.substring(1),$("."+this.options.selection.substring(1)).width(),$("."+this.options.selection.substring(1)).height(),that.source_name,that.source_link,that.display_credit);
+        renderCredits(this.options.selection.substring(1),$("."+this.options.selection.substring(1)).width(),$("."+this.options.selection.substring(1)).height(),that.source_name,that.source_link);
     };
 
     //----------------------------------------------------------------------------------------
