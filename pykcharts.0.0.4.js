@@ -7,9 +7,8 @@ var renderCredits = function(c,w,h,t,l){
             .append("text")
             .attr("x",10)
             .attr("y",h-2)
-            .attr("font-size",11)
-            .attr("fill","gray")
-            .text("Visualization by");
+            .text("Visualization by")
+            .attr("class","pyk-credits");
         credits = d3.select("svg."+c)
             .append("a")
             .attr("xlink:href","http://pykih.com")
@@ -17,10 +16,8 @@ var renderCredits = function(c,w,h,t,l){
         credits.append("text")
             .attr("x",87)
             .attr("y",h-2)
-            .attr("font-size",11)
-            .attr("fill","blue")
-            .style("text-decoration","underline")
-            .text("pykih.com");
+            .text("pykih.com")
+            .attr("class","pyk-credits");
     }
     if(t==="" && l!==""){
         credits = d3.select("svg."+c)
@@ -30,28 +27,24 @@ var renderCredits = function(c,w,h,t,l){
         credits.append("text")
             .attr("x",w-100)
             .attr("y",h-2)
-            .attr("font-size",11)
-            .attr("fill","blue")
-            .style("text-decoration","underline")
-            .text("Source");
+            .text("Source")
+            .attr("class","pyk-credits");
     }
     else if(t!=="" && l===""){
         d3.select("svg."+c)
             .append("text")
             .attr("x",w-100)
             .attr("y",h-2)
-            .attr("font-size",11)
-            .attr("fill","gray")
-            .text("Source: "+t);
+            .text("Source: "+t)
+            .attr("class","pyk-credits");
     }
     else if(t!=="" && l!==""){
         d3.select("svg."+c)
             .append("text")
             .attr("x",w-100)
             .attr("y",h-2)
-            .attr("font-size",11)
-            .attr("fill","gray")
-            .text("Source:");
+            .text("Source:")
+            .style("class","pyk-credits");
         credits = d3.select("svg."+c)
             .append("a")
             .attr("xlink:href",l)
@@ -59,10 +52,8 @@ var renderCredits = function(c,w,h,t,l){
         credits.append("text")
             .attr("x",w-60)
             .attr("y",h-2)
-            .attr("font-size",11)
-            .attr("fill","blue")
-            .style("text-decoration","underline")
-            .text(t);
+            .text(t)
+            .attr("class","pyk-credits");
     }
 };
 
