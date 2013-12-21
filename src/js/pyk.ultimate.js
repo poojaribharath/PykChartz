@@ -70,7 +70,7 @@ PykCharts.Ultimate = function(options){
         this.svg = d3.select(this.options.selection)
             .append("svg")
             .attr("class", "pyk-ultimate "+this.options.selection.substring(1))
-            .attr("height", h)
+            .attr("height", h+20)
             .attr("width", w);
 
               //4.4 Add other elements to the SVG Holder
