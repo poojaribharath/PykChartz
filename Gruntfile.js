@@ -61,8 +61,12 @@ module.exports = function(grunt) {
         // Run shell commands
         shell: {
             hooks: {
-            // Copy the project's pre-commit hook into .git/hooks
-            command: 'cp git-hooks/pre-commit .git/hooks/pre-commit'
+                // Copy the project's pre-commit hook into .git/hooks
+                command: 'cp git-hooks/pre-commit .git/hooks/pre-commit'
+            },
+            rmclogs: {
+                // Run the script
+                command: 'bash pre-build/script.bash'
             }
         }
     });
@@ -75,10 +79,14 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-contrib-jshint');
 
+    // Remove all console.logs
+    grunt.registerTask('rmconsolelogs', ['shell:rmclogs']);
+
     // Clean the .git/hooks/pre-commit file then copy in the latest version
     grunt.registerTask('hookmeup', ['clean:hooks', 'shell:hooks']);
+
     //build task
-    grunt.registerTask('build', ['concat', 'uglify', 'cssmin', 'hookmeup']);
+    grunt.registerTask('build', ['concat', 'uglify', 'cssmin', 'rmconsolelogs', 'hookmeup']);
 
     grunt.event.on('watch', function(action, filepath) {
         grunt.log.writeln(filepath + ' has ' + action);
