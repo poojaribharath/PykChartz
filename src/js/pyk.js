@@ -17,7 +17,7 @@ var renderCredits = function(c,w,h,t,l){
             .attr("x",87)
             .attr("y",h-2)
             .text("pykih.com")
-.attr("class","pyk-credits");
+            .attr("class","pyk-credits");
     }
     if(t==="" && l!==""){
         credits = d3.select("svg."+c)
