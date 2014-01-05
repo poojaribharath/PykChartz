@@ -27,3 +27,13 @@ The long term vision of PykCharts is to build / evolve a framework on top of d3 
 Download the distribution css and JS files from __ and include them
 
 Check out the [examples page]() to see more examples.
+
+### Contributors
+
+The project is maintained by [pykih](www.pykih.com). Check out all the [contributors](https://github.com/pykih/PykCharts/graphs/contributors)
+
+### License
+
+GPL License. Copyright 2011-2014 Pykih Software LLP. [http://www.pykih.com](http://www.pykih.com)
+
+You are not granted rights or licenses to the trademarks of the Pykih, including without limitation the PykCharts name or logo.
