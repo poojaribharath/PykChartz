@@ -3,68 +3,73 @@
    <head>
       <meta charset="utf-8">
       <title>PykCharts</title>
-      <link rel="shortcut icon" href="/examples/res/img/favicon.ico" type="image/ico">
+      <link rel="shortcut icon" href="http://s3-ap-southeast-1.amazonaws.com/pykih-public-docs/logos/pykcharts.png" type="image/ico">
       <script src="examples/res/lib/bootstrap.js" type="text/javascript"></script>
       <link href="examples/res/lib/bootstrap.css" rel="stylesheet" type="text/css">
+      <link href="examples/res/lib/pykui.min.css" rel="stylesheet" type="text/css">
    </head>
    <body>
-      <div class="container">
-         <div class="row">
-            <div class="col-sm-12">
-               <div class="col-sm-11" style="margin-bottom: 60px;">
-                  <h1><a href="index.html">PykCharts</a></h1>
+       <header id='main-header'>
+           <nav class='navbar navbar-default' id='main-nav' role='navigation'>
+               <div class='container'>
+                   <div class='navbar-header'>
+                       <button class='navbar-toggle' data-target='.navbar-ex1-collapse' data-toggle='collapse' id='overflow-button' type='button'>
+                           <span class='glyphicon glyphicon-align-justify gray-icon'></span>
+                       </button>
+                       <a href="index.html" class="navbar-brand"><img alt="Favicon" src="https://s3-ap-southeast-1.amazonaws.com/pykih-public-docs/logos/favicon.ico" /></a>
+                   </div>
+                   <ul class='nav navbar-nav'>
+                       <li>
+                           <a href="http://www.pykih.com/" style="color: #A01718;"><img alt="PykCharts" src="http://s3-ap-southeast-1.amazonaws.com/pykih-public-docs/logos/pykcharts.png"/>&nbsp;&nbsp;PykCharts</a>
+                       </li>
+                   </ul>
+                   <div class='collapse navbar-collapse navbar-ex1-collapse'>
+                       <ul class='nav navbar-nav navbar-right'>
+                           <li><a href="https://github.com/pykih/PykCharts/blob/master/LICENSE.md">License: GPL v2</a></li>
+                       </ul>
+                   </div>
                </div>
-               <div class="col-sm-1" style="padding-top: 25px; margin-bottom: 60px;">
-                  <a href="http://www.pykih.com" target="_blank"><img src="/examples/res/img/pykih_25.png" class="img-responsive"></a>
+           </nav>
+       </header>
+       <div class="container">
+           <div class="row">
+               <div class="col-sm-2">
+                   <ul class="nav nav-pills nav-stacked">
+                      <li class="active"><a href="index.html">Home</a></li>
+                      <li><a href="examples/river.html">River</a></li>
+                      <li><a href="ChoroplethOneLayer.html">One Layer Choropleth</a></li>
+                      <li><a href="choropleth.html">Zoomable Choropleth</a></li>
+                      <li><a href="ultimate.html">Ultimate Column</a></li>
+                      <li><a href="ultimatenegative.html">Ultimate Negative</a></li>
+                      <li><a href="chord.html">Rotating Chord</a></li>
+                      <li><a href="bubble.html">Bubble</a></li>
+                      <li><a href="treerect.html">Tree Rect</a></li>
+                      <li><a href="LinearRangeQuery.html">Linear Range Query</a></li>
+                      <li><a href="OneLayerBubbleMap.html">One Layer Bubble Map</a></li>
+                      <li><a href="pulse.html">Pulse</a></li>
+                   </ul>
                </div>
-            </div>
-            <div class="col-sm-12">
-               <div class="col-sm-4">
-                  <a href="examples/river.html">
-                     <div style="border: 1px solid lightgray; padding: 10px; height: 230px;">
-                        <h4>River</h4>
-                        <br/>
-                        <img src="/examples/res/img/river.png" class="img-responsive">
-                     </div>
-                  </a>
+               <div class="col-sm-10">
+                   <h1 style="margin-top: none; padding-top: none;">PykCharts</h1>
+                   <hr>
+                   <p>
+                       PykCharts.js is an open-source Javascript library of reusable charts similar to NVD3 and HighCharts. PykCharts.js was built with the single aim of making it trivial for developers to use d3.js charts in their projects. Hence, developers with minimum knowledge of d3 can write a single line interface in their HTML to render complex d3 charts. The long term vision of PykCharts is to build / evolve a framework on top of d3 for developing clean, structured and reusable charts.
+                   </p>                   
                </div>
-               <div class="col-sm-4" style="margin-bottom: 30px;">
-                  <a href="examples/choropleth.html">
-                     <div style="border: 1px solid lightgray; padding: 10px; height: 230px;">
-                        <h4>Zoomable Choropleth</h4>
-                        <br/>
-                        <img src="/examples/res/img/united_states_zoomable_map.png" class="img-responsive">
-                     </div>
-                  </a>
-               </div>
-               <div class="col-sm-4" style="margin-bottom: 30px;">
-                  <a href="examples/ultimate.html">
-                     <div style="border: 1px solid lightgray; padding: 10px; height: 230px;">
-                        <h4>Ultimate Column</h4>
-                        <br/>
-                        <img src="/examples/res/img/ultimate.png" class="img-responsive">
-                     </div>
-                  </a>
-               </div>
-               <div class="col-sm-4" style="margin-bottom: 30px;">
-                  <a href="examples/chord.html">
-                     <div style="border: 1px solid lightgray; padding: 10px; height: 230px;">
-                        <h4>Rotating Chord</h4>
-                        <br/>
-                        <img src="/examples/res/img/chord.png" class="img-responsive">
-                     </div>
-                  </a>
-               </div>
-            </div>
-         </div>
-		<div class="row">
-         <div class="col-sm-12" style="margin-top: 30px;">
-            <a href="http://www.pykih.com" target="_blank">(c) 2013 Pykih Software LLP</a>
- 			&nbsp;&nbsp;
-			<a href="https://github.com/pykih/PykCharts/blob/master/LICENSE.md">License</a>
-			<br/><br/><br/>
-         </div>
-		</div>
-      </div>
+           </div>
+       </div>
+       <nav class='navbar navbar-default navbar-bottom' id='footer' style='margin-top: 60px;padding-bottom: 0px; margin-bottom: 0px;'>
+           <div class='container'>
+               <ul class='nav navbar-nav'>
+                   <li style='padding-top: 16px;'><a href="https://twitter.com/pykih" class="twitter-follow-button" data-show-count="false">Follow @pykih</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
+               </ul>
+               <ul class='nav navbar-nav navbar-right'>
+                   <li><a href="http://www.pykih.com" target="_blank">&copy; 2011-2014 Pykih Software LLP</a></li>
+                   <li><a href="http://www.pykih.com/about">About Pykih</a></li>
+                   <li><a href="http://www.pykih.com/hacker-culture">Hacker Culture <span style='color:green;'>(Hiring)</span></a></li>
+               </ul>
+           </div>
+       </nav>       
    </body>
 </html>
