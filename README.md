@@ -28,7 +28,16 @@ Download the distribution css and JS files from __ and include them
 
 Check out the [examples page]() to see more examples.
 
-### Contributors
+
+### Reporting bugs
+
+If you discover a problem with PykCharts, we would like to know about it. However, we ask that you please review these guidelines before submitting a bug report: [Bug reports](https://github.com/pykih/PykCharts/wiki/Bug-reports).
+
+### Contributing and Contributors
+
+
+We hope that you will consider contributing to PykCharts. Please read the [Vision Document](https://github.com/pykih/PykCharts/wiki/Vision-Document) to understand why we created PykCharts and where we wish to take it. Also, please read this short overview for some information about how to get started: [Contributing](https://github.com/pykih/PykCharts/wiki/Contributing).
+
 
 The project is maintained by [pykih](www.pykih.com). Check out all the [contributors](https://github.com/pykih/PykCharts/graphs/contributors)
 
